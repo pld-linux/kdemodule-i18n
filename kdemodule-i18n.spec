@@ -21,13 +21,14 @@
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
-Version:	3.3.0
+Version:	3.3.1
 Release:	6
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/3.3/src/%{_name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
 # Source0-md5:	f1927048807146969f6497b5d789fb5d
+Patch0:		%{_name}-fixes.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs >= %{kdelibs_epoch}:%{version}
 BuildRequires:	kdelibs-devel
@@ -3046,6 +3047,7 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -n %{_name}-%{version}
+%patch0 -p1 -R
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -4519,8 +4521,8 @@ done
 %defattr(644,root,root,755)
 %files -n kde-decoration-openlook-i18n -f kwin_openlook.lang
 %defattr(644,root,root,755)
-#%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
-#%defattr(644,root,root,755)
+%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
+%defattr(644,root,root,755)
 %files -n kde-decoration-system-i18n -f kwin_system.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-ark-i18n -f ark_plugin.lang
