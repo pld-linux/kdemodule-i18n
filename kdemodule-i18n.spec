@@ -732,6 +732,10 @@ Summary(pl):	T³umaczenia dla kdepim
 Group:		X11/Applications
 Requires:	kdepim = %{kdepim_epoch}:%{version}
 Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:      kdepim-korganizer
+Obsoletes:      kdepim-korganizer-libs
+Obsoletes:      kdepim-kontact
+Obsoletes:      kdepim-kresources
 
 %description -n kdepim-i18n
 Internationalization and localization files for kdepim.
