@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.1
-Release:	2
+Release:	3
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -3696,7 +3696,7 @@ cat kio_lan.lang >> lisa.lang
 cat kppplogview.lang >> kppp.lang
 
 %find_lang kwireless		--with-kde
-cat kwireless.lang >> kwifimanager.lancat g
+cat kwireless.lang >> kwifimanager.lang
 %find_lang kcmwifi		--with-kde
 cat kcmwifi.lang >> kwifimanager.lang
 
