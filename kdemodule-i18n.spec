@@ -1,22 +1,23 @@
+%define		_name			kde-i18n
+%define		kdeacces_epoch		0
+%define		kdeaddons_epoch		1
+%define		kdeadmin_epoch		8
+%define		kdeartwork_epoch	8
+%define		kdebase_epoch		9
+%define		kdeedu_epoch		8
+%define		kdegames_epoch		8
+%define		kdegraphics_epoch	9
+%define		kdelibs_epoch		9
+%define		kdemultimedia_epoch     9
+%define		kdenetwork_epoch        10
+%define		kdepim_epoch		3
+%define		kdesdk_epoch		3
+%define		kdetoys_epoch		9
+%define		kdeutils_epoch		9
+%define		kdevelop_epoch		7
+%define		kdevelop_version	3.0.4
+%define		quanta_epoch		1
 #
-%define		_name	kde-i18n
-%define kdeacces_epoch  0
-%define kdeaddons_epoch 1
-%define kdeadmin_epoch  8
-%define kdeartwork_epoch        8
-%define kdebase_epoch   9
-%define kdeedu_epoch    8
-%define kdegames_epoch  8
-%define kdegraphics_epoch       9
-%define kdelibs_epoch   9
-%define kdemultimedia_epoch     9
-%define kdenetwork_epoch        10
-%define kdepim_epoch    3
-%define kdesdk_epoch    3
-%define kdetoys_epoch   9
-%define kdeutils_epoch  9
-%define kdevelop_epoch  7
-%define quanta_epoch 1
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
