@@ -4519,8 +4519,8 @@ done
 %defattr(644,root,root,755)
 %files -n kde-decoration-openlook-i18n -f kwin_openlook.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
-%defattr(644,root,root,755)
+#%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
+#%defattr(644,root,root,755)
 %files -n kde-decoration-system-i18n -f kwin_system.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-ark-i18n -f ark_plugin.lang
