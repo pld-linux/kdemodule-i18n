@@ -1,4 +1,4 @@
-	# $Revision: 1.28 $, $Date: 2004-09-01 15:15:39 $
+	# $Revision: 1.29 $, $Date: 2004-09-01 15:18:08 $
 %define		_name			kde-i18n
 %define		kdeacces_epoch		0
 %define		kdeaddons_epoch		1
@@ -2879,7 +2879,7 @@ Summary:	Internationalization and localization files for kontact
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kontact
 Group:		X11/Applications
 Requires:	kdeaddons-kontact = %{kdeaddons_epoch}:%{version}
-Requires:	kdepim-kontact-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim = %{epoch}:%{version}-%{release}
 Requires:	kdenetwork-knewsticker-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-kontact-i18n
@@ -3662,6 +3662,8 @@ cat korganizer-libs.lang >> libkdepim.lang
 cat ktnef.lang >> kmail.lang
 cat libkdenetwork.lang >> libkdepim.lang
 cat libksieve.lang >> libkdepim.lang
+cat kontact.lang >> kdepim.lang
+cat korganizer.lang >> kdepim.lang
 
 %find_lang	kfileshare	--with-kde
 %find_lang	kcm_sambaconf	--with-kde
@@ -4354,10 +4356,6 @@ done
 %files -n kdepim-knotes-i18n -f knotes.lang
 %defattr(644,root,root,755)
 %files -n kdepim-konsolekalendar-i18n -f konsolekalendar.lang
-%defattr(644,root,root,755)
-%files -n kdepim-kontact-i18n -f kontact.lang
-%defattr(644,root,root,755)
-%files -n kdepim-korganizer-i18n -f korganizer.lang
 %defattr(644,root,root,755)
 %files -n kdepim-korn-i18n -f korn.lang
 %defattr(644,root,root,755)
