@@ -22,12 +22,13 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.1
-Release:	6
+Release:	1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
 # Source0-md5:	34c43a57b4e8c8f2fea0622ba14ff471
+# Source0-size:	189192776
 Patch0:		%{_name}-fixes.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
@@ -3721,8 +3722,8 @@ cat {kcmlowbatcrit,kcmlowbatwarn,laptop,powerctrl}.lang >> klaptopdaemon.lang
 %find_lang kdelirc		--with-kde
 %find_lang irkick		--with-kde
 %find_lang kcmlirc		--with-kde
-cat irkick.lang >> kdelirc.lang
-cat kcmlirc.lang >> kdelirc.lang
+grep '\.mo' irkick.lang >> kdelirc.lang
+grep '\.mo' kcmlirc.lang >> kdelirc.lang
 
 %find_lang kwalletmanager	--with-kde
 cat kwalletmanager.lang >> kwallet.lang
@@ -3813,10 +3814,9 @@ do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
-for i in %{_kdedocdir}/HTML/*; do
-	if ! grep -q '/en$' $(echo $i); then
-		echo "%%lang(`basename $i`) %%dir $i" >> kdelibs.lang
-	fi
+for i in `find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"` ;
+do
+		echo "%dir %{_kdedocdir}/${i}" >> kdelibs.lang
 done
 
 %find_lang	cervisia	--with-kde
