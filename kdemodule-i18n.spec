@@ -3183,7 +3183,6 @@ programs=" \
 	kcmmidi \
 	kcmspellchecking \
 	kdesktop \
-	kdesktop_lock \
 	kwin \
 	kwin_default_config \
 	kwin_keramik_config \
@@ -4010,6 +4009,12 @@ do
 	fi
 done
 
+# Get rid of stupid messages about files listed twice.
+for i in *.lang ;
+do
+cat ${i}|sort|uniq > ${i}.niedakh
+mv ${i}.niedakh ${i}
+done
 
 
 %files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
