@@ -27,7 +27,7 @@ Epoch:		10
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
-# Source0-md5:	f1927048807146969f6497b5d789fb5d
+# Source0-md5:	34c43a57b4e8c8f2fea0622ba14ff471
 Patch0:		%{_name}-fixes.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
@@ -3813,7 +3813,7 @@ do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
-for i in %{_defaultdocdir}/kde/HTML/*; do
+for i in %{_kdedocdir}/HTML/*; do
 	if ! grep -q '/en$' $(echo $i); then
 		echo %dir $i >> kdelibs.lang
 	fi
