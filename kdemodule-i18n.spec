@@ -2354,19 +2354,6 @@ Internationalization and localization files for kompare.
 %description -n kdesdk-kompare-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kompare.
 
-%package -n kdesdk-kfilereplace-i18n
-Summary:	Internationalization and localization files for kfilereplace
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfilereplace
-Group:		X11/Applications
-Requires:	kdesdk-kfilereplace = %{kdesdk_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdesdk-kfilereplace-i18n
-Internationalization and localization files for kfilereplace.
-
-%description -n kdesdk-kfilereplace-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfilereplace.
-
 %package -n kdesdk-kstartperf-i18n
 Summary:	Internationalization and localization files for kstartperf
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kstartperfa
@@ -2918,6 +2905,72 @@ Internationalization and localization files for atlantikdesigner.
 %description -n kdeaddons-atlantikdesigner-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
 
+%package -n kdewebdev-kfilereplace-i18n
+Summary:	Internationalization and localization files for kfilereplace
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfilereplace
+Group:		X11/Applications
+Requires:	kdewebdev-kfilereplace = %{kdewebdev_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdesdk-kfilereplace-i18n
+
+%description -n kdewebdev-kfilereplace-i18n
+Internationalization and localization files for kfilereplace.
+
+%description -n kdewebdev-kfilereplace-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfilereplace.
+
+%package -n kdewebdev-kimagemapeditor-i18n
+Summary:	Internationalization and localization files for kimagemapeditor
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kimagemapeditor
+Group:		X11/Applications
+Requires:	kdewebdev-kimagemapeditor = %{kdewebdev_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdewebdev-kimagemapeditor-i18n
+Internationalization and localization files for kimagemapeditor.
+
+%description -n kdewebdev-kimagemapeditor-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kimagemapeditor.
+
+%package -n kdewebdev-klinkstatus-i18n
+Summary:	Internationalization and localization files for klinkstatus
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klinkstatus
+Group:		X11/Applications
+Requires:	kdewebdev-klinkstatus = %{kdewebdev_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdewebdev-klinkstatus-i18n
+Internationalization and localization files for klinkstatus.
+
+%description -n kdewebdev-klinkstatus-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla klinkstatus.
+
+%package -n kdewebdev-kommander-i18n
+Summary:	Internationalization and localization files for kommander
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kommander
+Group:		X11/Applications
+Requires:	kdewebdev-kommander = %{kdewebdev_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdewebdev-kommander-i18n
+Internationalization and localization files for kommander.
+
+%description -n kdewebdev-kommander-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kommander.
+
+%package -n kdewebdev-kxsldbg-i18n
+Summary:	Internationalization and localization files for kxsldbg
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kxsldbg
+Group:		X11/Applications
+Requires:	kdewebdev-kxsldbg = %{kdewebdev_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdewebdev-kxsldbg-i18n
+Internationalization and localization files for kxsldbg.
+
+%description -n kdewebdev-kxsldbg-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kxsldbg.
+
 %package -n kdewebdev-quanta-i18n
 Summary:	Internationalization and localization files for quanta
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla quanta
@@ -2977,9 +3030,9 @@ rm -rf *.lang
 
 %find_lang quanta	--with-kde
 %find_lang kommander	--with-kde
-cat kommander.lang  >> quanta.lang
 %find_lang kxsldbg	--with-kde
-cat kxsldbg.lang  >> quanta.lang
+%find_lang kimagemapeditor --with-kde
+%find_lang klinkstatus	--with-kde
 
 
 > kdegames.lang
@@ -3698,10 +3751,10 @@ do
 done
 %find_lang cvsservice	--with-kde
 
-##%find_lang kfilereplace
-%find_lang kstartperf
-%find_lang kuiviewer
-%find_lang spy
+%find_lang kfilereplace		--with-kde
+%find_lang kstartperf		--with-kde
+%find_lang kuiviewer		--with-kde
+%find_lang spy			--with-kde
 
 %find_lang amor			--with-kde
 %find_lang kmoon		--with-kde
@@ -3939,11 +3992,41 @@ do
 done
 
 
+for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/* ;
+do
+	echo $i
+	if [ -d $i ] ; then
+	z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/apps/khangman/data/,,`
+	echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> khangman.lang
+	fi
+done
+
+for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/* ;
+do
+	echo $i
+	if [ -d $i ] ; then
+	z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/apps/klettres/,,`
+	echo "%lang($z) %{_datadir}/apps/klettres/$z" >> klettres.lang
+	fi
+done
+
+
+
 %files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
 %defattr(644,root,root,755)
 %files -n kdegames-i18n -f kdegames.lang
 %defattr(644,root,root,755)
 %files -n kdewebdev-quanta-i18n -f quanta.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kfilereplace-i18n -f kfilereplace.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kimagemapeditor-i18n -f kimagemapeditor.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-klinkstatus-i18n -f klinkstatus.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kommander-i18n -f kommander.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kxsldbg-i18n -f kxsldbg.lang
 %defattr(644,root,root,755)
 %files -n kdelibs-i18n -f kdelibs.lang
 %defattr(644,root,root,755)
@@ -4262,7 +4345,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdesdk-kompare-i18n -f kompare.lang
 %defattr(644,root,root,755)
-##%files -n kdesdk-kfilereplace-i18n -f kfilereplace.lang
 %files -n kdesdk-kstartperf-i18n -f kstartperf.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-kuiviewer-i18n -f kuiviewer.lang
