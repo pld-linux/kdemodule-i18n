@@ -508,7 +508,7 @@ T³umaczenia dla libkonq.
 Summary:	Internationalization and localization files for newimap4 ioslave
 Summary(pl):	T³umaczenia dla newimap4 ioslave
 Group:		X11/Applications
-Requires:	kde-kio-newimap4 = %{kdebase_epoch}:%{version}
+Requires:	kde-kio-newimap4 = %{kdepim_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-kio-newimap4-i18n
