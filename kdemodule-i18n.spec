@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.1
-Release:	3
+Release:	4
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -991,7 +991,6 @@ Summary:	Internationalization and localization files for useraccount
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla useraccount
 Group:		X11/Applications
 Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
-Requires:	kdm-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdeutils-userinfo-i18n
 Obsoletes:	kdeutils-kdepasswd-i18n
