@@ -164,7 +164,8 @@ Requires:	kdebase-kfind-i18n = %{kdebase_epoch}:%{version}
 Requires:	kdebase-kjobviewer-i18n = %{kdebase_epoch}:%{version}
 Requires:	kdebase-kpager-i18n = %{kdebase_epoch}:%{version}
 Requires:	kdebase-kmenuedit-i18n = %{kdebase_epoch}:%{version}
-Obsoletes:	kdebase-kicker-i18n = %{kdebase_epoch}:%{version}
+Obsoletes:	kdebase-ksystraycmd-i18n
+Obsoletes:	kdebase-kicker-i18n 
 
 %description -n kdebase-desktop-i18n
 Internationalization and localization files for KDE:
@@ -341,7 +342,7 @@ Group:		X11/Applications
 Requires:	konqueror = %{kdebase_epoch}:%{version}
 Requires:	kdebase-common-filemanagement-i18n = %{kdebase_epoch}:%{version}
 Requires:	kdebase-konsole-i18n = %{kdebase_epoch}:%{version}
-Requires:	kdebase-libkonq-i18n = %{kdebase_epoch}:%{version}
+Requires:	konqueror-libs-i18n = %{kdebase_epoch}:%{version}
 Requires:	kdebase-mailnews-i18n = %{kdebase_epoch}:%{version}
 
 %description -n konqueror-i18n
@@ -492,29 +493,17 @@ Internationalization and localization files for kpersonalizer.
 %description -n kdebase-kpersonalizer-i18n -l pl
 T³umaczenia dla kpersonalizera.
 
-%package -n kdebase-ksystraycmd-i18n
-Summary:	Internationalization and localization files for ksystraycmd
-Summary(pl):	T³umaczenia dla ksystraycmd
-Group:		X11/Applications
-Requires:	kdebase-ksystraycmd = %{kdebase_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-ksystraycmd-i18n
-Internationalization and localization files for ksystraycmd.
-
-%description -n kdebase-ksystraycmd-i18n -l pl
-T³umaczenia dla ksystraycmd.
-
-%package -n kdebase-libkonq-i18n
+%package -n konqueror-libs-i18n
 Summary:	Internationalization and localization files for libkonq
 Summary(pl):	T³umaczenia dla libkonq
 Group:		X11/Applications
-Requires:	kdebase-libkonq = %{kdebase_epoch}:%{version}
+Requires:	konqueror-libs = %{kdebase_epoch}:%{version}
+Obsoletes:	kdebase-libkonq-i18n
 
-%description -n kdebase-libkonq-i18n
+%description -n konqueror-libs-i18n
 Internationalization and localization files for libkonq.
 
-%description -n kdebase-libkonq-i18n -l pl
+%description -n konqueror-libs-i18n -l pl
 T³umaczenia dla libkonq.
 
 %package -n kdebase-mailnews-i18n
@@ -3262,6 +3251,7 @@ cat libtaskmanager.lang >> libtaskbar.lang
 %find_lang kpersonalizer	--with-kde
 
 %find_lang ksystraycmd	--with-kde
+cat ksystraycmd.lang >> kdebase.lang
 
 %find_lang kwriteconfig	--with-kde
 cat kwriteconfig.lang >> kwrite.lang
@@ -4000,9 +3990,7 @@ done
 %defattr(644,root,root,755)
 %files -n kdebase-kpersonalizer-i18n -f kpersonalizer.lang
 %defattr(644,root,root,755)
-%files -n kdebase-ksystraycmd-i18n -f ksystraycmd.lang
-%defattr(644,root,root,755)
-%files -n kdebase-libkonq-i18n -f libkonq.lang
+%files -n konqueror-libs-i18n -f libkonq.lang
 %defattr(644,root,root,755)
 %files -n kdebase-mailnews-i18n -f mailnews.lang
 %defattr(644,root,root,755)
