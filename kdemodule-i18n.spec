@@ -3813,6 +3813,11 @@ do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
+for i in %{_defaultdocdir}/kde/HTML/*; do
+	if ! grep -q '/en$' $(echo $i); then
+		echo %dir $i >> kdelibs.lang
+	fi
+done
 
 %find_lang	cervisia	--with-kde
 %find_lang	kbabel		--with-kde
