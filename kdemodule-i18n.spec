@@ -516,6 +516,19 @@ Internationalization and localization files for libkonq.
 %description -n konqueror-libs-i18n -l pl
 T³umaczenia dla libkonq.
 
+%package -n kde-kio-newimap4-i18n
+Summary:	Internationalization and localization files for newimap4 ioslave
+Summary(pl):	T³umaczenia dla newimap4 ioslave
+Group:		X11/Applications
+Requires:	kde-kio-newimap4 = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kde-kio-newimap4-i18n
+Internationalization and localization files for newimap4 ioslave.
+
+%description -n kde-kio-newimap4-i18n -l pl
+T³umaczenia dla newimap4 ioslave.
+
 %package -n kde-kio-ldap-i18n
 Summary:	Internationalization and localization files for ldap ioslave
 Summary(pl):	T³umaczenia dla ldap ioslave
@@ -712,6 +725,19 @@ Internationalization and localization files for kontact.
 
 %description -n kdepim-kontact-i18n -l pl
 T³umaczenia dla kontacta.
+
+%package -n kdepim-i18n
+Summary:	Internationalization and localization files for kdepim
+Summary(pl):	T³umaczenia dla kdepim
+Group:		X11/Applications
+Requires:	kdepim = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-i18n
+Internationalization and localization files for kdepim.
+
+%description -n kdepim-i18n -l pl
+T³umaczenia dla kdepim.
 
 %package -n kdepim-korganizer-i18n
 Summary:	Internationalization and localization files for korganizer
@@ -980,19 +1006,6 @@ Internationalization and localization files for kdelirc.
 
 %description -n kdeutils-kdelirc-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdelirca.
-
-%package -n kdeutils-userinfo-i18n
-Summary:	Internationalization and localization files for userinfo
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla userinfo
-Group:		X11/Applications
-Requires:	kdeutils-userinfo = %{kdeutils_epoch}:%{version}
-Requires:	kdm-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeutils-userinfo-i18n
-Internationalization and localization files for userinfo.
-
-%description -n kdeutils-userinfo-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla userinfo.
 
 %package -n kdeutils-kdessh-i18n
 Summary:	Internationalization and localization files for kdessh
@@ -2787,6 +2800,145 @@ Internationalization and localization files for kvim.
 %description -n kdeaddons-kvim-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvima.
 
+%package -n kde-decoration-cde-i18n
+Summary:	Internationalization and localization files for cde
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla cde
+Group:		X11/Applications
+Requires:	kde-decoration-cde = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-cde-i18n
+Internationalization and localization files for cde.
+
+%description -n kdeaddons-cde-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla cde.
+
+
+%package -n kde-decoration-clients-i18n
+Summary:	Internationalization and localization files for clients
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla clients
+Group:		X11/Applications
+Requires:	kde-decoration-clients = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-clients-i18n
+Internationalization and localization files for clients.
+
+%description -n kdeaddons-clients-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla clients.
+
+
+%package -n kde-decoration-glow-i18n
+Summary:	Internationalization and localization files for glow
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla glow
+Group:		X11/Applications
+Requires:	kde-decoration-glow = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-glow-i18n
+Internationalization and localization files for glow.
+
+%description -n kdeaddons-glow-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla glow.
+
+
+%package -n kde-decoration-icewm-i18n
+Summary:	Internationalization and localization files for icewm
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla icewm
+Group:		X11/Applications
+Requires:	kde-decoration-icewm = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-icewm-i18n
+Internationalization and localization files for icewm.
+
+%description -n kdeaddons-icewm-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla icewm.
+
+
+%package -n kde-decoration-kde1-i18n
+Summary:	Internationalization and localization files for kde1
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde1
+Group:		X11/Applications
+Requires:	kde-decoration-kde1 = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-kde1-i18n
+Internationalization and localization files for kde1.
+
+%description -n kdeaddons-kde1-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kde1.
+
+
+%package -n kde-decoration-kstep-i18n
+Summary:	Internationalization and localization files for kstep
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kstep
+Group:		X11/Applications
+Requires:	kde-decoration-kstep = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-kstep-i18n
+Internationalization and localization files for kstep.
+
+%description -n kdeaddons-kstep-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kstep.
+
+
+%package -n kde-decoration-openlook-i18n
+Summary:	Internationalization and localization files for openlook
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla openlook
+Group:		X11/Applications
+Requires:	kde-decoration-openlook = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-openlook-i18n
+Internationalization and localization files for openlook.
+
+%description -n kdeaddons-openlook-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla openlook.
+
+
+%package -n kde-decoration-plastik-i18n
+Summary:	Internationalization and localization files for plastik
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla plastik
+Group:		X11/Applications
+Requires:	kde-decoration-plastik = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-plastik-i18n
+Internationalization and localization files for plastik.
+
+%description -n kdeaddons-plastik-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla plastik.
+
+
+%package -n kde-decoration-riscos-i18n
+Summary:	Internationalization and localization files for riscos
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla riscos
+Group:		X11/Applications
+Requires:	kde-decoration-riscos = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-riscos-i18n
+Internationalization and localization files for riscos.
+
+%description -n kdeaddons-riscos-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla riscos.
+
+
+%package -n kde-decoration-system-i18n
+Summary:	Internationalization and localization files for system
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla system
+Group:		X11/Applications
+Requires:	kde-decoration-system = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-system-i18n
+Internationalization and localization files for system.
+
+%description -n kdeaddons-system-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla system.
+
 %package -n kdeaddons-kicker-i18n
 Summary:	Internationalization and localization files for kicker
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kickera
@@ -3080,6 +3232,10 @@ cat kxsconfig.lang >> screensavers.lang
 %find_lang keduca	--with-kde
 %find_lang khangman	--with-kde
 %find_lang kig		--with-kde
+%find_lang kfile_drgeo		--with-kde
+%find_lang kfile_kig		--with-kde
+cat kfile_drgeo.lang >> kig.lang
+cat kfile_kig.lang >> kig.lang
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
 %find_lang kmathtool	--with-kde
@@ -3194,7 +3350,11 @@ programs=" \
 	ksplash \
 	krandr \
 	kreadconfig \
-	krdb"
+	krdb \
+	kcmkwinrules \
+	kcmkxmlrpcd \
+	kxmlrpcd \
+	kthememanager"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -3330,7 +3490,8 @@ kdesktop \
 ksmserver \
 kwin_keramik_config \
 kcmmidi \
-khotkeys"
+khotkeys \
+joystick"
 
 for i in $desktop;
 do
@@ -3422,7 +3583,8 @@ cat kwriteconfig.lang >> kwrite.lang
 mn="kio_imap4 \
 kio_pop3 \
 kio_nntp \
-kio_smtp"
+kio_smtp \
+kio_newimap4"
 
 for i in $mn;
 do
@@ -3485,10 +3647,9 @@ done
 cat kicker.lang >> kdebase.lang
 cat libtaskbar.lang >> ksplashthemes.lang
 
-
-
-
-
+%find_lang useraccount		--with-kde
+%find_lang kdepasswd		--with-kde
+cat kdepasswd.lang >> useraccount.lang 
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/* ;
 do
@@ -3499,6 +3660,19 @@ do
 	fi
 done
 
+> kdepim.lang
+
+kdepim="kdepimwizards \
+kabc_slox \
+kres_exchange \
+kres_imap \
+kres_xmlrpc \
+kres_remote"
+for i in $kdepim ;
+do
+	%find_lang $i	--with-kde
+	cat $i.lang >> kdepim.lang
+done
 
 %find_lang	kaddressbook	--with-kde
 %find_lang	kalarm		--with-kde
@@ -3515,10 +3689,16 @@ done
 %find_lang	kgpgcertmanager	--with-kde
 %find_lang	kpilot		--with-kde
 %find_lang	kfile_palm	--with-kde
+%find_lang	kwatchgnupg	--with-kde
+%find_lang	kmail_text_calendar_plugin	--with-kde
+%find_lang	kmail_text_vcard_plugin		--with-kde
 cat kfile_palm.lang >> kpilot.lang
 cat kalarm.lang >> korganizer.lang
 cat kalarmd.lang >> korganizer.lang
 cat kgpgcertmanager.lang >> kmail.lang
+cat kwatchgnupg.lang >> kmail.lang
+cat kmail_text_calendar_plugin >> kmail.lang
+cat kmail_text_vcard_plugin >> kmail.lang
 
 %find_lang alarmdaemonctrl	--with-kde
 cat alarmdaemonctrl.lang >> korganizer.lang
@@ -3531,6 +3711,10 @@ cat libcalendarresources.lang >> korganizer.lang
 
 %find_lang kmailcvt		--with-kde
 cat kmailcvt.lang >> kmail.lang
+
+%find_lang kleopatra		--with-kde
+cat kleopatra.lang >> kmail.lang
+
 %find_lang kfile_rfc822		--with-kde
 cat kfile_rfc822.lang >> kmail.lang
 %find_lang kio_sieve		--with-kde
@@ -3546,6 +3730,8 @@ cat kfile_vcf.lang >> kaddressbook.lang
 # Not packaging kmobile, it was disabled by coolo
 %find_lang kdgantt		--with-kde
 cat kdgantt.lang >> libkdepim.lang
+%find_lang libkleopatra		--with-kde
+cat libkleopatra.lang >> libkdepim.lang
 %find_lang ktnef		--with-kde
 
 %find_lang libkcal		--with-kde
@@ -3569,6 +3755,8 @@ cat libkdenetwork.lang >> libkdepim.lang
 cat libksieve.lang >> libkdepim.lang
 
 %find_lang	kfileshare	--with-kde
+%find_lang	kcm_sambaconf	--with-kde
+cat kcm_sambaconf.lang >> kfileshare.lang
 %find_lang kdict		--with-kde
 %find_lang kget			--with-kde
 %find_lang knewsticker		--with-kde
@@ -3583,10 +3771,6 @@ cat krdc.lang >> krfb.lang
 %find_lang lisa			--with-kde
 %find_lang lanbrowser		--with-kde
 cat lanbrowser.lang >> lisa.lang
-
-#%%find_lang kxmlrpcd		--with-kde
-#%%find_lang kcmkxmlrpcd		--with-kde
-#cat kcmkxmlrpcd.lang >> kxmlrpcd.lang
 
 %find_lang ktalkd		--with-kde
 #find_lang kcmtalkd		--with-kde
@@ -3658,6 +3842,19 @@ cat kcmkwallet.lang >> kwallet.lang
 cat kcmlaptop.lang >> klaptopdaemon.lang
 %find_lang kcmkvaio		--with-kde
 cat kcmkvaio.lang >> kmilo.lang
+
+milo="kmilo_generic \
+kmilo_kvaio \
+kmilo_powerbook \
+kmilo_thinkpad \
+kmilod \
+kcmthinkpad"
+for i in  $milo ;
+do
+%find_lang $i		--with-kde
+cat ${i}.lang >> kmilo.lang
+done
+
 %find_lang kcmthinkpad	--with-kde
 cat kcmthinkpad.lang >> kmilo.lang
 
@@ -3669,8 +3866,7 @@ cat kcharselectapplet.lang >> kcharselect.lang
 
 
 %find_lang kdessh		--with-kde
-#find_lang userinfo		--with-kde
-#find_lang kdepasswd            --with-kde
+
 # We dont buidl kcardchooser (disabled by default by coolo)
 # renaableing it would be posssible, but what for?
 # %find_lang kcardchooser            --with-kde
@@ -3709,7 +3905,8 @@ m3u \
 mp3 \
 ogg \
 wav \
-sid"
+sid \
+mpc"
 > kfile.lang
 
 for i in $kfile;
@@ -3771,7 +3968,7 @@ done
 %find_lang kghostview		--with-kde
 %find_lang kiconedit		--with-kde
 %find_lang kooka		--with-kde
-%find_lang kpaint		--with-kde
+%find_lang kolourpaint		--with-kde
 %find_lang kpdf			--with-kde
 %find_lang kpovmodeler		--with-kde
 %find_lang kruler		--with-kde
@@ -3849,11 +4046,28 @@ cat kfile_lnk.lang >> rellinks.lang
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
+decos="cde \
+clients \
+glow \
+icewm \
+kde1 \
+kstep \
+openlook \
+plastik \
+riscos \
+system"
+
+for i in $decos ;
+do
+%find_lang	kwin_$i	--with-kde
+done
+
 kicker="kbinaryclock \
 kolourpicker \
 ktimemon \
 mediacontrol \
-kcmmediacontrol"
+kcmmediacontrol \
+kmathapplet"
 
 for i in $kicker;
 do
@@ -3907,7 +4121,9 @@ audiorename_plugin \
 imagerename_plugin \
 kfile_folder \
 kfile_html \
-kfile_txt"
+kfile_txt \
+searchbarplugin \
+konqsidebar_news"
 
 for i in $konqueror;
 do
@@ -3934,7 +4150,9 @@ katespell \
 katetextfilter \
 katexmlcheck \
 katexmltools \
-ktexteditor_autobookmarker"
+ktexteditor_autobookmarker \
+katefiletemplates \
+katekjswrapper"
 
 for i in $kate;
 do
@@ -3942,19 +4160,10 @@ do
 	cat $i.lang >> kate-plugins.lang
 done
 
-> kmilo.lang
-milo="kmilo_generic \
-kmilo_kvaio \
-kmilo_powerbook \
-kmilo_thinkpad \
-kmilod"
-for i in $milo
-do
-%find_lang $i --with-kde
-done
-
 
 %find_lang kdevelop --with-kde
+%find_lang kdevdesigner	--with-kde
+cat kdevdesigner.lang >> kdevelop.lang
 %find_lang kdevtipofday --with-kde
 cat kdevtipofday.lang >> kdevelop.lang
 %find_lang qeditor --with-kde
@@ -4058,6 +4267,12 @@ done
 %files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
 %defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-kturtle-i18n -f kturtle.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-klatin-i18n -f klatin.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-flashkard-i18n -f flashkard.lang
 %defattr(644,root,root,755)
@@ -4238,6 +4453,8 @@ done
 %defattr(644,root,root,755)
 %files -n kdepim-kpilot-i18n -f kpilot.lang
 %defattr(644,root,root,755)
+%files -n kdepim-i18n -f kdepim.lang
+%defattr(644,root,root,755)
 %files -n kdepim-libs-i18n -f libkdepim.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-filesharing-i18n -f kfileshare.lang
@@ -4388,7 +4605,7 @@ done
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kooka-i18n -f kooka.lang
 %defattr(644,root,root,755)
-%files  -n kdegraphics-kolourpaint-i18n -f kpaint.lang
+%files  -n kdegraphics-kolourpaint-i18n -f kolourpaint.lang
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kpdf-i18n -f kpdf.lang
 %defattr(644,root,root,755)
@@ -4409,6 +4626,26 @@ done
 %files  -n kdegraphics-ksvg-i18n -f ksvgplugin.lang
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kfax-i18n -f kfax.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-cde-i18n -f kwin_cde.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-clients-i18n -f kwin_clients.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-glow-i18n -f kwin_glow.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-icewm-i18n -f kwin_icewm.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-kde1-i18n -f kwin_kde1.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-kstep-i18n -f kwin_kstep.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-openlook-i18n -f kwin_openlook.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-plastik-i18n -f kwin_plastik.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
+%defattr(644,root,root,755)
+%files -n kde-decoration-system-i18n -f kwin_system.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-ark-i18n -f ark_plugin.lang
 %defattr(644,root,root,755)
