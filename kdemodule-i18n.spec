@@ -116,7 +116,7 @@ Obsoletes:	kdenetwork-i18n
 Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
-
+Obsoletes:	kde-i18n-kdelibs
 %description -n kdelibs-i18n
 Translations and localization data for KDE libraries.
 
