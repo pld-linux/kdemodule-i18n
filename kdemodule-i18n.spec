@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.0
-Release:	2
+Release:	3
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -709,6 +709,7 @@ Obsoletes:	kdepim-korganizer-i18n
 Obsoletes:	kdepim-korganizer-libs-i18n
 Obsoletes:	kdepim-kontact-i18n
 Obsoletes:	kdepim-kresources-i18n
+Obsoletes:	kdeaddons-kontact-i18n
 
 %description -n kdepim-i18n
 Internationalization and localization files for kdepim.
@@ -988,7 +989,9 @@ Summary:	Internationalization and localization files for useraccount
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla useraccount
 Group:		X11/Applications
 Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
+Requires:	kdm-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdeutils-userinfo-i18n
 
 %description -n kdebase-useraccount-i18n
 Internationalization and localization files for useraccount.
@@ -2859,7 +2862,6 @@ Summary:	Internationalization and localization files for kontact
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kontact
 Group:		X11/Applications
 Requires:	kdeaddons-kontact = %{kdeaddons_epoch}:%{version}
-Requires:	kdepim = %{epoch}:%{version}-%{release}
 Requires:	kdenetwork-knewsticker-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-kontact-i18n
@@ -3113,7 +3115,7 @@ cat kxsconfig.lang >> screensavers.lang
 %find_lang	klatin		--with-kde
 %find_lang	kturtle		--with-kde
 %find_lang	kwordquiz	--with-kde
-%find_lang flashkard	--with-kde
+#find_lang flashkard	--with-kde
 %find_lang kalzium	--with-kde
 %find_lang kbruch	--with-kde
 %find_lang keduca	--with-kde
@@ -3925,6 +3927,7 @@ cat kfile_lnk.lang >> rellinks.lang
 %find_lang	fsview		--with-kde
 %find_lang	atlantikdesigner	--with-kde
 %find_lang	kcmkontactnt		--with-kde
+cat kcmkontactnt.lang >> kdepim.lang
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
@@ -4157,8 +4160,8 @@ done
 %defattr(644,root,root,755)
 %files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-flashkard-i18n -f flashkard.lang
-%defattr(644,root,root,755)
+#files -n kdeedu-flashkard-i18n -f flashkard.lang
+#defattr(644,root,root,755)
 %files -n kdeedu-kalzium-i18n -f kalzium.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kbruch-i18n -f kbruch.lang
@@ -4530,8 +4533,8 @@ done
 %defattr(644,root,root,755)
 %files -n kdeaddons-atlantikdesigner-i18n -f atlantikdesigner.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-kontact-i18n -f kcmkontactnt.lang
-%defattr(644,root,root,755)
+#files -n kdeaddons-kontact-i18n -f kcmkontactnt.lang
+#defattr(644,root,root,755)
 %files -n kdeaddons-ksig-i18n -f ksig.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-kaddressbook-i18n -f libkaddrbk_geo_xxport.lang
