@@ -16,20 +16,18 @@
 %define		kdeutils_epoch		9
 %define		kdevelop_epoch		7
 %define		kdevelop_version	3.0.4
-%define		quanta_epoch		1
+%define		kdewebdev_epoch		2
 #
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
-Version:	3.2.3
-Release:	4
+Version:	3.3.0
+Release:	1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
-#Source0:	http://ep09.pld-linux.org/~djurban/kde/%{_name}-%{version}.tar.bz2
-# Source0-md5:	7a2ff8e848b6347e41e450f5aaaf75a3
-Patch0:		%{_name}-fixes.patch
+Source0:	ftp://ftp.kde.org/pub/kde/stable/3.3/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	f1927048807146969f6497b5d789fb5d
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs >= %{kdelibs_epoch}:%{version}
 BuildRequires:	kdelibs-devel
@@ -91,6 +89,7 @@ Obsoletes:	kde-i18n-Norwegian
 Obsoletes:	kde-i18n-Norwegian_Bokmaal
 Obsoletes:	kde-i18n-Norwegian_Bookmal
 Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Punjabi
 Obsoletes:	kde-i18n-Polish
 Obsoletes:	kde-i18n-Portugnese
 Obsoletes:	kde-i18n-Portuguese
@@ -129,6 +128,7 @@ Obsoletes:	kdenetwork-i18n
 Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
+Obsoletes:	kdebase-mailnews
 
 %description -n kdelibs-i18n
 Translations and localization data for KDE libraries.
@@ -354,7 +354,6 @@ Requires:	konqueror = %{kdebase_epoch}:%{version}
 Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-konsole-i18n = %{epoch}:%{version}-%{release}
 Requires:	konqueror-libs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-mailnews-i18n = %{epoch}:%{version}-%{release}
 
 %description -n konqueror-i18n
 Internationalization and localization files for konqueror.
@@ -517,17 +516,76 @@ Internationalization and localization files for libkonq.
 %description -n konqueror-libs-i18n -l pl
 T³umaczenia dla libkonq.
 
-%package -n kdebase-mailnews-i18n
-Summary:	Internationalization and localization files for mailnews
-Summary(pl):	T³umaczenia dla mailnews
+%package -n kde-kio-ldap-i18n
+Summary:	Internationalization and localization files for ldap ioslave
+Summary(pl):	T³umaczenia dla ldap ioslave
 Group:		X11/Applications
-Requires:	kdebase-mailnews = %{kdebase_epoch}:%{version}
+Requires:	kde-kio-ldap = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	konqueror-i18n < %{epoch}:%{version}-%{release}
 
-%description -n kdebase-mailnews-i18n
-Internationalization and localization files for mailnews.
+%description -n kde-kio-ldap-i18n
+Internationalization and localization files for ldap ioslave.
 
-%description -n kdebase-mailnews-i18n -l pl
-T³umaczenia dla mailnews.
+%description -n kde-kio-ldap-i18n -l pl
+T³umaczenia dla ldap ioslave.
+
+
+%package -n kde-kio-smtp-i18n
+Summary:	Internationalization and localization files for smtp ioslave
+Summary(pl):	T³umaczenia dla smtp ioslave
+Group:		X11/Applications
+Requires:	kde-kio-smtp = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n 
+
+%description -n kde-kio-smtp-i18n
+Internationalization and localization files for smtp ioslave.
+
+%description -n kde-kio-smtp-i18n -l pl
+T³umaczenia dla smtp ioslave.
+
+%package -n kde-kio-pop3-i18n
+Summary:	Internationalization and localization files for pop3 ioslave
+Summary(pl):	T³umaczenia dla pop3 ioslave
+Group:		X11/Applications
+Requires:	kde-kio-pop3 = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n 
+
+%description -n kde-kio-pop3-i18n
+Internationalization and localization files for pop3 ioslave.
+
+%description -n kde-kio-pop3-i18n -l pl
+T³umaczenia dla pop3 ioslave.
+
+%package -n kde-kio-imap4-i18n
+Summary:	Internationalization and localization files for imap4 ioslave
+Summary(pl):	T³umaczenia dla imap4 ioslave
+Group:		X11/Applications
+Requires:	kde-kio-imap4 = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n
+
+%description -n kde-kio-imap4-i18n
+Internationalization and localization files for imap4 ioslave.
+
+%description -n kde-kio-imap4-i18n -l pl
+T³umaczenia dla imap4 ioslave.
+
+%package -n kde-kio-nntp-i18n
+Summary:	Internationalization and localization files for nntp ioslave
+Summary(pl):	T³umaczenia dla nntp ioslave
+Group:		X11/Applications
+Requires:	kde-kio-nntp = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n
+
+%description -n kde-kio-nntp-i18n
+Internationalization and localization files for nntp ioslave.
+
+%description -n kde-kio-nntp-i18n -l pl
+T³umaczenia dla nntp ioslave.
 
 %package -n kdevelop-i18n
 Summary:	Internationalization and localization files for kdevelop
@@ -587,10 +645,11 @@ Summary:	Internationalization and localization files for kmail
 Summary(pl):	T³umaczenia dla kmaila
 Group:		X11/Applications
 Requires:	kdepim-kmail = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdenetwork-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-kmail-libs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-mailnews-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-imap4-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-pop3-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdepim-ktnef-i18n
 
 %description -n kdepim-kmail-i18n
@@ -604,10 +663,10 @@ Summary:	Internationalization and localization files for knode
 Summary(pl):	T³umaczenia dla knode
 Group:		X11/Applications
 Requires:	kdepim-knode = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdenetwork-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-mailnews-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-nntp-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-knode-i18n
 Internationalization and localization files for knode.
@@ -620,7 +679,7 @@ Summary:	Internationalization and localization files for knotes
 Summary(pl):	T³umaczenia dla knotes
 Group:		X11/Applications
 Requires:	kdepim-knotes = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-knotes-i18n
 Internationalization and localization files for knotes.
@@ -633,7 +692,7 @@ Summary:	Internationalization and localization files for konsolekalendar
 Summary(pl):	T³umaczenia dla konsolekalendara
 Group:		X11/Applications
 Requires:	kdepim-konsolekalendar = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-konsolekalendar-i18n
 Internationalization and localization files for konsolekalendar.
@@ -646,7 +705,7 @@ Summary:	Internationalization and localization files for kontact
 Summary(pl):	T³umaczenia dla kontacta
 Group:		X11/Applications
 Requires:	kdepim-kontact = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-kontact-i18n
 Internationalization and localization files for kontact.
@@ -659,7 +718,7 @@ Summary:	Internationalization and localization files for korganizer
 Summary(pl):	T³umaczenia dla korganizera
 Group:		X11/Applications
 Requires:	kdepim-korganizer = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-korganizer-i18n
 Internationalization and localization files for korganizer.
@@ -672,7 +731,7 @@ Summary:	Internationalization and localization files for korn
 Summary(pl):	T³umaczenia dla korna
 Group:		X11/Applications
 Requires:	kdepim-korn = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdenetwork-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-korn-i18n
@@ -686,7 +745,7 @@ Summary:	Internationalization and localization files for kpilot
 Summary(pl):	T³umaczenia dla kpilota
 Group:		X11/Applications
 Requires:	kdepim-kpilot = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-kpilot-i18n
 Internationalization and localization files for kpilot.
@@ -694,51 +753,25 @@ Internationalization and localization files for kpilot.
 %description -n kdepim-kpilot-i18n -l pl
 T³umaczenia dla kpilota.
 
-%package -n kdepim-libkdepim-i18n
+
+%package -n kdepim-libs-i18n
 Summary:	Internationalization and localization files for libkdepim
 Summary(pl):	T³umaczenia dla libkdepim
 Group:		X11/Applications
-Requires:	kdepim-libkdepim = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs = %{kdepim_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdepim-libkcal-i18n
 Obsoletes:	kdepim-korganizer-libs-i18n
 Obsoletes:	kdepim-libkdgantt-i18n
+Obsoletes:	kdepim-libkdepim-i18n
+Obsoletes:	kdepim-libkdenetwork-i18n
+Obsoletes:	kdepim-kmail-libs-i18n
 
-%description -n kdepim-libkdepim-i18n
-Internationalization and localization files for libkdepim.
+%description -n kdepim-libs-i18n
+Internationalization and localization files for kdepim libraries.
 
-%description -n kdepim-libkdepim-i18n -l pl
-T³umaczenia dla libkdepim.
-
-%package -n kdepim-libkdenetwork-i18n
-Summary:	Internationalization and localization files for libkdenetwork
-Summary(pl):	T³umaczenia dla libkdenetwork
-Group:		X11/Applications
-Requires:	kdepim-libkdenetwork = %{kdepim_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-libkdenetwork-i18n
-Internationalization and localization files for libkdenetwork.
-
-%description -n kdepim-libkdenetwork-i18n -l pl
-T³umaczenia dla libkdenetwork.
-
-%package -n kdepim-kmail-libs-i18n
-Summary:	Internationalization and localization files for kmail-libs
-Summary(pl):	T³umaczenia dla kmail-libs
-Group:		X11/Applications
-Requires:	kdepim-libkdepim = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdenetwork = %{kdepim_epoch}:%{version}
-Requires:	kdepim-kmail-libs = %{kdepim_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdepim-libksieve-i18n 
-Obsoletes:	kdepim-libkmailprivate-i18n 
-
-%description -n kdepim-kmail-libs-i18n
-Internationalization and localization files for kmail-libs.
-
-%description -n kdepim-kmail-libs-i18n -l pl
-T³umaczenia dla kmail-libs.
+%description -n kdepim-libs-i18n -l pl
+T³umaczenia dla bibliotek kdepim.
 
 %package -n kdeutils-ark-i18n
 Summary:	Internationalization and localization files for ark
@@ -1025,6 +1058,19 @@ Internationalization and localization files for kmouth.
 
 %description -n kdeaccessibility-kmouth-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kmouth.
+
+%package -n kdenetwork-filesharing-i18n
+Summary:	Internationalization and localization files for fileshare
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fileshare
+Group:		X11/Applications
+Requires:	kdenetwork-filesharing = %{kdenetwork_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdenetwork-filesharing-i18n
+Internationalization and localization files for fileshare.
+
+%description -n kdenetwork-filesharing-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla fileshare.
 
 %package -n kdenetwork-kdict-i18n
 Summary:	Internationalization and localization files for kdict
@@ -1551,6 +1597,45 @@ Internationalization and localization files for screensavers.
 
 %description -n kdeartwork-screensavers-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla screensavers.
+
+%package -n kdeedu-kwordquiz-i18n
+Summary:	Internationalization and localization files for kwordquiz
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwordquiz
+Group:		X11/Applications
+Requires:	kdeedu-kwordquiz = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeedu-kwordquiz-i18n
+Internationalization and localization files for kwordquiz.
+
+%description -n kdeedu-kwordquiz-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kwordquiz.
+
+%package -n kdeedu-kturtle-i18n
+Summary:	Internationalization and localization files for kturtle
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kturtle
+Group:		X11/Applications
+Requires:	kdeedu-kturtle = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeedu-kturtle-i18n
+Internationalization and localization files for kturtle.
+
+%description -n kdeedu-kturtle-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kturtle.
+
+%package -n kdeedu-klatin-i18n
+Summary:	Internationalization and localization files for klatin
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klatin
+Group:		X11/Applications
+Requires:	kdeedu-klatin = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeedu-klatin-i18n
+Internationalization and localization files for klatin.
+
+%description -n kdeedu-klatin-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla klatin.
 
 %package -n kdeedu-flashkard-i18n
 Summary:	Internationalization and localization files for flashkard
@@ -2177,6 +2262,19 @@ Internationalization and localization files for megami.
 %description -n kdegames-megami-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla megami.
 
+%package -n kdesdk-libcvsservice-i18n
+Summary:	Internationalization and localization files for libcvsservice
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libcvsservice
+Group:		X11/Applications
+Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+Conflicts	kdesdk-cervisia < %{epoch}:%{version}-%{release}
+
+%description -n kdesdk-libcvsservice-i18n
+Internationalization and localization files for libcvsservice.
+
+%description -n kdesdk-libcvsservice-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla libcvsservice.
+
 %package -n kdesdk-kfile-i18n
 Summary:	Internationalization and localization files for kfile
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile
@@ -2195,6 +2293,7 @@ Summary:	Internationalization and localization files for cervisia
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla cervisii
 Group:		X11/Applications
 Requires:	kdesdk-cervisia = %{kdesdk_epoch}:%{version}
+Requires:	kdesdk-libcvsservice-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdesdk-cervisia-i18n
@@ -2518,18 +2617,19 @@ Internationalization and localization files for kooka.
 %description -n kdegraphics-kooka-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kooki.
 
-%package -n kdegraphics-kpaint-i18n
-Summary:	Internationalization and localization files for kpaint
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpainta
+%package -n kdegraphics-kolourpaint-i18n
+Summary:	Internationalization and localization files for kolourpaint
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kolourpaint
 Group:		X11/Applications
-Requires:	kdegraphics-kpaint = %{kdegraphics_epoch}:%{version}
+Requires:	kdegraphics-kolourpaint = %{kdegraphics_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdegraphics-kpaint-i18n
 
-%description -n kdegraphics-kpaint-i18n
-Internationalization and localization files for kpaint.
+%description -n kdegraphics-kolourpaint-i18n
+Internationalization and localization files for kolourpaint.
 
-%description -n kdegraphics-kpaint-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kpainta.
+%description -n kdegraphics-kolourpaint-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kolourpaint.
 
 %package -n kdegraphics-kpdf-i18n
 Summary:	Internationalization and localization files for kpdf
@@ -2660,6 +2760,32 @@ Internationalization and localization files for kfile.
 
 %description -n kdegraphics-kfile-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kfile'a.
+
+%package -n kdeaddons-ark-i18n
+Summary:	Internationalization and localization files for ark
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ark
+Group:		X11/Applications
+Requires:	kdeaddons-ark = %{kdeaddons_epoch}:%{version}
+Requires:	kdeutils-ark-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-ark-i18n
+Internationalization and localization files for ark.
+
+%description -n kdeaddons-ark-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ark.
+
+%package -n kdeaddons-lnkforward-i18n
+Summary:	Internationalization and localization files for lnkforward
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lnkforward
+Group:		X11/Applications
+Requires:	kdeaddons-lnkforward = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-lnkforward-i18n
+Internationalization and localization files for lnkforward.
+
+%description -n kdeaddons-lnkforward-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla lnkforward.
 
 %package -n kdeaddons-kvim-i18n
 Summary:	Internationalization and localization files for kvim
@@ -2792,17 +2918,18 @@ Internationalization and localization files for atlantikdesigner.
 %description -n kdeaddons-atlantikdesigner-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
 
-%package -n quanta-i18n
+%package -n kdewebdev-quanta-i18n
 Summary:	Internationalization and localization files for quanta
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla quanta
 Group:		X11/Applications
-Requires:	quanta = %{quanta_epoch}:%{version}
+Requires:	kdewebdev-quanta = %{kdewebdev_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	quanta-i18n
 
-%description -n quanta-i18n
+%description -n kdewebdev-quanta-i18n
 Internationalization and localization files for quanta.
 
-%description -n quanta-i18n -l pl
+%description -n kdewebdev-quanta-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla quanta.
 
 %package -n kde-kgreet-classic-i18n
@@ -2821,7 +2948,7 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -n %{_name}-%{version}
-%patch0 -p1
+
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
@@ -2829,36 +2956,6 @@ kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
 LDFLAGS="%{rpmldflags}"
 #export UNSERMAKE=%{_datadir}/unsermake/unsermake
 
-for i in `find ./ro/docs/ -name Makefile.am`;
-do
-	echo -e 'KDE_LANG = ro\nSUBDIRS = $(AUTODIRS)\nKDE_DOCS = AUTO' > $i
-done
-
-if test -d "./ro/docs/kdebase/kcontrol" ; then
-
-for i in `find ./ro/docs/kdebase/kcontrol -type d -maxdepth 1 -depth|grep -v CVS`;
-do
-if [ `echo $i|sed -e "s,\./ro/docs/kdebase/,,g"|grep -s  kcontrol/` ] ; then
-z=`echo $i|sed -e "s,\./ro/docs/kdebase/,,g"|grep -s  kcontrol/`
-echo -e "KDE_LANG=ro\nKDE_DOCS=$z" > ./ro/docs/kdebase/${z}/Makefile.am
-fi
-done
-
-
-fi
-
-if test -d "./ro/docs/kdebase/kinfocenter" ; then
-
-for i in `find ./ro/docs/kdebase/kinfocenter -type d -maxdepth 1 -depth|grep -v CVS`;
-do
-
-if [ `echo $i|sed -e "s,\./ro/docs/kdebase/,,g"|grep -s kinfocenter/` ] ; then
-z=`echo $i|sed -e "s,\./ro/docs/kdebase/,,g"|grep -s kinfocenter/`
-echo -e "KDE_LANG=ro\nKDE_DOCS=$z"  > ./ro/docs/kdebase/${z}/Makefile.am
-fi
-done
-
-fi
 
 %{__make} -f admin/Makefile.common cvs
 
@@ -2869,12 +2966,12 @@ fi
 	kde_libs_htmldir="%{_kdedocdir}"
 
 %install
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir="%{_kdedocdir}" \
-	kde_libs_htmldir="%{_kdedocdir}"
+##%{__make} install \
+#	DESTDIR=$RPM_BUILD_ROOT \
+#	kde_htmldir="%{_kdedocdir}" \
+#	kde_libs_htmldir="%{_kdedocdir}"
 
 rm -rf *.lang
 
@@ -2921,6 +3018,9 @@ cat klock.lang >> screensavers.lang
 cat kpartsaver.lang >> screensavers.lang
 %find_lang kxsconfig --with-kde
 cat kxsconfig.lang >> screensavers.lang
+%find_lang	klatin		--with-kde
+%find_lang	kturtle		--with-kde
+%find_lang	kwordquiz	--with-kde
 %find_lang flashkard	--with-kde
 %find_lang kalzium	--with-kde
 %find_lang kbruch	--with-kde
@@ -3076,14 +3176,14 @@ programs="\
 	netpref \
 	proxy \
 	smb \
-	useragent \
-	kio_ldap"
+	useragent"
 
 for i in $programs; do
 	%find_lang $i --with-kde
 	cat $i.lang >> konqueror.lang
 done
 
+%find_lang	kio_ldap	--with-kde
 %find_lang	kate		--with-kde
 %find_lang	kcmkonsole	--with-kde
 %find_lang	kdm		--with-kde
@@ -3275,7 +3375,6 @@ kio_smtp"
 for i in $mn;
 do
 	%find_lang $i	--with-kde
-	cat $i.lang >> mailnews.lang
 done
 
 screen="kscreensaver \
@@ -3414,7 +3513,10 @@ cat libkpimexchange.lang >> korganizer-libs.lang
 cat libkcal.lang >> libkdepim.lang
 cat korganizer-libs.lang >> libkdepim.lang
 cat ktnef.lang >> kmail.lang
-mv -f libksieve.lang kmail_libs.lang
+cat libkdenetwork.lang >> libkdepim.lang
+cat libksieve.lang >> libkdepim.lang
+
+%find_lang	kfileshare	--with-kde
 %find_lang kdict		--with-kde
 %find_lang kget			--with-kde
 %find_lang knewsticker		--with-kde
@@ -3513,9 +3615,10 @@ cat kregexpeditor.lang >> KRegExpEditor.lang
 %find_lang kcharselectapplet	--with-kde
 cat kcharselectapplet.lang >> kcharselect.lang
 
-%find_lang userinfo		--with-kde
+
 %find_lang kdessh		--with-kde
-%find_lang kdepasswd            --with-kde
+#find_lang userinfo		--with-kde
+#find_lang kdepasswd            --with-kde
 # We dont buidl kcardchooser (disabled by default by coolo)
 # renaableing it would be posssible, but what for?
 # %find_lang kcardchooser            --with-kde
@@ -3594,7 +3697,7 @@ do
 	cat kfile_${i}.lang >> kfile_sdk.lang
 done
 %find_lang cvsservice	--with-kde
-cat cvsservice.lang >> cervisia.lang
+
 ##%find_lang kfilereplace
 %find_lang kstartperf
 %find_lang kuiviewer
@@ -3680,6 +3783,10 @@ do
         cat kfile_${i}.lang >> kfile_gra.lang
 done
 
+%find_lang	ark_plugin	--with-kde
+%find_lang	kfile_lnk	--with-kde
+%find_lang	rellinks	--with-kde
+cat kfile_lnk.lang >> rellinks.lang
 
 %find_lang	kate-plugins	--with-kde
 %find_lang	kicker-applets	--with-kde
@@ -3728,7 +3835,7 @@ wavecapture"
 for i in $noatun;
 do
 	%find_lang $i	--with-kde
-	cat $i.lang >> noatun.lang
+	cat $i.lang >> noatun_add.lang
 done
 
 konqueror="khtmlsettingsplugin \
@@ -3836,7 +3943,7 @@ done
 %defattr(644,root,root,755)
 %files -n kdegames-i18n -f kdegames.lang
 %defattr(644,root,root,755)
-%files -n quanta-i18n -f quanta.lang
+%files -n kdewebdev-quanta-i18n -f quanta.lang
 %defattr(644,root,root,755)
 %files -n kdelibs-i18n -f kdelibs.lang
 %defattr(644,root,root,755)
@@ -4001,17 +4108,25 @@ done
 %defattr(644,root,root,755)
 %files -n konqueror-libs-i18n -f libkonq.lang
 %defattr(644,root,root,755)
-%files -n kdebase-mailnews-i18n -f mailnews.lang
-%defattr(644,root,root,755)
 %files -n kdm-i18n -f kdm.lang
 %defattr(644,root,root,755)
 %files -n konqueror-i18n -f konqueror.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-ldap-i18n -f kio_ldap.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-b2-i18n -f kwin_b2_config.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-modernsys-i18n -f kwin_modernsys_config.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-quartz-i18n -f kwin_quartz_config.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-smtp-i18n -f kio_smtp.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-nntp-i18n -f kio_nntp.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-imap4-i18n -f kio_imap4.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-pop3-i18n -f kio_pop3.lang
 %defattr(644,root,root,755)
 %files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
 %defattr(644,root,root,755)
@@ -4035,11 +4150,9 @@ done
 %defattr(644,root,root,755)
 %files -n kdepim-kpilot-i18n -f kpilot.lang
 %defattr(644,root,root,755)
-%files -n kdepim-libkdepim-i18n -f libkdepim.lang
+%files -n kdepim-libs-i18n -f libkdepim.lang
 %defattr(644,root,root,755)
-%files -n kdepim-libkdenetwork-i18n -f libkdenetwork.lang
-%defattr(644,root,root,755)
-%files -n kdepim-kmail-libs-i18n -f kmail_libs.lang
+%files -n kdenetwork-filesharing-i18n -f kfileshare.lang
 %defattr(644,root,root,755)
 %files  -n kdenetwork-kdict-i18n -f kdict.lang
 %defattr(644,root,root,755)
@@ -4103,11 +4216,7 @@ done
 %defattr(644,root,root,755)
 %files  -n kdeutils-kdelirc-i18n -f kdelirc.lang
 %defattr(644,root,root,755)
-%files  -n kdeutils-userinfo-i18n -f userinfo.lang
-%defattr(644,root,root,755)
 %files  -n kdeutils-kdessh-i18n -f kdessh.lang
-%defattr(644,root,root,755)
-%files  -n kdeutils-kdepasswd-i18n -f kdepasswd.lang
 %defattr(644,root,root,755)
 %files  -n kdeutils-kmilo-i18n -f kmilo.lang
 %defattr(644,root,root,755)
@@ -4138,6 +4247,8 @@ done
 %files  -n kdemultimedia-kaudiocreator-i18n -f kaudiocreator.lang
 %defattr(644,root,root,755)
 %files  -n kdemultimedia-libkcddb-i18n -f libkcddb.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-libcvsservice-i18n -f cvsservice.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-kfile-i18n -f kfile_sdk.lang
 %defattr(644,root,root,755)
@@ -4190,7 +4301,7 @@ done
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kooka-i18n -f kooka.lang
 %defattr(644,root,root,755)
-%files  -n kdegraphics-kpaint-i18n -f kpaint.lang
+%files  -n kdegraphics-kolourpaint-i18n -f kpaint.lang
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kpdf-i18n -f kpdf.lang
 %defattr(644,root,root,755)
@@ -4212,6 +4323,10 @@ done
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kfax-i18n -f kfax.lang
 %defattr(644,root,root,755)
+%files -n kdeaddons-ark-i18n -f ark_plugin.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-lnkforward-i18n -f rellinks.lang
+%defattr(644,root,root,755)
 %files -n kdeaddons-kate-i18n -f kate-plugins.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-kicker-i18n -f kicker-applets.lang
@@ -4228,7 +4343,7 @@ done
 %defattr(644,root,root,755)
 %files -n kdeaddons-fsview-i18n -f fsview.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-noatun-i18n -f noatun.lang
+%files -n kdeaddons-noatun-i18n -f noatun_add.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-kvim-i18n -f vim.lang
 %defattr(644,root,root,755)
