@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.1
-Release:	1
+Release:	2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -355,7 +355,7 @@ Summary:	Internationalization and localization files for kde-decoration-b2
 Summary(pl):	T³umaczenia dla kde-decoration-b2
 Group:		X11/Applications
 Requires:	kde-decoration-b2 = %{kdebase_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-b2-i18n
 Internationalization and localization files for kde-decoration-b2.
@@ -368,7 +368,7 @@ Summary:	Internationalization and localization files for kde-decoration-modernsy
 Summary(pl):	T³umaczenia dla kde-decoration-modernsys
 Group:		X11/Applications
 Requires:	kde-decoration-modernsys = %{kdebase_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-modernsys-i18n
 Internationalization and localization files for
@@ -382,7 +382,7 @@ Summary:	Internationalization and localization files for kde-decoration-quartz
 Summary(pl):	T³umaczenia dla kde-decoration-quartz
 Group:		X11/Applications
 Requires:	kde-decoration-quartz = %{kdebase_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-quartz-i18n
 Internationalization and localization files for kde-decoration-quartz.
@@ -1506,7 +1506,7 @@ Summary:	Internationalization and localization files for kde-decoration-cde
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
 Group:		X11/Applications
 Requires:	kde-decoration-cde = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-cde-i18n
 Internationalization and localization files for kde-decoration-cde.
@@ -1519,7 +1519,7 @@ Summary:	Internationalization and localization files for kde-decoration-icewm
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
 Group:		X11/Applications
 Requires:	kde-decoration-icewm = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-icewm-i18n
 Internationalization and localization files for kde-decoration-icewm.
@@ -1532,7 +1532,7 @@ Summary:	Internationalization and localization files for kde-decoration-glow
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
 Group:		X11/Applications
 Requires:	kde-decoration-glow = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-glow-i18n
 Internationalization and localization files for kde-decoration-glow.
@@ -1545,7 +1545,7 @@ Summary:	Internationalization and localization files for kde-decoration-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
 Group:		X11/Applications
 Requires:	kde-decoration-plastik = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-decoration-plastik-i18n
 Internationalization and localization files for
@@ -1566,6 +1566,17 @@ Internationalization and localization files for kde-style-plastik.
 
 %description -n kde-style-plastik-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-style-plastik.
+
+%package -n kde-decoration-common-i18n
+Summary:	Common internationalization and localization files for kwin decorations
+Summary(pl):	Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin
+Group:		X11/Applications
+
+%description -n kde-decoration-common-i18n
+Common internationalization and localization files for kwin decorations.
+
+%description -n kde-decoration-common-i18n -l pl
+Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin.
 
 %package -n kdeartwork-screensavers-i18n
 Summary:	Internationalization and localization files for screensavers
@@ -3248,7 +3259,8 @@ programs=" \
 	kcmkxmlrpcd \
 	kxmlrpcd \
 	kthememanager \
-	kmenuedit"
+	kmenuedit \
+	kcmthemes"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -3652,6 +3664,8 @@ cat kcm_sambaconf.lang >> kfileshare.lang
 %find_lang kdict		--with-kde
 %find_lang kget			--with-kde
 %find_lang knewsticker		--with-kde
+%find_lang kcmnewsticker	--with-kde
+cat kcmnewsticker.lang >> knewsticker.lang
 %find_lang kopete		--with-kde
 %find_lang kpf			--with-kde
 %find_lang kppp			--with-kde
@@ -3682,7 +3696,7 @@ cat kio_lan.lang >> lisa.lang
 cat kppplogview.lang >> kppp.lang
 
 %find_lang kwireless		--with-kde
-cat kwireless.lang >> kwifimanager.lang
+cat kwireless.lang >> kwifimanager.lancat g
 %find_lang kcmwifi		--with-kde
 cat kcmwifi.lang >> kwifimanager.lang
 
@@ -3797,8 +3811,10 @@ mp3 \
 ogg \
 wav \
 sid \
-mpc"
-> kfile.lang
+mpc \
+mp32 \
+theora"
+> kfile_mm.lang
 
 for i in $kfile;
 do
@@ -3898,6 +3914,8 @@ cat kcmkamera.lang >> kamera.lang
 
 %find_lang kfax --with-kde
 %find_lang kmrml --with-kde
+%find_lang kcmkmrml --with-kde
+cat kcmkmrml.lang >> kmrml.lang
 %find_lang ksvgplugin --with-kde
 %find_lang libkscan --with-kde
 cat libkscan.lang >> kooka.lang
@@ -4069,6 +4087,7 @@ cat qeditor.lang >> kdevelop.lang
 cat kde_app_devel.lang >> kdevelop.lang
 %find_lang kdearch --with-kde
 cat kdearch.lang >> kdevelop.lang
+%find_lang kwin_art_clients --with-kde
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/* ;
 do
@@ -4120,6 +4139,8 @@ cat ${i}|sort|uniq > ${i}.niedakh
 mv ${i}.niedakh ${i}
 done
 
+%files -n kde-decoration-common-i18n  -f kwin_art_clients.lang
+%defattr(644,root,root,755)
 %files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
 %defattr(644,root,root,755)
 %files -n kdegames-i18n -f kdegames.lang
