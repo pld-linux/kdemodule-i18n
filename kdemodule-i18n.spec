@@ -3426,13 +3426,13 @@ do
 	cat kfile_${i}.lang >> kfile_mm.lang
 done
 
-#WRRO.
 
-#for i in $libz;
-#do
-#	%find_lang libz --with-kde
-#	cat $i.lang >> kdelibs.lang
-#done
+ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell"
+for i in $ziew;
+do
+	%find_lang libz --with-kde
+	cat $i.lang >> kdelibs.lang
+done
 
 
 %find_lang	cervisia	--with-kde
