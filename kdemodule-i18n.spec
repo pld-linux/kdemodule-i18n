@@ -1738,12 +1738,26 @@ Internationalization and localization files for kvoctrain.
 %description -n kdeedu-kvoctrain-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvoctrain.
 
+%package -n kdegames-i18n
+Summary:        Internationalization and localization files for kdegames libs
+Summary(pl):    Pliki umiêdzynarodawiaj±ce dla bibliotek kdegames
+Group:          X11/Applications
+Requires:       kdegames = %{kdegames_epoch}:%{version}
+Requires:       kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:       kdelibs-i18n >= %{kdelibs_epoch}:%{version}
+
+%description -n kdegames-kmahjongg-i18n
+Internationalization and localization files for kdegames libs.
+
+%description -n kdegames-kmahjongg-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla bibliotek kdegames.
+
 %package -n kdegames-kmahjongg-i18n
 Summary:	Internationalization and localization files for kmahjongg
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmahjongga
 Group:		X11/Applications
 Requires:	kdegames-kmahjongg = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kmahjongg-i18n
 Internationalization and localization files for kmahjongg.
@@ -1756,7 +1770,7 @@ Summary:	Internationalization and localization files for ksmiletris
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksmiletrisa
 Group:		X11/Applications
 Requires:	kdegames-ksmiletris = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ksmiletris-i18n
 Internationalization and localization files for ksmiletris.
@@ -1769,7 +1783,7 @@ Summary:	Internationalization and localization files for atlantik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla atlantika
 Group:		X11/Applications
 Requires:	kdegames-atlantik = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-atlantik-i18n
 Internationalization and localization files for atlantik.
@@ -1782,7 +1796,7 @@ Summary:	Internationalization and localization files for kasteroids
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kasteroids
 Group:		X11/Applications
 Requires:	kdegames-kasteroids = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kasteroids-i18n
 Internationalization and localization files for kasteroids.
@@ -1795,7 +1809,7 @@ Summary:	Internationalization and localization files for katomic
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla katomic
 Group:		X11/Applications
 Requires:	kdegames-katomic = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-katomic-i18n
 Internationalization and localization files for katomic.
@@ -1808,7 +1822,7 @@ Summary:	Internationalization and localization files for kbackgammon
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kbackgammona
 Group:		X11/Applications
 Requires:	kdegames-kbackgammon = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kbackgammon-i18n
 Internationalization and localization files for kbackgammon.
@@ -1822,7 +1836,7 @@ Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kbattleship
 Group:		X11/Applications
 Requires:	kdegames-kbattleship = %{kdegames_epoch}:%{version}
 
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kbattleship-i18n
 Internationalization and localization files for kbattleship.
@@ -1835,7 +1849,7 @@ Summary:	Internationalization and localization files for kblackbox
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kblackboksa
 Group:		X11/Applications
 Requires:	kdegames-kblackbox = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kblackbox-i18n
 Internationalization and localization files for kblackbox.
@@ -1848,7 +1862,7 @@ Summary:	Internationalization and localization files for kbounce
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kbounce
 Group:		X11/Applications
 Requires:	kdegames-kbounce = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kbounce-i18n
 Internationalization and localization files for kbounce.
@@ -1861,7 +1875,7 @@ Summary:	Internationalization and localization files for kenolaba
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kenolaby
 Group:		X11/Applications
 Requires:	kdegames-kenolaba = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kenolaba-i18n
 Internationalization and localization files for kenolaba.
@@ -1874,7 +1888,7 @@ Summary:	Internationalization and localization files for kfouleggs
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfouleggs
 Group:		X11/Applications
 Requires:	kdegames-kfouleggs = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kfouleggs-i18n
 Internationalization and localization files for kfouleggs.
@@ -1887,7 +1901,7 @@ Summary:	Internationalization and localization files for kgoldrunner
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgoldrunnera
 Group:		X11/Applications
 Requires:	kdegames-kgoldrunner = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kgoldrunner-i18n
 Internationalization and localization files for kgoldrunner.
@@ -1900,7 +1914,7 @@ Summary:	Internationalization and localization files for kjumpingcube
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kjumpingcube
 Group:		X11/Applications
 Requires:	kdegames-kjumpingcube = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kjumpingcube-i18n
 Internationalization and localization files for kjumpingcube.
@@ -1913,7 +1927,7 @@ Summary:	Internationalization and localization files for klickety
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klickety
 Group:		X11/Applications
 Requires:	kdegames-klickety = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-klickety-i18n
 Internationalization and localization files for klickety.
@@ -1926,7 +1940,7 @@ Summary:	Internationalization and localization files for klines
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klines
 Group:		X11/Applications
 Requires:	kdegames-klines = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-klines-i18n
 Internationalization and localization files for klines.
@@ -1939,7 +1953,7 @@ Summary:	Internationalization and localization files for kmines
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmines
 Group:		X11/Applications
 Requires:	kdegames-kmines = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kmines-i18n
 Internationalization and localization files for kmines.
@@ -1952,7 +1966,7 @@ Summary:	Internationalization and localization files for kolf
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kolfa
 Group:		X11/Applications
 Requires:	kdegames-kolf = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kolf-i18n
 Internationalization and localization files for kolf.
@@ -1965,7 +1979,7 @@ Summary:	Internationalization and localization files for konquest
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla konquesta
 Group:		X11/Applications
 Requires:	kdegames-konquest = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-konquest-i18n
 Internationalization and localization files for konquest.
@@ -1978,7 +1992,7 @@ Summary:	Internationalization and localization files for kpat
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpata
 Group:		X11/Applications
 Requires:	kdegames-kpat = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kpat-i18n
 Internationalization and localization files for kpat.
@@ -1991,7 +2005,7 @@ Summary:	Internationalization and localization files for kpoker
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpokera
 Group:		X11/Applications
 Requires:	kdegames-kpoker = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kpoker-i18n
 Internationalization and localization files for kpoker.
@@ -2004,7 +2018,7 @@ Summary:	Internationalization and localization files for kreversi
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kreversi
 Group:		X11/Applications
 Requires:	kdegames-kreversi = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kreversi-i18n
 Internationalization and localization files for kreversi.
@@ -2017,7 +2031,7 @@ Summary:	Internationalization and localization files for ksame
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksame
 Group:		X11/Applications
 Requires:	kdegames-ksame = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ksame-i18n
 Internationalization and localization files for ksame.
@@ -2030,7 +2044,7 @@ Summary:	Internationalization and localization files for kshisen
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kshisen
 Group:		X11/Applications
 Requires:	kdegames-kshisen = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kshisen-i18n
 Internationalization and localization files for kshisen.
@@ -2043,7 +2057,7 @@ Summary:	Internationalization and localization files for ksirtet
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksirteta
 Group:		X11/Applications
 Requires:	kdegames-ksirtet = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ksirtet-i18n
 Internationalization and localization files for ksirtet.
@@ -2056,7 +2070,7 @@ Summary:	Internationalization and localization files for ksnake
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksnake'a
 Group:		X11/Applications
 Requires:	kdegames-ksnake = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ksnake-i18n
 Internationalization and localization files for ksnake.
@@ -2069,7 +2083,7 @@ Summary:	Internationalization and localization files for ksokoban
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksokobana
 Group:		X11/Applications
 Requires:	kdegames-ksokoban = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ksokoban-i18n
 Internationalization and localization files for ksokoban.
@@ -2082,7 +2096,7 @@ Summary:	Internationalization and localization files for kspaceduel
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kspaceduel
 Group:		X11/Applications
 Requires:	kdegames-kspaceduel = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kspaceduel-i18n
 Internationalization and localization files for kspaceduel.
@@ -2095,7 +2109,7 @@ Summary:	Internationalization and localization files for ktron
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktrona
 Group:		X11/Applications
 Requires:	kdegames-ktron = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ktron-i18n
 Internationalization and localization files for ktron.
@@ -2108,7 +2122,7 @@ Summary:	Internationalization and localization files for ktuberling
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktuberlinga
 Group:		X11/Applications
 Requires:	kdegames-ktuberling = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-ktuberling-i18n
 Internationalization and localization files for ktuberling.
@@ -2121,7 +2135,7 @@ Summary:	Internationalization and localization files for kwin4
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwin4
 Group:		X11/Applications
 Requires:	kdegames-kwin4 = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-kwin4-i18n
 Internationalization and localization files for kwin4.
@@ -2134,7 +2148,7 @@ Summary:	Internationalization and localization files for lskat
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lskata
 Group:		X11/Applications
 Requires:	kdegames-lskat = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-lskat-i18n
 Internationalization and localization files for lskat.
@@ -2147,7 +2161,7 @@ Summary:	Internationalization and localization files for megami
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla megami
 Group:		X11/Applications
 Requires:	kdegames-megami = %{kdegames_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+Requires:	kdegames-i18n = %{kdegames_epoch}:%{version}
 
 %description -n kdegames-megami-i18n
 Internationalization and localization files for megami.
@@ -2770,6 +2784,32 @@ Internationalization and localization files for atlantikdesigner.
 %description -n kdeaddons-atlantikdesigner-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
 
+%package -n quanta-i18n
+Summary:	Internationalization and localization files for quanta
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla quanta
+Group:		X11/Applications
+Requires:	quanta = %{quanta_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{kdebase_epoch}:%{version}
+
+%description -n quanta-i18n
+Internationalization and localization files for quanta.
+
+%description -n quanta-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla quanta.
+
+%package -n kde-kgreet-classic-i18n 
+Summary:        KDE greeter libraries - i18n
+Summary(pl):    Biblioteki s³u¿±ce do zapytañ o has³o - t³umaczenia
+Group:		X11/Applications
+Requires:       kdelibs-i18n >= %{kdelibs_epoch}:%{version}
+
+%description -n kde-kgreet-classic-i18n
+Tools for asking for passwords in the classic, default look - i18n.
+
+%description -n kde-kgreet-classic-i18n -l pl
+Narzêdzia s³u¿±ce do zapytañ o has³o - klasyczny, domy¶lny motyw
+wygl±du - t³umaczenia.
+
 
 %prep
 %setup -q -n %{_name}-%{version}
@@ -2794,15 +2834,32 @@ done
 	kde_htmldir="%{_kdedocdir}" \
 	kde_libs_htmldir="%{_kdedocdir}"
 
-##install
+%install
 rm -rf $RPM_BUILD_ROOT
-
+rm -rf *.lang
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir="%{_kdedocdir}" \
 	kde_libs_htmldir="%{_kdedocdir}"
 
 
+%find_lang quanta	--with-kde
+%find_lang kommander	--with-kde
+cat kommander.lang  >> quanta.lang
+%find_lang kxsldbg	--with-kde
+cat kxsldbg.lang  >> quanta.lang
+
+
+> kdegames.lang
+gamez="libkdegames \
+libkdehighscores"
+for i in $gamez;
+do
+	%find_lang $i --with-kde
+	cat $i.lang >> kdegames.lang
+done
+
+%find_lang kgreet_classic	--with-kde
 
 %find_lang kcron	--with-kde
 %find_lang kdat		--with-kde
@@ -2900,7 +2957,7 @@ for i in $programs; do
 	cat $i.lang >> core.lang
 done
 
-> %{name}.lang
+> kdebase.lang
 programs=" \
 	arts \
 	background \
@@ -2920,7 +2977,37 @@ programs=" \
 	mouse \
 	passwords \
 	spellchecking \
-	windowmanagement"
+	windowmanagement \
+	kcmenergy \
+	kcmbell \
+	kcmarts \
+	kcmbackground \
+	privacy \
+	libkickermenu_tom \
+	display \
+	kcmcomponentchooser \
+	kcmemail \
+	kcminput \
+	kcmkeys \
+	kcmkwindecoration \
+	kcmkwintheme \
+	kcmkwm \
+	kcmmidi \
+	kcmspellchecking \
+	kdesktop \
+	kdesktop_lock \
+	kwin \
+	kwin_default_config \
+	kwin_keramik_config \
+	kstart \
+	kcmxinerama \
+	ksmserver \
+	kcmxinerama \
+	ktip \
+	ksplash \
+	krandr \
+	kreadconfig \
+	krdb"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -2954,7 +3041,8 @@ programs="\
 	netpref \
 	proxy \
 	smb \
-	useragent"
+	useragent \
+	kio_ldap"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -2972,6 +3060,8 @@ done
 %find_lang	kmenuedit	--with-kde
 %find_lang	konsole		--with-kde
 %find_lang	ksysguard	--with-kde
+%find_lang	kpm	--with-kde
+cat kpm.lang >> ksysguard.lang
 %find_lang	kpager		--with-kde
 %find_lang	kwrite		--with-kde
 %find_lang	screensaver	--with-kde
@@ -3052,12 +3142,13 @@ khotkeys \
 kdesktop \
 ksmserver \
 kwin_keramik_config \
-kcmmidi"
+kcmmidi \
+khotkeys"
 
 for i in $desktop;
 do
 	%find_lang $i	--with-kde
-	cat $i.lang >> %{name}.lang
+	cat $i.lang >> kdebase.lang
 done
 
 %find_lang ksplashthemes	--with-kde
@@ -3079,6 +3170,7 @@ done
 
 %find_lang katedefaultproject	--with-kde
 cat katedefaultproject.lang >> kate.lang
+cat katetabbarextension >> kate.lang
 
 %find_lang kdcop	--with-kde
 
@@ -3234,7 +3326,8 @@ done
 %find_lang	korn		--with-kde
 %find_lang	kgpgcertmanager	--with-kde
 %find_lang	kpilot		--with-kde
-
+%find_lang	kfile_palm	--with-kde
+cat kfile_palm.lang >> kpilot.lang
 cat kalarm.lang >> korganizer.lang
 cat kalarmd.lang >> korganizer.lang
 cat kgpgcertmanager.lang >> kmail.lang
@@ -3264,6 +3357,7 @@ cat kfile_vcf.lang >> kaddressbook.lang
 
 # Not packaging kmobile, it was disabled by coolo
 %find_lang kdgantt		--with-kde
+cat kdgantt.lang >> libkdepim.lang
 %find_lang ktnef		--with-kde
 
 %find_lang libkcal		--with-kde
@@ -3337,6 +3431,8 @@ cat kdictapplet.lang >> kdict.lang
 %find_lang KRegExpEditor	--with-kde
 %find_lang kcalc		--with-kde
 %find_lang kcharselect		--with-kde
+%find_lang kcharselecapplet	--with-kde
+cat kcharselecapplet.lang << kcharselect
 > kdf.lang
 %find_lang kdf			--with-kde
 %find_lang blockdevices		--with-kde
@@ -3370,6 +3466,8 @@ cat kcmkwallet.lang >> kwallet.lang
 cat kcmlaptop.lang >> klaptopdaemon.lang
 %find_lang kcmkvaio		--with-kde
 cat kcmkvaio.lang >> kmilo.lang
+%find_lang kcmthinkpad	--with-kde
+cat kcmthinkpad.lang >> kmilo.lang
 
 %find_lang kregexpeditor	--with-kde
 cat kregexpeditor.lang >> KRegExpEditor.lang
@@ -3417,7 +3515,8 @@ flac \
 m3u \
 mp3 \
 ogg \
-wav"
+wav \
+sid"
 > kfile.lang
 
 for i in $kfile;
@@ -3426,8 +3525,6 @@ do
 	cat kfile_${i}.lang >> kfile_mm.lang
 done
 
-
-%install
 > kdelibs.spec
 %find_lang	kdelibs --with-kde
 ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell"
@@ -3440,6 +3537,8 @@ done
 
 %find_lang	cervisia	--with-kde
 %find_lang	kbabel		--with-kde
+%find_lang	kbabeldict	--with-kde
+cat kbabeldict.lang >> kbabel.lang
 %find_lang	kcachegrind	--with-kde
 %find_lang	kbugbuster	--with-kde
 %find_lang	kompare		--with-kde
@@ -3448,7 +3547,8 @@ done
 kfile="cpp \
 diff \
 po \
-ts"
+ts \
+desktop"
 
 for i in $kfile;
 do
@@ -3532,7 +3632,9 @@ pnm \
 ps \
 tga \
 tiff \
-xbm"
+xbm \
+exr \
+rgb"
 
 for i in $kfile;
 do
@@ -3634,7 +3736,8 @@ katepybrowse \
 katespell \
 katetextfilter \
 katexmlcheck \
-katexmltools"
+katexmltools \
+ktexteditor_autobookmarker"
 
 for i in $kate;
 do
@@ -3642,9 +3745,36 @@ do
 	cat $i.lang >> kate-plugins.lang
 done
 
+> kmilo.lang
+milo="kmilo_generic \
+kmilo_kvaio \
+kmilo_powerbook \
+kmilo_thinkpad \
+kmilod"
+for i in $milo
+do
+%find_lang $i --with-kde
+done
 
 
+%find_lang kdevelop --with-kde
+%find_lang kdevtipofday --with-kde
+cat kdevtipofday.lang >> kdevelop.lang
+%find_lang qeditor --with-kde
+cat qeditor >> kdevelop.lang
 
+for i in $RPM_BUILD_ROOT%{_datadir}/locale/* ;
+do
+        echo $i
+	if [ -d $i ] ; then
+	z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/locale/,,`
+	echo %lang\($z\) %{_datadir}/locale/$z/[cef]* >> core.lang
+	fi
+done
+	
+%files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
+%files -n kdegames-i18n -f kdegames.lang
+%files -n quanta-i18n -f quanta.lang
 %files -n kdelibs-i18n -f kdelibs.lang
 %files -n kdeadmin-kcron-i18n -f kcron.lang
 %files -n kdeadmin-kdat-i18n -f kdat.lang
@@ -3845,3 +3975,4 @@ done
 %files -n kdeaddons-noatun-i18n -f noatun.lang
 %files -n kdeaddons-kvim-i18n -f vim.lang
 %files -n kdeadmin-kcmlilo-i18n -f kcmlilo.lang
+%files -n kdevelop-i18n -f kdevelop.lang
