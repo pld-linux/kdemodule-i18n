@@ -8,6 +8,7 @@
 %define		kdemultimedia_epoch	9
 %define		kdeedu_epoch	8
 %define		kdeutils_epoch	
+%define		kdeacces_epoch	0
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodules-i18n
@@ -970,3 +971,42 @@ Internationalization and localization files for kdepasswd.
 
 %description -n kdeutils-kdepasswd-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdepasswd.
+
+%package -n kdeaccessibility-kmag-i18n
+Summary:	Internationalization and localization files for kmag
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmag
+Group:		X11/Applications
+Requires:	kdeaccessibility-kmag = %{kdeacces_epoch}:%{version}
+Requires:	kdelibs-i18n >= %{kdelibs_epoch}:%{version}
+
+%description -n kdeaccessibility-kmag-i18n
+Internationalization and localization files for kmag.
+
+%description -n kdeaccessibility-kmag-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmag.
+
+%package -n kdeaccessibility-kmousetool-i18n
+Summary:	Internationalization and localization files for kmousetool
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmousetool
+Group:		X11/Applications
+Requires:	kdeaccessibility-kmousetool = %{kdeacces_epoch}:%{version}
+Requires:	kdelibs-i18n >= %{kdelibs_epoch}:%{version}
+
+%description -n kdeaccessibility-kmousetool-i18n
+Internationalization and localization files for kmousetool.
+
+%description -n kdeaccessibility-kmousetool-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmousetool.
+
+%package -n kdeaccessibility-kmouth-i18n
+Summary:	Internationalization and localization files for kmouth
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmouth
+Group:		X11/Applications
+Requires:	kdeaccessibility-kmouth = %{kdeacces_epoch}:%{version}
+Requires:	kdelibs-i18n >= %{kdelibs_epoch}:%{version}
+
+%description -n kdeaccessibility-kmouth-i18n
+Internationalization and localization files for kmouth.
+
+%description -n kdeaccessibility-kmouth-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmouth.
