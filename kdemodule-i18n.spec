@@ -578,7 +578,7 @@ Requires:	kdepim-libkdenetwork-i18n = %{kdepim_epoch}:%{version}
 Requires:	kdepim-libkdepim-i18n = %{kdepim_epoch}:%{version}
 Requires:	kdepim-kmail-libs-i18n = %{kdepim_epoch}:%{version}
 Requires:	kdebase-mailnews-i18n = %{kdebase_epoch}:%{version}
-Obsolets:	kdepim-ktnef-i18n 
+Obsoletes:	kdepim-ktnef-i18n 
 
 %description -n kdepim-kmail-i18n
 Internationalization and localization files for kmail.
@@ -625,7 +625,7 @@ Requires:	kdepim-libkdepim-i18n = %{kdepim_epoch}:%{version}
 %description -n kdepim-konsolekalendar-i18n
 Internationalization and localization files for konsolekalendar.
 
-%description -n kdepim--l pl konsolekalendar-i18n
+%description -n kdepim-konsolekalendar-i18n -l pl
 T³umaczenia dla konsolekalendara.
 
 %package -n kdepim-kontact-i18n
