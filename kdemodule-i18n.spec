@@ -2804,67 +2804,11 @@ Internationalization and localization files for kvim.
 %description -n kdeaddons-kvim-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvima.
 
-%package -n kde-decoration-cde-i18n
-Summary:	Internationalization and localization files for cde
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla cde
-Group:		X11/Applications
-Requires:	kde-decoration-cde = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-cde-i18n
-Internationalization and localization files for cde.
-
-%description -n kdeaddons-cde-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla cde.
-
-
-%package -n kde-decoration-clients-i18n
-Summary:	Internationalization and localization files for clients
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla clients
-Group:		X11/Applications
-Requires:	kde-decoration-clients = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-clients-i18n
-Internationalization and localization files for clients.
-
-%description -n kdeaddons-clients-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla clients.
-
-
-%package -n kde-decoration-glow-i18n
-Summary:	Internationalization and localization files for glow
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla glow
-Group:		X11/Applications
-Requires:	kde-decoration-glow = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-glow-i18n
-Internationalization and localization files for glow.
-
-%description -n kdeaddons-glow-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla glow.
-
-
-%package -n kde-decoration-icewm-i18n
-Summary:	Internationalization and localization files for icewm
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla icewm
-Group:		X11/Applications
-Requires:	kde-decoration-icewm = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-icewm-i18n
-Internationalization and localization files for icewm.
-
-%description -n kdeaddons-icewm-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla icewm.
-
-
 %package -n kde-decoration-kde1-i18n
 Summary:	Internationalization and localization files for kde1
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde1
 Group:		X11/Applications
-Requires:	kde-decoration-kde1 = %{kdeaddons_epoch}:%{version}
+Requires:	kde-decoration-kde1 = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-kde1-i18n
@@ -2878,7 +2822,7 @@ Pliki umiêdzynarodawiaj±ce dla kde1.
 Summary:	Internationalization and localization files for kstep
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kstep
 Group:		X11/Applications
-Requires:	kde-decoration-kstep = %{kdeaddons_epoch}:%{version}
+Requires:	kde-decoration-kstep = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-kstep-i18n
@@ -2892,7 +2836,7 @@ Pliki umiêdzynarodawiaj±ce dla kstep.
 Summary:	Internationalization and localization files for openlook
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla openlook
 Group:		X11/Applications
-Requires:	kde-decoration-openlook = %{kdeaddons_epoch}:%{version}
+Requires:	kde-decoration-openlook = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-openlook-i18n
@@ -2902,25 +2846,11 @@ Internationalization and localization files for openlook.
 Pliki umiêdzynarodawiaj±ce dla openlook.
 
 
-%package -n kde-decoration-plastik-i18n
-Summary:	Internationalization and localization files for plastik
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla plastik
-Group:		X11/Applications
-Requires:	kde-decoration-plastik = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-plastik-i18n
-Internationalization and localization files for plastik.
-
-%description -n kdeaddons-plastik-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla plastik.
-
-
 %package -n kde-decoration-riscos-i18n
 Summary:	Internationalization and localization files for riscos
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla riscos
 Group:		X11/Applications
-Requires:	kde-decoration-riscos = %{kdeaddons_epoch}:%{version}
+Requires:	kde-decoration-riscos = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-riscos-i18n
@@ -2934,7 +2864,7 @@ Pliki umiêdzynarodawiaj±ce dla riscos.
 Summary:	Internationalization and localization files for system
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla system
 Group:		X11/Applications
-Requires:	kde-decoration-system = %{kdeaddons_epoch}:%{version}
+Requires:	kde-decoration-system = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaddons-system-i18n
@@ -4065,6 +3995,7 @@ for i in $decos ;
 do
 %find_lang	kwin_$i	--with-kde
 done
+cat kwin_clients.lang >> kdebase.lang
 
 kicker="kbinaryclock \
 kolourpicker \
@@ -4631,21 +4562,11 @@ done
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kfax-i18n -f kfax.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-cde-i18n -f kwin_cde.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-clients-i18n -f kwin_clients.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-glow-i18n -f kwin_glow.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-icewm-i18n -f kwin_icewm.lang
-%defattr(644,root,root,755)
 %files -n kde-decoration-kde1-i18n -f kwin_kde1.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-kstep-i18n -f kwin_kstep.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-openlook-i18n -f kwin_openlook.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-plastik-i18n -f kwin_plastik.lang
 %defattr(644,root,root,755)
 %files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
 %defattr(644,root,root,755)
