@@ -2669,7 +2669,7 @@ Pliki umiêdzynarodawiaj±ce dla kvima.
 Summary:	Internationalization and localization files for kicker
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kickera
 Group:		X11/Applications
-Requires:	kdeaddons-desktop = %{kdeaddons_epoch}:%{version}
+Requires:	kdeaddons-kicker = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{kdebase_epoch}:%{version}
 
 %description -n kdeaddons-kicker-i18n
