@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.0
-Release:	4
+Release:	5
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -128,7 +128,7 @@ Obsoletes:	kdenetwork-i18n
 Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
-Obsoletes:	kdebase-mailnews
+Obsoletes:	kdebase-mailnews-i18n
 Obsoletes:	kdeedu-flashkard-i18n
 
 %description -n kdelibs-i18n
@@ -993,6 +993,7 @@ Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
 Requires:	kdm-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdeutils-userinfo-i18n
+Obsoletes:	kdeutils-kdepasswd-i18n
 
 %description -n kdebase-useraccount-i18n
 Internationalization and localization files for useraccount.
@@ -2247,7 +2248,7 @@ Summary:	Internationalization and localization files for libcvsservice
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libcvsservice
 Group:		X11/Applications
 Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
-Conflicts:	kdesdk-cervisia < %{epoch}:%{version}-%{release}
+Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
 
 %description -n kdesdk-libcvsservice-i18n
 Internationalization and localization files for libcvsservice.
