@@ -998,18 +998,18 @@ Internationalization and localization files for kdessh.
 %description -n kdeutils-kdessh-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdessh.
 
-%package -n kdeutils-kdepasswd-i18n
-Summary:	Internationalization and localization files for kdepasswd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdepasswd
+%package -n kdebase-useraccount-i18n
+Summary:	Internationalization and localization files for useraccount
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla useraccount
 Group:		X11/Applications
-Requires:	kdeutils-kdepasswd = %{kdeutils_epoch}:%{version}
+Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeutils-kdepasswd-i18n
-Internationalization and localization files for kdepasswd.
+%description -n kdebase-useraccount-i18n
+Internationalization and localization files for useraccount.
 
-%description -n kdeutils-kdepasswd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdepasswd.
+%description -n kdebase-useraccount-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla useraccount.
 
 %package -n kdeaccessibility-kmag-i18n
 Summary:	Internationalization and localization files for kmag
@@ -3078,7 +3078,7 @@ LDFLAGS="%{rpmldflags}"
 	kde_htmldir="%{_kdedocdir}" \
 	kde_libs_htmldir="%{_kdedocdir}"
 
-#install
+%install
 #rm -rf $RPM_BUILD_ROOT
 
 ##%{__make} install \
@@ -3146,7 +3146,7 @@ cat kfile_drgeo.lang >> kig.lang
 cat kfile_kig.lang >> kig.lang
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
-%find_lang kmathtool	--with-kde
+# DONT PACKAGE KMATHTOOL
 %find_lang kmessedwords	--with-kde
 %find_lang kmplot	--with-kde
 %find_lang kpercentage	--with-kde
@@ -3827,7 +3827,7 @@ done
 
 > kdelibs.spec
 %find_lang	kdelibs --with-kde
-ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell"
+ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell ktexteditor_docwordcompletion"
 for i in $ziew;
 do
 	%find_lang $i --with-kde
@@ -3837,7 +3837,6 @@ done
 
 %find_lang	cervisia	--with-kde
 %find_lang	kbabel		--with-kde
-%install
 %find_lang	kcachegrind	--with-kde
 %find_lang	kbugbuster	--with-kde
 %find_lang	kompare		--with-kde
@@ -3971,6 +3970,10 @@ do
 %find_lang	kwin_$i	--with-kde
 done
 cat kwin_clients.lang >> kdebase.lang
+cat kwin_cde_config.lang >> kwin_cde.lang 
+cat kwin_icewm_config.lang >> kwin_icewm.lang 
+cat kwin_glow_config.lang >> kwin_glow.lang 
+cat kwin_plastik_config.lang >> kwin_plastik.lang 
 
 kicker="kbinaryclock \
 kolourpicker \
@@ -4166,13 +4169,13 @@ done
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-cde-i18n -f kwin_cde_config.lang
+%files -n kde-decoration-cde-i18n -f kwin_cde.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-icewm-i18n -f kwin_icewm_config.lang
+%files -n kde-decoration-icewm-i18n -f kwin_icewm.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-glow-i18n -f kwin_glow_config.lang
+%files -n kde-decoration-glow-i18n -f kwin_glow.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-plastik-i18n -f kwin_plastik_config.lang
+%files -n kde-decoration-plastik-i18n -f kwin_plastik.lang
 %defattr(644,root,root,755)
 %files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
 %defattr(644,root,root,755)
@@ -4277,6 +4280,8 @@ done
 %files -n kdegames-lskat-i18n -f lskat.lang
 %defattr(644,root,root,755)
 ##%%files -n kdegames-megami-i18n -f megami.lang
+%files -n kdebase-useraccount-i18n -f useraccount.lang 
+%defattr(644,root,root,755)
 %files -n kdebase-core-i18n -f core.lang
 %defattr(644,root,root,755)
 %files -n kdebase-desktop-i18n -f kdebase.lang
