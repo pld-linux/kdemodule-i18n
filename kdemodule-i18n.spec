@@ -26,7 +26,7 @@ Release:	1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/3.3/src/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/stable/3.3/src/%{_name}-%{version}.tar.bz2
 # Source0-md5:	f1927048807146969f6497b5d789fb5d
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs >= %{kdelibs_epoch}:%{version}
