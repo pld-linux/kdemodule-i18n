@@ -1,3 +1,4 @@
+	# $Revision: 1.28 $, $Date: 2004-09-01 15:15:39 $
 %define		_name			kde-i18n
 %define		kdeacces_epoch		0
 %define		kdeaddons_epoch		1
@@ -713,48 +714,22 @@ Internationalization and localization files for konsolekalendar.
 %description -n kdepim-konsolekalendar-i18n -l pl
 T³umaczenia dla konsolekalendara.
 
-%package -n kdepim-kontact-i18n
-Summary:	Internationalization and localization files for kontact
-Summary(pl):	T³umaczenia dla kontacta
-Group:		X11/Applications
-Requires:	kdepim-kontact = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-kontact-i18n
-Internationalization and localization files for kontact.
-
-%description -n kdepim-kontact-i18n -l pl
-T³umaczenia dla kontacta.
-
 %package -n kdepim-i18n
 Summary:	Internationalization and localization files for kdepim
 Summary(pl):	T³umaczenia dla kdepim
 Group:		X11/Applications
 Requires:	kdepim = %{kdepim_epoch}:%{version}
 Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:      kdepim-korganizer
-Obsoletes:      kdepim-korganizer-libs
-Obsoletes:      kdepim-kontact
-Obsoletes:      kdepim-kresources
+Obsoletes:      kdepim-korganizer-i18n
+Obsoletes:      kdepim-korganizer-libs-i18n
+Obsoletes:      kdepim-kontact-i18n
+Obsoletes:      kdepim-kresources-i18n
 
 %description -n kdepim-i18n
 Internationalization and localization files for kdepim.
 
 %description -n kdepim-i18n -l pl
 T³umaczenia dla kdepim.
-
-%package -n kdepim-korganizer-i18n
-Summary:	Internationalization and localization files for korganizer
-Summary(pl):	T³umaczenia dla korganizera
-Group:		X11/Applications
-Requires:	kdepim-korganizer = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-korganizer-i18n
-Internationalization and localization files for korganizer.
-
-%description -n kdepim-korganizer-i18n -l pl
-T³umaczenia dla korganizera.
 
 %package -n kdepim-korn-i18n
 Summary:	Internationalization and localization files for korn
@@ -2811,10 +2786,10 @@ Group:		X11/Applications
 Requires:	kde-decoration-kde1 = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeaddons-kde1-i18n
+%description -n kde-decoration-kde1-i18n
 Internationalization and localization files for kde1.
 
-%description -n kdeaddons-kde1-i18n -l pl
+%description -n kde-decoration-kde1-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde1.
 
 
@@ -2825,10 +2800,10 @@ Group:		X11/Applications
 Requires:	kde-decoration-kstep = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeaddons-kstep-i18n
+%description -n kde-decoration-kstep-i18n
 Internationalization and localization files for kstep.
 
-%description -n kdeaddons-kstep-i18n -l pl
+%description -n kde-decoration-kstep-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kstep.
 
 
@@ -2839,10 +2814,10 @@ Group:		X11/Applications
 Requires:	kde-decoration-openlook = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeaddons-openlook-i18n
+%description -n kde-decoration-openlook-i18n
 Internationalization and localization files for openlook.
 
-%description -n kdeaddons-openlook-i18n -l pl
+%description -n kde-decoration-openlook-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla openlook.
 
 
@@ -2853,10 +2828,10 @@ Group:		X11/Applications
 Requires:	kde-decoration-riscos = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeaddons-riscos-i18n
+%description -n kde-decoration-riscos-i18n
 Internationalization and localization files for riscos.
 
-%description -n kdeaddons-riscos-i18n -l pl
+%description -n kde-decoration-riscos-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla riscos.
 
 
@@ -2867,10 +2842,10 @@ Group:		X11/Applications
 Requires:	kde-decoration-system = %{kdeartwork_epoch}:%{version}
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeaddons-system-i18n
+%description -n kde-decoration-system-i18n
 Internationalization and localization files for system.
 
-%description -n kdeaddons-system-i18n -l pl
+%description -n kde-decoration-system-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla system.
 
 %package -n kdeaddons-kicker-i18n
