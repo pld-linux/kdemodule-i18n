@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.0
-Release:	3
+Release:	4
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -129,6 +129,7 @@ Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
 Obsoletes:	kdebase-mailnews
+Obsoletes:	kdeedu-flashkard-i18n
 
 %description -n kdelibs-i18n
 Translations and localization data for KDE libraries.
