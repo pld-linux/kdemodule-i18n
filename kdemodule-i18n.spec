@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.3.0
-Release:	1
+Release:	2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -170,7 +170,7 @@ Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-kfind-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-kjobviewer-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-kpager-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kmenuedit-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdebase-kmenuedit-i18n
 Obsoletes:	kdebase-kicker-i18n 
 Obsoletes:	kdebase-ksystraycmd-i18n
 
@@ -253,19 +253,6 @@ Internationalization and localization files for klipper.
 
 %description -n kdebase-klipper-i18n -l pl
 T³umaczenia dla klippera.
-
-%package -n kdebase-kmenuedit-i18n
-Summary:	Internationalization and localization files for kmenuedit
-Summary(pl):	T³umaczenia dla kmenuedit
-Group:		X11/Applications
-Requires:	kdebase-kmenuedit = %{kdebase_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdebase-kmenuedit-i18n
-Internationalization and localization files for kmenuedit.
-
-%description -n kdebase-kmenuedit-i18n -l pl
-T³umaczenia dla kmenuedit.
 
 %package -n kdebase-konsole-i18n
 Summary:	Internationalization and localization files for konsole
@@ -543,7 +530,6 @@ Internationalization and localization files for ldap ioslave.
 %description -n kde-kio-ldap-i18n -l pl
 T³umaczenia dla ldap ioslave.
 
-
 %package -n kde-kio-smtp-i18n
 Summary:	Internationalization and localization files for smtp ioslave
 Summary(pl):	T³umaczenia dla smtp ioslave
@@ -631,7 +617,7 @@ Summary:	Internationalization and localization files for kandy
 Summary(pl):	T³umaczenia dla kandy
 Group:		X11/Applications
 Requires:	kdepim-kandy = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-kandy-i18n
@@ -645,7 +631,7 @@ Summary:	Internationalization and localization files for karm
 Summary(pl):	T³umaczenia dla karm
 Group:		X11/Applications
 Requires:	kdepim-karm = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libkdepim-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdepim-karm-i18n
 Internationalization and localization files for karm.
@@ -756,7 +742,6 @@ Internationalization and localization files for kpilot.
 
 %description -n kdepim-kpilot-i18n -l pl
 T³umaczenia dla kpilota.
-
 
 %package -n kdepim-libs-i18n
 Summary:	Internationalization and localization files for libkdepim
@@ -2791,7 +2776,6 @@ Internationalization and localization files for kde1.
 %description -n kde-decoration-kde1-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde1.
 
-
 %package -n kde-decoration-kstep-i18n
 Summary:	Internationalization and localization files for kstep
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kstep
@@ -2804,7 +2788,6 @@ Internationalization and localization files for kstep.
 
 %description -n kde-decoration-kstep-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kstep.
-
 
 %package -n kde-decoration-openlook-i18n
 Summary:	Internationalization and localization files for openlook
@@ -2819,7 +2802,6 @@ Internationalization and localization files for openlook.
 %description -n kde-decoration-openlook-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla openlook.
 
-
 %package -n kde-decoration-riscos-i18n
 Summary:	Internationalization and localization files for riscos
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla riscos
@@ -2832,7 +2814,6 @@ Internationalization and localization files for riscos.
 
 %description -n kde-decoration-riscos-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla riscos.
-
 
 %package -n kde-decoration-system-i18n
 Summary:	Internationalization and localization files for system
@@ -3069,7 +3050,6 @@ kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
 LDFLAGS="%{rpmldflags}"
 #export UNSERMAKE=%{_datadir}/unsermake/unsermake
 
-
 %{__make} -f admin/Makefile.common cvs
 
 %configure
@@ -3093,7 +3073,6 @@ rm -rf *.lang
 %find_lang kxsldbg	--with-kde
 %find_lang kimagemapeditor --with-kde
 %find_lang klinkstatus	--with-kde
-
 
 > kdegames.lang
 gamez="libkdegames \
@@ -3262,7 +3241,8 @@ programs=" \
 	kcmkwinrules \
 	kcmkxmlrpcd \
 	kxmlrpcd \
-	kthememanager"
+	kthememanager \
+	kmenuedit"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -3312,7 +3292,6 @@ done
 %find_lang	kinfocenter	--with-kde
 %find_lang	kioslave	--with-kde
 %find_lang	klipper		--with-kde
-%find_lang	kmenuedit	--with-kde
 %find_lang	konsole		--with-kde
 %find_lang	ksysguard	--with-kde
 %find_lang	kpm	--with-kde
@@ -3324,23 +3303,22 @@ cat kpm.lang >> ksysguard.lang
 cat kcmkonsole.lang	>> konsole.lang
 cat kioslave.lang	>> kinfocenter.lang
 
-files="core \
-kdebase \
-kicker \
-konqueror \
-konsole \
-kinfocenter \
-kate \
-kdm \
-kfind \
-kioslave \
-klipper \
-kmenuedit \
-ksysguard \
-kpager \
-kwrite \
-screensaver \
-kcmfontinst"
+#files="core \
+#kdebase \
+#kicker \
+#konqueror \
+#konsole \
+#kinfocenter \
+#kate \
+#kdm \
+#kfind \
+#kioslave \
+#klipper \
+#ksysguard \
+#kpager \
+#kwrite \
+#screensaver \
+#kcmfontinst"
 
 %find_lang kwin_b2_config	--with-kde
 %find_lang kwin_modernsys_config	--with-kde
@@ -3438,7 +3416,6 @@ cat katetabbarextension.lang >> kate.lang
 %find_lang kfindpart	--with-kde
 cat kfindpart.lang >> kfind.lang
 
-
 %find_lang kfontinst	--with-kde
 cat kfontinst.lang >> kcmfontinst.lang
 %find_lang fontinst	--with-kde
@@ -3507,7 +3484,6 @@ do
 	%find_lang $i	--with-kde
 	cat $i.lang >> screensaver.lang
 done
-
 
 kdm="kdmchooser \
 kdmconfig \
@@ -3774,7 +3750,6 @@ cat kregexpeditor.lang >> KRegExpEditor.lang
 %find_lang kcharselectapplet	--with-kde
 cat kcharselectapplet.lang >> kcharselect.lang
 
-
 %find_lang kdessh		--with-kde
 
 # We dont buidl kcardchooser (disabled by default by coolo)
@@ -3833,7 +3808,6 @@ do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
-
 
 %find_lang	cervisia	--with-kde
 %find_lang	kbabel		--with-kde
@@ -4073,7 +4047,6 @@ do
 	cat $i.lang >> kate-plugins.lang
 done
 
-
 %find_lang kdevelop --with-kde
 %find_lang kdevdesigner	--with-kde
 cat kdevdesigner.lang >> kdevelop.lang
@@ -4085,7 +4058,6 @@ cat qeditor.lang >> kdevelop.lang
 cat kde_app_devel.lang >> kdevelop.lang
 %find_lang kdearch --with-kde
 cat kdearch.lang >> kdevelop.lang
-
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/* ;
 do
@@ -4112,7 +4084,6 @@ do
 	fi
 done
 
-
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/* ;
 do
 	echo $i
@@ -4137,7 +4108,6 @@ do
 cat ${i}|sort|uniq > ${i}.niedakh
 mv ${i}.niedakh ${i}
 done
-
 
 %files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
 %defattr(644,root,root,755)
@@ -4295,8 +4265,6 @@ done
 %files -n kdebase-kfontinst-i18n -f kcmfontinst.lang
 %defattr(644,root,root,755)
 %files -n kdebase-klipper-i18n -f klipper.lang
-%defattr(644,root,root,755)
-%files -n kdebase-kmenuedit-i18n -f kmenuedit.lang
 %defattr(644,root,root,755)
 %files -n kdebase-konsole-i18n -f konsole.lang
 %defattr(644,root,root,755)
@@ -4578,3 +4546,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdevelop-i18n -f kdevelop.lang
 %defattr(644,root,root,755)
+
+%clean
+rm -rf $RPM_BUILD_ROOT
