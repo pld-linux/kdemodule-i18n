@@ -3078,7 +3078,7 @@ LDFLAGS="%{rpmldflags}"
 	kde_htmldir="%{_kdedocdir}" \
 	kde_libs_htmldir="%{_kdedocdir}"
 
-%install
+#install
 #rm -rf $RPM_BUILD_ROOT
 
 ##%{__make} install \
@@ -3605,8 +3605,8 @@ cat kalarm.lang >> korganizer.lang
 cat kalarmd.lang >> korganizer.lang
 cat kgpgcertmanager.lang >> kmail.lang
 cat kwatchgnupg.lang >> kmail.lang
-cat kmail_text_calendar_plugin >> kmail.lang
-cat kmail_text_vcard_plugin >> kmail.lang
+cat kmail_text_calendar_plugin.lang  >> kmail.lang
+cat kmail_text_vcard_plugin.lang >> kmail.lang
 
 %find_lang alarmdaemonctrl	--with-kde
 cat alarmdaemonctrl.lang >> korganizer.lang
@@ -3635,6 +3635,7 @@ cat kcmkabconfig.lang >> kaddressbook.lang
 %find_lang kfile_vcf		--with-kde
 cat kfile_vcf.lang >> kaddressbook.lang
 
+%find_lang libkdepim		--with-kde
 # Not packaging kmobile, it was disabled by coolo
 %find_lang kdgantt		--with-kde
 cat kdgantt.lang >> libkdepim.lang
@@ -3647,7 +3648,6 @@ cat libkleopatra.lang >> libkdepim.lang
 cat libkcalsystem.lang >> libkcal.lang
 
 %find_lang libkdenetwork	--with-kde
-%find_lang libkdepim		--with-kde
 %find_lang libksieve		--with-kde
 %find_lang libksync		--with-kde
 mv {libksync,korganizer-libs}.lang
@@ -3837,8 +3837,7 @@ done
 
 %find_lang	cervisia	--with-kde
 %find_lang	kbabel		--with-kde
-%find_lang	kbabeldict	--with-kde
-cat kbabeldict.lang >> kbabel.lang
+%install
 %find_lang	kcachegrind	--with-kde
 %find_lang	kbugbuster	--with-kde
 %find_lang	kompare		--with-kde
