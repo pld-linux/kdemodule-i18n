@@ -2267,7 +2267,7 @@ Summary:	Internationalization and localization files for libcvsservice
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libcvsservice
 Group:		X11/Applications
 Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
-Conflicts	kdesdk-cervisia < %{epoch}:%{version}-%{release}
+Conflicts:	kdesdk-cervisia < %{epoch}:%{version}-%{release}
 
 %description -n kdesdk-libcvsservice-i18n
 Internationalization and localization files for libcvsservice.
