@@ -2794,7 +2794,7 @@ done
 	kde_htmldir="%{_kdedocdir}" \
 	kde_libs_htmldir="%{_kdedocdir}"
 
-%install
+##install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
@@ -3427,10 +3427,13 @@ do
 done
 
 
-ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell"
+%install
+> kdelibs.spec
+%find_lang	kdelibs --with-kde
+ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell"
 for i in $ziew;
 do
-	%find_lang libz --with-kde
+	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
 
