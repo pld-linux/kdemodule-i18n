@@ -3815,7 +3815,7 @@ do
 done
 for i in %{_kdedocdir}/HTML/*; do
 	if ! grep -q '/en$' $(echo $i); then
-		echo %dir $i >> kdelibs.lang
+		echo "%%lang(`basename $i`) %%dir $i" >> kdelibs.lang
 	fi
 done
 
