@@ -22,7 +22,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.2.3
-Release:	3
+Release:	4
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
