@@ -1,14 +1,21 @@
 #
 %define		_name	kde-i18n
-%define		kdelibs_epoch	9
-%define		kdebase_epoch	9
-%define		kdevelop_epoch 7
-%define		kdepim_epoch	3
-%define		kdenetwork_epoch	10
-%define		kdemultimedia_epoch	9
-%define		kdeedu_epoch	8
-%define		kdeutils_epoch	
-%define		kdeacces_epoch	0
+%define kdeacces_epoch  0
+%define kdeaddons_epoch 1
+%define kdeadmin_epoch  8
+%define kdeartwork_epoch        8
+%define kdebase_epoch   9
+%define kdeedu_epoch    8
+%define kdegames_epoch  8
+%define kdegraphics_epoch       9
+%define kdelibs_epoch   9
+%define kdemultimedia_epoch     9
+%define kdenetwork_epoch        10
+%define kdepim_epoch    3
+%define kdesdk_epoch    3
+%define kdetoys_epoch   9
+%define kdeutils_epoch  9
+%define kdevelop_epoch  7
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
@@ -17,12 +24,9 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
-Source0:	http://ep09.pld-linux.org/~djurban/kde/%{_name}-%{version}.tar.bz2
+#Source0:	http://ep09.pld-linux.org/~djurban/kde/%{_name}-%{version}.tar.bz2
 # Source0-md5:	7a2ff8e848b6347e41e450f5aaaf75a3
-Source1:	%{name}-splitmo
-Source2:	%{name}-splitdoc
-Source3:	%{name}-splitdoc-shared
-Patch0:		%{name}-fixes.patch
+Patch0:		%{_name}-fixes.patch
 BuildRequires:	kdelibs >= %{kdelibs_epoch}:%{version}
 Url:		http://i18n.kde.org
 BuildRequires:	kdelibs-devel
@@ -2753,8 +2757,22 @@ Internationalization and localization files for noatun.
 %description -n kdeaddons-noatun-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla noatun.
 
+%package -n kdeaddons-atlantikdesigner-i18n
+Summary:        Internationalization and localization files for atlantikdesigner
+Summary(pl):    Pliki umiêdzynarodawiaj±ce dla atlantikdesigner
+Group:          X11/Applications
+Requires:       kdeaddons-atlantikdesigner = %{kdeaddons_epoch}:%{version}
+Requires:       kdegames-atlantik-i18n >= %{kdegames_epoch}:%{version}
+
+%description -n kdeaddons-atlantikdesigner-i18n
+Internationalization and localization files for atlantikdesigner.
+
+%description -n kdeaddons-atlantikdesigner-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
+
+
 %prep
-%setup -q
+%setup -q -n %{_name}-%{version}
 %patch0 -p1
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -3286,9 +3304,9 @@ cat lanbrowser.lang >> lisa.lang
 #cat kcmkxmlrpcd.lang >> kxmlrpcd.lang
 
 %find_lang ktalkd		--with-kde
-%find_lang kcmtalkd		--with-kde
+#find_lang kcmtalkd		--with-kde
 %find_lang kcmktalkd		--with-kde
-cat kcmtalkd.lang >> ktalkd.lang
+#cat kcmtalkd.lang >> ktalkd.lang
 cat kcmktalkd.lang >> ktalkd.lang
 
 %find_lang kcm_krfb		--with-kde
