@@ -3056,7 +3056,7 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -n %{_name}-%{version}
-%patch0 -p1
+%patch0 -p1 -R
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
