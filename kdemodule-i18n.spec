@@ -29,7 +29,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar
 # Source0-md5:	7a2ff8e848b6347e41e450f5aaaf75a3
 Patch0:		%{_name}-fixes.patch
 BuildRequires:	kdelibs >= %{kdelibs_epoch}:%{version}
-Url:		http://i18n.kde.org
+URL:		http://i18n.kde.org
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs >= 2.4.2
 BuildArch:	noarch
