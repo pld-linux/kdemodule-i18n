@@ -4346,6 +4346,8 @@ done
 %defattr(644,root,root,755)
 %files -n kde-kio-pop3-i18n -f kio_pop3.lang
 %defattr(644,root,root,755)
+%files -n kde-kio-newimap4-i18n -f kio_newimap4.lang
+%defattr(644,root,root,755)
 %files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
 %defattr(644,root,root,755)
 %files -n kdepim-kandy-i18n -f kandy.lang
