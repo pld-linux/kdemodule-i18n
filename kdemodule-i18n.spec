@@ -3073,12 +3073,12 @@ LDFLAGS="%{rpmldflags}"
 	kde_libs_htmldir="%{_kdedocdir}"
 
 %install
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
-#%{__make} install \
-#	DESTDIR=$RPM_BUILD_ROOT \
-#	kde_htmldir="%{_kdedocdir}" \
-#	kde_libs_htmldir="%{_kdedocdir}"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir="%{_kdedocdir}" \
+	kde_libs_htmldir="%{_kdedocdir}"
 
 rm -rf *.lang
 
