@@ -10,25 +10,25 @@
 %define		kdelibs_epoch		9
 %define		kdemultimedia_epoch	9
 %define		kdenetwork_epoch	10
-%define		kdepim_epoch		3
+%define		kdepim_epoch		9
 %define		kdesdk_epoch		3
 %define		kdetoys_epoch		9
 %define		kdeutils_epoch		9
 %define		kdevelop_epoch		7
 %define		kdevelop_version	3.0.4
 %define		kdewebdev_epoch		2
+%define		_kver			3.4
 #
 Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
-Version:	3.3.2
-Release:	1
+Version:	3.4.0
+Release:	0.1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{_name}-%{version}.tar.bz2
-# Source0-md5:	20135e722cd5f94cbe4997765941b455
-Patch0:		%{_name}-fixes.patch
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{_kver}/src/%{_name}-%{version}.tar.bz2
+# Source0-md5:	14359b7a14d507b3f9e8302b46031aa2
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3056,7 +3056,6 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -n %{_name}-%{version}
-%patch0 -p1 -R
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -3074,12 +3073,12 @@ LDFLAGS="%{rpmldflags}"
 	kde_libs_htmldir="%{_kdedocdir}"
 
 %install
-rm -rf $RPM_BUILD_ROOT
+#rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir="%{_kdedocdir}" \
-	kde_libs_htmldir="%{_kdedocdir}"
+#%{__make} install \
+#	DESTDIR=$RPM_BUILD_ROOT \
+#	kde_htmldir="%{_kdedocdir}" \
+#	kde_libs_htmldir="%{_kdedocdir}"
 
 rm -rf *.lang
 
@@ -3114,10 +3113,6 @@ cat kfile_rpm.lang >> kpackage.lang
 %find_lang secpolicy	--with-kde
 cat secpolicy.lang >> ksysv.lang
 %find_lang kstyle_plastik_config --with-kde
-%find_lang kwin_cde_config --with-kde
-%find_lang kwin_glow_config --with-kde
-%find_lang kwin_icewm_config --with-kde
-%find_lang kwin_plastik_config --with-kde
 > screensavers.lang
 %find_lang klock --with-kde
 cat klock.lang >> screensavers.lang
@@ -3242,8 +3237,6 @@ programs=" \
 	kcmspellchecking \
 	kdesktop \
 	kwin \
-	kwin_default_config \
-	kwin_keramik_config \
 	kstart \
 	kcmxinerama \
 	ksmserver \
@@ -3257,8 +3250,7 @@ programs=" \
 	kcmkxmlrpcd \
 	kxmlrpcd \
 	kthememanager \
-	kmenuedit \
-	kcmthemes"
+	kmenuedit"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -3310,8 +3302,6 @@ done
 %find_lang	klipper		--with-kde
 %find_lang	konsole		--with-kde
 %find_lang	ksysguard	--with-kde
-%find_lang	kpm	--with-kde
-cat kpm.lang >> ksysguard.lang
 %find_lang	kpager		--with-kde
 %find_lang	kwrite		--with-kde
 %find_lang	screensaver	--with-kde
@@ -3335,11 +3325,6 @@ cat kioslave.lang	>> kinfocenter.lang
 #kwrite \
 #screensaver \
 #kcmfontinst"
-
-%find_lang kwin_b2_config	--with-kde
-%find_lang kwin_modernsys_config	--with-kde
-%find_lang kwin_quartz_config	--with-kde
-%find_lang kcmfileshare	--with-kde
 
 core="kdesud \
 kcmaccessibility \
@@ -3378,7 +3363,6 @@ krdb \
 kreadconfig \
 ksplash \
 kstart \
-kwin_default_config \
 kcmarts \
 kcmbackground \
 kcmbell \
@@ -3390,7 +3374,6 @@ kcmkwindecoration \
 khotkeys \
 kdesktop \
 ksmserver \
-kwin_keramik_config \
 kcmmidi \
 khotkeys \
 joystick"
@@ -3536,8 +3519,7 @@ kio_mac \
 kio_nfs \
 kio_print \
 kio_sftp \
-kio_smb \
-kio_smbro"
+kio_smb"
 
 for i in $konqueror;
 do
@@ -3562,7 +3544,9 @@ done
 
 > kdepim.lang
 
-kdepim="kdepimwizards \
+kdepim="akregator_konqplugin \
+akregator \
+kdepimwizards \
 kabc_slox \
 kres_exchange \
 kres_imap \
@@ -3586,7 +3570,6 @@ done
 %find_lang	kontact		--with-kde
 %find_lang	korganizer	--with-kde
 %find_lang	korn		--with-kde
-%find_lang	kgpgcertmanager	--with-kde
 %find_lang	kpilot		--with-kde
 %find_lang	kfile_palm	--with-kde
 %find_lang	kwatchgnupg	--with-kde
@@ -3595,15 +3578,10 @@ done
 cat kfile_palm.lang >> kpilot.lang
 cat kalarm.lang >> korganizer.lang
 cat kalarmd.lang >> korganizer.lang
-cat kgpgcertmanager.lang >> kmail.lang
 cat kwatchgnupg.lang >> kmail.lang
 cat kmail_text_calendar_plugin.lang  >> kmail.lang
 cat kmail_text_vcard_plugin.lang >> kmail.lang
 
-%find_lang alarmdaemonctrl	--with-kde
-cat alarmdaemonctrl.lang >> korganizer.lang
-%find_lang kalarmdgui		--with-kde
-cat kalarmdgui.lang >> korganizer.lang
 %find_lang ksync		--with-kde
 cat ksync.lang >> korganizer.lang
 %find_lang libcalendarresources --with-kde
@@ -3657,13 +3635,9 @@ cat kontact.lang >> kdepim.lang
 cat korganizer.lang >> kdepim.lang
 
 %find_lang	kfileshare	--with-kde
-%find_lang	kcm_sambaconf	--with-kde
-cat kcm_sambaconf.lang >> kfileshare.lang
 %find_lang kdict		--with-kde
 %find_lang kget			--with-kde
 %find_lang knewsticker		--with-kde
-%find_lang kcmnewsticker	--with-kde
-cat kcmnewsticker.lang >> knewsticker.lang
 %find_lang kopete		--with-kde
 %find_lang kpf			--with-kde
 %find_lang kppp			--with-kde
@@ -3701,7 +3675,6 @@ cat kcmwifi.lang >> kwifimanager.lang
 %find_lang kdictapplet		--with-kde
 cat kdictapplet.lang >> kdict.lang
 
-%find_lang dcopservice		--with-kde
 %find_lang kinetd		--with-kde
 %find_lang kmag		--with-kde
 %find_lang kmousetool	--with-kde
@@ -3810,7 +3783,6 @@ ogg \
 wav \
 sid \
 mpc \
-mp32 \
 theora"
 > kfile_mm.lang
 
@@ -3912,8 +3884,6 @@ cat kcmkamera.lang >> kamera.lang
 
 %find_lang kfax --with-kde
 %find_lang kmrml --with-kde
-%find_lang kcmkmrml --with-kde
-cat kcmkmrml.lang >> kmrml.lang
 %find_lang ksvgplugin --with-kde
 %find_lang libkscan --with-kde
 cat libkscan.lang >> kooka.lang
@@ -3954,27 +3924,6 @@ cat kfile_lnk.lang >> rellinks.lang
 cat kcmkontactnt.lang >> kdepim.lang
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
-
-decos="cde \
-clients \
-glow \
-icewm \
-kde1 \
-kstep \
-openlook \
-plastik \
-riscos \
-system"
-
-for i in $decos ;
-do
-%find_lang	kwin_$i	--with-kde
-done
-cat kwin_clients.lang >> kdebase.lang
-cat kwin_cde_config.lang >> kwin_cde.lang 
-cat kwin_icewm_config.lang >> kwin_icewm.lang 
-cat kwin_glow_config.lang >> kwin_glow.lang 
-cat kwin_plastik_config.lang >> kwin_plastik.lang 
 
 kicker="kbinaryclock \
 kolourpicker \
@@ -4169,14 +4118,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
 %defattr(644,root,root,755)
-%files -n kde-decoration-cde-i18n -f kwin_cde.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-icewm-i18n -f kwin_icewm.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-glow-i18n -f kwin_glow.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-plastik-i18n -f kwin_plastik.lang
-%defattr(644,root,root,755)
 %files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
 %defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
@@ -4306,8 +4247,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdebase-screensavers-i18n -f screensaver.lang
 %defattr(644,root,root,755)
-%files -n kdebase-common-filemanagement-i18n -f kcmfileshare.lang
-%defattr(644,root,root,755)
 %files -n kdebase-desktop-libs-i18n -f ksplashthemes.lang
 %defattr(644,root,root,755)
 %files -n kdebase-kappfinder-i18n -f kappfinder.lang
@@ -4329,12 +4268,6 @@ done
 %files -n konqueror-i18n -f konqueror.lang
 %defattr(644,root,root,755)
 %files -n kde-kio-ldap-i18n -f kio_ldap.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-b2-i18n -f kwin_b2_config.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-modernsys-i18n -f kwin_modernsys_config.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-quartz-i18n -f kwin_quartz_config.lang
 %defattr(644,root,root,755)
 %files -n kde-kio-smtp-i18n -f kio_smtp.lang
 %defattr(644,root,root,755)
@@ -4393,8 +4326,6 @@ done
 %files -n kdenetwork-lanbrowser-i18n -f lisa.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-kinetd-i18n -f kinetd.lang
-%defattr(644,root,root,755)
-%files -n kdenetwork-rss-i18n -f dcopservice.lang
 %defattr(644,root,root,755)
 %files -n kdeaccessibility-kmag-i18n -f kmag.lang
 %defattr(644,root,root,755)
@@ -4537,16 +4468,6 @@ done
 %files  -n kdegraphics-ksvg-i18n -f ksvgplugin.lang
 %defattr(644,root,root,755)
 %files  -n kdegraphics-kfax-i18n -f kfax.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-kde1-i18n -f kwin_kde1.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-kstep-i18n -f kwin_kstep.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-openlook-i18n -f kwin_openlook.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-riscos-i18n -f kwin_riscos.lang
-%defattr(644,root,root,755)
-%files -n kde-decoration-system-i18n -f kwin_system.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-ark-i18n -f ark_plugin.lang
 %defattr(644,root,root,755)
