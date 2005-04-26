@@ -23,12 +23,13 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.4.0
-Release:	0.1
+Release:	0.2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{_kver}/src/%{_name}-%{version}.tar.bz2
 # Source0-md5:	14359b7a14d507b3f9e8302b46031aa2
+Patch0:		kde-i18n-fixes.patch 
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3056,6 +3057,7 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -n %{_name}-%{version}
+%patch0 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
