@@ -23,7 +23,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.4.0
-Release:	3
+Release:	4
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -145,6 +145,7 @@ Summary(pl):	T³umaczenia dla podstawowej czê¶ci KDE
 Group:		X11/Applications
 Requires:	kdebase-core = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kde-i18n-base
 
 %description -n kdebase-core-i18n
 Internationalization and localization files for KDE:
