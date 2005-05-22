@@ -146,6 +146,7 @@ Group:		X11/Applications
 Requires:	kdebase-core = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Conflicts:	kde-i18n-base
+Obsoletes:	kdebase-common-filemanagement-i18n
 
 %description -n kdebase-core-i18n
 Internationalization and localization files for KDE:
