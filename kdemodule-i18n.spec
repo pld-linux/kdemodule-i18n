@@ -15,7 +15,7 @@
 %define		kdetoys_epoch		9
 %define		kdeutils_epoch		9
 %define		kdevelop_epoch		7
-%define		kdevelop_version	3.0.4
+%define		kdevelop_version	3.2.0
 %define		kdewebdev_epoch		2
 %define		_kver			3.4
 #
@@ -23,7 +23,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.4.0
-Release:	2
+Release:	3
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -126,6 +126,7 @@ Obsoletes:	kdeedu-i18n
 Obsoletes:	kdegraphics-i18n
 Obsoletes:	kdemultimedia-i18n
 Obsoletes:	kdenetwork-i18n
+Obsoletes:	kdenetwork-rss-i18n
 Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
@@ -175,6 +176,19 @@ Requires:	kdebase-kpager-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdebase-kmenuedit-i18n
 Obsoletes:	kdebase-kicker-i18n 
 Obsoletes:	kdebase-ksystraycmd-i18n
+Obsoletes:	kde-decoration-cde-i18n
+Obsoletes:	kde-decoration-icewm-i18n
+Obsoletes:	kde-decoration-glow-i18n
+Obsoletes:	kde-decoration-plastik-i18n
+Obsoletes:	kde-decoration-b2-i18n
+Obsoletes:	kde-decoration-modernsys-i18n
+Obsoletes:	kde-decoration-quartz-i18n
+Obsoletes:	kde-decoration-kde1-i18n
+Obsoletes:	kde-decoration-kstep-i18n
+Obsoletes:	kde-decoration-openlook-i18n
+Obsoletes:	kde-decoration-riscos-i18n
+Obsoletes:	kde-decoration-system-i18n
+Obsoletes:	kde-style-plastik-i18n
 
 %description -n kdebase-desktop-i18n
 Internationalization and localization files for KDE:
@@ -508,19 +522,6 @@ Internationalization and localization files for libkonq.
 %description -n konqueror-libs-i18n -l pl
 T³umaczenia dla libkonq.
 
-%package -n kde-kio-newimap4-i18n
-Summary:	Internationalization and localization files for newimap4 ioslave
-Summary(pl):	T³umaczenia dla newimap4 ioslave
-Group:		X11/Applications
-Requires:	kde-kio-newimap4 = %{kdepim_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-kio-newimap4-i18n
-Internationalization and localization files for newimap4 ioslave.
-
-%description -n kde-kio-newimap4-i18n -l pl
-T³umaczenia dla newimap4 ioslave.
-
 %package -n kde-kio-ldap-i18n
 Summary:	Internationalization and localization files for ldap ioslave
 Summary(pl):	T³umaczenia dla ldap ioslave
@@ -570,6 +571,7 @@ Group:		X11/Applications
 Requires:	kde-kio-imap4 = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Conflicts:	kdebase-mailnews-i18n
+Obsoletes:	kde-kio-newimap4-i18n
 
 %description -n kde-kio-imap4-i18n
 Internationalization and localization files for imap4 ioslave.
@@ -1555,19 +1557,6 @@ kde-decoration-plastik.
 
 %description -n kde-decoration-plastik-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik.
-
-%package -n kde-style-plastik-i18n
-Summary:	Internationalization and localization files for kde-style-plastik
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-style-plastik
-Group:		X11/Applications
-Requires:	kde-style-plastik = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-style-plastik-i18n
-Internationalization and localization files for kde-style-plastik.
-
-%description -n kde-style-plastik-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde-style-plastik.
 
 %package -n kde-decoration-common-i18n
 Summary:	Common internationalization and localization files for kwin decorations
@@ -3117,7 +3106,6 @@ cat kfile_deb.lang >> kpackage.lang
 cat kfile_rpm.lang >> kpackage.lang
 %find_lang secpolicy	--with-kde
 cat secpolicy.lang >> ksysv.lang
-%find_lang kstyle_plastik_config --with-kde
 > screensavers.lang
 %find_lang klock --with-kde
 cat klock.lang >> screensavers.lang
@@ -3255,7 +3243,8 @@ programs=" \
 	kcmkxmlrpcd \
 	kxmlrpcd \
 	kthememanager \
-	kmenuedit"
+	kmenuedit
+	kstyle_plastik_config"
 
 for i in $programs; do
 	%find_lang $i --with-kde
@@ -3479,6 +3468,8 @@ for i in $mn;
 do
 	%find_lang $i	--with-kde
 done
+
+cat kio_newimap4.lang >> kio_imap4.lang
 
 screen="kscreensaver \
 kcmscreensaver"
@@ -4123,8 +4114,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
 %defattr(644,root,root,755)
-%files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
-%defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kturtle-i18n -f kturtle.lang
@@ -4281,8 +4270,6 @@ done
 %files -n kde-kio-imap4-i18n -f kio_imap4.lang
 %defattr(644,root,root,755)
 %files -n kde-kio-pop3-i18n -f kio_pop3.lang
-%defattr(644,root,root,755)
-%files -n kde-kio-newimap4-i18n -f kio_newimap4.lang
 %defattr(644,root,root,755)
 %files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
 %defattr(644,root,root,755)
