@@ -23,7 +23,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.4.0
-Release:	1
+Release:	2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -209,7 +209,8 @@ Summary:	Internationalization and localization files for kate
 Summary(pl):	T³umaczenia dla kate
 Group:		X11/Applications
 Requires:	kdebase-kate = %{kdebase_epoch}:%{version}
-Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
+#Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdebase-kate-i18n
 Internationalization and localization files for kate.
@@ -340,7 +341,8 @@ Summary:	Internationalization and localization files for konqueror
 Summary(pl):	T³umaczenia dla konquerora
 Group:		X11/Applications
 Requires:	konqueror = %{kdebase_epoch}:%{version}
-Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
+#Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-konsole-i18n = %{epoch}:%{version}-%{release}
 Requires:	konqueror-libs-i18n = %{epoch}:%{version}-%{release}
 
@@ -390,6 +392,7 @@ Internationalization and localization files for kde-decoration-quartz.
 %description -n kde-decoration-quartz-i18n -l pl
 T³umaczenia dla kde-decoration-quartz.
 
+# currently emty
 %package -n kdebase-common-filemanagement-i18n
 Summary:	Internationalization and localization files for common-filemanagement
 Summary(pl):	T³umaczenia dla common-filemanagement
