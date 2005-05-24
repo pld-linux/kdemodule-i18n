@@ -1494,19 +1494,6 @@ Internationalization and localization files for kcmlilo.
 %description -n kdeadmin-kcmlilo-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kcmlilo.
 
-%package -n kdeadmin-kcmlinuz-i18n
-Summary:	Internationalization and localization files for kcmlinuz
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcmlinuz
-Group:		X11/Applications
-Requires:	kdeadmin-kcmlinuz = %{kdeadmin_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeadmin-kcmlinuz-i18n
-Internationalization and localization files for kcmlinuz.
-
-%description -n kdeadmin-kcmlinuz-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kcmlinuz.
-
 %package -n kde-decoration-cde-i18n
 Summary:	Internationalization and localization files for kde-decoration-cde
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
@@ -3100,7 +3087,6 @@ done
 %find_lang kpackage	--with-kde
 %find_lang ksysv	--with-kde
 %find_lang kuser	--with-kde
-%find_lang kcmlinuz	--with-kde
 %find_lang kcmlilo	--with-kde
 %find_lang kfile_deb	--with-kde
 cat kfile_deb.lang >> kpackage.lang
@@ -4114,8 +4100,6 @@ done
 %defattr(644,root,root,755)
 %files -n kdeadmin-kuser-i18n -f kuser.lang
 %defattr(644,root,root,755)
-#%files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
-#%defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kturtle-i18n -f kturtle.lang
