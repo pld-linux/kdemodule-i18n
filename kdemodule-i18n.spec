@@ -23,7 +23,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.4.0
-Release:	4
+Release:	5
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -1486,6 +1486,7 @@ Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcmlilo
 Group:		X11/Applications
 Requires:	kdeadmin-kcmlilo = %{kdeadmin_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdeadmin-kcmlinuz-i18n
 
 %description -n kdeadmin-kcmlilo-i18n
 Internationalization and localization files for kcmlilo.
@@ -4113,8 +4114,8 @@ done
 %defattr(644,root,root,755)
 %files -n kdeadmin-kuser-i18n -f kuser.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
-%defattr(644,root,root,755)
+#%files -n kdeadmin-kcmlinuz-i18n -f kcmlinuz.lang
+#%defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kturtle-i18n -f kturtle.lang
