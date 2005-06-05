@@ -27,107 +27,107 @@ Release:	1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ar-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ar-%{version}.tar.bz2
 # Source0-md5:  8a7ce5d6748f8418943dc9d29c9923e9
-Source1:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-bg-%{version}.tar.bz2
+Source1:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-bg-%{version}.tar.bz2
 # Source1-md5:  747a0acec5deed97bd46b07dceaa6993
-Source2:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-bn-%{version}.tar.bz2
+Source2:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-bn-%{version}.tar.bz2
 # Source2-md5:  a1263b43f67af53cde0272100d6af2fd
-Source3:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-br-%{version}.tar.bz2
+Source3:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-br-%{version}.tar.bz2
 # Source3-md5:  41ac99638b871e4391a41ab25cf19524
-Source4:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-bs-%{version}.tar.bz2
+Source4:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-bs-%{version}.tar.bz2
 # Source4-md5:  f1bcc7fb7a75735a4705b21dea318d28
-Source5:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ca-%{version}.tar.bz2
+Source5:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ca-%{version}.tar.bz2
 # Source5-md5:  b1d17cf7923363176d55140c8b77c3db
-Source6:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-cs-%{version}.tar.bz2
+Source6:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-cs-%{version}.tar.bz2
 # Source6-md5:  519e1bebbe770ad45ae11987a94dc4e4
-Source7:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-cy-%{version}.tar.bz2
+Source7:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-cy-%{version}.tar.bz2
 # Source7-md5:  b2ecbf97921b7b7a69940493583ab33c
-Source8:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-da-%{version}.tar.bz2
+Source8:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-da-%{version}.tar.bz2
 # Source8-md5:  3cf62f4594e22dabfc2378277d5d8845
-Source9:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-de-%{version}.tar.bz2
+Source9:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-de-%{version}.tar.bz2
 # Source9-md5:  a0d20e378e8dc759ca6ab4fbb78a1ba0
-Source10:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-el-%{version}.tar.bz2
+Source10:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-el-%{version}.tar.bz2
 # Source10-md5: 69a9076cc809b1e5d6543255c7850b80
-Source11:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-en_GB-%{version}.tar.bz2
+Source11:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-en_GB-%{version}.tar.bz2
 # Source11-md5: 201bf4e7ab75f6e111c023788ffa1fe4
-Source12:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-eo-%{version}.tar.bz2
+Source12:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-eo-%{version}.tar.bz2
 # Source12-md5: 9c3a8083435c3156ba30dfa8ffffc027
-Source13:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-es-%{version}.tar.bz2
+Source13:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-es-%{version}.tar.bz2
 # Source13-md5: a53442acc363a69aeab9b4d3d8e39084
-Source14:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-et-%{version}.tar.bz2
+Source14:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-et-%{version}.tar.bz2
 # Source14-md5: 2b04f8bf15bb82524da21160651d390e
-Source15:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-eu-%{version}.tar.bz2
+Source15:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-eu-%{version}.tar.bz2
 # Source15-md5: 405a37e6c1484a91a6774784daea566b
-Source16:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-fi-%{version}.tar.bz2
+Source16:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-fi-%{version}.tar.bz2
 # Source16-md5: 9ad1a28e6222745ee3b216141a674224
-Source17:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-fr-%{version}.tar.bz2
+Source17:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-fr-%{version}.tar.bz2
 # Source17-md5: 0bd260de66a391196b9c5588ddeb4381
-Source18:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-fy-%{version}.tar.bz2
+Source18:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-fy-%{version}.tar.bz2
 # Source18-md5: c01d7f4d3adf051611b1488dcfce6879
-Source19:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ga-%{version}.tar.bz2
+Source19:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ga-%{version}.tar.bz2
 # Source19-md5: 6288a8570c8478456a18834b88ef728b
-Source20:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-he-%{version}.tar.bz2
+Source20:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-he-%{version}.tar.bz2
 # Source20-md5: 30fd8cd41be58e8e4ee4645a5343ac6f
-Source21:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-hi-%{version}.tar.bz2
+Source21:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-hi-%{version}.tar.bz2
 # Source21-md5: 3def89639222c9eda85b21706342536b
-Source22:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-hsb-%{version}.tar.bz2
+Source22:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-hsb-%{version}.tar.bz2
 # Source22-md5: f4a83fbae5528a75ed51e4944333741f
-Source23:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-hu-%{version}.tar.bz2
+Source23:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-hu-%{version}.tar.bz2
 # Source23-md5: 6834f452fa47bd79594e63f559b44bbf
-Source24:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-is-%{version}.tar.bz2
+Source24:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-is-%{version}.tar.bz2
 # Source24-md5: 0fee39dca84f5ad2cae3cd7b36d2baea
-Source25:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-it-%{version}.tar.bz2
+Source25:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-it-%{version}.tar.bz2
 # Source25-md5: 4f6069a269d0633bfe9f4a67672d9e8b
-Source26:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ja-%{version}.tar.bz2
+Source26:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ja-%{version}.tar.bz2
 # Source26-md5: 2d7d1357ffd1948a0bb72835e81159a3
-Source27:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-lt-%{version}.tar.bz2
+Source27:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-lt-%{version}.tar.bz2
 # Source27-md5: 0f1617a3daf3fbb291954a84b6f1b6cf
-Source28:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-mk-%{version}.tar.bz2
+Source28:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-mk-%{version}.tar.bz2
 # Source28-md5: 985488085ce08466dc609699b7fa615c
-Source29:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-nb-%{version}.tar.bz2
+Source29:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-nb-%{version}.tar.bz2
 # Source29-md5: 71a09ae88bf0b396528d0fe92c684f21
-Source30:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-nds-%{version}.tar.bz2
+Source30:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-nds-%{version}.tar.bz2
 # Source30-md5: b96d4fcbd991613b452f61b4c4726873
-Source31:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-nl-%{version}.tar.bz2
+Source31:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-nl-%{version}.tar.bz2
 # Source31-md5: 7d0d2c8253ab61bd2ff3ec3ac3bf4b0a
-Source32:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-nn-%{version}.tar.bz2
+Source32:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-nn-%{version}.tar.bz2
 # Source32-md5: f94b30928746f56decf014aba4dd0a62
-Source33:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-pa-%{version}.tar.bz2
+Source33:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-pa-%{version}.tar.bz2
 # Source33-md5: b8447164534f6eb640914df73b67d435
-Source34:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-pl-%{version}.tar.bz2
+Source34:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-pl-%{version}.tar.bz2
 # Source34-md5: a8a4274f098cca840aff4815ed0f2dc7
-Source35:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-pt-%{version}.tar.bz2
+Source35:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-pt-%{version}.tar.bz2
 # Source35-md5: ca86da0bf48c0b1ac0299a72ef6a8673
-Source36:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-pt_BR-%{version}.tar.bz2
+Source36:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-pt_BR-%{version}.tar.bz2
 # Source36-md5: 252bc28b226b66573b619399586aa32a
-Source37:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ro-%{version}.tar.bz2
+Source37:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ro-%{version}.tar.bz2
 # Source37-md5: 59b9771ea148a16987ffa219c5bf8012
-Source38:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ru-%{version}.tar.bz2
+Source38:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ru-%{version}.tar.bz2
 # Source38-md5: 5a8716e4247369411dbd60f1f193ea3c
-Source39:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-se-%{version}.tar.bz2
+Source39:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-se-%{version}.tar.bz2
 # Source39-md5: 59fae9861c2ecd7c2e110f885a41d114
-Source40:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-sk-%{version}.tar.bz2
+Source40:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-sk-%{version}.tar.bz2
 # Source40-md5: cf9b958ea6d8963f92f0dbe3a894e586
-Source41:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-sl-%{version}.tar.bz2
+Source41:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-sl-%{version}.tar.bz2
 # Source41-md5: 24c1dd518c1644bbf0410dac7175cdf2
-Source42:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-sr-%{version}.tar.bz2
+Source42:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-sr-%{version}.tar.bz2
 # Source42-md5: ef481313fbdf6f5fffc52f2bc4af09c6
-Source43:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-sr@Latn-%{version}.tar.bz2
+Source43:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-sr@Latn-%{version}.tar.bz2
 # Source43-md5: 5576966fe6d97b45f6fda96ada1ac347
-Source44:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-sv-%{version}.tar.bz2
+Source44:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-sv-%{version}.tar.bz2
 # Source44-md5: 048b29d333d8f6d49817e9701e7a1bed
-Source45:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-ta-%{version}.tar.bz2
+Source45:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-ta-%{version}.tar.bz2
 # Source45-md5: 017f11bcbd89ea376d901bfeae2b653b
-Source46:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-tg-%{version}.tar.bz2
+Source46:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-tg-%{version}.tar.bz2
 # Source46-md5: 290b2be708e73315661ebb41bd9932a5
-Source47:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-tr-%{version}.tar.bz2
+Source47:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-tr-%{version}.tar.bz2
 # Source47-md5: 1b884f33806a6f32e6b539bb2a4d7c96
-Source48:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-uk-%{version}.tar.bz2
+Source48:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-uk-%{version}.tar.bz2
 # Source48-md5: 59eef6b0563f4fb31e04f2576213a069
-Source49:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{name}-zh_CN-%{version}.tar.bz2
+Source49:	ftp://ftp.kde.org/pub/kde/stable/%{_kdever}/src/kde-i18n/%{_name}-zh_CN-%{version}.tar.bz2
 # Source49-md5: f933849ce2271402caf57c41e94fc0f3
-Patch0:		%{name}-pt_BR-fixes.patch
+Patch0:		%{_name}-pt_BR-fixes.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
 BuildRequires:	libxml2-progs >= 2.4.2
