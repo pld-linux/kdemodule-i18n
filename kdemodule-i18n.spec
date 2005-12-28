@@ -230,6 +230,7 @@ Obsoletes:	kdeutils-i18n
 Obsoletes:	kdebase-mailnews-i18n
 Obsoletes:	kdeedu-flashkard-i18n
 Obsoletes:	kdeaddons-kvim-i18n
+Obsoletes:	kdeedu-kmessedwords-i18n
 
 %description -n kdelibs-i18n
 Translations and localization data for KDE libraries.
@@ -1813,18 +1814,18 @@ Internationalization and localization files for klettres.
 %description -n kdeedu-klettres-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla klettres.
 
-%package -n kdeedu-kmessedwords-i18n
-Summary:	Internationalization and localization files for kmessedwords
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmessedwords
+%package -n kdeedu-kanagram-i18n
+Summary:	Internationalization and localization files for kanagram
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kanagram
 Group:		X11/Applications
-Requires:	kdeedu-kmessedwords = %{kdeedu_epoch}:%{version}
+Requires:	kdeedu-kanagram = %{kdeedu_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdeedu-kmessedwords-i18n
-Internationalization and localization files for kmessedwords.
+%description -n kdeedu-kanagram-i18n
+Internationalization and localization files for kanagram.
 
-%description -n kdeedu-kmessedwords-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmessedwords.
+%description -n kdeedu-kanagram-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kanagram.
 
 %package -n kdeedu-kmplot-i18n
 Summary:	Internationalization and localization files for kmplot
@@ -3222,7 +3223,7 @@ cat kfile_kig.lang >> kig.lang
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
 # DONT PACKAGE KMATHTOOL
-%find_lang kmessedwords	--with-kde
+%find_lang kanagram	--with-kde
 %find_lang kmplot	--with-kde
 %find_lang kpercentage	--with-kde
 %find_lang kstars	--with-kde
@@ -4204,7 +4205,7 @@ done
 %defattr(644,root,root,755)
 %files -n kdeedu-klettres-i18n -f klettres.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kmessedwords-i18n -f kmessedwords.lang
+%files -n kdeedu-kanagram-i18n -f kanagram.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kmplot-i18n -f kmplot.lang
 %defattr(644,root,root,755)
