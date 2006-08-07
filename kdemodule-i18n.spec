@@ -29,7 +29,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.5.4
-Release:	0.1
+Release:	0.2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -133,6 +133,7 @@ Source48:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-uk-%
 # Source48-md5:	5ee00967f1e91474f1aa462e1bf0fac3
 Source49:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-zh_CN-%{version}.tar.bz2
 # Source49-md5:	c1f8e26b1129513ef83357c65ab2db94
+Patch0:		kde-i18n-et-bug-131614.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3144,6 +3145,9 @@ wygl±du - t³umaczenia.
 
 %prep
 %setup -q -c -T -a0 -a1 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37 -a38 -a39 -a40 -a41 -a42 -a43 -a44 -a45 -a45 -a47 -a48 -a49
+cd kde-i18n-et-*
+%patch0 -p1
+cd ..
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
@@ -3697,10 +3701,7 @@ cat libkleopatra.lang >> libkdepim.lang
 %find_lang ktnef		--with-kde
 
 %find_lang libkcal		--with-kde
-%find_lang libkcalsystem	--with-kde
-cat libkcalsystem.lang >> libkcal.lang
 
-#%find_lang libkdenetwork	--with-kde
 %find_lang libksieve		--with-kde
 %find_lang libksync		--with-kde
 mv {libksync,korganizer-libs}.lang
@@ -3712,7 +3713,6 @@ cat libkpimexchange.lang >> korganizer-libs.lang
 cat libkcal.lang >> libkdepim.lang
 cat korganizer-libs.lang >> libkdepim.lang
 cat ktnef.lang >> kmail.lang
-#cat libkdenetwork.lang >> libkdepim.lang
 cat libksieve.lang >> libkdepim.lang
 cat kontact.lang >> kdepim.lang
 cat korganizer.lang >> kdepim.lang
@@ -3734,9 +3734,7 @@ cat krdc.lang >> krfb.lang
 cat lanbrowser.lang >> lisa.lang
 
 %find_lang ktalkd		--with-kde
-#find_lang kcmtalkd		--with-kde
 %find_lang kcmktalkd		--with-kde
-#cat kcmtalkd.lang >> ktalkd.lang
 cat kcmktalkd.lang >> ktalkd.lang
 
 %find_lang kcm_krfb		--with-kde
@@ -3766,8 +3764,6 @@ cat kdictapplet.lang >> kdict.lang
 %find_lang KRegExpEditor	--with-kde
 %find_lang kcalc		--with-kde
 %find_lang kcharselect		--with-kde
-##find_lang kcharselecapplet	--with-kde
-##cat kcharselecapplet.lang << kcharselect
 
 > kdf.lang
 %find_lang kdf			--with-kde
@@ -3826,15 +3822,13 @@ cat kcharselectapplet.lang >> kcharselect.lang
 
 %find_lang kdessh		--with-kde
 
-# We dont buidl kcardchooser (disabled by default by coolo)
-# renaableing it would be posssible, but what for?
+# We don't build kcardchooser (disabled by default by coolo)
+# re-enabling it would be posssible, but what for?
 # %find_lang kcardchooser	--with-kde
 %find_lang artsbuilder	--with-kde
 %find_lang juk		--with-kde
 %find_lang kaboodle	--with-kde
 %find_lang kmid		--with-kde
-# No kmidi
-# %find_lang kmidi	--with-kde
 %find_lang kmix		--with-kde
 %find_lang kmixcfg	--with-kde
 cat kmixcfg.lang >> kmix.lang
@@ -4190,8 +4184,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
 %defattr(644,root,root,755)
-#files -n kdeedu-flashkard-i18n -f flashkard.lang
-#defattr(644,root,root,755)
 %files -n kdeedu-kalzium-i18n -f kalzium.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kbruch-i18n -f kbruch.lang
@@ -4282,7 +4274,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-lskat-i18n -f lskat.lang
 %defattr(644,root,root,755)
-##%%files -n kdegames-megami-i18n -f megami.lang
 %files -n kdebase-useraccount-i18n -f useraccount.lang
 %defattr(644,root,root,755)
 %files -n kdebase-core-i18n -f core.lang
