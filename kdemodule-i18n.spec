@@ -2,7 +2,7 @@
 # - difference between kdemodule-i18n and kde-i18n is that one is per
 #   package and other is per language.
 # TODO:
-# - tons of unpackaged files
+# - tons of unpackaged files (see end of install section for more)
 #   http://glen.alkohol.ee/pld/kdemodule-i18n.txt
 #
 %define		_name			kde-i18n
@@ -3179,6 +3179,7 @@ if [ ! -f installed.stamp ]; then
 	touch installed.stamp
 fi
 
+%if 0
 rm -f *.lang *.cache
 
 %find_lang quanta	--with-kde
@@ -3212,9 +3213,25 @@ cat klock.lang >> screensavers.lang
 cat kpartsaver.lang >> screensavers.lang
 %find_lang kxsconfig --with-kde
 cat kxsconfig.lang >> screensavers.lang
-%find_lang	klatin		--with-kde
-%find_lang	kturtle		--with-kde
-%find_lang	kwordquiz	--with-kde
+%find_lang klatin		--with-kde
+for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
+	lang=${a##*/}
+	path=${a#$RPM_BUILD_ROOT/}
+	echo "%lang($lang) $path" >> klatin.lang
+done
+%find_lang kturtle		--with-kde
+for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
+	t=${a##*logokeywords.}
+	lang=${t%.xml}
+	path=${a#$RPM_BUILD_ROOT/}
+	echo "%lang($lang) $path" >> kturtle.lang
+done
+for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
+	lang=${a##*/}
+	path=${a#$RPM_BUILD_ROOT/}
+	echo "%lang($lang) $path" >> kturtle.lang
+done
+%find_lang kwordquiz	--with-kde
 %find_lang kalzium	--with-kde
 %find_lang kbruch	--with-kde
 %find_lang keduca	--with-kde
@@ -3227,7 +3244,14 @@ cat kfile_kig.lang >> kig.lang
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
 # DON'T PACKAGE KMATHTOOL
+
 %find_lang kanagram	--with-kde
+for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
+	lang=${a##*/}
+	path=${a#$RPM_BUILD_ROOT/}
+	echo "%lang($lang) $path" >> kanagram.lang
+done
+
 %find_lang kmplot	--with-kde
 %find_lang kpercentage	--with-kde
 %find_lang kstars	--with-kde
@@ -4080,6 +4104,12 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/*; do
 		echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> khangman.lang
 	fi
 done
+for a in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/*.txt; do
+	t=${a##*/}
+	lang=${t%.txt}
+	path=${a#$RPM_BUILD_ROOT/}
+	echo "%lang($lang) $path" >> khangman.lang
+done
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 	echo $i
@@ -4088,6 +4118,31 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 		echo "%lang($z) %{_datadir}/apps/klettres/$z" >> klettres.lang
 	fi
 done
+
+%endif
+
+# TODO these *.lang are created but not included in any %package yet
+%find_lang blinken --with-kde
+#%find_lang flashkard --with-kde # obsoleted?
+%find_lang kapptemplate --with-kde
+#%find_lang kcontrol --with-kde
+%find_lang kdesvn-build --with-kde
+%find_lang kgeography --with-kde
+#%find_lang kmessedwords --with-kde # obsoleted?
+%find_lang kmidi --with-kde
+%find_lang knetattach --with-kde
+%find_lang knetworkconf --with-kde
+%find_lang kompmgr --with-kde
+#%find_lang kpaint --with-kde # obsoleted by kolourpaint?
+%find_lang kttsd --with-kde
+%find_lang kwuftpd --with-kde
+%find_lang kxconfig --with-kde
+%find_lang lilo-config --with-kde
+%find_lang megami --with-kde
+%find_lang multisynk --with-kde
+%find_lang scripts --with-kde
+%find_lang superkaramba --with-kde
+%find_lang xsldbg --with-kde
 
 # Get rid of messages about files listed twice.
 for i in *.lang; do
