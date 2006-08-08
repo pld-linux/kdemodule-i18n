@@ -3157,15 +3157,12 @@ LDFLAGS="%{rpmldflags}"
 #export UNSERMAKE=%{_datadir}/unsermake/unsermake
 
 for dir in kde-i18n-*-%{version}; do
-		cd "$dir"
-
+	cd "$dir"
 	%configure
-
 	%{__make} \
 		RPM_OPT_FLAGS="%{rpmcflags}" \
 		kde_htmldir="%{_kdedocdir}" \
 		kde_libs_htmldir="%{_kdedocdir}"
-
 	cd ..
 done
 
@@ -3191,13 +3188,8 @@ rm -f *.lang *.cache
 %find_lang klinkstatus	--with-kde
 
 > kdegames.lang
-gamez="libkdegames \
-"
-for i in $gamez;
-do
-	%find_lang $i --with-kde
-	cat $i.lang >> kdegames.lang
-done
+%find_lang libkdegames --with-kde
+cat libkdegames.lang >> kdegames.lang
 
 %find_lang kgreet_classic	--with-kde
 
@@ -3223,7 +3215,6 @@ cat kxsconfig.lang >> screensavers.lang
 %find_lang	klatin		--with-kde
 %find_lang	kturtle		--with-kde
 %find_lang	kwordquiz	--with-kde
-#find_lang flashkard	--with-kde
 %find_lang kalzium	--with-kde
 %find_lang kbruch	--with-kde
 %find_lang keduca	--with-kde
@@ -3235,7 +3226,7 @@ cat kfile_drgeo.lang >> kig.lang
 cat kfile_kig.lang >> kig.lang
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
-# DONT PACKAGE KMATHTOOL
+# DON'T PACKAGE KMATHTOOL
 %find_lang kanagram	--with-kde
 %find_lang kmplot	--with-kde
 %find_lang kpercentage	--with-kde
@@ -3281,107 +3272,99 @@ cat libksirtet.lang >> ksirtet.lang
 cat libkdegames.lang >> i18n.lang
 
 > core.lang
-programs=" \
-	colors \
-	fonts \
-	kcmstyle \
-	kdeprint \
-	kdebugdialog \
-	kdesu \
-	khelpcenter \
-	language"
-
-for i in $programs; do
+for i in "colors
+	fonts
+	kcmstyle
+	kdeprint
+	kdebugdialog
+	kdesu
+	khelpcenter
+	language"; do
 	%find_lang $i --with-kde
 	cat $i.lang >> core.lang
 done
 
 > kdebase.lang
-programs=" \
-	arts \
-	background \
-	bell \
-	desktop \
-	desktopbehavior \
-	energy \
-	kcmaccess \
-	kcmlaunch \
-	kcmnotify \
-	kcmsmserver \
-	keyboard \
-	keys \
-	ksplashml \
-	kwindecoration \
-	kxkb \
-	mouse \
-	passwords \
-	spellchecking \
-	windowmanagement \
-	kcmenergy \
-	kcmbell \
-	kcmarts \
-	kcmbackground \
-	privacy \
-	libkickermenu_tom \
-	display \
-	kcmcomponentchooser \
-	kcminput \
-	kcmkeys \
-	kcmkwindecoration \
-	kcmkwm \
-	kcmspellchecking \
-	kdesktop \
-	kwin \
-	kstart \
-	kcmxinerama \
-	ksmserver \
-	kcmxinerama \
-	ktip \
-	ksplash \
-	krandr \
-	kreadconfig \
-	krdb \
-	kcmkwinrules \
-	kxmlrpcd \
-	kthememanager \
-	kmenuedit
-	kstyle_plastik_config"
 
-for i in $programs; do
+for i in "
+	arts
+	background
+	bell
+	desktop
+	desktopbehavior
+	energy
+	kcmaccess
+	kcmlaunch
+	kcmnotify
+	kcmsmserver
+	keyboard
+	keys
+	ksplashml
+	kwindecoration
+	kxkb
+	mouse
+	passwords
+	spellchecking
+	windowmanagement
+	kcmenergy
+	kcmbell
+	kcmarts
+	kcmbackground
+	privacy
+	libkickermenu_tom
+	display
+	kcmcomponentchooser
+	kcminput
+	kcmkeys
+	kcmkwindecoration
+	kcmkwm
+	kcmspellchecking
+	kdesktop
+	kwin
+	kstart
+	kcmxinerama
+	ksmserver
+	kcmxinerama
+	ktip
+	ksplash
+	krandr
+	kreadconfig
+	krdb
+	kcmkwinrules
+	kxmlrpcd
+	kthememanager
+	kmenuedit
+	kstyle_plastik_config"; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdebase.lang
 done
 
 %find_lang kicker	--with-kde
-programs=" \
-	clock \
-	kcmtaskbar \
-	panel \
-	panelappearance"
-
-for i in $programs; do
+for i in "
+	clock
+	kcmtaskbar
+	panel
+	panelappearance"; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kicker.lang
 done
 
 %find_lang konqueror	--with-kde
-programs="\
-	cache \
-	cookies \
-	crypto \
-	ebrowsing \
-	email \
-	filemanager \
-	filetypes \
-	icons \
-	kcmcss \
-	khtml \
-	netpref \
-	proxy \
-	smb \
-	useragent"
-
-for i in $programs; do
+for i in "
+	cache
+	cookies
+	crypto
+	ebrowsing
+	email
+	filemanager
+	filetypes
+	icons
+	kcmcss
+	khtml
+	netpref
+	proxy
+	smb
+	useragent"; do 
 	%find_lang $i --with-kde
 	cat $i.lang >> konqueror.lang
 done
@@ -3404,89 +3387,63 @@ done
 cat kcmkonsole.lang	>> konsole.lang
 cat kioslave.lang	>> kinfocenter.lang
 
-#files="core \
-#kdebase \
-#kicker \
-#konqueror \
-#konsole \
-#kinfocenter \
-#kate \
-#kdm \
-#kfind \
-#kioslave \
-#klipper \
-#ksysguard \
-#kpager \
-#kwrite \
-#screensaver \
-#kcmfontinst"
-
-core="kdesud \
-kcmaccessibility \
-kcmprintmgr \
-klegacyimport \
-kpartapp \
-kprinter \
-kcmcolors \
-kcmfonts \
-kcmkded \
-kcmlocale \
-kdeprint_part \
-kio_man \
-kio_settings \
-kstyle_keramik_config \
-drkonqi"
-
-for i in $core;
-do
+for i in "kdesud
+kcmaccessibility
+kcmprintmgr
+klegacyimport
+kpartapp
+kprinter
+kcmcolors
+kcmfonts
+kcmkded
+kcmlocale
+kdeprint_part
+kio_man
+kio_settings
+kstyle_keramik_config
+drkonqi"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> core.lang
 done
 
-desktop="kcmkwm \
-kwin \
-krandr \
-privacy \
-kcmspellchecking \
-kcminput \
-kcmxinerama \
-display \
-ktip \
-kaccess \
-krdb \
-kreadconfig \
-ksplash \
-kstart \
-kcmarts \
-kcmbackground \
-kcmbell \
-kcmcomponentchooser \
-kcmenergy \
-kcmkeys \
-kcmkwindecoration \
-khotkeys \
-kdesktop \
-ksmserver \
-khotkeys \
-joystick"
-
-for i in $desktop;
-do
+for i in "kcmkwm
+kwin
+krandr
+privacy
+kcmspellchecking
+kcminput
+kcmxinerama
+display
+ktip
+kaccess
+krdb
+kreadconfig
+ksplash
+kstart
+kcmarts
+kcmbackground
+kcmbell
+kcmcomponentchooser
+kcmenergy
+kcmkeys
+kcmkwindecoration
+khotkeys
+kdesktop
+ksmserver
+khotkeys
+joystick"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdebase.lang
 done
 
 %find_lang ksplashthemes	--with-kde
 
-info="kcminfo \
-kcmioslaveinfo \
-kcmnic \
-kcmsamba \
-kcmusb \
-kcmview1394"
-
-for i in $info;
-do
+for i in "kcminfo
+kcmioslaveinfo
+kcmnic
+kcmsamba
+kcmusb
+kcmview1394"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kinfocenter.lang
 done
@@ -3509,31 +3466,26 @@ cat kfindpart.lang >> kfind.lang
 
 %find_lang kfontinst	--with-kde
 cat kfontinst.lang >> kcmfontinst.lang
-#%find_lang fontinst	--with-kde
-#cat fontinst.lang >> kcmfontinst.lang
 
-kicker="kcmkclock \
-kcmkicker \
-lockout \
-ktaskbarapplet \
-libkicker \
-libkickermenu_kdeprint \
-libkickermenu_konsole \
-libkickermenu_prefmenu \
-libkickermenu_recentdocs \
-ksystemtrayapplet \
-clockapplet \
-kmenuapplet \
-kminipagerapplet \
-krunapplet \
-dockbarextension \
-kasbarextension \
-naughtyapplet \
-quicklauncher \
-taskbarextension"
-
-for i in $kicker;
-do
+for i in "kcmkclock
+kcmkicker
+lockout
+ktaskbarapplet
+libkicker
+libkickermenu_kdeprint
+libkickermenu_konsole
+libkickermenu_prefmenu
+libkickermenu_recentdocs
+ksystemtrayapplet
+clockapplet
+kmenuapplet
+kminipagerapplet
+krunapplet
+dockbarextension
+kasbarextension
+naughtyapplet
+quicklauncher
+taskbarextension"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kicker.lang
 done
@@ -3554,64 +3506,52 @@ cat kwriteconfig.lang >> kwrite.lang
 
 %find_lang libkonq	--with-kde
 
-mn="kio_imap4 \
-kio_pop3 \
-kio_nntp \
-kio_smtp \
-"
-
-for i in $mn;
-do
+for i in "kio_imap4
+kio_pop3
+kio_nntp
+kio_smtp
+"; do
 	%find_lang $i	--with-kde
 done
 
-screen="kscreensaver \
-kcmscreensaver"
-
-for i in $screen;
-do
+for i in "kscreensaver
+kcmscreensaver"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> screensaver.lang
 done
 
-kdm="kdmchooser \
-kdmconfig \
-kdmgreet"
-
-for i in $kdm;
-do
+for i in "kdmchooser
+kdmconfig
+kdmgreet"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdm.lang
 done
 
-konqueror="appletproxy \
-nsplugin \
-kcmhtmlsearch \
-kcmsocks \
-kcmlayout \
-htmlsearch \
-extensionproxy \
-kfmclient \
-kcmcgi \
-kcmcrypto \
-kcmicons \
-kcmkio \
-kcmkonq \
-kcmkonqhtml \
-kcmkurifilt \
-kcmperformance \
-kfile_font \
-kio_finger \
-kio_fish \
-kio_floppy \
-kio_mac \
-kio_nfs \
-kio_print \
-kio_sftp \
-kio_smb"
-
-for i in $konqueror;
-do
+for i in "appletproxy
+nsplugin
+kcmhtmlsearch
+kcmsocks
+kcmlayout
+htmlsearch
+extensionproxy
+kfmclient
+kcmcgi
+kcmcrypto
+kcmicons
+kcmkio
+kcmkonq
+kcmkonqhtml
+kcmkurifilt
+kcmperformance
+kfile_font
+kio_finger
+kio_fish
+kio_floppy
+kio_mac
+kio_nfs
+kio_print
+kio_sftp
+kio_smb"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konqueror.lang
 done
@@ -3622,8 +3562,7 @@ cat libtaskbar.lang >> ksplashthemes.lang
 %find_lang kdepasswd		--with-kde
 cat kdepasswd.lang >> useraccount.lang
 
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/* ;
-do
+for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	echo $i
 	if [ -d $i ] ; then
 	z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/,,`
@@ -3633,16 +3572,14 @@ done
 
 > kdepim.lang
 
-kdepim="akregator_konqplugin \
-akregator \
-kdepimwizards \
-kabc_slox \
-kres_exchange \
-kres_imap \
-kres_xmlrpc \
-kres_remote"
-for i in $kdepim ;
-do
+for i in "akregator_konqplugin
+akregator
+kdepimwizards
+kabc_slox
+kres_exchange
+kres_imap
+kres_xmlrpc
+kres_remote"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdepim.lang
 done
@@ -3799,16 +3736,14 @@ cat kcmlaptop.lang >> klaptopdaemon.lang
 %find_lang kcmkvaio		--with-kde
 cat kcmkvaio.lang >> kmilo.lang
 
-milo="kmilo_generic \
-kmilo_kvaio \
-kmilo_powerbook \
-kmilo_thinkpad \
-kmilod \
-kcmthinkpad"
-for i in $milo ;
-do
-%find_lang $i		--with-kde
-cat ${i}.lang >> kmilo.lang
+for i in "kmilo_generic
+kmilo_kvaio
+kmilo_powerbook
+kmilo_thinkpad
+kmilod
+kcmthinkpad"; do
+	%find_lang $i		--with-kde
+	cat ${i}.lang >> kmilo.lang
 done
 
 %find_lang kcmthinkpad	--with-kde
@@ -3824,7 +3759,6 @@ cat kcharselectapplet.lang >> kcharselect.lang
 
 # We don't build kcardchooser (disabled by default by coolo)
 # re-enabling it would be posssible, but what for?
-# %find_lang kcardchooser	--with-kde
 %find_lang artsbuilder	--with-kde
 %find_lang juk		--with-kde
 %find_lang kaboodle	--with-kde
@@ -3848,35 +3782,54 @@ cat kcmaudiocd.lang >> kio_audiocd.lang
 %find_lang artsmodules	--with-kde
 mv artsmodules.lang arts.lang
 
-kfile="au \
-avi \
-flac \
-m3u \
-mp3 \
-ogg \
-wav \
-sid \
-mpc \
-theora"
 > kfile_mm.lang
-
-for i in $kfile;
-do
+for i in "au
+avi
+flac
+m3u
+mp3
+ogg
+wav
+sid
+mpc
+theora"; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_mm.lang
 done
 
 > kdelibs.spec
 %find_lang	kdelibs --with-kde
-ziew="cupsdconf kabc_dir kabc_file kabc_ldap kabc_ldapkio kabc_net kabc_sql kabcformat_binary katepart kdelibs_colors kdeprint kfileaudiopreview kio kio_help kioexec kmcop knotify ktexteditor_insertfile ktexteditor_isearch ktexteditor_kdatatool libkscreensaver ppdtranslations timezones common kspell ktexteditor_docwordcompletion"
-for i in $ziew;
-do
+for i in "
+cupsdconf
+kabc_dir
+kabc_file
+kabc_ldapkio
+kabc_net
+kabc_sql
+kabcformat_binary
+katepart
+kdelibs_colors
+kdeprint
+kfileaudiopreview
+kio
+kio_help
+kioexec
+kmcop
+knotify
+ktexteditor_insertfile
+ktexteditor_isearch
+ktexteditor_kdatatool
+libkscreensaver
+ppdtranslations
+timezones
+common
+kspell
+ktexteditor_docwordcompletion"; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
-for i in `find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"` ;
-do
-		echo "%dir %{_kdedocdir}/${i}" >> kdelibs.lang
+for i in `find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"`; do
+	echo "%dir %{_kdedocdir}/${i}" >> kdelibs.lang
 done
 
 %find_lang	cervisia	--with-kde
@@ -3886,14 +3839,11 @@ done
 %find_lang	kompare		--with-kde
 %find_lang	umbrello	--with-kde
 
-kfile="cpp \
-diff \
-po \
-ts \
-desktop"
-
-for i in $kfile;
-do
+for i in "cpp
+diff
+po
+ts
+desktop"; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_sdk.lang
 done
@@ -3928,17 +3878,14 @@ done
 %find_lang kuickshow		--with-kde
 %find_lang kview		--with-kde
 
-kview="_scale \
-browserplugin \
-canvas \
-effectsplugin \
-presenterplugin \
-scannerplugin \
-shell \
-viewer"
-
-for i in $kview;
-do
+for i in "_scale
+browserplugin
+canvas
+effectsplugin
+presenterplugin
+scannerplugin
+shell
+viewer"; do
 	%find_lang kview${i} --with-kde
 	cat kview${i}.lang >> kview.lang
 done
@@ -3961,24 +3908,21 @@ cat kcmkamera.lang >> kamera.lang
 %find_lang libkscan --with-kde
 cat libkscan.lang >> kooka.lang
 
-kfile="bmp \
-dvi \
-gif \
-ico \
-jpeg \
-pcx \
-pdf \
-png \
-pnm \
-ps \
-tga \
-tiff \
-xbm \
-exr \
-rgb"
-
-for i in $kfile;
-do
+for i in "bmp
+dvi
+gif
+ico
+jpeg
+pcx
+pdf
+png
+pnm
+ps
+tga
+tiff
+xbm
+exr
+rgb"; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_gra.lang
 done
@@ -3998,59 +3942,50 @@ cat kcmkontactnt.lang >> kdepim.lang
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
-kicker="kbinaryclock \
-kolourpicker \
-ktimemon \
-mediacontrol \
-kmathapplet"
-
-for i in $kicker;
-do
+for i in "kbinaryclock
+kolourpicker
+ktimemon
+mediacontrol
+kmathapplet"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kicker-applets.lang
 done
 
-noatun="alsaplayerui \
-charlatanui \
-dub \
-ffrs \
-lyrics \
-nexscope \
-pitchablespeed \
-synaescope \
-tippecanoe \
-tyler \
-wakeup \
-wavecapture"
-
-for i in $noatun;
-do
+for i in "alsaplayerui
+charlatanui
+dub
+ffrs
+lyrics
+nexscope
+pitchablespeed
+synaescope
+tippecanoe
+tyler
+wakeup
+wavecapture"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> noatun_add.lang
 done
 
-konqueror="khtmlsettingsplugin \
-konqsidebar_mediaplayer \
-validatorsplugin \
-autorefresh \
-babelfish \
-crashesplugin \
-dirfilterplugin \
-imgalleryplugin \
-kcmkuick \
-minitoolsplugin \
-uachangerplugin \
-kuick_plugin \
-audiorename_plugin \
-imagerename_plugin \
-kfile_folder \
-kfile_html \
-kfile_txt \
-searchbarplugin \
-konqsidebar_news"
-
-for i in $konqueror;
-do
+for i in "khtmlsettingsplugin
+konqsidebar_mediaplayer
+validatorsplugin
+autorefresh
+babelfish
+crashesplugin
+dirfilterplugin
+imgalleryplugin
+kcmkuick
+minitoolsplugin
+uachangerplugin
+kuick_plugin
+audiorename_plugin
+imagerename_plugin
+kfile_folder
+kfile_html
+kfile_txt
+searchbarplugin
+konqsidebar_news"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konq-plugins.lang
 done
@@ -4059,25 +3994,22 @@ done
 %find_lang domtreeviewer
 cat webarchiver.lang domtreeviewer.lang >> konq-plugins.lang
 
-kate="katecppsymbolviewer \
-katefll_initplugin \
-katefll_plugin \
-katehelloworld \
-katehtmltools \
-kateinsertcommand \
-katemake \
-katemodeline \
-kateopenheader \
-katepybrowse \
-katetextfilter \
-katexmlcheck \
-katexmltools \
-ktexteditor_autobookmarker \
-katefiletemplates \
-katekjswrapper"
-
-for i in $kate;
-do
+for i in "katecppsymbolviewer
+katefll_initplugin
+katefll_plugin
+katehelloworld
+katehtmltools
+kateinsertcommand
+katemake
+katemodeline
+kateopenheader
+katepybrowse
+katetextfilter
+katexmlcheck
+katexmltools
+ktexteditor_autobookmarker
+katefiletemplates
+katekjswrapper"; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kate-plugins.lang
 done
@@ -4095,45 +4027,41 @@ cat kde_app_devel.lang >> kdevelop.lang
 cat kdearch.lang >> kdevelop.lang
 %find_lang kwin_art_clients --with-kde
 
-for i in $RPM_BUILD_ROOT%{_datadir}/locale/* ;
-do
+for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
 	if [ -d $i ] ; then
-	z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/locale/,,`
+	z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
 	echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> core.lang
 	fi
 done
 %find_lang kcontrol --with-kde
 grep '\.mo' kcontrol.lang >> core.lang
 
-sed -e "s,%{_prefix},%dir %{_prefix},g" kcontrol.lang |grep HTML >> core.lang
+sed -e 's,%{_prefix},%dir %{_prefix},g' kcontrol.lang | grep HTML >> core.lang
 
-for i in $RPM_BUILD_ROOT%{_kdedocdir}/*/kcontrol/index.docbook ;
-do
+for i in $RPM_BUILD_ROOT%{_kdedocdir}/*/kcontrol/index.docbook; do
 	echo $i
-	if [ -f $i ] ; then
-	z=`echo $i|sed -e "s,${RPM_BUILD_ROOT}%{_kdedocdir},,g"`
-	lang=`echo $z|cut -d'/' -f2`
-	if [ -n "$lang" ] ; then
-	echo -e "%lang($lang) %{_kdedocdir}/$lang/kcontrol/*.*" >> core.lang
-	fi
+	if [ -f $i ]; then
+		z=`echo $i | sed -e "s,$RPM_BUILD_ROOT%{_kdedocdir},,g"`
+		lang=`echo $z | cut -d'/' -f2`
+		if [ -n "$lang" ] ; then
+			echo -e "%lang($lang) %{_kdedocdir}/$lang/kcontrol/*.*" >> core.lang
+		fi
 	fi
 done
 
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/* ;
-do
+for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/*; do
 	echo $i
 	if [ -d $i ]; then
-		z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/apps/khangman/data/,,`
+		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/,,`
 		echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> khangman.lang
 	fi
 done
 
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/* ;
-do
+for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 	echo $i
 	if [ -d $i ]; then
-		z=`echo $i|sed -e s,${RPM_BUILD_ROOT}%{_datadir}/apps/klettres/,,`
+		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/klettres/,,`
 		echo "%lang($z) %{_datadir}/apps/klettres/$z" >> klettres.lang
 	fi
 done
@@ -4532,8 +4460,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeaddons-atlantikdesigner-i18n -f atlantikdesigner.lang
 %defattr(644,root,root,755)
-#files -n kdeaddons-kontact-i18n -f kcmkontactnt.lang
-#defattr(644,root,root,755)
 %files -n kdeaddons-ksig-i18n -f ksig.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-kaddressbook-i18n -f libkaddrbk_geo_xxport.lang
