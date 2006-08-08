@@ -3179,7 +3179,6 @@ if [ ! -f installed.stamp ]; then
 	touch installed.stamp
 fi
 
-%if 0
 rm -f *.lang *.cache
 
 %find_lang quanta	--with-kde
@@ -4119,8 +4118,7 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 	fi
 done
 
-%endif
-
+%if 0
 # TODO these *.lang are created but not included in any %package yet
 %find_lang blinken --with-kde
 #%find_lang flashkard --with-kde # obsoleted?
@@ -4143,6 +4141,7 @@ done
 %find_lang scripts --with-kde
 %find_lang superkaramba --with-kde
 %find_lang xsldbg --with-kde
+%endif
 
 # Get rid of messages about files listed twice.
 for i in *.lang; do
