@@ -3272,21 +3272,22 @@ cat libksirtet.lang >> ksirtet.lang
 cat libkdegames.lang >> i18n.lang
 
 > core.lang
-for i in "colors
+a="colors
 	fonts
 	kcmstyle
 	kdeprint
 	kdebugdialog
 	kdesu
 	khelpcenter
-	language"; do
+	language"
+for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> core.lang
 done
 
 > kdebase.lang
 
-for i in "
+a="
 	arts
 	background
 	bell
@@ -3334,23 +3335,25 @@ for i in "
 	kxmlrpcd
 	kthememanager
 	kmenuedit
-	kstyle_plastik_config"; do
+	kstyle_plastik_config"
+for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdebase.lang
 done
 
 %find_lang kicker	--with-kde
-for i in "
+a="
 	clock
 	kcmtaskbar
 	panel
-	panelappearance"; do
+	panelappearance"
+for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kicker.lang
 done
 
 %find_lang konqueror	--with-kde
-for i in "
+a="
 	cache
 	cookies
 	crypto
@@ -3364,7 +3367,8 @@ for i in "
 	netpref
 	proxy
 	smb
-	useragent"; do 
+	useragent"
+for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> konqueror.lang
 done
@@ -3387,7 +3391,7 @@ done
 cat kcmkonsole.lang	>> konsole.lang
 cat kioslave.lang	>> kinfocenter.lang
 
-for i in "kdesud
+a="kdesud
 kcmaccessibility
 kcmprintmgr
 klegacyimport
@@ -3401,12 +3405,13 @@ kdeprint_part
 kio_man
 kio_settings
 kstyle_keramik_config
-drkonqi"; do
+drkonqi"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> core.lang
 done
 
-for i in "kcmkwm
+a="kcmkwm
 kwin
 krandr
 privacy
@@ -3431,19 +3436,21 @@ khotkeys
 kdesktop
 ksmserver
 khotkeys
-joystick"; do
+joystick"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdebase.lang
 done
 
 %find_lang ksplashthemes	--with-kde
 
-for i in "kcminfo
+a="kcminfo
 kcmioslaveinfo
 kcmnic
 kcmsamba
 kcmusb
-kcmview1394"; do
+kcmview1394"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kinfocenter.lang
 done
@@ -3467,7 +3474,7 @@ cat kfindpart.lang >> kfind.lang
 %find_lang kfontinst	--with-kde
 cat kfontinst.lang >> kcmfontinst.lang
 
-for i in "kcmkclock
+a="kcmkclock
 kcmkicker
 lockout
 ktaskbarapplet
@@ -3485,7 +3492,8 @@ dockbarextension
 kasbarextension
 naughtyapplet
 quicklauncher
-taskbarextension"; do
+taskbarextension"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kicker.lang
 done
@@ -3506,28 +3514,31 @@ cat kwriteconfig.lang >> kwrite.lang
 
 %find_lang libkonq	--with-kde
 
-for i in "kio_imap4
+a="kio_imap4
 kio_pop3
 kio_nntp
 kio_smtp
-"; do
+"
+for i in $a; do
 	%find_lang $i	--with-kde
 done
 
-for i in "kscreensaver
-kcmscreensaver"; do
+a="kscreensaver
+kcmscreensaver"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> screensaver.lang
 done
 
-for i in "kdmchooser
+a="kdmchooser
 kdmconfig
-kdmgreet"; do
+kdmgreet"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdm.lang
 done
 
-for i in "appletproxy
+a="appletproxy
 nsplugin
 kcmhtmlsearch
 kcmsocks
@@ -3551,7 +3562,8 @@ kio_mac
 kio_nfs
 kio_print
 kio_sftp
-kio_smb"; do
+kio_smb"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konqueror.lang
 done
@@ -3572,14 +3584,15 @@ done
 
 > kdepim.lang
 
-for i in "akregator_konqplugin
+a="akregator_konqplugin
 akregator
 kdepimwizards
 kabc_slox
 kres_exchange
 kres_imap
 kres_xmlrpc
-kres_remote"; do
+kres_remote"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdepim.lang
 done
@@ -3736,12 +3749,13 @@ cat kcmlaptop.lang >> klaptopdaemon.lang
 %find_lang kcmkvaio		--with-kde
 cat kcmkvaio.lang >> kmilo.lang
 
-for i in "kmilo_generic
+a="kmilo_generic
 kmilo_kvaio
 kmilo_powerbook
 kmilo_thinkpad
 kmilod
-kcmthinkpad"; do
+kcmthinkpad"
+for i in $a; do
 	%find_lang $i		--with-kde
 	cat ${i}.lang >> kmilo.lang
 done
@@ -3783,7 +3797,7 @@ cat kcmaudiocd.lang >> kio_audiocd.lang
 mv artsmodules.lang arts.lang
 
 > kfile_mm.lang
-for i in "au
+a="au
 avi
 flac
 m3u
@@ -3792,14 +3806,15 @@ ogg
 wav
 sid
 mpc
-theora"; do
+theora"
+for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_mm.lang
 done
 
 > kdelibs.spec
 %find_lang	kdelibs --with-kde
-for i in "
+a="
 cupsdconf
 kabc_dir
 kabc_file
@@ -3824,7 +3839,8 @@ ppdtranslations
 timezones
 common
 kspell
-ktexteditor_docwordcompletion"; do
+ktexteditor_docwordcompletion"
+for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
 done
@@ -3839,11 +3855,12 @@ done
 %find_lang	kompare		--with-kde
 %find_lang	umbrello	--with-kde
 
-for i in "cpp
+a="cpp
 diff
 po
 ts
-desktop"; do
+desktop"
+for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_sdk.lang
 done
@@ -3878,14 +3895,15 @@ done
 %find_lang kuickshow		--with-kde
 %find_lang kview		--with-kde
 
-for i in "_scale
+a="_scale
 browserplugin
 canvas
 effectsplugin
 presenterplugin
 scannerplugin
 shell
-viewer"; do
+viewer"
+for i in $a; do
 	%find_lang kview${i} --with-kde
 	cat kview${i}.lang >> kview.lang
 done
@@ -3908,7 +3926,7 @@ cat kcmkamera.lang >> kamera.lang
 %find_lang libkscan --with-kde
 cat libkscan.lang >> kooka.lang
 
-for i in "bmp
+a="bmp
 dvi
 gif
 ico
@@ -3922,7 +3940,8 @@ tga
 tiff
 xbm
 exr
-rgb"; do
+rgb"
+for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_gra.lang
 done
@@ -3942,16 +3961,17 @@ cat kcmkontactnt.lang >> kdepim.lang
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
-for i in "kbinaryclock
+a="
 kolourpicker
 ktimemon
 mediacontrol
-kmathapplet"; do
+kmathapplet"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kicker-applets.lang
 done
 
-for i in "alsaplayerui
+a="alsaplayerui
 charlatanui
 dub
 ffrs
@@ -3962,12 +3982,13 @@ synaescope
 tippecanoe
 tyler
 wakeup
-wavecapture"; do
+wavecapture"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> noatun_add.lang
 done
 
-for i in "khtmlsettingsplugin
+a="khtmlsettingsplugin
 konqsidebar_mediaplayer
 validatorsplugin
 autorefresh
@@ -3985,7 +4006,8 @@ kfile_folder
 kfile_html
 kfile_txt
 searchbarplugin
-konqsidebar_news"; do
+konqsidebar_news"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konq-plugins.lang
 done
@@ -3994,7 +4016,7 @@ done
 %find_lang domtreeviewer
 cat webarchiver.lang domtreeviewer.lang >> konq-plugins.lang
 
-for i in "katecppsymbolviewer
+a="katecppsymbolviewer
 katefll_initplugin
 katefll_plugin
 katehelloworld
@@ -4009,7 +4031,8 @@ katexmlcheck
 katexmltools
 ktexteditor_autobookmarker
 katefiletemplates
-katekjswrapper"; do
+katekjswrapper"
+for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kate-plugins.lang
 done
