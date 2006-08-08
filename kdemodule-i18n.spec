@@ -3179,7 +3179,7 @@ if [ ! -f installed.stamp ]; then
 	touch installed.stamp
 fi
 
-rm -f *.lang *.cache
+rm -f *.lang *.cache __find.*
 
 %find_lang quanta	--with-kde
 %find_lang kommander	--with-kde
@@ -3215,19 +3215,19 @@ cat kxsconfig.lang >> screensavers.lang
 %find_lang klatin		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT/}
+	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> klatin.lang
 done
 %find_lang kturtle		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
 	t=${a##*logokeywords.}
 	lang=${t%.xml}
-	path=${a#$RPM_BUILD_ROOT/}
+	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kturtle.lang
 done
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
 	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT/}
+	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kturtle.lang
 done
 %find_lang kwordquiz	--with-kde
@@ -3247,7 +3247,7 @@ cat kfile_kig.lang >> kig.lang
 %find_lang kanagram	--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
 	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT/}
+	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kanagram.lang
 done
 
@@ -4106,7 +4106,7 @@ done
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/*.txt; do
 	t=${a##*/}
 	lang=${t%.txt}
-	path=${a#$RPM_BUILD_ROOT/}
+	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> khangman.lang
 done
 
