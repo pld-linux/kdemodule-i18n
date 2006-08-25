@@ -22,7 +22,7 @@
 %define		kdetoys_epoch		9
 %define		kdeutils_epoch		9
 %define		kdevelop_epoch		7
-%define		kdevelop_version	3.3.3
+%define		kdevelop_version	3.3.4
 %define		kdewebdev_epoch		2
 #
 Summary:	K Desktop Environment - international support
