@@ -28,7 +28,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.5.5
-Release:	0.3
+Release:	0.4
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -3171,15 +3171,14 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 			kde_libs_htmldir="%{_kdedocdir}"
 	done
 
+	# remove zero-length file
+	find $RPM_BUILD_ROOT%{_kdedocdir} -size 0 -print0 | xargs -0 rm -vf
+
+	# remove empty language catalogs (= 1 message only)
+	find $RPM_BUILD_ROOT%{_datadir}/locale -type f -name '*.mo' | xargs file | egrep ', 1 messages$' | cut -d: -f1 | xargs rm -vf
+
 	touch installed.stamp
 fi
-
-
-# remove zero-length file
-find $RPM_BUILD_ROOT%{_kdedocdir} -size 0 -print0 | xargs -0 rm -vf
-
-# remove empty language catalogs (= 1 message only)
-find $RPM_BUILD_ROOT%{_datadir}/locale -type f -name '*.mo' | xargs file | egrep ', 1 messages$' | cut -d: -f1 | xargs rm -vf
 
 rm -f *.lang *.cache __find.*
 
@@ -3311,7 +3310,6 @@ for i in $a; do
 done
 
 > kdebase.lang
-
 a="
 	arts
 	background
@@ -3360,7 +3358,10 @@ a="
 	kxmlrpcd
 	kthememanager
 	kmenuedit
-	kstyle_plastik_config"
+	kstyle_plastik_config
+	kbinaryclock
+	mediaapplet
+"
 for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdebase.lang
@@ -3392,7 +3393,9 @@ a="
 	netpref
 	proxy
 	smb
-	useragent"
+	useragent
+	kio_media
+"
 for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> konqueror.lang
@@ -4149,45 +4152,9 @@ done
 %find_lang scripts --with-kde
 %find_lang superkaramba --with-kde
 %find_lang xsldbg --with-kde
-%endif
-
-%find_lang kbinaryclock --with-kde
 %find_lang kcmsmartcard --with-kde
-%find_lang kio_media --with-kde
 %find_lang kio_mobile --with-kde
-%find_lang mediaapplet --with-kde
-
-#%find_lang cvsservice --with-kde
-#%find_lang kbackgammon --with-kde
-#%find_lang kdevtipofday --with-kde
-#%find_lang kenolaba --with-kde
-#%find_lang kfileshare --with-kde
-#%find_lang kfouleggs --with-kde
-#%find_lang kio_floppy --with-kde
-#%find_lang kiten --with-kde
-#%find_lang klickety --with-kde
-#%find_lang kmahjongg --with-kde
-#%find_lang kmenuapplet --with-kde
-#%find_lang kmobile --with-kde # Not packaging kmobile, it was disabled by coolo
-#%find_lang kmplot --with-kde
-#%find_lang konqsidebar_mediaplayer --with-kde
-#%find_lang konqsidebar_news --with-kde
-#%find_lang kpat --with-kde
-#%find_lang kpercentage --with-kde
-#%find_lang kpoker --with-kde
-#%find_lang kreversi --with-kde
-#%find_lang kshisen --with-kde
-#%find_lang ksirtet --with-kde
-#%find_lang ksnake --with-kde
-#%find_lang ksokoban --with-kde
-#%find_lang ksystemtrayapplet --with-kde
-#%find_lang ktron --with-kde
-#%find_lang ktuberling --with-kde
-#%find_lang kwifimanager --with-kde
-#%find_lang kwin4 --with-kde
-#%find_lang libkcal --with-kde
-#%find_lang libkscreensaver --with-kde
-#%find_lang libksirtet --with-kde
+%endif
 
 # Get rid of messages about files listed twice.
 for i in *.lang; do
