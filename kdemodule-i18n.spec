@@ -703,7 +703,7 @@ Summary:	Internationalization and localization files for kdevelop
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdevelopa
 Group:		X11/Applications
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdevelop = %{kdevelop_epoch}:%{kdevelop_version}
+Requires:	kdevelop >= %{kdevelop_epoch}:%{kdevelop_version}
 
 %description -n kdevelop-i18n
 Internationalization and localization files for kdevelop.
