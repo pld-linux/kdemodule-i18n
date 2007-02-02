@@ -3221,34 +3221,40 @@ rm -f *.lang *.cache __find.*
 > kdegames.lang
 %find_lang libkdegames --with-kde
 cat libkdegames.lang >> kdegames.lang
+rm -f libkdegames.lang
 
 %find_lang kgreet_classic	--with-kde
 
 %find_lang kcron	--with-kde
 %find_lang kdat		--with-kde
-%find_lang kpackage	--with-kde
 %find_lang ksysv	--with-kde
 %find_lang kuser	--with-kde
 %find_lang kcmlilo	--with-kde
+
+%find_lang kpackage	--with-kde
 %find_lang kfile_deb	--with-kde
-cat kfile_deb.lang >> kpackage.lang
 %find_lang kfile_rpm	--with-kde
-cat kfile_rpm.lang >> kpackage.lang
+cat kfile_deb.lang kfile_rpm.lang >> kpackage.lang
+rm -f kfile_deb.lang kfile_rpm.lang
+
 %find_lang secpolicy	--with-kde
 cat secpolicy.lang >> ksysv.lang
+rm -f secpolicy.lang
+
 > screensavers.lang
 %find_lang klock --with-kde
-cat klock.lang >> screensavers.lang
 %find_lang kpartsaver --with-kde
-cat kpartsaver.lang >> screensavers.lang
 %find_lang kxsconfig --with-kde
-cat kxsconfig.lang >> screensavers.lang
+cat klock.lang kpartsaver.lang kxsconfig.lang >> screensavers.lang
+rm -f klock.lang kpartsaver.lang kxsconfig.lang
+
 %find_lang klatin		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> klatin.lang
 done
+
 %find_lang kturtle		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
 	t=${a##*logokeywords.}
@@ -3256,24 +3262,31 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kturtle.lang
 done
+
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kturtle.lang
 done
+
 %find_lang kwordquiz	--with-kde
 %find_lang kalzium	--with-kde
 %find_lang kbruch	--with-kde
 %find_lang keduca	--with-kde
 %find_lang khangman	--with-kde
+
 %find_lang kig		--with-kde
 %find_lang kfile_drgeo		--with-kde
 %find_lang kfile_kig		--with-kde
-cat kfile_drgeo.lang >> kig.lang
-cat kfile_kig.lang >> kig.lang
+cat kfile_drgeo.lang kfile_kig.lang >> kig.lang
+rm -f kfile_drgeo.lang kfile_kig.lang
+
 %find_lang kiten	--with-kde
 %find_lang klettres	--with-kde
+
 # DON'T PACKAGE KMATHTOOL
+rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
 
 %find_lang kanagram	--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
@@ -3309,7 +3322,6 @@ done
 %find_lang kreversi	--with-kde
 %find_lang ksame	--with-kde
 %find_lang kshisen	--with-kde
-%find_lang ksirtet	--with-kde
 %find_lang ksnake	--with-kde
 %find_lang ksokoban	--with-kde
 %find_lang kspaceduel	--with-kde
@@ -3317,157 +3329,90 @@ done
 %find_lang ktuberling	--with-kde
 %find_lang kwin4	--with-kde
 %find_lang lskat	--with-kde
+
+%find_lang ksirtet	--with-kde
 %find_lang libksirtet	--with-kde
 cat libksirtet.lang >> ksirtet.lang
+rm -f libksirtet.lang
+
 %find_lang kmahjongg	--with-kde
 %find_lang ksmiletris	--with-kde
+
 > i18n.lang
 %find_lang libkdegames	--with-kde
 cat libkdegames.lang >> i18n.lang
+rm -f libkdegames.lang
 
 > core.lang
-a="colors
-	fonts
-	kcmstyle
-	kdeprint
-	kdebugdialog
-	kdesu
-	khelpcenter
-	language"
+a="
+colors
+fonts
+kcmstyle
+kdeprint
+kdebugdialog
+kdesu
+khelpcenter
+language
+"
 for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> core.lang
+	rm -f $i.lang
 done
 
 > kdebase.lang
 a="
-	arts
-	background
-	bell
-	desktop
-	desktopbehavior
-	energy
-	kcmaccess
-	kcmlaunch
-	kcmnotify
-	kcmsmserver
-	keyboard
-	keys
-	ksplashml
-	kwindecoration
-	kxkb
-	mouse
-	passwords
-	spellchecking
-	windowmanagement
-	kcmenergy
-	kcmbell
-	kcmarts
-	kcmbackground
-	privacy
-	libkickermenu_tom
-	display
-	kcmcomponentchooser
-	kcminput
-	kcmkeys
-	kcmkwindecoration
-	kcmkwm
-	kcmspellchecking
-	kdesktop
-	kwin
-	kstart
-	kcmxinerama
-	ksmserver
-	kcmxinerama
-	ktip
-	ksplash
-	krandr
-	kreadconfig
-	krdb
-	kcmkwinrules
-	kxmlrpcd
-	kthememanager
-	kmenuedit
-	kstyle_plastik_config
-	kbinaryclock
-	mediaapplet
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kdebase.lang
-done
-
-%find_lang kicker	--with-kde
-a="
-	clock
-	kcmtaskbar
-	panel
-	panelappearance"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kicker.lang
-done
-
-%find_lang konqueror	--with-kde
-a="
-	cache
-	cookies
-	crypto
-	ebrowsing
-	email
-	filemanager
-	filetypes
-	icons
-	kcmcss
-	khtml
-	netpref
-	proxy
-	smb
-	useragent
-	kio_media
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> konqueror.lang
-done
-
-%find_lang	kio_ldap	--with-kde
-%find_lang	kate		--with-kde
-%find_lang	kcmkonsole	--with-kde
-%find_lang	kdm		--with-kde
-%find_lang	kfind		--with-kde
-%find_lang	kcmfontinst	--with-kde
-%find_lang	kinfocenter	--with-kde
-%find_lang	kioslave	--with-kde
-%find_lang	klipper		--with-kde
-%find_lang	konsole		--with-kde
-%find_lang	ksysguard	--with-kde
-%find_lang	kpager		--with-kde
-%find_lang	kwrite		--with-kde
-%find_lang	screensaver	--with-kde
-
-cat kcmkonsole.lang	>> konsole.lang
-cat kioslave.lang	>> kinfocenter.lang
-
-a="kdesud
-kcmaccessibility
-kcmprintmgr
-kprinter
-kcmcolors
-kcmfonts
-kcmkded
-kcmlocale
-kdeprint_part
-kio_man
-kio_settings
-kstyle_keramik_config
-drkonqi"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> core.lang
-done
-
-a="kcmkwm
+arts
+background
+bell
+desktop
+desktopbehavior
+energy
+kcmaccess
+kcmlaunch
+kcmnotify
+kcmsmserver
+keyboard
+keys
+ksplashml
+kwindecoration
+kxkb
+mouse
+passwords
+spellchecking
+windowmanagement
+kcmenergy
+kcmbell
+kcmarts
+kcmbackground
+privacy
+libkickermenu_tom
+display
+kcmcomponentchooser
+kcminput
+kcmkeys
+kcmkwindecoration
+kcmkwm
+kcmspellchecking
+kdesktop
+kwin
+kstart
+kcmxinerama
+ksmserver
+kcmxinerama
+ktip
+ksplash
+krandr
+kreadconfig
+krdb
+kcmkwinrules
+kxmlrpcd
+kthememanager
+kmenuedit
+kstyle_plastik_config
+kbinaryclock
+mediaapplet
+kcmkwm
 kwin
 krandr
 privacy
@@ -3492,45 +3437,13 @@ khotkeys
 kdesktop
 ksmserver
 khotkeys
-joystick"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kdebase.lang
-done
-
-%find_lang ksplashthemes	--with-kde
-
-a="kcminfo
-kcmioslaveinfo
-kcmnic
-kcmsamba
-kcmusb
-kcmview1394"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kinfocenter.lang
-done
-
-%find_lang kappfinder	--with-kde
-
-%find_lang katedefaultproject	--with-kde
-cat katedefaultproject.lang >> kate.lang
-%find_lang katetabbarextension --with-kde
-cat katetabbarextension.lang >> kate.lang
-
-%find_lang kdcop	--with-kde
-
-%find_lang kdeprintfax	--with-kde
-
-%find_lang kdialog	--with-kde
-
-%find_lang kfindpart	--with-kde
-cat kfindpart.lang >> kfind.lang
-
-%find_lang kfontinst	--with-kde
-cat kfontinst.lang >> kcmfontinst.lang
-
-a="kcmkclock
+joystick
+kicker
+clock
+kcmtaskbar
+panel
+panelappearance
+kcmkclock
 kcmkicker
 lockout
 ktaskbarapplet
@@ -3547,53 +3460,153 @@ krunapplet
 dockbarextension
 kasbarextension
 naughtyapplet
-quicklauncher"
+quicklauncher
+ksystraycmd
+"
 for i in $a; do
 	%find_lang $i	--with-kde
-	cat $i.lang >> kicker.lang
+	cat $i.lang >> kdebase.lang
+	rm -f $i.lang
 done
+
+%find_lang	kio_ldap	--with-kde
+%find_lang	klipper		--with-kde
+%find_lang	ksysguard	--with-kde
+%find_lang	kpager		--with-kde
+%find_lang	kwrite		--with-kde
+
+%find_lang	konsole		--with-kde
+%find_lang	kcmkonsole	--with-kde
+cat kcmkonsole.lang	>> konsole.lang
+rm -f kcmkonsole.lang
+
+%find_lang	kinfocenter	--with-kde
+%find_lang	kioslave	--with-kde
+cat kioslave.lang	>> kinfocenter.lang
+rm -f kioslave.lang
+
+a="
+kdesud
+kcmaccessibility
+kcmprintmgr
+kprinter
+kcmcolors
+kcmfonts
+kcmkded
+kcmlocale
+kdeprint_part
+kio_man
+kio_settings
+kstyle_keramik_config
+drkonqi
+"
+for i in $a; do
+	%find_lang $i	--with-kde
+	cat $i.lang >> core.lang
+	rm -f $i.lang
+done
+
+%find_lang ksplashthemes	--with-kde
+
+a="
+kcminfo
+kcmioslaveinfo
+kcmnic
+kcmsamba
+kcmusb
+kcmview1394
+"
+for i in $a; do
+	%find_lang $i	--with-kde
+	cat $i.lang >> kinfocenter.lang
+	rm -f $i.lang
+done
+
+%find_lang kappfinder	--with-kde
+
+%find_lang	kate		--with-kde
+%find_lang katedefaultproject	--with-kde
+%find_lang katetabbarextension --with-kde
+cat katedefaultproject.lang katetabbarextension.lang >> kate.lang
+rm -f katedefaultproject.lang katetabbarextension.lang
+
+%find_lang kdcop	--with-kde
+
+%find_lang kdeprintfax	--with-kde
+
+%find_lang kdialog	--with-kde
+
+%find_lang kfind		--with-kde
+%find_lang kfindpart	--with-kde
+cat kfindpart.lang >> kfind.lang
+rm -f kfindpart.lang
+
+%find_lang	kcmfontinst	--with-kde
+%find_lang kfontinst	--with-kde
+cat kfontinst.lang >> kcmfontinst.lang
+rm -f kfontinst.lang
+
 
 %find_lang libtaskbar	--with-kde
 %find_lang libtaskmanager	--with-kde
 cat libtaskmanager.lang >> libtaskbar.lang
+rm -f libtaskmanager.lang
 
 %find_lang kjobviewer	--with-kde
 
 %find_lang kpersonalizer	--with-kde
 
-%find_lang ksystraycmd	--with-kde
-cat ksystraycmd.lang >> kdebase.lang
-
 %find_lang kwriteconfig	--with-kde
 cat kwriteconfig.lang >> kwrite.lang
+rm -f kwriteconfig.lang
 
 %find_lang libkonq	--with-kde
 
-a="kio_imap4
-kio_pop3
-kio_nntp
-kio_smtp
+%find_lang kio_imap4 --with-kde
+%find_lang kio_pop3 --with-kde
+%find_lang kio_nntp --with-kde
+%find_lang kio_smtp --with-kde
+
+%find_lang	screensaver	--with-kde
+a="
+kscreensaver
+kcmscreensaver
 "
 for i in $a; do
 	%find_lang $i	--with-kde
-done
-
-a="kscreensaver
-kcmscreensaver"
-for i in $a; do
-	%find_lang $i	--with-kde
 	cat $i.lang >> screensaver.lang
+	rm -f $i.lang
 done
 
+%find_lang	kdm		--with-kde
 a="
 kdmconfig
-kdmgreet"
+kdmgreet
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdm.lang
+	rm -f $i.lang
 done
 
-a="appletproxy
+%find_lang konqueror --with-kde
+a="
+cache
+cookies
+crypto
+ebrowsing
+email
+filemanager
+filetypes
+icons
+kcmcss
+khtml
+netpref
+proxy
+smb
+useragent
+kio_media
+appletproxy
 nsplugin
 kcmhtmlsearch
 kcmlayout
@@ -3616,17 +3629,21 @@ kio_mac
 kio_nfs
 kio_print
 kio_sftp
-kio_smb"
+kio_smb
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konqueror.lang
+	rm -f $i.lang
 done
-cat kicker.lang >> kdebase.lang
+
 cat libtaskbar.lang >> ksplashthemes.lang
+rm -f libtaskbar.lang
 
 %find_lang useraccount		--with-kde
 %find_lang kdepasswd		--with-kde
 cat kdepasswd.lang >> useraccount.lang
+rm -f kdepasswd.lang
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	if [ -d $i ]; then
@@ -3636,89 +3653,85 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 done
 
 > kdepim.lang
-
-a="akregator_konqplugin
+a="
+akregator_konqplugin
 akregator
 kdepimwizards
 kabc_slox
 kres_exchange
 kres_imap
 kres_xmlrpc
-kres_remote"
+kres_remote
+kontact
+korganizer
+kalarmd
+kalarm
+ksync
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kdepim.lang
+	rm -f $i.lang
 done
 
 %find_lang	kaddressbook	--with-kde
-%find_lang	kalarm		--with-kde
-%find_lang	kalarmd		--with-kde
 %find_lang	kandy		--with-kde
 %find_lang	karm		--with-kde
-%find_lang	kmail		--with-kde
 %find_lang	knode		--with-kde
 %find_lang	knotes		--with-kde
 %find_lang	konsolekalendar	--with-kde
-%find_lang	kontact		--with-kde
-%find_lang	korganizer	--with-kde
 %find_lang	korn		--with-kde
 %find_lang	kpilot		--with-kde
 %find_lang	kfile_palm	--with-kde
-%find_lang	kwatchgnupg	--with-kde
-%find_lang	kmail_text_calendar_plugin	--with-kde
-%find_lang	kmail_text_vcard_plugin		--with-kde
 cat kfile_palm.lang >> kpilot.lang
-cat kalarm.lang >> korganizer.lang
-cat kalarmd.lang >> korganizer.lang
-cat kwatchgnupg.lang >> kmail.lang
-cat kmail_text_calendar_plugin.lang  >> kmail.lang
-cat kmail_text_vcard_plugin.lang >> kmail.lang
+rm -f kfile_palm.lang
 
-%find_lang ksync		--with-kde
-cat ksync.lang >> korganizer.lang
 
-%find_lang kmailcvt		--with-kde
-cat kmailcvt.lang >> kmail.lang
+%find_lang	kmail		--with-kde
+a="
+kmailcvt
+kleopatra
+kfile_rfc822
+ktnef
+kio_sieve
+kwatchgnupg
+kmail_text_calendar_plugin
+kmail_text_vcard_plugin
+"
+for i in $a; do
+	%find_lang $i --with-kde
+	cat $i.lang >> kmail.lang
+	rm -f $i.lang
+done
 
-%find_lang kleopatra		--with-kde
-cat kleopatra.lang >> kmail.lang
+a="
+kabc2mutt
+kcmkabconfig
+kfile_vcf
+"
+for i in $a; do
+	%find_lang $i --with-kde
+	cat $i.lang >> kaddressbook.lang
+	rm -f $i.lang
+done
 
-%find_lang kfile_rfc822		--with-kde
-cat kfile_rfc822.lang >> kmail.lang
-%find_lang kio_sieve		--with-kde
-cat kio_sieve.lang >> kmail.lang
-
-%find_lang kabc2mutt		--with-kde
-cat kabc2mutt.lang >> kaddressbook.lang
-%find_lang kcmkabconfig		--with-kde
-cat kcmkabconfig.lang >> kaddressbook.lang
-%find_lang kfile_vcf		--with-kde
-cat kfile_vcf.lang >> kaddressbook.lang
+# Not packaging kmobile, it was disabled by coolo
 
 %find_lang libkdepim		--with-kde
-# Not packaging kmobile, it was disabled by coolo
-%find_lang kdgantt		--with-kde
-cat kdgantt.lang >> libkdepim.lang
-%find_lang libkleopatra		--with-kde
-cat libkleopatra.lang >> libkdepim.lang
-%find_lang ktnef		--with-kde
-
-%find_lang libkcal		--with-kde
-
-%find_lang libksieve		--with-kde
-%find_lang libksync		--with-kde
-mv {libksync,korganizer-libs}.lang
-%find_lang kgantt		--with-kde
-cat kgantt.lang >> korganizer-libs.lang
-%find_lang libkpimexchange	--with-kde
-cat libkpimexchange.lang >> korganizer-libs.lang
-
-cat libkcal.lang >> libkdepim.lang
-cat korganizer-libs.lang >> libkdepim.lang
-cat ktnef.lang >> kmail.lang
-cat libksieve.lang >> libkdepim.lang
-cat kontact.lang >> kdepim.lang
-cat korganizer.lang >> kdepim.lang
+a="
+kdgantt
+kgantt
+libkcal
+libkleopatra
+libkpimexchange
+libksieve
+libksync
+"
+for i in $a; do
+	%find_lang $i --with-kde
+	cat $i.lang >> libkdepim.lang
+	rm -f $i.lang
+done
 
 %find_lang kfileshare	--with-kde
 %find_lang kdict		--with-kde
@@ -3730,34 +3743,46 @@ cat korganizer.lang >> kdepim.lang
 %find_lang krdc			--with-kde
 %find_lang krfb			--with-kde
 cat krdc.lang >> krfb.lang
+rm -f krdc.lang
 %find_lang ksirc		--with-kde
 %find_lang kwifimanager		--with-kde
 %find_lang lisa			--with-kde
 %find_lang lanbrowser		--with-kde
 cat lanbrowser.lang >> lisa.lang
+rm -f lanbrowser.lang
 
 %find_lang ktalkd		--with-kde
 %find_lang kcmktalkd		--with-kde
 cat kcmktalkd.lang >> ktalkd.lang
+rm -f kcmktalkd.lang
 
 %find_lang kcm_krfb		--with-kde
 cat kcm_krfb.lang >> krfb.lang
+rm -f kcm_krfb.lang
 
 %find_lang kcmlanbrowser	--with-kde
 cat kcmlanbrowser.lang >> lisa.lang
+rm -f kcmlanbrowser.lang
+
 %find_lang kio_lan		--with-kde
 cat kio_lan.lang >> lisa.lang
+rm -f kio_lan.lang
 
 %find_lang kppplogview		--with-kde
 cat kppplogview.lang >> kppp.lang
+rm -f kppplogview.lang
 
 %find_lang kwireless		--with-kde
 cat kwireless.lang >> kwifimanager.lang
+rm -f kwireless.lang
+
 %find_lang kcmwifi		--with-kde
 cat kcmwifi.lang >> kwifimanager.lang
+rm -f kcmwifi.lang
 
 %find_lang kdictapplet		--with-kde
 cat kdictapplet.lang >> kdict.lang
+rm -f kdictapplet.lang
 
 %find_lang kinetd		--with-kde
 %find_lang kmag		--with-kde
@@ -3768,10 +3793,11 @@ cat kdictapplet.lang >> kdict.lang
 %find_lang kcalc		--with-kde
 %find_lang kcharselect		--with-kde
 
-> kdf.lang
 %find_lang kdf			--with-kde
 %find_lang blockdevices		--with-kde
 cat blockdevices.lang >> kdf.lang
+rm -f blockdevices.lang
+
 %find_lang kedit		--with-kde
 %find_lang kfloppy		--with-kde
 %find_lang kgpg			--with-kde
@@ -3783,6 +3809,8 @@ cat blockdevices.lang >> kdf.lang
 %find_lang laptop		--with-kde
 %find_lang powerctrl		--with-kde
 cat {kcmlowbatcrit,kcmlowbatwarn,laptop,powerctrl}.lang >> klaptopdaemon.lang
+rm -f {kcmlowbatcrit,kcmlowbatwarn,laptop,powerctrl}.lang
+
 %find_lang ksim			--with-kde
 %find_lang ktimer		--with-kde
 %find_lang kwallet		--with-kde
@@ -3794,33 +3822,38 @@ grep '\.mo' kcmlirc.lang >> kdelirc.lang
 
 %find_lang kwalletmanager	--with-kde
 cat kwalletmanager.lang >> kwallet.lang
+rm -f kwalletmanager.lang
 %find_lang kcmkwallet		--with-kde
 cat kcmkwallet.lang >> kwallet.lang
+rm -f kcmkwallet.lang
 
 %find_lang kcmlaptop		--with-kde
 cat kcmlaptop.lang >> klaptopdaemon.lang
-%find_lang kcmkvaio		--with-kde
-cat kcmkvaio.lang >> kmilo.lang
+rm -f kcmlaptop.lang
 
-a="kmilo_generic
+a="
+kmilo_generic
 kmilo_kvaio
 kmilo_powerbook
 kmilo_thinkpad
 kmilod
-kcmthinkpad"
+kcmthinkpad
+kcmkvaio
+kcmthinkpad
+"
 for i in $a; do
 	%find_lang $i		--with-kde
 	cat ${i}.lang >> kmilo.lang
+	rm -f ${i}.lang
 done
-
-%find_lang kcmthinkpad	--with-kde
-cat kcmthinkpad.lang >> kmilo.lang
 
 %find_lang kregexpeditor	--with-kde
 cat kregexpeditor.lang >> KRegExpEditor.lang
+rm -f kregexpeditor.lang
 
 %find_lang kcharselectapplet	--with-kde
 cat kcharselectapplet.lang >> kcharselect.lang
+rm -f kcharselectapplet.lang
 
 %find_lang kdessh		--with-kde
 
@@ -3833,16 +3866,19 @@ cat kcharselectapplet.lang >> kcharselect.lang
 %find_lang kmix		--with-kde
 %find_lang kmixcfg	--with-kde
 cat kmixcfg.lang >> kmix.lang
+rm -f kmixcfg.lang
 %find_lang krec		--with-kde
 %find_lang kscd		--with-kde
 %find_lang noatun	--with-kde
 %find_lang libkcddb	--with-kde
 %find_lang kcmcddb	--with-kde
 cat kcmcddb.lang >> libkcddb.lang
+rm -f kcmcddb.lang
 
 %find_lang kio_audiocd	--with-kde
 %find_lang kcmaudiocd	--with-kde
 cat kcmaudiocd.lang >> kio_audiocd.lang
+rm -f kcmaudiocd.lang
 
 %find_lang kaudiocreator --with-kde
 %find_lang artscontrol	--with-kde
@@ -3850,7 +3886,8 @@ cat kcmaudiocd.lang >> kio_audiocd.lang
 mv artsmodules.lang arts.lang
 
 > kfile_mm.lang
-a="au
+a="
+au
 avi
 flac
 m3u
@@ -3859,10 +3896,12 @@ ogg
 wav
 sid
 mpc
-theora"
+theora
+"
 for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_mm.lang
+	rm -f kfile_${i}.lang
 done
 
 > kdelibs.lang
@@ -3896,7 +3935,9 @@ ktexteditor_docwordcompletion"
 for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
+	rm -f $i.lang
 done
+
 for i in $(find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"); do
 	echo "%dir %{_kdedocdir}/${i}" >> kdelibs.lang
 done
@@ -3915,14 +3956,17 @@ done
 %find_lang	kompare		--with-kde
 %find_lang	umbrello	--with-kde
 
-a="cpp
+a="
+cpp
 diff
 po
 ts
-desktop"
+desktop
+"
 for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_sdk.lang
+	rm -f kfile_${i}.lang
 done
 %find_lang cvsservice	--with-kde
 
@@ -3955,38 +3999,42 @@ done
 %find_lang kuickshow		--with-kde
 %find_lang kview		--with-kde
 
-a="_scale
+a="
+_scale
 browserplugin
 canvas
 effectsplugin
 presenterplugin
 scannerplugin
 shell
-viewer"
+viewer
+"
 for i in $a; do
 	%find_lang kview${i} --with-kde
 	cat kview${i}.lang >> kview.lang
+	rm -f kview${i}.lang
 done
 
 %find_lang kcm_kviewcanvasconfig --with-kde
 %find_lang kcm_kviewgeneralconfig --with-kde
 %find_lang kcm_kviewpluginsconfig --with-kde
 %find_lang kcm_kviewviewerpluginsconfig --with-kde
-cat kcm_kviewcanvasconfig.lang >> kview.lang
-cat kcm_kviewgeneralconfig.lang >> kview.lang
-cat kcm_kviewpluginsconfig.lang >> kview.lang
-cat kcm_kviewviewerpluginsconfig.lang >> kview.lang
+cat kcm_kviewcanvasconfig.lang kcm_kviewgeneralconfig.lang kcm_kviewpluginsconfig.lang kcm_kviewviewerpluginsconfig.lang >> kview.lang
+rm -f kcm_kviewcanvasconfig.lang kcm_kviewgeneralconfig.lang kcm_kviewpluginsconfig.lang kcm_kviewviewerpluginsconfig.lang
 
 %find_lang kcmkamera --with-kde
 cat kcmkamera.lang >> kamera.lang
+rm -f kcmkamera.lang
 
 %find_lang kfax --with-kde
 %find_lang kmrml --with-kde
 %find_lang ksvgplugin --with-kde
 %find_lang libkscan --with-kde
 cat libkscan.lang >> kooka.lang
+rm -f libkscan.lang
 
-a="bmp
+a="
+bmp
 dvi
 gif
 ico
@@ -4000,16 +4048,19 @@ tga
 tiff
 xbm
 exr
-rgb"
+rgb
+"
 for i in $a; do
 	%find_lang kfile_${i} --with-kde
 	cat kfile_${i}.lang >> kfile_gra.lang
+	rm -f kfile_${i}.lang
 done
 
 %find_lang	ark_plugin	--with-kde
 %find_lang	kfile_lnk	--with-kde
 %find_lang	rellinks	--with-kde
 cat kfile_lnk.lang >> rellinks.lang
+rm -f kfile_lnk.lang
 
 %find_lang	kate-plugins	--with-kde
 %find_lang	kicker-applets	--with-kde
@@ -4018,6 +4069,8 @@ cat kfile_lnk.lang >> rellinks.lang
 %find_lang	atlantikdesigner	--with-kde
 %find_lang	kcmkontactnt		--with-kde
 cat kcmkontactnt.lang >> kdepim.lang
+rm -f kcmkontactnt.lang
+
 %find_lang	ksig		--with-kde
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
@@ -4025,13 +4078,16 @@ a="
 kolourpicker
 ktimemon
 mediacontrol
-kmathapplet"
+kmathapplet
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kicker-applets.lang
+	rm -f $i.lang
 done
 
-a="alsaplayerui
+a="
+alsaplayerui
 charlatanui
 dub
 ffrs
@@ -4042,13 +4098,16 @@ synaescope
 tippecanoe
 tyler
 wakeup
-wavecapture"
+wavecapture
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> noatun_add.lang
+	rm -f $i.lang
 done
 
-a="khtmlsettingsplugin
+a="
+khtmlsettingsplugin
 konqsidebar_mediaplayer
 validatorsplugin
 autorefresh
@@ -4066,17 +4125,21 @@ kfile_folder
 kfile_html
 kfile_txt
 searchbarplugin
-konqsidebar_news"
+konqsidebar_news
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konq-plugins.lang
+	rm -f $i.lang
 done
 
 %find_lang webarchiver
 %find_lang domtreeviewer
 cat webarchiver.lang domtreeviewer.lang >> konq-plugins.lang
+rm -f webarchiver.lang domtreeviewer.lang
 
-a="katecppsymbolviewer
+a="
+katecppsymbolviewer
 katefll_initplugin
 katefll_plugin
 katehelloworld
@@ -4091,32 +4154,38 @@ katexmlcheck
 katexmltools
 ktexteditor_autobookmarker
 katefiletemplates
-katekjswrapper"
+katekjswrapper
+"
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> kate-plugins.lang
+	rm -f $i.lang
 done
 
 %find_lang kdevelop --with-kde
-%find_lang kdevdesigner	--with-kde
-cat kdevdesigner.lang >> kdevelop.lang
-%find_lang kdevtipofday --with-kde
-cat kdevtipofday.lang >> kdevelop.lang
-%find_lang qeditor --with-kde
-cat qeditor.lang >> kdevelop.lang
-%find_lang kde_app_devel --with-kde
-cat kde_app_devel.lang >> kdevelop.lang
-%find_lang kdearch --with-kde
-cat kdearch.lang >> kdevelop.lang
+a="
+kdevdesigner
+kdevtipofday
+qeditor
+kde_app_devel
+kdearch
+"
+for i in $a; do
+	%find_lang $i	--with-kde
+	cat $i.lang >> kdevelop.lang
+	rm -f $i.lang
+done
+
 %find_lang kwin_art_clients --with-kde
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
 	if [ -d $i ] ; then
-	z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
-	echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> core.lang
+		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
+		echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> core.lang
 	fi
 done
+
 %find_lang kcontrol --with-kde
 grep '\.mo' kcontrol.lang >> core.lang
 
@@ -4160,7 +4229,6 @@ done
 %find_lang blinken --with-kde
 #%find_lang flashkard --with-kde # obsoleted?
 %find_lang kapptemplate --with-kde
-#%find_lang kcontrol --with-kde
 %find_lang kdesvn-build --with-kde
 %find_lang kgeography --with-kde
 #%find_lang kmessedwords --with-kde # obsoleted?
