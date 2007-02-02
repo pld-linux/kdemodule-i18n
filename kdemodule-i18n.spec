@@ -132,6 +132,36 @@ Source48:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-uk-%
 # Source48-md5:	82f0f3f3567d551307c03ebad12f3a1c
 Source49:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-zh_CN-%{version}.tar.bz2
 # Source49-md5:	a74fb6fee6d36a8bd975bb7b1b97fb4c
+Source50:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-af-%{version}.tar.bz2
+# Source50-md5:	7771bdb76b76323a68da4700bd5eaf26
+Source51:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-az-%{version}.tar.bz2
+# Source51-md5:	416e628f6c3d27a334d26f1c5bd83406
+Source52:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-fa-%{version}.tar.bz2
+# Source52-md5:	be881e4b7be80e289b9dcdf00753ce79
+Source53:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-gl-%{version}.tar.bz2
+# Source53-md5:	590bd015071b21ba0dcd55fc2955ca55
+Source54:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-kk-%{version}.tar.bz2
+# Source54-md5:	f878ce771f32ea800c285e5a813b17e7
+Source55:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-km-%{version}.tar.bz2
+# Source55-md5:	2f83f915e5ee4932ce8c7f26abb8b542
+Source56:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-ko-%{version}.tar.bz2
+# Source56-md5:	eb47d4c6f46c161835c5255f399e1ac9
+Source57:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-lv-%{version}.tar.bz2
+# Source57-md5:	c3f7cca71708d2894510bdd30b264bff
+Source58:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-mn-%{version}.tar.bz2
+# Source58-md5:	7158b53fec42b7ed43525bacfa57e0e4
+Source59:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-ms-%{version}.tar.bz2
+# Source59-md5:	edeaa43311fc0935d0a5b79b5db8f39e
+Source60:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-rw-%{version}.tar.bz2
+# Source60-md5:	8d07d207bb2e933a7b0130e593313842
+Source61:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-ss-%{version}.tar.bz2
+# Source61-md5:	7ecd86abba7c02c73b248ba5452c4bed
+Source62:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-uz-%{version}.tar.bz2
+# Source62-md5:	2208bb14ae419e20f2179d586ba49ff5
+Source63:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-vi-%{version}.tar.bz2
+# Source63-md5:	58602a074a5868b3c1ae299080289d9a
+Source64:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kde-i18n/%{_name}-zh_TW-%{version}.tar.bz2
+# Source64-md5:	f6211661d09cf7dcc381147d084537a7
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel >= %{kdelibs_epoch}:%{version}
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3142,7 +3172,7 @@ Narzêdzia s³u¿±ce do zapytañ o has³o - klasyczny, domy¶lny motyw
 wygl±du - t³umaczenia.
 
 %prep
-%setup -q -c -T -a0 -a1 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37 -a38 -a39 -a40 -a41 -a42 -a43 -a44 -a45 -a45 -a47 -a48 -a49
+%setup -qcT %(seq -f '-a %g' 0 64 | xargs)
 
 %build
 export kde_htmldir="%{_kdedocdir}"
