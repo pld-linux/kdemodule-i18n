@@ -4166,6 +4166,8 @@ for i in $a; do
 done
 
 %find_lang kwin_art_clients --with-kde
+cat kwin_art_clients.lang >> kde-decoration-common.lang
+rm -f kwin_art_clients.lang
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
@@ -4240,31 +4242,53 @@ done
 
 # Get rid of messages about files listed twice.
 for i in *.lang; do
-	sort -u ${i} > ${i}.tmp && mv ${i}.tmp ${i}
+	sort -u $i > $i.tmp && mv $i.tmp $i
 done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n kde-decoration-common-i18n  -f kwin_art_clients.lang
+%files -n kde-decoration-common-i18n -f kde-decoration-common.lang
 %defattr(644,root,root,755)
 %files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
 %defattr(644,root,root,755)
-%files -n kdegames-i18n -f kdegames.lang
+%files -n kde-kio-imap4-i18n -f kio_imap4.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-quanta-i18n -f quanta.lang
+%files -n kde-kio-ldap-i18n -f kio_ldap.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kfilereplace-i18n -f kfilereplace.lang
+%files -n kde-kio-nntp-i18n -f kio_nntp.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kimagemapeditor-i18n -f kimagemapeditor.lang
+%files -n kde-kio-pop3-i18n -f kio_pop3.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-klinkstatus-i18n -f klinkstatus.lang
+%files -n kde-kio-smtp-i18n -f kio_smtp.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kommander-i18n -f kommander.lang
+%files -n kdeaccessibility-kmag-i18n -f kmag.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kxsldbg-i18n -f kxsldbg.lang
+%files -n kdeaccessibility-kmousetool-i18n -f kmousetool.lang
 %defattr(644,root,root,755)
-%files -n kdelibs-i18n -f kdelibs.lang
+%files -n kdeaccessibility-kmouth-i18n -f kmouth.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-ark-i18n -f ark_plugin.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-atlantikdesigner-i18n -f atlantikdesigner.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-fsview-i18n -f fsview.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-kaddressbook-i18n -f libkaddrbk_geo_xxport.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-kate-i18n -f kate-plugins.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-kicker-i18n -f kicker-applets.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-konqueror-i18n -f konq-plugins.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-ksig-i18n -f ksig.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-lnkforward-i18n -f rellinks.lang
+%defattr(644,root,root,755)
+%files -n kdeaddons-noatun-i18n -f noatun_add.lang
+%defattr(644,root,root,755)
+%files -n kdeadmin-kcmlilo-i18n -f kcmlilo.lang
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcron-i18n -f kcron.lang
 %defattr(644,root,root,755)
@@ -4278,13 +4302,49 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f screensavers.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kturtle-i18n -f kturtle.lang
+%files -n kdebase-core-i18n -f core.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-klatin-i18n -f klatin.lang
+%files -n kdebase-desktop-i18n -f kdebase.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
+%files -n kdebase-desktop-libs-i18n -f ksplashthemes.lang
+%defattr(644,root,root,755)
+%files -n kdebase-infocenter-i18n -f kinfocenter.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kappfinder-i18n -f kappfinder.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kate-i18n -f kate.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kdcop-i18n -f kdcop.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kdeprintfax-i18n -f kdeprintfax.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kdialog-i18n -f kdialog.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kfind-i18n -f kfind.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kfontinst-i18n -f kcmfontinst.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kjobviewer-i18n -f kjobviewer.lang
+%defattr(644,root,root,755)
+%files -n kdebase-klipper-i18n -f klipper.lang
+%defattr(644,root,root,755)
+%files -n kdebase-konsole-i18n -f konsole.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kpager-i18n -f kpager.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kpersonalizer-i18n -f kpersonalizer.lang
+%defattr(644,root,root,755)
+%files -n kdebase-ksysguard-i18n -f ksysguard.lang
+%defattr(644,root,root,755)
+%files -n kdebase-kwrite-i18n -f kwrite.lang
+%defattr(644,root,root,755)
+%files -n kdebase-screensavers-i18n -f screensaver.lang
+%defattr(644,root,root,755)
+%files -n kdebase-useraccount-i18n -f useraccount.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kalzium-i18n -f kalzium.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-kanagram-i18n -f kanagram.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kbruch-i18n -f kbruch.lang
 %defattr(644,root,root,755)
@@ -4296,9 +4356,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-kiten-i18n -f kiten.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-klettres-i18n -f klettres.lang
+%files -n kdeedu-klatin-i18n -f klatin.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kanagram-i18n -f kanagram.lang
+%files -n kdeedu-klettres-i18n -f klettres.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kmplot-i18n -f kmplot.lang
 %defattr(644,root,root,755)
@@ -4308,15 +4368,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-ktouch-i18n -f ktouch.lang
 %defattr(644,root,root,755)
+%files -n kdeedu-kturtle-i18n -f kturtle.lang
+%defattr(644,root,root,755)
 %files -n kdeedu-kverbos-i18n -f kverbos.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kvoctrain-i18n -f kvoctrain.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksmiletris-i18n -f ksmiletris.lang
-%defattr(644,root,root,755)
-%files -n kdegames-kmahjongg-i18n -f kmahjongg.lang
+%files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
 %defattr(644,root,root,755)
 %files -n kdegames-atlantik-i18n -f atlantik.lang
+%defattr(644,root,root,755)
+%files -n kdegames-i18n -f kdegames.lang
 %defattr(644,root,root,755)
 %files -n kdegames-kasteroids-i18n -f kasteroids.lang
 %defattr(644,root,root,755)
@@ -4342,6 +4404,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-klines-i18n -f klines.lang
 %defattr(644,root,root,755)
+%files -n kdegames-kmahjongg-i18n -f kmahjongg.lang
+%defattr(644,root,root,755)
 %files -n kdegames-kmines-i18n -f kmines.lang
 %defattr(644,root,root,755)
 %files -n kdegames-kolf-i18n -f kolf.lang
@@ -4360,6 +4424,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-ksirtet-i18n -f ksirtet.lang
 %defattr(644,root,root,755)
+%files -n kdegames-ksmiletris-i18n -f ksmiletris.lang
+%defattr(644,root,root,755)
 %files -n kdegames-ksnake-i18n -f ksnake.lang
 %defattr(644,root,root,755)
 %files -n kdegames-ksokoban-i18n -f ksokoban.lang
@@ -4374,89 +4440,79 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-lskat-i18n -f lskat.lang
 %defattr(644,root,root,755)
-%files -n kdebase-useraccount-i18n -f useraccount.lang
+%files -n kdegraphics-kamera-i18n -f kamera.lang
 %defattr(644,root,root,755)
-%files -n kdebase-core-i18n -f core.lang
+%files -n kdegraphics-kcoloredit-i18n -f kcoloredit.lang
 %defattr(644,root,root,755)
-%files -n kdebase-desktop-i18n -f kdebase.lang
+%files -n kdegraphics-kdvi-i18n -f kdvi.lang
 %defattr(644,root,root,755)
-%files -n kdebase-infocenter-i18n -f kinfocenter.lang
+%files -n kdegraphics-kfax-i18n -f kfax.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kate-i18n -f kate.lang
+%files -n kdegraphics-kfile-i18n -f kfile_gra.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kfind-i18n -f kfind.lang
+%files -n kdegraphics-kgamma-i18n -f kgamma.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kfontinst-i18n -f kcmfontinst.lang
+%files -n kdegraphics-kghostview-i18n -f kghostview.lang
 %defattr(644,root,root,755)
-%files -n kdebase-klipper-i18n -f klipper.lang
+%files -n kdegraphics-kiconedit-i18n -f kiconedit.lang
 %defattr(644,root,root,755)
-%files -n kdebase-konsole-i18n -f konsole.lang
+%files -n kdegraphics-kmrml-i18n -f kmrml.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kpager-i18n -f kpager.lang
+%files -n kdegraphics-kolourpaint-i18n -f kolourpaint.lang
 %defattr(644,root,root,755)
-%files -n kdebase-ksysguard-i18n -f ksysguard.lang
+%files -n kdegraphics-kooka-i18n -f kooka.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kwrite-i18n -f kwrite.lang
+%files -n kdegraphics-kpdf-i18n -f kpdf.lang
 %defattr(644,root,root,755)
-%files -n kdebase-screensavers-i18n -f screensaver.lang
+%files -n kdegraphics-kpovmodeler-i18n -f kpovmodeler.lang
 %defattr(644,root,root,755)
-%files -n kdebase-desktop-libs-i18n -f ksplashthemes.lang
+%files -n kdegraphics-kruler-i18n -f kruler.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kappfinder-i18n -f kappfinder.lang
+%files -n kdegraphics-ksnapshot-i18n -f ksnapshot.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdcop-i18n -f kdcop.lang
+%files -n kdegraphics-ksvg-i18n -f ksvgplugin.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdeprintfax-i18n -f kdeprintfax.lang
+%files -n kdegraphics-kuickshow-i18n -f kuickshow.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdialog-i18n -f kdialog.lang
+%files -n kdegraphics-kview-i18n -f kview.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kjobviewer-i18n -f kjobviewer.lang
+%files -n kdelibs-i18n -f kdelibs.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kpersonalizer-i18n -f kpersonalizer.lang
+%files -n kdemultimedia-arts-i18n -f arts.lang
 %defattr(644,root,root,755)
-%files -n konqueror-libs-i18n -f libkonq.lang
+%files -n kdemultimedia-artsbuilder-i18n -f artsbuilder.lang
 %defattr(644,root,root,755)
-%files -n kdm-i18n -f kdm.lang
+%files -n kdemultimedia-artscontrol-i18n -f artscontrol.lang
 %defattr(644,root,root,755)
-%files -n konqueror-i18n -f konqueror.lang
+%files -n kdemultimedia-audiocd-i18n -f kio_audiocd.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-ldap-i18n -f kio_ldap.lang
+%files -n kdemultimedia-juk-i18n -f juk.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-smtp-i18n -f kio_smtp.lang
+%files -n kdemultimedia-kaboodle-i18n -f kaboodle.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-nntp-i18n -f kio_nntp.lang
+%files -n kdemultimedia-kaudiocreator-i18n -f kaudiocreator.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-imap4-i18n -f kio_imap4.lang
+%files -n kdemultimedia-kfile-i18n -f kfile_mm.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-pop3-i18n -f kio_pop3.lang
+%files -n kdemultimedia-kmid-i18n -f kmid.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
+%files -n kdemultimedia-kmix-i18n -f kmix.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kandy-i18n -f kandy.lang
+%files -n kdemultimedia-krec-i18n -f krec.lang
 %defattr(644,root,root,755)
-%files -n kdepim-karm-i18n -f karm.lang
+%files -n kdemultimedia-kscd-i18n -f kscd.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kmail-i18n -f kmail.lang
+%files -n kdemultimedia-libkcddb-i18n -f libkcddb.lang
 %defattr(644,root,root,755)
-%files -n kdepim-knode-i18n -f knode.lang
-%defattr(644,root,root,755)
-%files -n kdepim-knotes-i18n -f knotes.lang
-%defattr(644,root,root,755)
-%files -n kdepim-konsolekalendar-i18n -f konsolekalendar.lang
-%defattr(644,root,root,755)
-%files -n kdepim-korn-i18n -f korn.lang
-%defattr(644,root,root,755)
-%files -n kdepim-kpilot-i18n -f kpilot.lang
-%defattr(644,root,root,755)
-%files -n kdepim-i18n -f kdepim.lang
-%defattr(644,root,root,755)
-%files -n kdepim-libs-i18n -f libkdepim.lang
+%files -n kdemultimedia-noatun-i18n -f noatun.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-filesharing-i18n -f kfileshare.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-kdict-i18n -f kdict.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-kget-i18n -f kget.lang
+%defattr(644,root,root,755)
+%files -n kdenetwork-kinetd-i18n -f kinetd.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-knewsticker-i18n -f knewsticker.lang
 %defattr(644,root,root,755)
@@ -4476,19 +4532,75 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdenetwork-lanbrowser-i18n -f lisa.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kinetd-i18n -f kinetd.lang
+%files -n kdepim-i18n -f kdepim.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmag-i18n -f kmag.lang
+%files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmousetool-i18n -f kmousetool.lang
+%files -n kdepim-kandy-i18n -f kandy.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmouth-i18n -f kmouth.lang
+%files -n kdepim-karm-i18n -f karm.lang
+%defattr(644,root,root,755)
+%files -n kdepim-kmail-i18n -f kmail.lang
+%defattr(644,root,root,755)
+%files -n kdepim-knode-i18n -f knode.lang
+%defattr(644,root,root,755)
+%files -n kdepim-knotes-i18n -f knotes.lang
+%defattr(644,root,root,755)
+%files -n kdepim-konsolekalendar-i18n -f konsolekalendar.lang
+%defattr(644,root,root,755)
+%files -n kdepim-korn-i18n -f korn.lang
+%defattr(644,root,root,755)
+%files -n kdepim-kpilot-i18n -f kpilot.lang
+%defattr(644,root,root,755)
+%files -n kdepim-libs-i18n -f libkdepim.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-cervisia-i18n -f cervisia.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kbabel-i18n -f kbabel.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kbugbuster-i18n -f kbugbuster.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kcachegrind-i18n -f kcachegrind.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kfile-i18n -f kfile_sdk.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kompare-i18n -f kompare.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kspy-i18n -f spy.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kstartperf-i18n -f kstartperf.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kuiviewer-i18n -f kuiviewer.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-libcvsservice-i18n -f cvsservice.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-umbrello-i18n -f umbrello.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-amor-i18n -f amor.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-fifteen-i18n -f kfifteenapplet.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-kmoon-i18n -f kmoon.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-kodo-i18n -f kodo.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-kteatime-i18n -f kteatime.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-ktux-i18n -f ktux.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-kweather-i18n -f kweather.lang
+%defattr(644,root,root,755)
+%files -n kdetoys-kworldclock-i18n -f kworldclock.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-ark-i18n -f ark.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-kcalc-i18n -f kcalc.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-kcharselect-i18n -f kcharselect.lang
+%defattr(644,root,root,755)
+%files -n kdeutils-kdelirc-i18n -f kdelirc.lang
+%defattr(644,root,root,755)
+%files -n kdeutils-kdessh-i18n -f kdessh.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-kdf-i18n -f kdf.lang
 %defattr(644,root,root,755)
@@ -4504,6 +4616,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeutils-klaptopdaemon-i18n -f klaptopdaemon.lang
 %defattr(644,root,root,755)
+%files -n kdeutils-kmilo-i18n -f kmilo.lang
+%defattr(644,root,root,755)
 %files -n kdeutils-kregexpeditor-i18n -f KRegExpEditor.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-ksim-i18n -f ksim.lang
@@ -4512,135 +4626,23 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeutils-kwalletmanager-i18n -f kwallet.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kdelirc-i18n -f kdelirc.lang
-%defattr(644,root,root,755)
-%files -n kdeutils-kdessh-i18n -f kdessh.lang
-%defattr(644,root,root,755)
-%files -n kdeutils-kmilo-i18n -f kmilo.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-artsbuilder-i18n -f artsbuilder.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-artscontrol-i18n -f artscontrol.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-arts-i18n -f arts.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-juk-i18n -f juk.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kaboodle-i18n -f kaboodle.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kmid-i18n -f kmid.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kmix-i18n -f kmix.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kscd-i18n -f kscd.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-krec-i18n -f krec.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-noatun-i18n -f noatun.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kfile-i18n -f kfile_mm.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-audiocd-i18n -f kio_audiocd.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-kaudiocreator-i18n -f kaudiocreator.lang
-%defattr(644,root,root,755)
-%files -n kdemultimedia-libkcddb-i18n -f libkcddb.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-libcvsservice-i18n -f cvsservice.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kfile-i18n -f kfile_sdk.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-cervisia-i18n -f cervisia.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kbabel-i18n -f kbabel.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kbugbuster-i18n -f kbugbuster.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kcachegrind-i18n -f kcachegrind.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kompare-i18n -f kompare.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kstartperf-i18n -f kstartperf.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kuiviewer-i18n -f kuiviewer.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-kspy-i18n -f spy.lang
-%defattr(644,root,root,755)
-%files -n kdesdk-umbrello-i18n -f umbrello.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-amor-i18n -f amor.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-kmoon-i18n -f kmoon.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-kodo-i18n -f kodo.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-kteatime-i18n -f kteatime.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-kweather-i18n -f kweather.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-kworldclock-i18n -f kworldclock.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-fifteen-i18n -f kfifteenapplet.lang
-%defattr(644,root,root,755)
-%files -n kdetoys-ktux-i18n -f ktux.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kamera-i18n -f kamera.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kcoloredit-i18n -f kcoloredit.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kdvi-i18n -f kdvi.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kgamma-i18n -f kgamma.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kghostview-i18n -f kghostview.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kiconedit-i18n -f kiconedit.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kooka-i18n -f kooka.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kolourpaint-i18n -f kolourpaint.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kpdf-i18n -f kpdf.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kpovmodeler-i18n -f kpovmodeler.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kruler-i18n -f kruler.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-ksnapshot-i18n -f ksnapshot.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kuickshow-i18n -f kuickshow.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kview-i18n -f kview.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kfile-i18n -f kfile_gra.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kmrml-i18n -f kmrml.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-ksvg-i18n -f ksvgplugin.lang
-%defattr(644,root,root,755)
-%files  -n kdegraphics-kfax-i18n -f kfax.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-ark-i18n -f ark_plugin.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-lnkforward-i18n -f rellinks.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-kate-i18n -f kate-plugins.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-kicker-i18n -f kicker-applets.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-konqueror-i18n -f konq-plugins.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-atlantikdesigner-i18n -f atlantikdesigner.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-ksig-i18n -f ksig.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-kaddressbook-i18n -f libkaddrbk_geo_xxport.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-fsview-i18n -f fsview.lang
-%defattr(644,root,root,755)
-%files -n kdeaddons-noatun-i18n -f noatun_add.lang
-%defattr(644,root,root,755)
-%files -n kdeadmin-kcmlilo-i18n -f kcmlilo.lang
-%defattr(644,root,root,755)
 %files -n kdevelop-i18n -f kdevelop.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kfilereplace-i18n -f kfilereplace.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kimagemapeditor-i18n -f kimagemapeditor.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-klinkstatus-i18n -f klinkstatus.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kommander-i18n -f kommander.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-kxsldbg-i18n -f kxsldbg.lang
+%defattr(644,root,root,755)
+%files -n kdewebdev-quanta-i18n -f quanta.lang
+%defattr(644,root,root,755)
+%files -n kdm-i18n -f kdm.lang
+%defattr(644,root,root,755)
+%files -n konqueror-i18n -f konqueror.lang
+%defattr(644,root,root,755)
+%files -n konqueror-libs-i18n -f libkonq.lang
 %defattr(644,root,root,755)
