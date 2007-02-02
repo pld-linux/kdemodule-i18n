@@ -3616,10 +3616,57 @@ kde_find_lang kdenetwork-ksirc-i18n ksirc
 kde_find_lang kdenetwork-ktalkd-i18n ktalkd kcmktalkd
 kde_find_lang kdenetwork-kwifimanager-i18n kwifimanager kwireless kcmwifi
 kde_find_lang kdenetwork-lanbrowser-i18n lisa lanbrowser kcmlanbrowser kio_lan
-
-
-
-
+kde_find_lang kdepim-i18n "
+	akregator
+	akregator_konqplugin
+	kabc_slox
+	kalarm
+	kalarmd
+	kcmkontactnt
+	kdepimwizards
+	kfile_ics
+	kitchensync
+	kontact
+	korganizer
+	kres_exchange
+	kres_imap
+	kres_remote
+	kres_xmlrpc
+	ksync
+	multisynk
+"
+kde_find_lang kdepim-kaddressbook-i18n kabc2mutt kaddressbook kcmkabconfig kfile_vcf
+kde_find_lang kdepim-kandy-i18n kandy
+kde_find_lang kdepim-karm-i18n karm
+kde_find_lang kdepim-kmail-i18n "
+	kfile_rfc822
+	kio_sieve
+	kleopatra
+	kmail
+	kmail_text_calendar_plugin
+	kmail_text_vcard_plugin
+	kmailcvt
+	ktnef
+	kwatchgnupg
+"
+kde_find_lang kdepim-knode-i18n knode
+kde_find_lang kdepim-knotes-i18n knotes
+kde_find_lang kdepim-konsolekalendar-i18n konsolekalendar
+kde_find_lang kdepim-korn-i18n korn
+kde_find_lang kdepim-kpilot-i18n kpilot kfile_palm
+kde_find_lang kdepim-libs-i18n "
+	kdgantt
+	kgantt
+	libkcal
+	libkdepim
+	libkitchensync
+	libkleopatra
+	libkmime
+	libkpgp
+	libkpimexchange
+	libksieve
+	libksync
+"
 
 
 
@@ -3742,92 +3789,9 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	fi
 done
 
-> kdepim.lang
-a="
-akregator
-akregator_konqplugin
-kabc_slox
-kalarm
-kalarmd
-kdepimwizards
-kfile_ics
-kitchensync
-kontact
-korganizer
-kres_exchange
-kres_imap
-kres_remote
-kres_xmlrpc
-ksync
-multisynk
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kdepim.lang
-	rm -f $i.lang
-done
 
-%find_lang	kaddressbook	--with-kde
-%find_lang	kandy		--with-kde
-%find_lang	karm		--with-kde
-%find_lang	knode		--with-kde
-%find_lang	knotes		--with-kde
-%find_lang	konsolekalendar	--with-kde
-%find_lang	korn		--with-kde
-%find_lang	kpilot		--with-kde
-%find_lang	kfile_palm	--with-kde
-cat kfile_palm.lang >> kpilot.lang
-rm -f kfile_palm.lang
-
-
-%find_lang	kmail		--with-kde
-a="
-kfile_rfc822
-kio_sieve
-kleopatra
-kmail_text_calendar_plugin
-kmail_text_vcard_plugin
-kmailcvt
-ktnef
-kwatchgnupg
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kmail.lang
-	rm -f $i.lang
-done
-
-a="
-kabc2mutt
-kcmkabconfig
-kfile_vcf
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kaddressbook.lang
-	rm -f $i.lang
-done
 
 # Not packaging kmobile, it was disabled by coolo
-
-%find_lang libkdepim		--with-kde
-a="
-kdgantt
-kgantt
-libkcal
-libkitchensync
-libkleopatra
-libkmime
-libkpgp
-libkpimexchange
-libksieve
-libksync
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> libkdepim.lang
-	rm -f $i.lang
-done
 
 %find_lang ark			--with-kde
 %find_lang KRegExpEditor	--with-kde
@@ -3947,10 +3911,6 @@ done
 %find_lang kworldclock		--with-kde
 %find_lang kfifteenapplet	--with-kde
 %find_lang ktux			--with-kde
-
-%find_lang	kcmkontactnt		--with-kde
-cat kcmkontactnt.lang >> kdepim.lang
-rm -f kcmkontactnt.lang
 
 
 %find_lang kdevelop --with-kde
@@ -4330,27 +4290,27 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdenetwork-lanbrowser-i18n -f kdenetwork-lanbrowser-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-i18n -f kdepim.lang
+%files -n kdepim-i18n -f kdepim-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kaddressbook-i18n -f kaddressbook.lang
+%files -n kdepim-kaddressbook-i18n -f kdepim-kaddressbook-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kandy-i18n -f kandy.lang
+%files -n kdepim-kandy-i18n -f kdepim-kandy-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-karm-i18n -f karm.lang
+%files -n kdepim-karm-i18n -f kdepim-karm-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kmail-i18n -f kmail.lang
+%files -n kdepim-kmail-i18n -f kdepim-kmail-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-knode-i18n -f knode.lang
+%files -n kdepim-knode-i18n -f kdepim-knode-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-knotes-i18n -f knotes.lang
+%files -n kdepim-knotes-i18n -f kdepim-knotes-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-konsolekalendar-i18n -f konsolekalendar.lang
+%files -n kdepim-konsolekalendar-i18n -f kdepim-konsolekalendar-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-korn-i18n -f korn.lang
+%files -n kdepim-korn-i18n -f kdepim-korn-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-kpilot-i18n -f kpilot.lang
+%files -n kdepim-kpilot-i18n -f kdepim-kpilot-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdepim-libs-i18n -f libkdepim.lang
+%files -n kdepim-libs-i18n -f kdepim-libs-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-cervisia-i18n -f cervisia.lang
 %defattr(644,root,root,755)
