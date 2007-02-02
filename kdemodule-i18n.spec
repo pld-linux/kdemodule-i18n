@@ -357,7 +357,6 @@ T³umaczenia dla centrum informacji o systemie w KDE.
 Summary:	Internationalization and localization files for kate
 Summary(pl):	T³umaczenia dla kate
 Group:		X11/Applications
-#Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-kate = %{kdebase_epoch}:%{version}
 
@@ -489,7 +488,6 @@ T³umaczenia dla kdm-a.
 Summary:	Internationalization and localization files for konqueror
 Summary(pl):	T³umaczenia dla konquerora
 Group:		X11/Applications
-#Requires:	kdebase-common-filemanagement-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-konsole-i18n = %{epoch}:%{version}-%{release}
 Requires:	konqueror = %{kdebase_epoch}:%{version}
@@ -540,20 +538,6 @@ Internationalization and localization files for kde-decoration-quartz.
 
 %description -n kde-decoration-quartz-i18n -l pl
 T³umaczenia dla kde-decoration-quartz.
-
-# currently emty
-%package -n kdebase-common-filemanagement-i18n
-Summary:	Internationalization and localization files for common-filemanagement
-Summary(pl):	T³umaczenia dla common-filemanagement
-Group:		X11/Applications
-Requires:	kdebase-common-filemanagement = %{kdebase_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdebase-common-filemanagement-i18n
-Internationalization and localization files for common-filemanagement.
-
-%description -n kdebase-common-filemanagement-i18n -l pl
-T³umaczenia dla common-filemanagement.
 
 %package -n kdebase-desktop-libs-i18n
 Summary:	Internationalization and localization files for desktop-libs
@@ -3207,10 +3191,11 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	# remove empty language catalogs (= 1 message only)
 	find $RPM_BUILD_ROOT%{_datadir}/locale -type f -name '*.mo' | xargs file | egrep ', 1 messages$' | cut -d: -f1 | xargs rm -vf
 
+	rm -f __find.*
 	touch installed.stamp
 fi
 
-rm -f *.lang *.cache __find.*
+rm -f *.lang
 
 %find_lang quanta	--with-kde
 %find_lang kommander	--with-kde
@@ -3346,16 +3331,32 @@ rm -f libkdegames.lang
 > core.lang
 a="
 colors
+drkonqi
 fonts
+kcmaccessibility
+kcmcolors
+kcmfonts
+kcmkded
+kcmlocale
+kcmprintmgr
 kcmstyle
 kdebugdialog
 kdeprint
+kdeprint_part
 kdesu
+kdesud
 khelpcenter
+khtmlkttsd
+kio_home
+kio_man
+kio_settings
+kio_thumbnail
+kprinter
+kstyle_keramik_config
 language
 "
 for i in $a; do
-	%find_lang $i --with-kde
+	%find_lang $i	--with-kde
 	cat $i.lang >> core.lang
 	rm -f $i.lang
 done
@@ -3370,7 +3371,6 @@ clockapplet
 desktop
 desktopbehavior
 display
-display
 dockbarextension
 energy
 joystick
@@ -3379,58 +3379,38 @@ kasbarextension
 kbinaryclock
 kcmaccess
 kcmarts
-kcmarts
-kcmbackground
 kcmbackground
 kcmbell
-kcmbell
-kcmcomponentchooser
 kcmcomponentchooser
 kcmenergy
-kcmenergy
-kcminput
 kcminput
 kcmkclock
 kcmkeys
-kcmkeys
 kcmkicker
 kcmkwindecoration
-kcmkwindecoration
 kcmkwinrules
-kcmkwm
 kcmkwm
 kcmlaunch
 kcmnotify
 kcmsmserver
 kcmspellchecking
-kcmspellchecking
 kcmtaskbar
 kcmxinerama
-kcmxinerama
-kcmxinerama
-kdesktop
 kdesktop
 keyboard
 keys
-khotkeys
 khotkeys
 kicker
 kmenuapplet
 kmenuedit
 kminipagerapplet
 krandr
-krandr
 krdb
-krdb
-kreadconfig
 kreadconfig
 krunapplet
 ksmserver
-ksmserver
-ksplash
 ksplash
 ksplashml
-kstart
 kstart
 kstyle_plastik_config
 ksystemtrayapplet
@@ -3438,8 +3418,6 @@ ksystraycmd
 ktaskbarapplet
 kthememanager
 ktip
-ktip
-kwin
 kwin
 kwindecoration
 kxkb
@@ -3457,7 +3435,6 @@ naughtyapplet
 panel
 panelappearance
 passwords
-privacy
 privacy
 quicklauncher
 spellchecking
@@ -3484,27 +3461,6 @@ rm -f kcmkonsole.lang
 %find_lang	kioslave	--with-kde
 cat kioslave.lang	>> kinfocenter.lang
 rm -f kioslave.lang
-
-a="
-drkonqi
-kcmaccessibility
-kcmcolors
-kcmfonts
-kcmkded
-kcmlocale
-kcmprintmgr
-kdeprint_part
-kdesud
-kio_man
-kio_settings
-kprinter
-kstyle_keramik_config
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> core.lang
-	rm -f $i.lang
-done
 
 %find_lang ksplashthemes	--with-kde
 
@@ -3623,8 +3579,12 @@ kio_mac
 kio_media
 kio_nfs
 kio_print
+kio_remote
 kio_sftp
 kio_smb
+kio_system
+kio_tar
+kio_trash
 netpref
 nsplugin
 proxy
@@ -3660,6 +3620,7 @@ kabc_slox
 kalarm
 kalarmd
 kdepimwizards
+kfile_ics
 kontact
 korganizer
 kres_exchange
@@ -3737,7 +3698,12 @@ done
 %find_lang kdict		--with-kde
 %find_lang kget			--with-kde
 %find_lang knewsticker		--with-kde
+
 %find_lang kopete		--with-kde
+%find_lang kio_jabberdisco		--with-kde
+cat kio_jabberdisco.lang >> kopete.lang
+rm -f kio_jabberdisco.lang
+
 %find_lang kpf			--with-kde
 %find_lang kppp			--with-kde
 %find_lang krdc			--with-kde
@@ -3835,6 +3801,7 @@ a="
 kcmkvaio
 kcmthinkpad
 kcmthinkpad
+kmilo_delli8k
 kmilo_generic
 kmilo_kvaio
 kmilo_powerbook
@@ -3843,8 +3810,8 @@ kmilod
 "
 for i in $a; do
 	%find_lang $i		--with-kde
-	cat ${i}.lang >> kmilo.lang
-	rm -f ${i}.lang
+	cat $i.lang >> kmilo.lang
+	rm -f $i.lang
 done
 
 %find_lang kregexpeditor	--with-kde
@@ -3876,9 +3843,16 @@ cat kcmcddb.lang >> libkcddb.lang
 rm -f kcmcddb.lang
 
 %find_lang kio_audiocd	--with-kde
-%find_lang kcmaudiocd	--with-kde
-cat kcmaudiocd.lang >> kio_audiocd.lang
-rm -f kcmaudiocd.lang
+a="
+audiocd_encoder_lame
+audiocd_encoder_vorbis
+kcmaudiocd
+"
+for i in $a; do
+	%find_lang $i --with-kde
+	cat $i.lang >> kio_audiocd.lang
+	rm -f $i.lang
+done
 
 %find_lang kaudiocreator --with-kde
 %find_lang artscontrol	--with-kde
@@ -3916,6 +3890,7 @@ kabc_net
 kabc_sql
 kabcformat_binary
 katepart
+kcmshell
 kdelibs_colors
 kdeprint
 kfileaudiopreview
@@ -4065,7 +4040,6 @@ rm -f kfile_lnk.lang
 
 %find_lang	kate-plugins	--with-kde
 %find_lang	kicker-applets	--with-kde
-%find_lang	konq-plugins	--with-kde
 %find_lang	fsview		--with-kde
 %find_lang	atlantikdesigner	--with-kde
 %find_lang	kcmkontactnt		--with-kde
@@ -4107,17 +4081,21 @@ for i in $a; do
 	rm -f $i.lang
 done
 
+%find_lang	konq-plugins	--with-kde
 a="
 audiorename_plugin
 autorefresh
 babelfish
 crashesplugin
 dirfilterplugin
+domtreeviewer
 imagerename_plugin
 imgalleryplugin
 kcmkuick
+kfile_cert
 kfile_folder
 kfile_html
+kfile_mhtml
 kfile_txt
 khtmlsettingsplugin
 konqsidebar_mediaplayer
@@ -4127,17 +4105,13 @@ minitoolsplugin
 searchbarplugin
 uachangerplugin
 validatorsplugin
+webarchiver
 "
 for i in $a; do
 	%find_lang $i	--with-kde
 	cat $i.lang >> konq-plugins.lang
 	rm -f $i.lang
 done
-
-%find_lang webarchiver
-%find_lang domtreeviewer
-cat webarchiver.lang domtreeviewer.lang >> konq-plugins.lang
-rm -f webarchiver.lang domtreeviewer.lang
 
 a="
 katecppsymbolviewer
