@@ -3251,7 +3251,6 @@ kde_find_lang kdeaddons-kicker-i18n "
 "
 
 kde_find_lang kdeaddons-konqueror-i18n "
-	konq-plugins
 	audiorename_plugin
 	autorefresh
 	babelfish
@@ -3267,6 +3266,7 @@ kde_find_lang kdeaddons-konqueror-i18n "
 	kfile_mhtml
 	kfile_txt
 	khtmlsettingsplugin
+	konq-plugins
 	konqsidebar_delicious
 	konqsidebar_mediaplayer
 	konqsidebar_metabar
@@ -3301,8 +3301,164 @@ kde_find_lang kdeadmin-kcron-i18n kcron
 kde_find_lang kdeadmin-kdat-i18n kdat
 kde_find_lang kdeadmin-kpackage-i18n kpackage kfile_deb	kfile_rpm
 kde_find_lang kdeadmin-ksysv-i18n ksysv	secpolicy
+kde_find_lang kdeadmin-kuser-i18n kuser
+kde_find_lang kdeartwork-screensavers-i18n klock kpartsaver kxsconfig
+kde_find_lang kdebase-core-i18n "
+	colors
+	drkonqi
+	fonts
+	kcmaccessibility
+	kcmcolors
+	kcmfonts
+	kcmkded
+	kcmlocale
+	kcmprintmgr
+	kcmstyle
+	kdebugdialog
+	kdeprint
+	kdeprint_part
+	kdesu
+	kdesud
+	khelpcenter
+	khtmlkttsd
+	kio_home
+	kio_man
+	kio_settings
+	kio_thumbnail
+	knetattach
+	kprinter
+	kstyle_keramik_config
+	language
+"
+kde_find_lang kdebase-desktop-i18n "
+	arts
+	background
+	bell
+	clock
+	clockapplet
+	desktop
+	desktopbehavior
+	display
+	dockbarextension
+	energy
+	joystick
+	kaccess
+	kasbarextension
+	kbinaryclock
+	kcmaccess
+	kcmarts
+	kcmbackground
+	kcmbell
+	kcmcomponentchooser
+	kcmenergy
+	kcminput
+	kcmkclock
+	kcmkeys
+	kcmkicker
+	kcmkwindecoration
+	kcmkwinrules
+	kcmkwm
+	kcmkxmlrpcd
+	kcmlaunch
+	kcmnotify
+	kcmsmserver
+	kcmspellchecking
+	kcmtaskbar
+	kcmxinerama
+	kdesktop
+	keyboard
+	keys
+	khotkeys
+	kicker
+	kickermenu_kate
+	kmenuapplet
+	kmenuedit
+	kminipagerapplet
+	krandr
+	krdb
+	kreadconfig
+	krunapplet
+	ksmserver
+	ksplash
+	ksplashml
+	kstart
+	kstyle_plastik_config
+	ksystemtrayapplet
+	ksystraycmd
+	ktaskbarapplet
+	kthememanager
+	ktip
+	kwin
+	kwindecoration
+	kxkb
+	kxmlrpcd
+	libkicker
+	libkickermenu_kdeprint
+	libkickermenu_konsole
+	libkickermenu_prefmenu
+	libkickermenu_recentdocs
+	libkickermenu_tom
+	lockout
+	mediaapplet
+	mouse
+	naughtyapplet
+	panel
+	panelappearance
+	passwords
+	privacy
+	quicklauncher
+	spellchecking
+	taskbarextension
+	windowmanagement
+"
+kde_find_lang kdebase-desktop-libs-i18n "
+	ksplashthemes
+	libtaskbar
+	libtaskmanager
+"
 
+kde_find_lang kdebase-infocenter-i18n "
+	kcminfo
+	kcmioslaveinfo
+	kcmnic
+	kcmsamba
+	kcmusb
+	kcmview1394
+	kinfocenter
+	kioslave
+"
+kde_find_lang kdebase-kappfinder-i18n kappfinder
+kde_find_lang kdebase-kate-i18n "
+	kate
+	katedefaultproject
+	katetabbarextension
+"
+kde_find_lang kdebase-kdcop-i18n kdcop
+kde_find_lang kdebase-kdeprintfax-i18n kdeprintfax
+kde_find_lang kdebase-kdialog-i18n kdialog
+kde_find_lang kdebase-kfind-i18n kfind kfindpart
+kde_find_lang kdebase-kfontinst-i18n kcmfontinst kfontinst
+kde_find_lang kdebase-kjobviewer-i18n kjobviewer
+kde_find_lang kdebase-klipper-i18n klipper
+kde_find_lang kdebase-konsole-i18n konsole kcmkonsole
+kde_find_lang kdebase-kpager-i18n kpager
+kde_find_lang kdebase-kpersonalizer-i18n kpersonalizer
+kde_find_lang kdebase-ksysguard-i18n ksysguard
+# XXX kwriteconfig != kwrite
+kde_find_lang kdebase-kwrite-i18n kwrite kwriteconfig
+kde_find_lang kdebase-screensavers-i18n screensaver	kcmscreensaver kscreensaver
+kde_find_lang kdebase-useraccount-i18n useraccount kdepasswd
+kde_find_lang kdeedu-kalzium-i18n kalzium
+kde_find_lang kdeedu-kanagram-i18n kanagram
+kde_find_lang kdeedu-kbruch-i18n kbruch
+kde_find_lang kdeedu-keduca-i18n keduca
+kde_find_lang kdeedu-khangman-i18n khangman
+kde_find_lang kdeedu-kig-i18n kig kfile_drgeo kfile_kig
+kde_find_lang kdeedu-kiten-i18n kiten
+kde_find_lang kdeedu-klatin-i18n klatin
+kde_find_lang kdeedu-klettres-i18n klettres
 
+exit 1
 
 
 
@@ -3318,21 +3474,10 @@ kde_find_lang kdeadmin-ksysv-i18n ksysv	secpolicy
 cat libkdegames.lang >> kdegames.lang
 rm -f libkdegames.lang
 
-
-%find_lang kuser	--with-kde
-
-> screensavers.lang
-%find_lang klock --with-kde
-%find_lang kpartsaver --with-kde
-%find_lang kxsconfig --with-kde
-cat klock.lang kpartsaver.lang kxsconfig.lang >> screensavers.lang
-rm -f klock.lang kpartsaver.lang kxsconfig.lang
-
-%find_lang klatin		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> klatin.lang
+	echo "%lang($lang) $path" >> kdeedu-klatin-i18n.lang
 done
 
 %find_lang kturtle		--with-kde
@@ -3350,29 +3495,16 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
 done
 
 %find_lang kwordquiz	--with-kde
-%find_lang kalzium	--with-kde
-%find_lang kbruch	--with-kde
-%find_lang keduca	--with-kde
-%find_lang khangman	--with-kde
 
-%find_lang kig		--with-kde
-%find_lang kfile_drgeo		--with-kde
-%find_lang kfile_kig		--with-kde
-cat kfile_drgeo.lang kfile_kig.lang >> kig.lang
-rm -f kfile_drgeo.lang kfile_kig.lang
-
-%find_lang kiten	--with-kde
-%find_lang klettres	--with-kde
 
 # DON'T PACKAGE KMATHTOOL
 rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
 rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
 
-%find_lang kanagram	--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kanagram.lang
+	echo "%lang($lang) $path" >> kdeedu-kanagram-i18n.lang
 done
 
 %find_lang kmplot	--with-kde
@@ -3423,210 +3555,7 @@ rm -f libksirtet.lang
 cat libkdegames.lang >> i18n.lang
 rm -f libkdegames.lang
 
-> core.lang
-a="
-colors
-drkonqi
-fonts
-kcmaccessibility
-kcmcolors
-kcmfonts
-kcmkded
-kcmlocale
-kcmprintmgr
-kcmstyle
-kdebugdialog
-kdeprint
-kdeprint_part
-kdesu
-kdesud
-khelpcenter
-khtmlkttsd
-kio_home
-kio_man
-kio_settings
-kio_thumbnail
-knetattach
-kprinter
-kstyle_keramik_config
-language
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> core.lang
-	rm -f $i.lang
-done
-
-> kdebase.lang
-a="
-arts
-background
-bell
-clock
-clockapplet
-desktop
-desktopbehavior
-display
-dockbarextension
-energy
-joystick
-kaccess
-kasbarextension
-kbinaryclock
-kcmaccess
-kcmarts
-kcmbackground
-kcmbell
-kcmcomponentchooser
-kcmenergy
-kcminput
-kcmkclock
-kcmkeys
-kcmkicker
-kcmkwindecoration
-kcmkwinrules
-kcmkwm
-kcmkxmlrpcd
-kcmlaunch
-kcmnotify
-kcmsmserver
-kcmspellchecking
-kcmtaskbar
-kcmxinerama
-kdesktop
-keyboard
-keys
-khotkeys
-kicker
-kickermenu_kate
-kmenuapplet
-kmenuedit
-kminipagerapplet
-krandr
-krdb
-kreadconfig
-krunapplet
-ksmserver
-ksplash
-ksplashml
-kstart
-kstyle_plastik_config
-ksystemtrayapplet
-ksystraycmd
-ktaskbarapplet
-kthememanager
-ktip
-kwin
-kwindecoration
-kxkb
-kxmlrpcd
-libkicker
-libkickermenu_kdeprint
-libkickermenu_konsole
-libkickermenu_prefmenu
-libkickermenu_recentdocs
-libkickermenu_tom
-lockout
-mediaapplet
-mouse
-naughtyapplet
-panel
-panelappearance
-passwords
-privacy
-quicklauncher
-spellchecking
-taskbarextension
-windowmanagement
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kdebase.lang
-	rm -f $i.lang
-done
-
-%find_lang	klipper		--with-kde
-%find_lang	ksysguard	--with-kde
-%find_lang	kpager		--with-kde
-%find_lang	kwrite		--with-kde
-
-%find_lang	konsole		--with-kde
-%find_lang	kcmkonsole	--with-kde
-cat kcmkonsole.lang	>> konsole.lang
-rm -f kcmkonsole.lang
-
-%find_lang	kinfocenter	--with-kde
-%find_lang	kioslave	--with-kde
-cat kioslave.lang	>> kinfocenter.lang
-rm -f kioslave.lang
-
-%find_lang ksplashthemes	--with-kde
-
-a="
-kcminfo
-kcmioslaveinfo
-kcmnic
-kcmsamba
-kcmusb
-kcmview1394
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kinfocenter.lang
-	rm -f $i.lang
-done
-
-%find_lang kappfinder	--with-kde
-
-%find_lang	kate		--with-kde
-%find_lang katedefaultproject	--with-kde
-%find_lang katetabbarextension --with-kde
-cat katedefaultproject.lang katetabbarextension.lang >> kate.lang
-rm -f katedefaultproject.lang katetabbarextension.lang
-
-%find_lang kdcop	--with-kde
-
-%find_lang kdeprintfax	--with-kde
-
-%find_lang kdialog	--with-kde
-
-%find_lang kfind		--with-kde
-%find_lang kfindpart	--with-kde
-cat kfindpart.lang >> kfind.lang
-rm -f kfindpart.lang
-
-%find_lang	kcmfontinst	--with-kde
-%find_lang kfontinst	--with-kde
-cat kfontinst.lang >> kcmfontinst.lang
-rm -f kfontinst.lang
-
-
-%find_lang libtaskbar	--with-kde
-%find_lang libtaskmanager	--with-kde
-cat libtaskmanager.lang >> libtaskbar.lang
-rm -f libtaskmanager.lang
-
-%find_lang kjobviewer	--with-kde
-
-%find_lang kpersonalizer	--with-kde
-
-%find_lang kwriteconfig	--with-kde
-cat kwriteconfig.lang >> kwrite.lang
-rm -f kwriteconfig.lang
-
 %find_lang libkonq	--with-kde
-
-
-%find_lang	screensaver	--with-kde
-a="
-kcmscreensaver
-kscreensaver
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> screensaver.lang
-	rm -f $i.lang
-done
 
 %find_lang	kdm		--with-kde
 a="
@@ -3690,14 +3619,6 @@ for i in $a; do
 	cat $i.lang >> konqueror.lang
 	rm -f $i.lang
 done
-
-cat libtaskbar.lang >> ksplashthemes.lang
-rm -f libtaskbar.lang
-
-%find_lang useraccount		--with-kde
-%find_lang kdepasswd		--with-kde
-cat kdepasswd.lang >> useraccount.lang
-rm -f kdepasswd.lang
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	if [ -d $i ]; then
@@ -4154,14 +4075,14 @@ for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
 	if [ -d $i ] ; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
-		echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> core.lang
+		echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> kdebase-core-i18n.lang
 	fi
 done
 
 %find_lang kcontrol --with-kde
-grep '\.mo' kcontrol.lang >> core.lang
+grep '\.mo' kcontrol.lang >> kdebase-core-i18n.lang
 
-sed -e 's,%{_prefix},%dir %{_prefix},g' kcontrol.lang | grep HTML >> core.lang
+sed -e 's,%{_prefix},%dir %{_prefix},g' kcontrol.lang | grep HTML >> kdebase-core-i18n.lang
 
 for i in $RPM_BUILD_ROOT%{_kdedocdir}/*/kcontrol/index.docbook; do
 	echo $i
@@ -4169,7 +4090,7 @@ for i in $RPM_BUILD_ROOT%{_kdedocdir}/*/kcontrol/index.docbook; do
 		z=`echo $i | sed -e "s,$RPM_BUILD_ROOT%{_kdedocdir},,g"`
 		lang=`echo $z | cut -d'/' -f2`
 		if [ -n "$lang" ] ; then
-			echo -e "%lang($lang) %{_kdedocdir}/$lang/kcontrol/*.*" >> core.lang
+			echo -e "%lang($lang) %{_kdedocdir}/$lang/kcontrol/*.*" >> kdebase-core-i18n.lang
 		fi
 	fi
 done
@@ -4178,25 +4099,26 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/*; do
 	echo $i
 	if [ -d $i ]; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/,,`
-		echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> khangman.lang
+		echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> kdeedu-khangman-i18n.lang
 	fi
 done
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/*.txt; do
 	t=${a##*/}
 	lang=${t%.txt}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> khangman.lang
+	echo "%lang($lang) $path" >> kdeedu-khangman-i18n.lang
 done
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 	echo $i
 	if [ -d $i ]; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/klettres/,,`
-		echo "%lang($z) %{_datadir}/apps/klettres/$z" >> klettres.lang
+		echo "%lang($z) %{_datadir}/apps/klettres/$z" >> kdeedu-klettres-i18n.lang
 	fi
 done
 
 %if 0
+#"
 # TODO these *.lang are created but not included in any %package yet
 %find_lang blinken --with-kde
 #%find_lang flashkard --with-kde # obsoleted?
@@ -4279,67 +4201,67 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeadmin-ksysv-i18n -f kdeadmin-ksysv-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kuser-i18n -f kuser.lang
+%files -n kdeadmin-kuser-i18n -f kdeadmin-kuser-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeartwork-screensavers-i18n -f screensavers.lang
+%files -n kdeartwork-screensavers-i18n -f kdeartwork-screensavers-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-core-i18n -f core.lang
+%files -n kdebase-core-i18n -f kdebase-core-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-desktop-i18n -f kdebase.lang
+%files -n kdebase-desktop-i18n -f kdebase-desktop-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-desktop-libs-i18n -f ksplashthemes.lang
+%files -n kdebase-desktop-libs-i18n -f kdebase-desktop-libs-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-infocenter-i18n -f kinfocenter.lang
+%files -n kdebase-infocenter-i18n -f kdebase-infocenter-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kappfinder-i18n -f kappfinder.lang
+%files -n kdebase-kappfinder-i18n -f kdebase-kappfinder-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kate-i18n -f kate.lang
+%files -n kdebase-kate-i18n -f kdebase-kate-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdcop-i18n -f kdcop.lang
+%files -n kdebase-kdcop-i18n -f kdebase-kdcop-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdeprintfax-i18n -f kdeprintfax.lang
+%files -n kdebase-kdeprintfax-i18n -f kdebase-kdeprintfax-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kdialog-i18n -f kdialog.lang
+%files -n kdebase-kdialog-i18n -f kdebase-kdialog-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kfind-i18n -f kfind.lang
+%files -n kdebase-kfind-i18n -f kdebase-kfind-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kfontinst-i18n -f kcmfontinst.lang
+%files -n kdebase-kfontinst-i18n -f kdebase-kfontinst-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kjobviewer-i18n -f kjobviewer.lang
+%files -n kdebase-kjobviewer-i18n -f kdebase-kjobviewer-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-klipper-i18n -f klipper.lang
+%files -n kdebase-klipper-i18n -f kdebase-klipper-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-konsole-i18n -f konsole.lang
+%files -n kdebase-konsole-i18n -f kdebase-konsole-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kpager-i18n -f kpager.lang
+%files -n kdebase-kpager-i18n -f kdebase-kpager-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kpersonalizer-i18n -f kpersonalizer.lang
+%files -n kdebase-kpersonalizer-i18n -f kdebase-kpersonalizer-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-ksysguard-i18n -f ksysguard.lang
+%files -n kdebase-ksysguard-i18n -f kdebase-ksysguard-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-kwrite-i18n -f kwrite.lang
+%files -n kdebase-kwrite-i18n -f kdebase-kwrite-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-screensavers-i18n -f screensaver.lang
+%files -n kdebase-screensavers-i18n -f kdebase-screensavers-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdebase-useraccount-i18n -f useraccount.lang
+%files -n kdebase-useraccount-i18n -f kdebase-useraccount-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kalzium-i18n -f kalzium.lang
+%files -n kdeedu-kalzium-i18n -f kdeedu-kalzium-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kanagram-i18n -f kanagram.lang
+%files -n kdeedu-kanagram-i18n -f kdeedu-kanagram-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kbruch-i18n -f kbruch.lang
+%files -n kdeedu-kbruch-i18n -f kdeedu-kbruch-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-keduca-i18n -f keduca.lang
+%files -n kdeedu-keduca-i18n -f kdeedu-keduca-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-khangman-i18n -f khangman.lang
+%files -n kdeedu-khangman-i18n -f kdeedu-khangman-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kig-i18n -f kig.lang
+%files -n kdeedu-kig-i18n -f kdeedu-kig-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kiten-i18n -f kiten.lang
+%files -n kdeedu-kiten-i18n -f kdeedu-kiten-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-klatin-i18n -f klatin.lang
+%files -n kdeedu-klatin-i18n -f kdeedu-klatin-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-klettres-i18n -f klettres.lang
+%files -n kdeedu-klettres-i18n -f kdeedu-klettres-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kmplot-i18n -f kmplot.lang
 %defattr(644,root,root,755)
