@@ -3197,20 +3197,114 @@ fi
 
 rm -f *.lang
 
-%find_lang kwin_art_clients			--with-kde kde-decoration-common.lang
-%find_lang kgreet_classic			--with-kde kde-kgreet-classic.lang
-%find_lang kio_imap4				--with-kde kde-kio-imap4.lang
-%find_lang kio_ldap					--with-kde kde-kio-ldap.lang
-%find_lang kio_nntp					--with-kde kde-kio-nntp.lang
-%find_lang kio_pop3					--with-kde kde-kio-pop3.lang
-%find_lang kio_smtp					--with-kde kde-kio-smtp.lang
-%find_lang kmag						--with-kde kdeaccessibility-kmag.lang
-%find_lang kmousetool				--with-kde kdeaccessibility-kmousetool.lang
-%find_lang kmouth					--with-kde kdeaccessibility-kmouth.lang
-%find_lang ark_plugin				--with-kde kdeaddons-ark.lang
-%find_lang atlantikdesigner			--with-kde kdeaddons-atlantikdesigner.lang
-%find_lang fsview					--with-kde kdeaddons-fsview.lang
-%find_lang libkaddrbk_geo_xxport	--with-kde kdeaddons-kaddressbook.lang
+kde_find_lang() {
+	local out=$1.lang
+	shift
+	> $out
+	for a in $*; do
+		%find_lang $a --with-kde tmp.lang
+		cat tmp.lang >> $out
+	done
+	rm -f tmp.lang
+}
+
+kde_find_lang kde-decoration-common-i18n kwin_art_clients
+kde_find_lang kde-kgreet-classic-i18n kgreet_classic
+kde_find_lang kde-kio-imap4-i18n kio_imap4
+kde_find_lang kde-kio-ldap-i18n kio_ldap
+kde_find_lang kde-kio-nntp-i18n kio_nntp
+kde_find_lang kde-kio-pop3-i18n kio_pop3
+kde_find_lang kde-kio-smtp-i18n kio_smtp
+kde_find_lang kdeaccessibility-kmag-i18n kmag
+kde_find_lang kdeaccessibility-kmousetool-i18n kmousetool
+kde_find_lang kdeaccessibility-kmouth-i18n kmouth
+kde_find_lang kdeaddons-ark-i18n ark_plugin
+kde_find_lang kdeaddons-atlantikdesigner-i18n atlantikdesigner
+kde_find_lang kdeaddons-fsview-i18n fsview
+kde_find_lang kdeaddons-kaddressbook-i18n libkaddrbk_geo_xxport
+kde_find_lang kdeaddons-kate-i18n "
+	kate-plugins
+	katecppsymbolviewer
+	katefiletemplates
+	katefll_initplugin
+	katefll_plugin
+	katehelloworld
+	katehtmltools
+	kateinsertcommand
+	katekjswrapper
+	katemake
+	katemodeline
+	kateopenheader
+	katepybrowse
+	katetextfilter
+	katexmlcheck
+	katexmltools
+	ktexteditor_autobookmarker
+"
+
+kde_find_lang kdeaddons-kicker-i18n "
+	kicker-applets
+	kmathapplet
+	kolourpicker
+	ktimemon
+	mediacontrol
+"
+
+kde_find_lang kdeaddons-konqueror-i18n "
+	konq-plugins
+	audiorename_plugin
+	autorefresh
+	babelfish
+	crashesplugin
+	dirfilterplugin
+	domtreeviewer
+	imagerename_plugin
+	imgalleryplugin
+	kcmkuick
+	kfile_cert
+	kfile_folder
+	kfile_html
+	kfile_mhtml
+	kfile_txt
+	khtmlsettingsplugin
+	konqsidebar_delicious
+	konqsidebar_mediaplayer
+	konqsidebar_metabar
+	konqsidebar_news
+	kuick_plugin
+	minitoolsplugin
+	searchbarplugin
+	uachangerplugin
+	validatorsplugin
+	webarchiver
+"
+
+kde_find_lang kdeaddons-ksig-i18n ksig
+kde_find_lang kdeaddons-lnkforward-i18n rellinks kfile_lnk
+kde_find_lang kdeaddons-noatun-i18n "
+	alsaplayerui
+	charlatanui
+	dub
+	ffrs
+	lyrics
+	nexscope
+	pitchablespeed
+	synaescope
+	tippecanoe
+	tyler
+	wakeup
+	wavecapture
+"
+
+kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo
+kde_find_lang kdeadmin-kcron-i18n kcron
+kde_find_lang kdeadmin-kdat-i18n kdat
+kde_find_lang kdeadmin-kpackage-i18n kpackage kfile_deb	kfile_rpm
+kde_find_lang kdeadmin-ksysv-i18n ksysv	secpolicy
+
+
+
+
 
 
 %find_lang quanta	--with-kde
@@ -3225,21 +3319,7 @@ cat libkdegames.lang >> kdegames.lang
 rm -f libkdegames.lang
 
 
-%find_lang kcron	--with-kde
-%find_lang kdat		--with-kde
-%find_lang ksysv	--with-kde
 %find_lang kuser	--with-kde
-%find_lang kcmlilo	--with-kde
-
-%find_lang kpackage	--with-kde
-%find_lang kfile_deb	--with-kde
-%find_lang kfile_rpm	--with-kde
-cat kfile_deb.lang kfile_rpm.lang >> kpackage.lang
-rm -f kfile_deb.lang kfile_rpm.lang
-
-%find_lang secpolicy	--with-kde
-cat secpolicy.lang >> ksysv.lang
-rm -f secpolicy.lang
 
 > screensavers.lang
 %find_lang klock --with-kde
@@ -4051,108 +4131,10 @@ for i in $a; do
 	rm -f kfile_${i}.lang
 done
 
-%find_lang	kfile_lnk	--with-kde
-%find_lang	rellinks	--with-kde
-cat kfile_lnk.lang >> rellinks.lang
-rm -f kfile_lnk.lang
-
-%find_lang	kate-plugins	--with-kde
-%find_lang	kicker-applets	--with-kde
 %find_lang	kcmkontactnt		--with-kde
 cat kcmkontactnt.lang >> kdepim.lang
 rm -f kcmkontactnt.lang
 
-%find_lang	ksig		--with-kde
-
-a="
-kmathapplet
-kolourpicker
-ktimemon
-mediacontrol
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kicker-applets.lang
-	rm -f $i.lang
-done
-
-a="
-alsaplayerui
-charlatanui
-dub
-ffrs
-lyrics
-nexscope
-pitchablespeed
-synaescope
-tippecanoe
-tyler
-wakeup
-wavecapture
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> noatun_add.lang
-	rm -f $i.lang
-done
-
-%find_lang	konq-plugins	--with-kde
-a="
-audiorename_plugin
-autorefresh
-babelfish
-crashesplugin
-dirfilterplugin
-domtreeviewer
-imagerename_plugin
-imgalleryplugin
-kcmkuick
-kfile_cert
-kfile_folder
-kfile_html
-kfile_mhtml
-kfile_txt
-khtmlsettingsplugin
-konqsidebar_delicious
-konqsidebar_mediaplayer
-konqsidebar_metabar
-konqsidebar_news
-kuick_plugin
-minitoolsplugin
-searchbarplugin
-uachangerplugin
-validatorsplugin
-webarchiver
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> konq-plugins.lang
-	rm -f $i.lang
-done
-
-a="
-katecppsymbolviewer
-katefiletemplates
-katefll_initplugin
-katefll_plugin
-katehelloworld
-katehtmltools
-kateinsertcommand
-katekjswrapper
-katemake
-katemodeline
-kateopenheader
-katepybrowse
-katetextfilter
-katexmlcheck
-katexmltools
-ktexteditor_autobookmarker
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kate-plugins.lang
-	rm -f $i.lang
-done
 
 %find_lang kdevelop --with-kde
 a="
@@ -4247,55 +4229,55 @@ done
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n kde-decoration-common-i18n -f kde-decoration-common.lang
+%files -n kde-decoration-common-i18n -f kde-decoration-common-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kgreet-classic-i18n -f kde-kgreet-classic.lang
+%files -n kde-kgreet-classic-i18n -f kde-kgreet-classic-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-imap4-i18n -f kde-kio-imap4.lang
+%files -n kde-kio-imap4-i18n -f kde-kio-imap4-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-ldap-i18n -f kde-kio-ldap.lang
+%files -n kde-kio-ldap-i18n -f kde-kio-ldap-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-nntp-i18n -f kde-kio-nntp.lang
+%files -n kde-kio-nntp-i18n -f kde-kio-nntp-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-pop3-i18n -f kde-kio-pop3.lang
+%files -n kde-kio-pop3-i18n -f kde-kio-pop3-i18n.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-smtp-i18n -f kde-kio-smtp.lang
+%files -n kde-kio-smtp-i18n -f kde-kio-smtp-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmag-i18n -f kdeaccessibility-kmag.lang
+%files -n kdeaccessibility-kmag-i18n -f kdeaccessibility-kmag-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmousetool-i18n -f kdeaccessibility-kmousetool.lang
+%files -n kdeaccessibility-kmousetool-i18n -f kdeaccessibility-kmousetool-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmouth-i18n -f kdeaccessibility-kmouth.lang
+%files -n kdeaccessibility-kmouth-i18n -f kdeaccessibility-kmouth-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-ark-i18n -f kdeaddons-ark.lang
+%files -n kdeaddons-ark-i18n -f kdeaddons-ark-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-atlantikdesigner-i18n -f kdeaddons-atlantikdesigner.lang
+%files -n kdeaddons-atlantikdesigner-i18n -f kdeaddons-atlantikdesigner-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-fsview-i18n -f kdeaddons-fsview.lang
+%files -n kdeaddons-fsview-i18n -f kdeaddons-fsview-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-kaddressbook-i18n -f kdeaddons-kaddressbook.lang
+%files -n kdeaddons-kaddressbook-i18n -f kdeaddons-kaddressbook-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-kate-i18n -f kate-plugins.lang
+%files -n kdeaddons-kate-i18n -f kdeaddons-kate-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-kicker-i18n -f kicker-applets.lang
+%files -n kdeaddons-kicker-i18n -f kdeaddons-kicker-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-konqueror-i18n -f konq-plugins.lang
+%files -n kdeaddons-konqueror-i18n -f kdeaddons-konqueror-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-ksig-i18n -f ksig.lang
+%files -n kdeaddons-ksig-i18n -f kdeaddons-ksig-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-lnkforward-i18n -f rellinks.lang
+%files -n kdeaddons-lnkforward-i18n -f kdeaddons-lnkforward-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-noatun-i18n -f noatun_add.lang
+%files -n kdeaddons-noatun-i18n -f kdeaddons-noatun-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kcmlilo-i18n -f kcmlilo.lang
+%files -n kdeadmin-kcmlilo-i18n -f kdeadmin-kcmlilo-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kcron-i18n -f kcron.lang
+%files -n kdeadmin-kcron-i18n -f kdeadmin-kcron-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kdat-i18n -f kdat.lang
+%files -n kdeadmin-kdat-i18n -f kdeadmin-kdat-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-kpackage-i18n -f kpackage.lang
+%files -n kdeadmin-kpackage-i18n -f kdeadmin-kpackage-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeadmin-ksysv-i18n -f ksysv.lang
+%files -n kdeadmin-ksysv-i18n -f kdeadmin-ksysv-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeadmin-kuser-i18n -f kuser.lang
 %defattr(644,root,root,755)
