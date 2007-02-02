@@ -1084,6 +1084,19 @@ Internationalization and localization files for kwalletmanager.
 %description -n kdeutils-kwalletmanager-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kwalletmanagera.
 
+%package -n kdeutils-superkaramba-i18n
+Summary:	Internationalization and localization files for superkaramba
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwalletmanagera
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-superkaramba = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-superkaramba-i18n
+Internationalization and localization files for superkaramba.
+
+%description -n kdeutils-superkaramba-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla superkaramba.
+
 %package -n kdeutils-kdelirc-i18n
 Summary:	Internationalization and localization files for kdelirc
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdelirca
@@ -1125,6 +1138,15 @@ Internationalization and localization files for useraccount.
 %description -n kdebase-useraccount-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla useraccount.
 
+%package -n kdeaccessibility-kbstateapplet-i18n
+Summary:	Internationalization and localization files for kbstateapplet
+Group:		X11/Applications
+Requires:	kdeaccessibility-kbstateapplet = %{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaccessibility-kbstateapplet-i18n
+Internationalization and localization files for kbstateapplet.
+
 %package -n kdeaccessibility-kmag-i18n
 Summary:	Internationalization and localization files for kmag
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmag
@@ -1163,6 +1185,32 @@ Internationalization and localization files for kmouth.
 
 %description -n kdeaccessibility-kmouth-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kmouth.
+
+%package -n kdeaccessibility-ksayit-i18n
+Summary:	Internationalization and localization files for ksayit
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksayit
+Group:		X11/Applications
+Requires:	kdeaccessibility-ksayit = %{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaccessibility-ksayit-i18n
+Internationalization and localization files for ksayit.
+
+%description -n kdeaccessibility-ksayit-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksayit.
+
+%package -n kdeaccessibility-kttsd-i18n
+Summary:	Internationalization and localization files for kttsd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kttsd
+Group:		X11/Applications
+Requires:	kdeaccessibility-kttsd = %{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaccessibility-kttsd-i18n
+Internationalization and localization files for kttsd.
+
+%description -n kdeaccessibility-kttsd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kttsd.
 
 %package -n kdenetwork-filesharing-i18n
 Summary:	Internationalization and localization files for fileshare
@@ -1558,6 +1606,16 @@ Internationalization and localization files for kdat.
 
 %description -n kdeadmin-kdat-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdat.
+
+%package -n kdeadmin-knetworkconf-i18n
+Summary:	Internationalization and localization files for knetworkconf
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla knetworkconf
+Group:		X11/Applications
+Requires:	kdeadmin-knetworkconf = %{kdeadmin_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeadmin-knetworkconf-i18n
+Internationalization and localization files for knetworkconf.
 
 %package -n kdeadmin-kpackage-i18n
 Summary:	Internationalization and localization files for kpackage
@@ -3216,9 +3274,22 @@ kde_find_lang kde-kio-ldap-i18n kio_ldap
 kde_find_lang kde-kio-nntp-i18n kio_nntp
 kde_find_lang kde-kio-pop3-i18n kio_pop3
 kde_find_lang kde-kio-smtp-i18n kio_smtp
+kde_find_lang kdeaccessibility-kbstateapplet-i18n kbstateapplet
 kde_find_lang kdeaccessibility-kmag-i18n kmag
 kde_find_lang kdeaccessibility-kmousetool-i18n kmousetool
 kde_find_lang kdeaccessibility-kmouth-i18n kmouth
+kde_find_lang kdeaccessibility-ksayit-i18n ksayit
+kde_find_lang kdeaccessibility-kttsd-i18n "
+	kcmkttsd
+	kttsd_commandplugin
+	kttsd_eposplugin
+	kttsd_fliteplugin
+	kttsd_freettsplugin
+	kttsd_sbdplugin
+	kttsd_xmltransformerplugin
+	kttsmgr
+	libKTTSD
+"
 kde_find_lang kdeaddons-ark-i18n ark_plugin
 kde_find_lang kdeaddons-atlantikdesigner-i18n atlantikdesigner
 kde_find_lang kdeaddons-fsview-i18n fsview
@@ -3237,6 +3308,7 @@ kde_find_lang kdeaddons-kate-i18n "
 	katemodeline
 	kateopenheader
 	katepybrowse
+	katesnippets
 	katetextfilter
 	katexmlcheck
 	katexmltools
@@ -3300,6 +3372,7 @@ kde_find_lang kdeaddons-noatun-i18n "
 kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo
 kde_find_lang kdeadmin-kcron-i18n kcron
 kde_find_lang kdeadmin-kdat-i18n kdat
+kde_find_lang kdeadmin-knetworkconf-i18n knetworkconf
 kde_find_lang kdeadmin-kpackage-i18n kpackage kfile_deb kfile_rpm
 kde_find_lang kdeadmin-ksysv-i18n ksysv secpolicy
 kde_find_lang kdeadmin-kuser-i18n kuser
@@ -3410,6 +3483,7 @@ kde_find_lang kdebase-desktop-i18n "
 	quicklauncher
 	spellchecking
 	taskbarextension
+	trashapplet
 	windowmanagement
 "
 kde_find_lang kdebase-desktop-libs-i18n "
@@ -3724,12 +3798,14 @@ kde_find_lang kdeutils-kregexpeditor-i18n KRegExpEditor kregexpeditor
 kde_find_lang kdeutils-ksim-i18n ksim
 kde_find_lang kdeutils-ktimer-i18n ktimer
 kde_find_lang kdeutils-kwalletmanager-i18n kwallet kwalletmanager kcmkwallet
+kde_find_lang kdeutils-superkaramba-i18n superkaramba
 kde_find_lang kdevelop-i18n "
 	kde_app_devel
 	kdearch
 	kdevdesigner
 	kdevelop
 	kdevtipofday
+	kpartapp
 	qeditor
 "
 kde_find_lang kdewebdev-kfilereplace-i18n kfilereplace
@@ -3901,7 +3977,6 @@ done
 %find_lang kmidi --with-kde
 %find_lang knetworkconf --with-kde
 %find_lang kompmgr --with-kde
-%find_lang kttsd --with-kde
 %find_lang kwuftpd --with-kde
 %find_lang kxconfig --with-kde
 %find_lang lilo-config --with-kde
@@ -3936,11 +4011,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kde-kio-smtp-i18n -f kde-kio-smtp-i18n.lang
 %defattr(644,root,root,755)
+%files -n kdeaccessibility-kbstateapplet-i18n -f kdeaccessibility-kbstateapplet-i18n.lang
+%defattr(644,root,root,755)
 %files -n kdeaccessibility-kmag-i18n -f kdeaccessibility-kmag-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeaccessibility-kmousetool-i18n -f kdeaccessibility-kmousetool-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeaccessibility-kmouth-i18n -f kdeaccessibility-kmouth-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeaccessibility-ksayit-i18n -f kdeaccessibility-ksayit-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeaccessibility-kttsd-i18n -f kdeaccessibility-kttsd-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-ark-i18n -f kdeaddons-ark-i18n.lang
 %defattr(644,root,root,755)
@@ -3967,6 +4048,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdeadmin-kcron-i18n -f kdeadmin-kcron-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeadmin-kdat-i18n -f kdeadmin-kdat-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeadmin-knetworkconf-i18n -f kdeadmin-knetworkconf-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeadmin-kpackage-i18n -f kdeadmin-kpackage-i18n.lang
 %defattr(644,root,root,755)
@@ -4299,6 +4382,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdeutils-ktimer-i18n -f kdeutils-ktimer-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-kwalletmanager-i18n -f kdeutils-kwalletmanager-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeutils-superkaramba-i18n -f kdeutils-superkaramba-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdevelop-i18n -f kdevelop-i18n.lang
 %defattr(644,root,root,755)
