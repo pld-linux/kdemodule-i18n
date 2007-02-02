@@ -3299,8 +3299,8 @@ kde_find_lang kdeaddons-noatun-i18n "
 kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo
 kde_find_lang kdeadmin-kcron-i18n kcron
 kde_find_lang kdeadmin-kdat-i18n kdat
-kde_find_lang kdeadmin-kpackage-i18n kpackage kfile_deb	kfile_rpm
-kde_find_lang kdeadmin-ksysv-i18n ksysv	secpolicy
+kde_find_lang kdeadmin-kpackage-i18n kpackage kfile_deb kfile_rpm
+kde_find_lang kdeadmin-ksysv-i18n ksysv secpolicy
 kde_find_lang kdeadmin-kuser-i18n kuser
 kde_find_lang kdeartwork-screensavers-i18n klock kpartsaver kxsconfig
 kde_find_lang kdebase-core-i18n "
@@ -3446,7 +3446,7 @@ kde_find_lang kdebase-kpersonalizer-i18n kpersonalizer
 kde_find_lang kdebase-ksysguard-i18n ksysguard
 # XXX kwriteconfig != kwrite
 kde_find_lang kdebase-kwrite-i18n kwrite kwriteconfig
-kde_find_lang kdebase-screensavers-i18n screensaver	kcmscreensaver kscreensaver
+kde_find_lang kdebase-screensavers-i18n screensaver kcmscreensaver kscreensaver
 kde_find_lang kdebase-useraccount-i18n useraccount kdepasswd
 kde_find_lang kdeedu-kalzium-i18n kalzium
 kde_find_lang kdeedu-kanagram-i18n kanagram
@@ -3457,6 +3457,47 @@ kde_find_lang kdeedu-kig-i18n kig kfile_drgeo kfile_kig
 kde_find_lang kdeedu-kiten-i18n kiten
 kde_find_lang kdeedu-klatin-i18n klatin
 kde_find_lang kdeedu-klettres-i18n klettres
+kde_find_lang kdeedu-kmplot-i18n kmplot
+kde_find_lang kdeedu-kpercentage-i18n kpercentage
+kde_find_lang kdeedu-kstars-i18n kstars
+kde_find_lang kdeedu-ktouch-i18n ktouch
+kde_find_lang kdeedu-kturtle-i18n kturtle
+kde_find_lang kdeedu-kverbos-i18n kverbos
+kde_find_lang kdeedu-kvoctrain-i18n kvoctrain
+kde_find_lang kdeedu-kwordquiz-i18n kwordquiz
+kde_find_lang kdegames-atlantik-i18n atlantik
+kde_find_lang kdegames-i18n libkdegames
+kde_find_lang kdegames-kasteroids-i18n kasteroids
+kde_find_lang kdegames-katomic-i18n katomic
+kde_find_lang kdegames-kbackgammon-i18n kbackgammon
+kde_find_lang kdegames-kbattleship-i18n kbattleship
+kde_find_lang kdegames-kblackbox-i18n kblackbox
+kde_find_lang kdegames-kbounce-i18n kbounce
+kde_find_lang kdegames-kenolaba-i18n kenolaba
+kde_find_lang kdegames-kfouleggs-i18n kfouleggs
+kde_find_lang kdegames-kgoldrunner-i18n kgoldrunner
+kde_find_lang kdegames-kjumpingcube-i18n kjumpingcube
+kde_find_lang kdegames-klickety-i18n klickety
+kde_find_lang kdegames-klines-i18n klines
+kde_find_lang kdegames-kmahjongg-i18n kmahjongg
+kde_find_lang kdegames-kmines-i18n kmines
+kde_find_lang kdegames-kolf-i18n kolf
+kde_find_lang kdegames-konquest-i18n konquest
+kde_find_lang kdegames-kpat-i18n kpat
+kde_find_lang kdegames-kpoker-i18n kpoker
+kde_find_lang kdegames-kreversi-i18n kreversi
+kde_find_lang kdegames-ksame-i18n ksame
+kde_find_lang kdegames-kshisen-i18n kshisen
+kde_find_lang kdegames-ksirtet-i18n ksirtet libksirtet
+kde_find_lang kdegames-ksmiletris-i18n ksmiletris
+kde_find_lang kdegames-ksnake-i18n ksnake
+kde_find_lang kdegames-ksokoban-i18n ksokoban
+kde_find_lang kdegames-kspaceduel-i18n kspaceduel
+kde_find_lang kdegames-ktron-i18n ktron
+kde_find_lang kdegames-ktuberling-i18n ktuberling
+kde_find_lang kdegames-kwin4-i18n kwin4
+kde_find_lang kdegames-lskat-i18n lskat
+
 
 exit 1
 
@@ -3469,10 +3510,6 @@ exit 1
 %find_lang kimagemapeditor --with-kde
 %find_lang klinkstatus	--with-kde
 
-> kdegames.lang
-%find_lang libkdegames --with-kde
-cat libkdegames.lang >> kdegames.lang
-rm -f libkdegames.lang
 
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	lang=${a##*/}
@@ -3480,21 +3517,18 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	echo "%lang($lang) $path" >> kdeedu-klatin-i18n.lang
 done
 
-%find_lang kturtle		--with-kde
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
 	t=${a##*logokeywords.}
 	lang=${t%.xml}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kturtle.lang
+	echo "%lang($lang) $path" >> kdeedu-kturtle-i18n.lang
 done
 
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kturtle.lang
+	echo "%lang($lang) $path" >> kdeedu-kturtle-i18n.lang
 done
-
-%find_lang kwordquiz	--with-kde
 
 
 # DON'T PACKAGE KMATHTOOL
@@ -3507,48 +3541,6 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
 	echo "%lang($lang) $path" >> kdeedu-kanagram-i18n.lang
 done
 
-%find_lang kmplot	--with-kde
-%find_lang kpercentage	--with-kde
-%find_lang kstars	--with-kde
-%find_lang ktouch	--with-kde
-%find_lang kverbos	--with-kde
-%find_lang kvoctrain	--with-kde
-%find_lang atlantik	--with-kde
-%find_lang kasteroids	--with-kde
-%find_lang katomic	--with-kde
-%find_lang kbackgammon	--with-kde
-%find_lang kbattleship	--with-kde
-%find_lang kblackbox	--with-kde
-%find_lang kbounce	--with-kde
-%find_lang kenolaba	--with-kde
-%find_lang kfouleggs	--with-kde
-%find_lang kgoldrunner	--with-kde
-%find_lang kjumpingcube	--with-kde
-%find_lang klickety	--with-kde
-%find_lang klines	--with-kde
-%find_lang kmines	--with-kde
-%find_lang kolf		--with-kde
-%find_lang konquest	--with-kde
-%find_lang kpat		--with-kde
-%find_lang kpoker	--with-kde
-%find_lang kreversi	--with-kde
-%find_lang ksame	--with-kde
-%find_lang kshisen	--with-kde
-%find_lang ksnake	--with-kde
-%find_lang ksokoban	--with-kde
-%find_lang kspaceduel	--with-kde
-%find_lang ktron	--with-kde
-%find_lang ktuberling	--with-kde
-%find_lang kwin4	--with-kde
-%find_lang lskat	--with-kde
-
-%find_lang ksirtet	--with-kde
-%find_lang libksirtet	--with-kde
-cat libksirtet.lang >> ksirtet.lang
-rm -f libksirtet.lang
-
-%find_lang kmahjongg	--with-kde
-%find_lang ksmiletris	--with-kde
 
 > i18n.lang
 %find_lang libkdegames	--with-kde
@@ -3623,7 +3615,7 @@ done
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	if [ -d $i ]; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/,,`
-		echo "%lang($z) %{_datadir}/apps/ktuberling/sounds/$z" >> ktuberling.lang
+		echo "%lang($z) %{_datadir}/apps/ktuberling/sounds/$z" >> kdegames-ktuberling-i18n.lang
 	fi
 done
 
@@ -4263,85 +4255,85 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-klettres-i18n -f kdeedu-klettres-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kmplot-i18n -f kmplot.lang
+%files -n kdeedu-kmplot-i18n -f kdeedu-kmplot-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kpercentage-i18n -f kpercentage.lang
+%files -n kdeedu-kpercentage-i18n -f kdeedu-kpercentage-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kstars-i18n -f kstars.lang
+%files -n kdeedu-kstars-i18n -f kdeedu-kstars-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-ktouch-i18n -f ktouch.lang
+%files -n kdeedu-ktouch-i18n -f kdeedu-ktouch-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kturtle-i18n -f kturtle.lang
+%files -n kdeedu-kturtle-i18n -f kdeedu-kturtle-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kverbos-i18n -f kverbos.lang
+%files -n kdeedu-kverbos-i18n -f kdeedu-kverbos-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kvoctrain-i18n -f kvoctrain.lang
+%files -n kdeedu-kvoctrain-i18n -f kdeedu-kvoctrain-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeedu-kwordquiz-i18n -f kwordquiz.lang
+%files -n kdeedu-kwordquiz-i18n -f kdeedu-kwordquiz-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-atlantik-i18n -f atlantik.lang
+%files -n kdegames-atlantik-i18n -f kdegames-atlantik-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-i18n -f kdegames.lang
+%files -n kdegames-i18n -f kdegames-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kasteroids-i18n -f kasteroids.lang
+%files -n kdegames-kasteroids-i18n -f kdegames-kasteroids-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-katomic-i18n -f katomic.lang
+%files -n kdegames-katomic-i18n -f kdegames-katomic-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kbackgammon-i18n -f kbackgammon.lang
+%files -n kdegames-kbackgammon-i18n -f kdegames-kbackgammon-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kbattleship-i18n -f kbattleship.lang
+%files -n kdegames-kbattleship-i18n -f kdegames-kbattleship-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kblackbox-i18n -f kblackbox.lang
+%files -n kdegames-kblackbox-i18n -f kdegames-kblackbox-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kbounce-i18n -f kbounce.lang
+%files -n kdegames-kbounce-i18n -f kdegames-kbounce-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kenolaba-i18n -f kenolaba.lang
+%files -n kdegames-kenolaba-i18n -f kdegames-kenolaba-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kfouleggs-i18n -f kfouleggs.lang
+%files -n kdegames-kfouleggs-i18n -f kdegames-kfouleggs-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kgoldrunner-i18n -f kgoldrunner.lang
+%files -n kdegames-kgoldrunner-i18n -f kdegames-kgoldrunner-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kjumpingcube-i18n -f kjumpingcube.lang
+%files -n kdegames-kjumpingcube-i18n -f kdegames-kjumpingcube-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-klickety-i18n -f klickety.lang
+%files -n kdegames-klickety-i18n -f kdegames-klickety-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-klines-i18n -f klines.lang
+%files -n kdegames-klines-i18n -f kdegames-klines-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kmahjongg-i18n -f kmahjongg.lang
+%files -n kdegames-kmahjongg-i18n -f kdegames-kmahjongg-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kmines-i18n -f kmines.lang
+%files -n kdegames-kmines-i18n -f kdegames-kmines-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kolf-i18n -f kolf.lang
+%files -n kdegames-kolf-i18n -f kdegames-kolf-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-konquest-i18n -f konquest.lang
+%files -n kdegames-konquest-i18n -f kdegames-konquest-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kpat-i18n -f kpat.lang
+%files -n kdegames-kpat-i18n -f kdegames-kpat-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kpoker-i18n -f kpoker.lang
+%files -n kdegames-kpoker-i18n -f kdegames-kpoker-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kreversi-i18n -f kreversi.lang
+%files -n kdegames-kreversi-i18n -f kdegames-kreversi-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksame-i18n -f ksame.lang
+%files -n kdegames-ksame-i18n -f kdegames-ksame-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kshisen-i18n -f kshisen.lang
+%files -n kdegames-kshisen-i18n -f kdegames-kshisen-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksirtet-i18n -f ksirtet.lang
+%files -n kdegames-ksirtet-i18n -f kdegames-ksirtet-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksmiletris-i18n -f ksmiletris.lang
+%files -n kdegames-ksmiletris-i18n -f kdegames-ksmiletris-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksnake-i18n -f ksnake.lang
+%files -n kdegames-ksnake-i18n -f kdegames-ksnake-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ksokoban-i18n -f ksokoban.lang
+%files -n kdegames-ksokoban-i18n -f kdegames-ksokoban-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kspaceduel-i18n -f kspaceduel.lang
+%files -n kdegames-kspaceduel-i18n -f kdegames-kspaceduel-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ktron-i18n -f ktron.lang
+%files -n kdegames-ktron-i18n -f kdegames-ktron-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-ktuberling-i18n -f ktuberling.lang
+%files -n kdegames-ktuberling-i18n -f kdegames-ktuberling-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-kwin4-i18n -f kwin4.lang
+%files -n kdegames-kwin4-i18n -f kdegames-kwin4-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegames-lskat-i18n -f lskat.lang
+%files -n kdegames-lskat-i18n -f kdegames-lskat-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegraphics-kamera-i18n -f kamera.lang
 %defattr(644,root,root,755)
