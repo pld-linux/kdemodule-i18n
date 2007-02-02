@@ -3684,7 +3684,14 @@ kde_find_lang kdesdk-kstartperf-i18n kstartperf
 kde_find_lang kdesdk-kuiviewer-i18n kuiviewer
 kde_find_lang kdesdk-libcvsservice-i18n cvsservice
 kde_find_lang kdesdk-umbrello-i18n umbrello
-
+kde_find_lang kdetoys-amor-i18n amor
+kde_find_lang kdetoys-fifteen-i18n kfifteenapplet
+kde_find_lang kdetoys-kmoon-i18n kmoon
+kde_find_lang kdetoys-kodo-i18n kodo
+kde_find_lang kdetoys-kteatime-i18n kteatime
+kde_find_lang kdetoys-ktux-i18n ktux
+kde_find_lang kdetoys-kweather-i18n kweather
+kde_find_lang kdetoys-kworldclock-i18n kworldclock
 
 
 
@@ -3894,15 +3901,6 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xm
 done
 
 %find_lang kfilereplace		--with-kde
-
-%find_lang amor			--with-kde
-%find_lang kmoon		--with-kde
-%find_lang kodo			--with-kde
-%find_lang kteatime		--with-kde
-%find_lang kweather		--with-kde
-%find_lang kworldclock		--with-kde
-%find_lang kfifteenapplet	--with-kde
-%find_lang ktux			--with-kde
 
 
 %find_lang kdevelop --with-kde
@@ -4326,21 +4324,21 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdesdk-umbrello-i18n -f kdesdk-umbrello-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-amor-i18n -f amor.lang
+%files -n kdetoys-amor-i18n -f kdetoys-amor-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-fifteen-i18n -f kfifteenapplet.lang
+%files -n kdetoys-fifteen-i18n -f kdetoys-fifteen-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-kmoon-i18n -f kmoon.lang
+%files -n kdetoys-kmoon-i18n -f kdetoys-kmoon-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-kodo-i18n -f kodo.lang
+%files -n kdetoys-kodo-i18n -f kdetoys-kodo-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-kteatime-i18n -f kteatime.lang
+%files -n kdetoys-kteatime-i18n -f kdetoys-kteatime-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-ktux-i18n -f ktux.lang
+%files -n kdetoys-ktux-i18n -f kdetoys-ktux-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-kweather-i18n -f kweather.lang
+%files -n kdetoys-kweather-i18n -f kdetoys-kweather-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdetoys-kworldclock-i18n -f kworldclock.lang
+%files -n kdetoys-kworldclock-i18n -f kdetoys-kworldclock-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeutils-ark-i18n -f ark.lang
 %defattr(644,root,root,755)
