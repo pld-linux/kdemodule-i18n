@@ -3197,6 +3197,22 @@ fi
 
 rm -f *.lang
 
+%find_lang kwin_art_clients			--with-kde kde-decoration-common.lang
+%find_lang kgreet_classic			--with-kde kde-kgreet-classic.lang
+%find_lang kio_imap4				--with-kde kde-kio-imap4.lang
+%find_lang kio_ldap					--with-kde kde-kio-ldap.lang
+%find_lang kio_nntp					--with-kde kde-kio-nntp.lang
+%find_lang kio_pop3					--with-kde kde-kio-pop3.lang
+%find_lang kio_smtp					--with-kde kde-kio-smtp.lang
+%find_lang kmag						--with-kde kdeaccessibility-kmag.lang
+%find_lang kmousetool				--with-kde kdeaccessibility-kmousetool.lang
+%find_lang kmouth					--with-kde kdeaccessibility-kmouth.lang
+%find_lang ark_plugin				--with-kde kdeaddons-ark.lang
+%find_lang atlantikdesigner			--with-kde kdeaddons-atlantikdesigner.lang
+%find_lang fsview					--with-kde kdeaddons-fsview.lang
+%find_lang libkaddrbk_geo_xxport	--with-kde kdeaddons-kaddressbook.lang
+
+
 %find_lang quanta	--with-kde
 %find_lang kommander	--with-kde
 %find_lang kxsldbg	--with-kde
@@ -3208,7 +3224,6 @@ rm -f *.lang
 cat libkdegames.lang >> kdegames.lang
 rm -f libkdegames.lang
 
-%find_lang kgreet_classic	--with-kde
 
 %find_lang kcron	--with-kde
 %find_lang kdat		--with-kde
@@ -3450,7 +3465,6 @@ for i in $a; do
 	rm -f $i.lang
 done
 
-%find_lang	kio_ldap	--with-kde
 %find_lang	klipper		--with-kde
 %find_lang	ksysguard	--with-kde
 %find_lang	kpager		--with-kde
@@ -3522,10 +3536,6 @@ rm -f kwriteconfig.lang
 
 %find_lang libkonq	--with-kde
 
-%find_lang kio_imap4 --with-kde
-%find_lang kio_pop3 --with-kde
-%find_lang kio_nntp --with-kde
-%find_lang kio_smtp --with-kde
 
 %find_lang	screensaver	--with-kde
 a="
@@ -3760,9 +3770,6 @@ cat kdictapplet.lang >> kdict.lang
 rm -f kdictapplet.lang
 
 %find_lang kinetd		--with-kde
-%find_lang kmag		--with-kde
-%find_lang kmousetool	--with-kde
-%find_lang kmouth	--with-kde
 %find_lang ark			--with-kde
 %find_lang KRegExpEditor	--with-kde
 %find_lang kcalc		--with-kde
@@ -4044,7 +4051,6 @@ for i in $a; do
 	rm -f kfile_${i}.lang
 done
 
-%find_lang	ark_plugin	--with-kde
 %find_lang	kfile_lnk	--with-kde
 %find_lang	rellinks	--with-kde
 cat kfile_lnk.lang >> rellinks.lang
@@ -4052,14 +4058,11 @@ rm -f kfile_lnk.lang
 
 %find_lang	kate-plugins	--with-kde
 %find_lang	kicker-applets	--with-kde
-%find_lang	fsview		--with-kde
-%find_lang	atlantikdesigner	--with-kde
 %find_lang	kcmkontactnt		--with-kde
 cat kcmkontactnt.lang >> kdepim.lang
 rm -f kcmkontactnt.lang
 
 %find_lang	ksig		--with-kde
-%find_lang	libkaddrbk_geo_xxport	--with-kde
 
 a="
 kmathapplet
@@ -4165,10 +4168,6 @@ for i in $a; do
 	rm -f $i.lang
 done
 
-%find_lang kwin_art_clients --with-kde
-cat kwin_art_clients.lang >> kde-decoration-common.lang
-rm -f kwin_art_clients.lang
-
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
 	if [ -d $i ] ; then
@@ -4250,31 +4249,31 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-common-i18n -f kde-decoration-common.lang
 %defattr(644,root,root,755)
-%files -n kde-kgreet-classic-i18n -f kgreet_classic.lang
+%files -n kde-kgreet-classic-i18n -f kde-kgreet-classic.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-imap4-i18n -f kio_imap4.lang
+%files -n kde-kio-imap4-i18n -f kde-kio-imap4.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-ldap-i18n -f kio_ldap.lang
+%files -n kde-kio-ldap-i18n -f kde-kio-ldap.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-nntp-i18n -f kio_nntp.lang
+%files -n kde-kio-nntp-i18n -f kde-kio-nntp.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-pop3-i18n -f kio_pop3.lang
+%files -n kde-kio-pop3-i18n -f kde-kio-pop3.lang
 %defattr(644,root,root,755)
-%files -n kde-kio-smtp-i18n -f kio_smtp.lang
+%files -n kde-kio-smtp-i18n -f kde-kio-smtp.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmag-i18n -f kmag.lang
+%files -n kdeaccessibility-kmag-i18n -f kdeaccessibility-kmag.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmousetool-i18n -f kmousetool.lang
+%files -n kdeaccessibility-kmousetool-i18n -f kdeaccessibility-kmousetool.lang
 %defattr(644,root,root,755)
-%files -n kdeaccessibility-kmouth-i18n -f kmouth.lang
+%files -n kdeaccessibility-kmouth-i18n -f kdeaccessibility-kmouth.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-ark-i18n -f ark_plugin.lang
+%files -n kdeaddons-ark-i18n -f kdeaddons-ark.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-atlantikdesigner-i18n -f atlantikdesigner.lang
+%files -n kdeaddons-atlantikdesigner-i18n -f kdeaddons-atlantikdesigner.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-fsview-i18n -f fsview.lang
+%files -n kdeaddons-fsview-i18n -f kdeaddons-fsview.lang
 %defattr(644,root,root,755)
-%files -n kdeaddons-kaddressbook-i18n -f libkaddrbk_geo_xxport.lang
+%files -n kdeaddons-kaddressbook-i18n -f kdeaddons-kaddressbook.lang
 %defattr(644,root,root,755)
 %files -n kdeaddons-kate-i18n -f kate-plugins.lang
 %defattr(644,root,root,755)
