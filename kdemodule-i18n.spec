@@ -3692,8 +3692,38 @@ kde_find_lang kdetoys-kteatime-i18n kteatime
 kde_find_lang kdetoys-ktux-i18n ktux
 kde_find_lang kdetoys-kweather-i18n kweather
 kde_find_lang kdetoys-kworldclock-i18n kworldclock
-
-
+kde_find_lang kdeutils-ark-i18n ark
+kde_find_lang kdeutils-kcalc-i18n kcalc
+kde_find_lang kdeutils-kcharselect-i18n kcharselect kcharselectapplet
+kde_find_lang kdeutils-kdelirc-i18n kdelirc
+%find_lang irkick		--with-kde
+%find_lang kcmlirc		--with-kde
+# XXX if mo goes there then where goes the rest?
+grep '\.mo' irkick.lang >> kdeutils-kdelirc-i18n.lang
+grep '\.mo' kcmlirc.lang >> kdeutils-kdelirc-i18n.lang
+kde_find_lang kdeutils-kdessh-i18n kdessh
+kde_find_lang kdeutils-kdf-i18n kdf blockdevices
+kde_find_lang kdeutils-kedit-i18n kedit
+kde_find_lang kdeutils-kfloppy-i18n kfloppy
+kde_find_lang kdeutils-kgpg-i18n kgpg
+kde_find_lang kdeutils-khexedit-i18n khexedit
+kde_find_lang kdeutils-kjots-i18n kjots
+kde_find_lang kdeutils-klaptopdaemon-i18n klaptopdaemon kcmlowbatcrit kcmlowbatwarn laptop powerctrl kcmlaptop
+kde_find_lang kdeutils-kmilo-i18n "
+	kcmkvaio
+	kcmthinkpad
+	kcmthinkpad
+	kmilo_delli8k
+	kmilo_generic
+	kmilo_kvaio
+	kmilo_powerbook
+	kmilo_thinkpad
+	kmilod
+"
+kde_find_lang kdeutils-kregexpeditor-i18n KRegExpEditor kregexpeditor
+kde_find_lang kdeutils-ksim-i18n ksim
+kde_find_lang kdeutils-ktimer-i18n ktimer
+kde_find_lang kdeutils-kwalletmanager-i18n kwallet kwalletmanager kcmkwallet
 
 
 
@@ -3815,76 +3845,6 @@ done
 
 
 # Not packaging kmobile, it was disabled by coolo
-
-%find_lang ark			--with-kde
-%find_lang KRegExpEditor	--with-kde
-%find_lang kcalc		--with-kde
-%find_lang kcharselect		--with-kde
-
-%find_lang kdf			--with-kde
-%find_lang blockdevices		--with-kde
-cat blockdevices.lang >> kdf.lang
-rm -f blockdevices.lang
-
-%find_lang kedit		--with-kde
-%find_lang kfloppy		--with-kde
-%find_lang kgpg			--with-kde
-%find_lang khexedit		--with-kde
-%find_lang kjots		--with-kde
-%find_lang klaptopdaemon	--with-kde
-%find_lang kcmlowbatcrit	--with-kde
-%find_lang kcmlowbatwarn	--with-kde
-%find_lang laptop		--with-kde
-%find_lang powerctrl		--with-kde
-cat {kcmlowbatcrit,kcmlowbatwarn,laptop,powerctrl}.lang >> klaptopdaemon.lang
-rm -f {kcmlowbatcrit,kcmlowbatwarn,laptop,powerctrl}.lang
-
-%find_lang ksim			--with-kde
-%find_lang ktimer		--with-kde
-%find_lang kwallet		--with-kde
-%find_lang kdelirc		--with-kde
-%find_lang irkick		--with-kde
-%find_lang kcmlirc		--with-kde
-grep '\.mo' irkick.lang >> kdelirc.lang
-grep '\.mo' kcmlirc.lang >> kdelirc.lang
-
-%find_lang kwalletmanager	--with-kde
-cat kwalletmanager.lang >> kwallet.lang
-rm -f kwalletmanager.lang
-%find_lang kcmkwallet		--with-kde
-cat kcmkwallet.lang >> kwallet.lang
-rm -f kcmkwallet.lang
-
-%find_lang kcmlaptop		--with-kde
-cat kcmlaptop.lang >> klaptopdaemon.lang
-rm -f kcmlaptop.lang
-
-a="
-kcmkvaio
-kcmthinkpad
-kcmthinkpad
-kmilo_delli8k
-kmilo_generic
-kmilo_kvaio
-kmilo_powerbook
-kmilo_thinkpad
-kmilod
-"
-for i in $a; do
-	%find_lang $i		--with-kde
-	cat $i.lang >> kmilo.lang
-	rm -f $i.lang
-done
-
-%find_lang kregexpeditor	--with-kde
-cat kregexpeditor.lang >> KRegExpEditor.lang
-rm -f kregexpeditor.lang
-
-%find_lang kcharselectapplet	--with-kde
-cat kcharselectapplet.lang >> kcharselect.lang
-rm -f kcharselectapplet.lang
-
-%find_lang kdessh		--with-kde
 
 # We don't build kcardchooser (disabled by default by coolo)
 # re-enabling it would be posssible, but what for?
@@ -4340,39 +4300,39 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdetoys-kworldclock-i18n -f kdetoys-kworldclock-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-ark-i18n -f ark.lang
+%files -n kdeutils-ark-i18n -f kdeutils-ark-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kcalc-i18n -f kcalc.lang
+%files -n kdeutils-kcalc-i18n -f kdeutils-kcalc-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kcharselect-i18n -f kcharselect.lang
+%files -n kdeutils-kcharselect-i18n -f kdeutils-kcharselect-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kdelirc-i18n -f kdelirc.lang
+%files -n kdeutils-kdelirc-i18n -f kdeutils-kdelirc-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kdessh-i18n -f kdessh.lang
+%files -n kdeutils-kdessh-i18n -f kdeutils-kdessh-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kdf-i18n -f kdf.lang
+%files -n kdeutils-kdf-i18n -f kdeutils-kdf-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kedit-i18n -f kedit.lang
+%files -n kdeutils-kedit-i18n -f kdeutils-kedit-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kfloppy-i18n -f kfloppy.lang
+%files -n kdeutils-kfloppy-i18n -f kdeutils-kfloppy-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kgpg-i18n -f kgpg.lang
+%files -n kdeutils-kgpg-i18n -f kdeutils-kgpg-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-khexedit-i18n -f khexedit.lang
+%files -n kdeutils-khexedit-i18n -f kdeutils-khexedit-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kjots-i18n -f kjots.lang
+%files -n kdeutils-kjots-i18n -f kdeutils-kjots-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-klaptopdaemon-i18n -f klaptopdaemon.lang
+%files -n kdeutils-klaptopdaemon-i18n -f kdeutils-klaptopdaemon-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kmilo-i18n -f kmilo.lang
+%files -n kdeutils-kmilo-i18n -f kdeutils-kmilo-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kregexpeditor-i18n -f KRegExpEditor.lang
+%files -n kdeutils-kregexpeditor-i18n -f kdeutils-kregexpeditor-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-ksim-i18n -f ksim.lang
+%files -n kdeutils-ksim-i18n -f kdeutils-ksim-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-ktimer-i18n -f ktimer.lang
+%files -n kdeutils-ktimer-i18n -f kdeutils-ktimer-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdeutils-kwalletmanager-i18n -f kwallet.lang
+%files -n kdeutils-kwalletmanager-i18n -f kdeutils-kwalletmanager-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdevelop-i18n -f kdevelop.lang
 %defattr(644,root,root,755)
