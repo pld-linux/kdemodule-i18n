@@ -3351,6 +3351,7 @@ kio_home
 kio_man
 kio_settings
 kio_thumbnail
+knetattach
 kprinter
 kstyle_keramik_config
 language
@@ -3390,6 +3391,7 @@ kcmkicker
 kcmkwindecoration
 kcmkwinrules
 kcmkwm
+kcmkxmlrpcd
 kcmlaunch
 kcmnotify
 kcmsmserver
@@ -3401,6 +3403,7 @@ keyboard
 keys
 khotkeys
 kicker
+kickermenu_kate
 kmenuapplet
 kmenuedit
 kminipagerapplet
@@ -3438,6 +3441,7 @@ passwords
 privacy
 quicklauncher
 spellchecking
+taskbarextension
 windowmanagement
 "
 for i in $a; do
@@ -3621,6 +3625,7 @@ kalarm
 kalarmd
 kdepimwizards
 kfile_ics
+kitchensync
 kontact
 korganizer
 kres_exchange
@@ -3628,6 +3633,7 @@ kres_imap
 kres_remote
 kres_xmlrpc
 ksync
+multisynk
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -3683,7 +3689,10 @@ a="
 kdgantt
 kgantt
 libkcal
+libkitchensync
 libkleopatra
+libkmime
+libkpgp
 libkpimexchange
 libksieve
 libksync
@@ -3900,10 +3909,13 @@ kioexec
 kmcop
 knotify
 kspell
+kstyle_highcontrast_config
 ktexteditor_docwordcompletion
 ktexteditor_insertfile
 ktexteditor_isearch
 ktexteditor_kdatatool
+kttsd
+libkholidays
 libkscreensaver
 ppdtranslations
 timezones
@@ -4098,7 +4110,9 @@ kfile_html
 kfile_mhtml
 kfile_txt
 khtmlsettingsplugin
+konqsidebar_delicious
 konqsidebar_mediaplayer
+konqsidebar_metabar
 konqsidebar_news
 kuick_plugin
 minitoolsplugin
@@ -4208,7 +4222,6 @@ done
 %find_lang kgeography --with-kde
 #%find_lang kmessedwords --with-kde # obsoleted?
 %find_lang kmidi --with-kde
-%find_lang knetattach --with-kde
 %find_lang knetworkconf --with-kde
 %find_lang kompmgr --with-kde
 #%find_lang kpaint --with-kde # obsoleted by kolourpaint?
