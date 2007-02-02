@@ -3724,14 +3724,68 @@ kde_find_lang kdeutils-kregexpeditor-i18n KRegExpEditor kregexpeditor
 kde_find_lang kdeutils-ksim-i18n ksim
 kde_find_lang kdeutils-ktimer-i18n ktimer
 kde_find_lang kdeutils-kwalletmanager-i18n kwallet kwalletmanager kcmkwallet
-
-
-
-%find_lang quanta	--with-kde
-%find_lang kommander	--with-kde
-%find_lang kxsldbg	--with-kde
-%find_lang kimagemapeditor --with-kde
-%find_lang klinkstatus	--with-kde
+kde_find_lang kdevelop-i18n "
+	kde_app_devel
+	kdearch
+	kdevdesigner
+	kdevelop
+	kdevtipofday
+	qeditor
+"
+kde_find_lang kdewebdev-kfilereplace-i18n kfilereplace
+kde_find_lang kdewebdev-kimagemapeditor-i18n kimagemapeditor
+kde_find_lang kdewebdev-klinkstatus-i18n klinkstatus
+kde_find_lang kdewebdev-kommander-i18n kommander
+kde_find_lang kdewebdev-kxsldbg-i18n kxsldbg
+kde_find_lang kdewebdev-quanta-i18n quanta
+kde_find_lang kdm-i18n kdm kdmconfig kdmgreet
+kde_find_lang konqueror-i18n "
+	appletproxy
+	cache
+	cookies
+	crypto
+	ebrowsing
+	email
+	extensionproxy
+	filemanager
+	filetypes
+	htmlsearch
+	icons
+	kcmcgi
+	kcmcrypto
+	kcmcss
+	kcmhtmlsearch
+	kcmicons
+	kcmkio
+	kcmkonq
+	kcmkonqhtml
+	kcmkurifilt
+	kcmlayout
+	kcmperformance
+	kfile_font
+	kfmclient
+	khtml
+	kio_finger
+	kio_fish
+	kio_floppy
+	kio_mac
+	kio_media
+	kio_nfs
+	kio_print
+	kio_remote
+	kio_sftp
+	kio_smb
+	kio_system
+	kio_tar
+	kio_trash
+	konqueror
+	netpref
+	nsplugin
+	proxy
+	smb
+	useragent
+"
+kde_find_lang konqueror-libs-i18n libkonq
 
 
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
@@ -3770,71 +3824,6 @@ done
 cat libkdegames.lang >> i18n.lang
 rm -f libkdegames.lang
 
-%find_lang libkonq	--with-kde
-
-%find_lang	kdm		--with-kde
-a="
-kdmconfig
-kdmgreet
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kdm.lang
-	rm -f $i.lang
-done
-
-%find_lang konqueror --with-kde
-a="
-appletproxy
-cache
-cookies
-crypto
-ebrowsing
-email
-extensionproxy
-filemanager
-filetypes
-htmlsearch
-icons
-kcmcgi
-kcmcrypto
-kcmcss
-kcmhtmlsearch
-kcmicons
-kcmkio
-kcmkonq
-kcmkonqhtml
-kcmkurifilt
-kcmlayout
-kcmperformance
-kfile_font
-kfmclient
-khtml
-kio_finger
-kio_fish
-kio_floppy
-kio_mac
-kio_media
-kio_nfs
-kio_print
-kio_remote
-kio_sftp
-kio_smb
-kio_system
-kio_tar
-kio_trash
-netpref
-nsplugin
-proxy
-smb
-useragent
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> konqueror.lang
-	rm -f $i.lang
-done
-
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	if [ -d $i ]; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/,,`
@@ -3858,23 +3847,6 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xm
 	lang=${t%.xml}
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kdelibs-i18n.lang
-done
-
-%find_lang kfilereplace		--with-kde
-
-
-%find_lang kdevelop --with-kde
-a="
-kde_app_devel
-kdearch
-kdevdesigner
-kdevtipofday
-qeditor
-"
-for i in $a; do
-	%find_lang $i	--with-kde
-	cat $i.lang >> kdevelop.lang
-	rm -f $i.lang
 done
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
@@ -4334,23 +4306,23 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeutils-kwalletmanager-i18n -f kdeutils-kwalletmanager-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdevelop-i18n -f kdevelop.lang
+%files -n kdevelop-i18n -f kdevelop-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kfilereplace-i18n -f kfilereplace.lang
+%files -n kdewebdev-kfilereplace-i18n -f kdewebdev-kfilereplace-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kimagemapeditor-i18n -f kimagemapeditor.lang
+%files -n kdewebdev-kimagemapeditor-i18n -f kdewebdev-kimagemapeditor-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-klinkstatus-i18n -f klinkstatus.lang
+%files -n kdewebdev-klinkstatus-i18n -f kdewebdev-klinkstatus-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kommander-i18n -f kommander.lang
+%files -n kdewebdev-kommander-i18n -f kdewebdev-kommander-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-kxsldbg-i18n -f kxsldbg.lang
+%files -n kdewebdev-kxsldbg-i18n -f kdewebdev-kxsldbg-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdewebdev-quanta-i18n -f quanta.lang
+%files -n kdewebdev-quanta-i18n -f kdewebdev-quanta-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdm-i18n -f kdm.lang
+%files -n kdm-i18n -f kdm-i18n.lang
 %defattr(644,root,root,755)
-%files -n konqueror-i18n -f konqueror.lang
+%files -n konqueror-i18n -f konqueror-i18n.lang
 %defattr(644,root,root,755)
-%files -n konqueror-libs-i18n -f libkonq.lang
+%files -n konqueror-libs-i18n -f konqueror-libs-i18n.lang
 %defattr(644,root,root,755)
