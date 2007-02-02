@@ -3348,8 +3348,8 @@ a="
 colors
 fonts
 kcmstyle
-kdeprint
 kdebugdialog
+kdeprint
 kdesu
 khelpcenter
 language
@@ -3365,103 +3365,103 @@ a="
 arts
 background
 bell
+clock
+clockapplet
 desktop
 desktopbehavior
+display
+display
+dockbarextension
 energy
+joystick
+kaccess
+kasbarextension
+kbinaryclock
 kcmaccess
+kcmarts
+kcmarts
+kcmbackground
+kcmbackground
+kcmbell
+kcmbell
+kcmcomponentchooser
+kcmcomponentchooser
+kcmenergy
+kcmenergy
+kcminput
+kcminput
+kcmkclock
+kcmkeys
+kcmkeys
+kcmkicker
+kcmkwindecoration
+kcmkwindecoration
+kcmkwinrules
+kcmkwm
+kcmkwm
 kcmlaunch
 kcmnotify
 kcmsmserver
+kcmspellchecking
+kcmspellchecking
+kcmtaskbar
+kcmxinerama
+kcmxinerama
+kcmxinerama
+kdesktop
+kdesktop
 keyboard
 keys
+khotkeys
+khotkeys
+kicker
+kmenuapplet
+kmenuedit
+kminipagerapplet
+krandr
+krandr
+krdb
+krdb
+kreadconfig
+kreadconfig
+krunapplet
+ksmserver
+ksmserver
+ksplash
+ksplash
 ksplashml
+kstart
+kstart
+kstyle_plastik_config
+ksystemtrayapplet
+ksystraycmd
+ktaskbarapplet
+kthememanager
+ktip
+ktip
+kwin
+kwin
 kwindecoration
 kxkb
-mouse
-passwords
-spellchecking
-windowmanagement
-kcmenergy
-kcmbell
-kcmarts
-kcmbackground
-privacy
-libkickermenu_tom
-display
-kcmcomponentchooser
-kcminput
-kcmkeys
-kcmkwindecoration
-kcmkwm
-kcmspellchecking
-kdesktop
-kwin
-kstart
-kcmxinerama
-ksmserver
-kcmxinerama
-ktip
-ksplash
-krandr
-kreadconfig
-krdb
-kcmkwinrules
 kxmlrpcd
-kthememanager
-kmenuedit
-kstyle_plastik_config
-kbinaryclock
-mediaapplet
-kcmkwm
-kwin
-krandr
-privacy
-kcmspellchecking
-kcminput
-kcmxinerama
-display
-ktip
-kaccess
-krdb
-kreadconfig
-ksplash
-kstart
-kcmarts
-kcmbackground
-kcmbell
-kcmcomponentchooser
-kcmenergy
-kcmkeys
-kcmkwindecoration
-khotkeys
-kdesktop
-ksmserver
-khotkeys
-joystick
-kicker
-clock
-kcmtaskbar
-panel
-panelappearance
-kcmkclock
-kcmkicker
-lockout
-ktaskbarapplet
 libkicker
 libkickermenu_kdeprint
 libkickermenu_konsole
 libkickermenu_prefmenu
 libkickermenu_recentdocs
-ksystemtrayapplet
-clockapplet
-kmenuapplet
-kminipagerapplet
-krunapplet
-dockbarextension
-kasbarextension
+libkickermenu_tom
+lockout
+mediaapplet
+mouse
 naughtyapplet
+panel
+panelappearance
+passwords
+privacy
+privacy
 quicklauncher
-ksystraycmd
+spellchecking
+windowmanagement
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -3486,19 +3486,19 @@ cat kioslave.lang	>> kinfocenter.lang
 rm -f kioslave.lang
 
 a="
-kdesud
+drkonqi
 kcmaccessibility
-kcmprintmgr
-kprinter
 kcmcolors
 kcmfonts
 kcmkded
 kcmlocale
+kcmprintmgr
 kdeprint_part
+kdesud
 kio_man
 kio_settings
+kprinter
 kstyle_keramik_config
-drkonqi
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -3569,8 +3569,8 @@ rm -f kwriteconfig.lang
 
 %find_lang	screensaver	--with-kde
 a="
-kscreensaver
 kcmscreensaver
+kscreensaver
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -3591,45 +3591,45 @@ done
 
 %find_lang konqueror --with-kde
 a="
+appletproxy
 cache
 cookies
 crypto
 ebrowsing
 email
+extensionproxy
 filemanager
 filetypes
-icons
-kcmcss
-khtml
-netpref
-proxy
-smb
-useragent
-kio_media
-appletproxy
-nsplugin
-kcmhtmlsearch
-kcmlayout
 htmlsearch
-extensionproxy
-kfmclient
+icons
 kcmcgi
 kcmcrypto
+kcmcss
+kcmhtmlsearch
 kcmicons
 kcmkio
 kcmkonq
 kcmkonqhtml
 kcmkurifilt
+kcmlayout
 kcmperformance
 kfile_font
+kfmclient
+khtml
 kio_finger
 kio_fish
 kio_floppy
 kio_mac
+kio_media
 kio_nfs
 kio_print
 kio_sftp
 kio_smb
+netpref
+nsplugin
+proxy
+smb
+useragent
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -3654,18 +3654,18 @@ done
 
 > kdepim.lang
 a="
-akregator_konqplugin
 akregator
-kdepimwizards
+akregator_konqplugin
 kabc_slox
-kres_exchange
-kres_imap
-kres_xmlrpc
-kres_remote
+kalarm
+kalarmd
+kdepimwizards
 kontact
 korganizer
-kalarmd
-kalarm
+kres_exchange
+kres_imap
+kres_remote
+kres_xmlrpc
 ksync
 "
 for i in $a; do
@@ -3689,14 +3689,14 @@ rm -f kfile_palm.lang
 
 %find_lang	kmail		--with-kde
 a="
-kmailcvt
-kleopatra
 kfile_rfc822
-ktnef
 kio_sieve
-kwatchgnupg
+kleopatra
 kmail_text_calendar_plugin
 kmail_text_vcard_plugin
+kmailcvt
+ktnef
+kwatchgnupg
 "
 for i in $a; do
 	%find_lang $i --with-kde
@@ -3832,14 +3832,14 @@ cat kcmlaptop.lang >> klaptopdaemon.lang
 rm -f kcmlaptop.lang
 
 a="
+kcmkvaio
+kcmthinkpad
+kcmthinkpad
 kmilo_generic
 kmilo_kvaio
 kmilo_powerbook
 kmilo_thinkpad
 kmilod
-kcmthinkpad
-kcmkvaio
-kcmthinkpad
 "
 for i in $a; do
 	%find_lang $i		--with-kde
@@ -3907,6 +3907,7 @@ done
 > kdelibs.lang
 %find_lang	kdelibs --with-kde
 a="
+common
 cupsdconf
 kabc_dir
 kabc_file
@@ -3923,15 +3924,15 @@ kio_help
 kioexec
 kmcop
 knotify
+kspell
+ktexteditor_docwordcompletion
 ktexteditor_insertfile
 ktexteditor_isearch
 ktexteditor_kdatatool
 libkscreensaver
 ppdtranslations
 timezones
-common
-kspell
-ktexteditor_docwordcompletion"
+"
 for i in $a; do
 	%find_lang $i --with-kde
 	cat $i.lang >> kdelibs.lang
@@ -3958,10 +3959,10 @@ done
 
 a="
 cpp
+desktop
 diff
 po
 ts
-desktop
 "
 for i in $a; do
 	%find_lang kfile_${i} --with-kde
@@ -4036,6 +4037,7 @@ rm -f libkscan.lang
 a="
 bmp
 dvi
+exr
 gif
 ico
 jpeg
@@ -4044,11 +4046,10 @@ pdf
 png
 pnm
 ps
+rgb
 tga
 tiff
 xbm
-exr
-rgb
 "
 for i in $a; do
 	%find_lang kfile_${i} --with-kde
@@ -4075,10 +4076,10 @@ rm -f kcmkontactnt.lang
 %find_lang	libkaddrbk_geo_xxport	--with-kde
 
 a="
+kmathapplet
 kolourpicker
 ktimemon
 mediacontrol
-kmathapplet
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -4107,25 +4108,25 @@ for i in $a; do
 done
 
 a="
-khtmlsettingsplugin
-konqsidebar_mediaplayer
-validatorsplugin
+audiorename_plugin
 autorefresh
 babelfish
 crashesplugin
 dirfilterplugin
+imagerename_plugin
 imgalleryplugin
 kcmkuick
-minitoolsplugin
-uachangerplugin
-kuick_plugin
-audiorename_plugin
-imagerename_plugin
 kfile_folder
 kfile_html
 kfile_txt
-searchbarplugin
+khtmlsettingsplugin
+konqsidebar_mediaplayer
 konqsidebar_news
+kuick_plugin
+minitoolsplugin
+searchbarplugin
+uachangerplugin
+validatorsplugin
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -4140,11 +4141,13 @@ rm -f webarchiver.lang domtreeviewer.lang
 
 a="
 katecppsymbolviewer
+katefiletemplates
 katefll_initplugin
 katefll_plugin
 katehelloworld
 katehtmltools
 kateinsertcommand
+katekjswrapper
 katemake
 katemodeline
 kateopenheader
@@ -4153,8 +4156,6 @@ katetextfilter
 katexmlcheck
 katexmltools
 ktexteditor_autobookmarker
-katefiletemplates
-katekjswrapper
 "
 for i in $a; do
 	%find_lang $i	--with-kde
@@ -4164,11 +4165,11 @@ done
 
 %find_lang kdevelop --with-kde
 a="
+kde_app_devel
+kdearch
 kdevdesigner
 kdevtipofday
 qeditor
-kde_app_devel
-kdearch
 "
 for i in $a; do
 	%find_lang $i	--with-kde
