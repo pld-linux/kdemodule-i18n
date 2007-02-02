@@ -3522,7 +3522,7 @@ kde_find_lang kdegraphics-kfile-i18n "
 kde_find_lang kdegraphics-kgamma-i18n kgamma
 kde_find_lang kdegraphics-kghostview-i18n kghostview
 kde_find_lang kdegraphics-kiconedit-i18n kiconedit
-kde_find_lang akmrml-i18n kmrml
+kde_find_lang kdegraphics-kmrml-i18n kmrml
 kde_find_lang kdegraphics-kolourpaint-i18n kolourpaint # 'kpaint' obsoleted by kolourpaint?
 kde_find_lang kdegraphics-kooka-i18n kooka libkscan
 kde_find_lang kdegraphics-kpdf-i18n kpdf
@@ -3787,6 +3787,10 @@ kde_find_lang konqueror-i18n "
 "
 kde_find_lang konqueror-libs-i18n libkonq
 
+# package dirs
+for i in $(find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"); do
+	echo "%dir %{_kdedocdir}/${i}" >> kdelibs-i18n.lang
+done
 
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
 	lang=${a##*/}
@@ -3808,21 +3812,11 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
 done
 
 
-# DON'T PACKAGE KMATHTOOL
-rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
-rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
-
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
 	lang=${a##*/}
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kdeedu-kanagram-i18n.lang
 done
-
-
-> i18n.lang
-%find_lang libkdegames	--with-kde
-cat libkdegames.lang >> i18n.lang
-rm -f libkdegames.lang
 
 for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	if [ -d $i ]; then
@@ -3831,23 +3825,23 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
 	fi
 done
 
-
-
-# Not packaging kmobile, it was disabled by coolo
-
-# We don't build kcardchooser (disabled by default by coolo)
-# re-enabling it would be posssible, but what for?
-
-for i in $(find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"); do
-	echo "%dir %{_kdedocdir}/${i}" >> kdelibs-i18n.lang
-done
-
+# TODO: to kate?
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xml; do
 	t=${a##*/logohighlightstyle.}
 	lang=${t%.xml}
 	path=${a#$RPM_BUILD_ROOT}
 	echo "%lang($lang) $path" >> kdelibs-i18n.lang
 done
+
+
+# DON'T PACKAGE KMATHTOOL
+rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
+
+# Not packaging kmobile, it was disabled by coolo
+
+# We don't build kcardchooser (disabled by default by coolo)
+# re-enabling it would be posssible, but what for?
 
 for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	echo $i
