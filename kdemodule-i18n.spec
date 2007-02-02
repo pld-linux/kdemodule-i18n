@@ -3198,6 +3198,7 @@ fi
 rm -f *.lang
 
 kde_find_lang() {
+	%{?debug:set -x}
 	local out=$1.lang
 	shift
 	> $out
@@ -3602,6 +3603,28 @@ kde_find_lang kdemultimedia-krec-i18n krec
 kde_find_lang kdemultimedia-kscd-i18n kscd
 kde_find_lang kdemultimedia-libkcddb-i18n libkcddb kcmcddb
 kde_find_lang kdemultimedia-noatun-i18n noatun
+kde_find_lang kdenetwork-filesharing-i18n kfileshare
+kde_find_lang kdenetwork-kdict-i18n kdict kdictapplet
+kde_find_lang kdenetwork-kget-i18n kget
+kde_find_lang kdenetwork-kinetd-i18n kinetd
+kde_find_lang kdenetwork-knewsticker-i18n knewsticker
+kde_find_lang kdenetwork-kopete-i18n kopete kio_jabberdisco
+kde_find_lang kdenetwork-kpf-i18n kpf
+kde_find_lang kdenetwork-kppp-i18n kppp kppplogview
+kde_find_lang kdenetwork-krfb-i18n kcm_krfb krfb krdc
+kde_find_lang kdenetwork-ksirc-i18n ksirc
+kde_find_lang kdenetwork-ktalkd-i18n ktalkd kcmktalkd
+kde_find_lang kdenetwork-kwifimanager-i18n kwifimanager kwireless kcmwifi
+kde_find_lang kdenetwork-lanbrowser-i18n lisa lanbrowser kcmlanbrowser kio_lan
+
+
+
+
+
+
+
+
+
 
 
 %find_lang quanta	--with-kde
@@ -3806,63 +3829,6 @@ for i in $a; do
 	rm -f $i.lang
 done
 
-%find_lang kfileshare	--with-kde
-%find_lang kdict		--with-kde
-%find_lang kget			--with-kde
-%find_lang knewsticker		--with-kde
-
-%find_lang kopete		--with-kde
-%find_lang kio_jabberdisco		--with-kde
-cat kio_jabberdisco.lang >> kopete.lang
-rm -f kio_jabberdisco.lang
-
-%find_lang kpf			--with-kde
-%find_lang kppp			--with-kde
-%find_lang krdc			--with-kde
-%find_lang krfb			--with-kde
-cat krdc.lang >> krfb.lang
-rm -f krdc.lang
-%find_lang ksirc		--with-kde
-%find_lang kwifimanager		--with-kde
-%find_lang lisa			--with-kde
-%find_lang lanbrowser		--with-kde
-cat lanbrowser.lang >> lisa.lang
-rm -f lanbrowser.lang
-
-%find_lang ktalkd		--with-kde
-%find_lang kcmktalkd		--with-kde
-cat kcmktalkd.lang >> ktalkd.lang
-rm -f kcmktalkd.lang
-
-%find_lang kcm_krfb		--with-kde
-cat kcm_krfb.lang >> krfb.lang
-rm -f kcm_krfb.lang
-
-%find_lang kcmlanbrowser	--with-kde
-cat kcmlanbrowser.lang >> lisa.lang
-rm -f kcmlanbrowser.lang
-
-%find_lang kio_lan		--with-kde
-cat kio_lan.lang >> lisa.lang
-rm -f kio_lan.lang
-
-%find_lang kppplogview		--with-kde
-cat kppplogview.lang >> kppp.lang
-rm -f kppplogview.lang
-
-%find_lang kwireless		--with-kde
-cat kwireless.lang >> kwifimanager.lang
-rm -f kwireless.lang
-
-%find_lang kcmwifi		--with-kde
-cat kcmwifi.lang >> kwifimanager.lang
-rm -f kcmwifi.lang
-
-%find_lang kdictapplet		--with-kde
-cat kdictapplet.lang >> kdict.lang
-rm -f kdictapplet.lang
-
-%find_lang kinetd		--with-kde
 %find_lang ark			--with-kde
 %find_lang KRegExpEditor	--with-kde
 %find_lang kcalc		--with-kde
@@ -4338,31 +4304,31 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdemultimedia-noatun-i18n -f kdemultimedia-noatun-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-filesharing-i18n -f kfileshare.lang
+%files -n kdenetwork-filesharing-i18n -f kdenetwork-filesharing-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kdict-i18n -f kdict.lang
+%files -n kdenetwork-kdict-i18n -f kdenetwork-kdict-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kget-i18n -f kget.lang
+%files -n kdenetwork-kget-i18n -f kdenetwork-kget-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kinetd-i18n -f kinetd.lang
+%files -n kdenetwork-kinetd-i18n -f kdenetwork-kinetd-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-knewsticker-i18n -f knewsticker.lang
+%files -n kdenetwork-knewsticker-i18n -f kdenetwork-knewsticker-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kopete-i18n -f kopete.lang
+%files -n kdenetwork-kopete-i18n -f kdenetwork-kopete-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kpf-i18n -f kpf.lang
+%files -n kdenetwork-kpf-i18n -f kdenetwork-kpf-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kppp-i18n -f kppp.lang
+%files -n kdenetwork-kppp-i18n -f kdenetwork-kppp-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-krfb-i18n -f krfb.lang
+%files -n kdenetwork-krfb-i18n -f kdenetwork-krfb-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-ksirc-i18n -f ksirc.lang
+%files -n kdenetwork-ksirc-i18n -f kdenetwork-ksirc-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-ktalkd-i18n -f ktalkd.lang
+%files -n kdenetwork-ktalkd-i18n -f kdenetwork-ktalkd-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-kwifimanager-i18n -f kwifimanager.lang
+%files -n kdenetwork-kwifimanager-i18n -f kdenetwork-kwifimanager-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdenetwork-lanbrowser-i18n -f lisa.lang
+%files -n kdenetwork-lanbrowser-i18n -f kdenetwork-lanbrowser-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdepim-i18n -f kdepim.lang
 %defattr(644,root,root,755)
