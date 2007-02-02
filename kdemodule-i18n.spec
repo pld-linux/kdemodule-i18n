@@ -3667,7 +3667,23 @@ kde_find_lang kdepim-libs-i18n "
 	libksieve
 	libksync
 "
-
+kde_find_lang kdesdk-cervisia-i18n cervisia
+kde_find_lang kdesdk-kbabel-i18n kbabel
+kde_find_lang kdesdk-kbugbuster-i18n kbugbuster
+kde_find_lang kdesdk-kcachegrind-i18n kcachegrind
+kde_find_lang kdesdk-kfile-i18n "
+	kfile_cpp
+	kfile_desktop
+	kfile_diff
+	kfile_po
+	kfile_ts
+"
+kde_find_lang kdesdk-kompare-i18n kompare
+kde_find_lang kdesdk-kspy-i18n spy
+kde_find_lang kdesdk-kstartperf-i18n kstartperf
+kde_find_lang kdesdk-kuiviewer-i18n kuiviewer
+kde_find_lang kdesdk-libcvsservice-i18n cvsservice
+kde_find_lang kdesdk-umbrello-i18n umbrello
 
 
 
@@ -3877,31 +3893,7 @@ for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xm
 	echo "%lang($lang) $path" >> kdelibs-i18n.lang
 done
 
-%find_lang	cervisia	--with-kde
-%find_lang	kbabel		--with-kde
-%find_lang	kcachegrind	--with-kde
-%find_lang	kbugbuster	--with-kde
-%find_lang	kompare		--with-kde
-%find_lang	umbrello	--with-kde
-
-a="
-cpp
-desktop
-diff
-po
-ts
-"
-for i in $a; do
-	%find_lang kfile_${i} --with-kde
-	cat kfile_${i}.lang >> kfile_sdk.lang
-	rm -f kfile_${i}.lang
-done
-%find_lang cvsservice	--with-kde
-
 %find_lang kfilereplace		--with-kde
-%find_lang kstartperf		--with-kde
-%find_lang kuiviewer		--with-kde
-%find_lang spy			--with-kde
 
 %find_lang amor			--with-kde
 %find_lang kmoon		--with-kde
@@ -4312,27 +4304,27 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdepim-libs-i18n -f kdepim-libs-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-cervisia-i18n -f cervisia.lang
+%files -n kdesdk-cervisia-i18n -f kdesdk-cervisia-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kbabel-i18n -f kbabel.lang
+%files -n kdesdk-kbabel-i18n -f kdesdk-kbabel-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kbugbuster-i18n -f kbugbuster.lang
+%files -n kdesdk-kbugbuster-i18n -f kdesdk-kbugbuster-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kcachegrind-i18n -f kcachegrind.lang
+%files -n kdesdk-kcachegrind-i18n -f kdesdk-kcachegrind-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kfile-i18n -f kfile_sdk.lang
+%files -n kdesdk-kfile-i18n -f kdesdk-kfile-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kompare-i18n -f kompare.lang
+%files -n kdesdk-kompare-i18n -f kdesdk-kompare-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kspy-i18n -f spy.lang
+%files -n kdesdk-kspy-i18n -f kdesdk-kspy-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kstartperf-i18n -f kstartperf.lang
+%files -n kdesdk-kstartperf-i18n -f kdesdk-kstartperf-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kuiviewer-i18n -f kuiviewer.lang
+%files -n kdesdk-kuiviewer-i18n -f kdesdk-kuiviewer-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-libcvsservice-i18n -f cvsservice.lang
+%files -n kdesdk-libcvsservice-i18n -f kdesdk-libcvsservice-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-umbrello-i18n -f umbrello.lang
+%files -n kdesdk-umbrello-i18n -f kdesdk-umbrello-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdetoys-amor-i18n -f amor.lang
 %defattr(644,root,root,755)
