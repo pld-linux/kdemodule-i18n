@@ -3497,9 +3497,63 @@ kde_find_lang kdegames-ktron-i18n ktron
 kde_find_lang kdegames-ktuberling-i18n ktuberling
 kde_find_lang kdegames-kwin4-i18n kwin4
 kde_find_lang kdegames-lskat-i18n lskat
+kde_find_lang kdegraphics-kamera-i18n kamera kcmkamera
+kde_find_lang kdegraphics-kcoloredit-i18n kcoloredit
+kde_find_lang kdegraphics-kdvi-i18n kdvi
+kde_find_lang kdegraphics-kfax-i18n kfax
+kde_find_lang kdegraphics-kfile-i18n "
+	kfile_bmp
+	kfile_dvi
+	kfile_exr
+	kfile_gif
+	kfile_ico
+	kfile_jpeg
+	kfile_pcx
+	kfile_pdf
+	kfile_png
+	kfile_pnm
+	kfile_ps
+	kfile_rgb
+	kfile_tga
+	kfile_tiff
+	kfile_xbm
+"
+kde_find_lang kdegraphics-kgamma-i18n kgamma
+kde_find_lang kdegraphics-kghostview-i18n kghostview
+kde_find_lang kdegraphics-kiconedit-i18n kiconedit
+kde_find_lang akmrml-i18n kmrml
+kde_find_lang kdegraphics-kolourpaint-i18n kolourpaint # 'kpaint' obsoleted by kolourpaint?
+kde_find_lang kdegraphics-kooka-i18n kooka libkscan
+kde_find_lang kdegraphics-kpdf-i18n kpdf
+kde_find_lang kdegraphics-kpovmodeler-i18n kpovmodeler
+kde_find_lang kdegraphics-kruler-i18n kruler
+kde_find_lang kdegraphics-ksnapshot-i18n ksnapshot
+kde_find_lang kdegraphics-ksvg-i18n ksvgplugin
+kde_find_lang kdegraphics-kuickshow-i18n kuickshow
+kde_find_lang kdegraphics-kview-i18n "
+	kcm_kviewcanvasconfig
+	kcm_kviewgeneralconfig
+	kcm_kviewpluginsconfig
+	kcm_kviewviewerpluginsconfig
+	kview
+	kview_scale
+	kviewbrowserplugin
+	kviewcanvas
+	kvieweffectsplugin
+	kviewpresenterplugin
+	kviewscannerplugin
+	kviewshell
+	kviewviewer
+"
 
 
-exit 1
+
+
+
+
+
+
+
 
 
 
@@ -3972,78 +4026,6 @@ done
 %find_lang kfifteenapplet	--with-kde
 %find_lang ktux			--with-kde
 
-%find_lang kamera		--with-kde
-%find_lang kcoloredit		--with-kde
-%find_lang kgamma		--with-kde
-%find_lang kdvi			--with-kde
-%find_lang kghostview		--with-kde
-%find_lang kiconedit		--with-kde
-%find_lang kooka		--with-kde
-%find_lang kolourpaint		--with-kde
-%find_lang kpdf			--with-kde
-%find_lang kpovmodeler		--with-kde
-%find_lang kruler		--with-kde
-%find_lang ksnapshot		--with-kde
-%find_lang kuickshow		--with-kde
-%find_lang kview		--with-kde
-
-a="
-_scale
-browserplugin
-canvas
-effectsplugin
-presenterplugin
-scannerplugin
-shell
-viewer
-"
-for i in $a; do
-	%find_lang kview${i} --with-kde
-	cat kview${i}.lang >> kview.lang
-	rm -f kview${i}.lang
-done
-
-%find_lang kcm_kviewcanvasconfig --with-kde
-%find_lang kcm_kviewgeneralconfig --with-kde
-%find_lang kcm_kviewpluginsconfig --with-kde
-%find_lang kcm_kviewviewerpluginsconfig --with-kde
-cat kcm_kviewcanvasconfig.lang kcm_kviewgeneralconfig.lang kcm_kviewpluginsconfig.lang kcm_kviewviewerpluginsconfig.lang >> kview.lang
-rm -f kcm_kviewcanvasconfig.lang kcm_kviewgeneralconfig.lang kcm_kviewpluginsconfig.lang kcm_kviewviewerpluginsconfig.lang
-
-%find_lang kcmkamera --with-kde
-cat kcmkamera.lang >> kamera.lang
-rm -f kcmkamera.lang
-
-%find_lang kfax --with-kde
-%find_lang kmrml --with-kde
-%find_lang ksvgplugin --with-kde
-%find_lang libkscan --with-kde
-cat libkscan.lang >> kooka.lang
-rm -f libkscan.lang
-
-a="
-bmp
-dvi
-exr
-gif
-ico
-jpeg
-pcx
-pdf
-png
-pnm
-ps
-rgb
-tga
-tiff
-xbm
-"
-for i in $a; do
-	%find_lang kfile_${i} --with-kde
-	cat kfile_${i}.lang >> kfile_gra.lang
-	rm -f kfile_${i}.lang
-done
-
 %find_lang	kcmkontactnt		--with-kde
 cat kcmkontactnt.lang >> kdepim.lang
 rm -f kcmkontactnt.lang
@@ -4121,7 +4103,6 @@ done
 %find_lang kmidi --with-kde
 %find_lang knetworkconf --with-kde
 %find_lang kompmgr --with-kde
-#%find_lang kpaint --with-kde # obsoleted by kolourpaint?
 %find_lang kttsd --with-kde
 %find_lang kwuftpd --with-kde
 %find_lang kxconfig --with-kde
@@ -4335,41 +4316,41 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-lskat-i18n -f kdegames-lskat-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kamera-i18n -f kamera.lang
+%files -n kdegraphics-kamera-i18n -f kdegraphics-kamera-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kcoloredit-i18n -f kcoloredit.lang
+%files -n kdegraphics-kcoloredit-i18n -f kdegraphics-kcoloredit-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kdvi-i18n -f kdvi.lang
+%files -n kdegraphics-kdvi-i18n -f kdegraphics-kdvi-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kfax-i18n -f kfax.lang
+%files -n kdegraphics-kfax-i18n -f kdegraphics-kfax-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kfile-i18n -f kfile_gra.lang
+%files -n kdegraphics-kfile-i18n -f kdegraphics-kfile-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kgamma-i18n -f kgamma.lang
+%files -n kdegraphics-kgamma-i18n -f kdegraphics-kgamma-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kghostview-i18n -f kghostview.lang
+%files -n kdegraphics-kghostview-i18n -f kdegraphics-kghostview-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kiconedit-i18n -f kiconedit.lang
+%files -n kdegraphics-kiconedit-i18n -f kdegraphics-kiconedit-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kmrml-i18n -f kmrml.lang
+%files -n kdegraphics-kmrml-i18n -f kdegraphics-kmrml-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kolourpaint-i18n -f kolourpaint.lang
+%files -n kdegraphics-kolourpaint-i18n -f kdegraphics-kolourpaint-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kooka-i18n -f kooka.lang
+%files -n kdegraphics-kooka-i18n -f kdegraphics-kooka-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kpdf-i18n -f kpdf.lang
+%files -n kdegraphics-kpdf-i18n -f kdegraphics-kpdf-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kpovmodeler-i18n -f kpovmodeler.lang
+%files -n kdegraphics-kpovmodeler-i18n -f kdegraphics-kpovmodeler-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kruler-i18n -f kruler.lang
+%files -n kdegraphics-kruler-i18n -f kdegraphics-kruler-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-ksnapshot-i18n -f ksnapshot.lang
+%files -n kdegraphics-ksnapshot-i18n -f kdegraphics-ksnapshot-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-ksvg-i18n -f ksvgplugin.lang
+%files -n kdegraphics-ksvg-i18n -f kdegraphics-ksvg-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kuickshow-i18n -f kuickshow.lang
+%files -n kdegraphics-kuickshow-i18n -f kdegraphics-kuickshow-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdegraphics-kview-i18n -f kview.lang
+%files -n kdegraphics-kview-i18n -f kdegraphics-kview-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdelibs-i18n -f kdelibs.lang
 %defattr(644,root,root,755)
