@@ -3545,17 +3545,63 @@ kde_find_lang kdegraphics-kview-i18n "
 	kviewshell
 	kviewviewer
 "
-
-
-
-
-
-
-
-
-
-
-
+kde_find_lang kdelibs-i18n "
+	common
+	cupsdconf
+	kabc_dir
+	kabc_file
+	kabc_ldapkio
+	kabc_net
+	kabc_sql
+	kabcformat_binary
+	katepart
+	kcmshell
+	kdelibs
+	kdelibs_colors
+	kdeprint
+	kfileaudiopreview
+	kio
+	kio_help
+	kioexec
+	kmcop
+	knotify
+	kspell
+	kstyle_highcontrast_config
+	ktexteditor_docwordcompletion
+	ktexteditor_insertfile
+	ktexteditor_isearch
+	ktexteditor_kdatatool
+	kttsd
+	libkholidays
+	libkscreensaver
+	ppdtranslations
+	timezones
+"
+kde_find_lang kdemultimedia-arts-i18n artsmodules
+kde_find_lang kdemultimedia-artsbuilder-i18n artsbuilder
+kde_find_lang kdemultimedia-artscontrol-i18n artscontrol
+kde_find_lang kdemultimedia-audiocd-i18n audiocd_encoder_lame audiocd_encoder_vorbis kcmaudiocd kio_audiocd
+kde_find_lang kdemultimedia-juk-i18n juk
+kde_find_lang kdemultimedia-kaboodle-i18n kaboodle
+kde_find_lang kdemultimedia-kaudiocreator-i18n kaudiocreator
+kde_find_lang kdemultimedia-kfile-i18n "
+	kfile_au
+	kfile_avi
+	kfile_flac
+	kfile_m3u
+	kfile_mp3
+	kfile_mpc
+	kfile_ogg
+	kfile_sid
+	kfile_theora
+	kfile_wav
+"
+kde_find_lang kdemultimedia-kmid-i18n kmid
+kde_find_lang kdemultimedia-kmix-i18n kmix kmixcfg
+kde_find_lang kdemultimedia-krec-i18n krec
+kde_find_lang kdemultimedia-kscd-i18n kscd
+kde_find_lang kdemultimedia-libkcddb-i18n libkcddb kcmcddb
+kde_find_lang kdemultimedia-noatun-i18n noatun
 
 
 %find_lang quanta	--with-kde
@@ -3889,106 +3935,16 @@ rm -f kcharselectapplet.lang
 
 # We don't build kcardchooser (disabled by default by coolo)
 # re-enabling it would be posssible, but what for?
-%find_lang artsbuilder	--with-kde
-%find_lang juk		--with-kde
-%find_lang kaboodle	--with-kde
-%find_lang kmid		--with-kde
-%find_lang kmix		--with-kde
-%find_lang kmixcfg	--with-kde
-cat kmixcfg.lang >> kmix.lang
-rm -f kmixcfg.lang
-%find_lang krec		--with-kde
-%find_lang kscd		--with-kde
-%find_lang noatun	--with-kde
-%find_lang libkcddb	--with-kde
-%find_lang kcmcddb	--with-kde
-cat kcmcddb.lang >> libkcddb.lang
-rm -f kcmcddb.lang
-
-%find_lang kio_audiocd	--with-kde
-a="
-audiocd_encoder_lame
-audiocd_encoder_vorbis
-kcmaudiocd
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kio_audiocd.lang
-	rm -f $i.lang
-done
-
-%find_lang kaudiocreator --with-kde
-%find_lang artscontrol	--with-kde
-%find_lang artsmodules	--with-kde
-mv artsmodules.lang arts.lang
-
-> kfile_mm.lang
-a="
-au
-avi
-flac
-m3u
-mp3
-ogg
-wav
-sid
-mpc
-theora
-"
-for i in $a; do
-	%find_lang kfile_${i} --with-kde
-	cat kfile_${i}.lang >> kfile_mm.lang
-	rm -f kfile_${i}.lang
-done
-
-> kdelibs.lang
-%find_lang	kdelibs --with-kde
-a="
-common
-cupsdconf
-kabc_dir
-kabc_file
-kabc_ldapkio
-kabc_net
-kabc_sql
-kabcformat_binary
-katepart
-kcmshell
-kdelibs_colors
-kdeprint
-kfileaudiopreview
-kio
-kio_help
-kioexec
-kmcop
-knotify
-kspell
-kstyle_highcontrast_config
-ktexteditor_docwordcompletion
-ktexteditor_insertfile
-ktexteditor_isearch
-ktexteditor_kdatatool
-kttsd
-libkholidays
-libkscreensaver
-ppdtranslations
-timezones
-"
-for i in $a; do
-	%find_lang $i --with-kde
-	cat $i.lang >> kdelibs.lang
-	rm -f $i.lang
-done
 
 for i in $(find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"); do
-	echo "%dir %{_kdedocdir}/${i}" >> kdelibs.lang
+	echo "%dir %{_kdedocdir}/${i}" >> kdelibs-i18n.lang
 done
 
 for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xml; do
 	t=${a##*/logohighlightstyle.}
 	lang=${t%.xml}
 	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdelibs.lang
+	echo "%lang($lang) $path" >> kdelibs-i18n.lang
 done
 
 %find_lang	cervisia	--with-kde
@@ -4352,35 +4308,35 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegraphics-kview-i18n -f kdegraphics-kview-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdelibs-i18n -f kdelibs.lang
+%files -n kdelibs-i18n -f kdelibs-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-arts-i18n -f arts.lang
+%files -n kdemultimedia-arts-i18n -f kdemultimedia-arts-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-artsbuilder-i18n -f artsbuilder.lang
+%files -n kdemultimedia-artsbuilder-i18n -f kdemultimedia-artsbuilder-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-artscontrol-i18n -f artscontrol.lang
+%files -n kdemultimedia-artscontrol-i18n -f kdemultimedia-artscontrol-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-audiocd-i18n -f kio_audiocd.lang
+%files -n kdemultimedia-audiocd-i18n -f kdemultimedia-audiocd-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-juk-i18n -f juk.lang
+%files -n kdemultimedia-juk-i18n -f kdemultimedia-juk-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kaboodle-i18n -f kaboodle.lang
+%files -n kdemultimedia-kaboodle-i18n -f kdemultimedia-kaboodle-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kaudiocreator-i18n -f kaudiocreator.lang
+%files -n kdemultimedia-kaudiocreator-i18n -f kdemultimedia-kaudiocreator-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kfile-i18n -f kfile_mm.lang
+%files -n kdemultimedia-kfile-i18n -f kdemultimedia-kfile-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kmid-i18n -f kmid.lang
+%files -n kdemultimedia-kmid-i18n -f kdemultimedia-kmid-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kmix-i18n -f kmix.lang
+%files -n kdemultimedia-kmix-i18n -f kdemultimedia-kmix-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-krec-i18n -f krec.lang
+%files -n kdemultimedia-krec-i18n -f kdemultimedia-krec-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-kscd-i18n -f kscd.lang
+%files -n kdemultimedia-kscd-i18n -f kdemultimedia-kscd-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-libkcddb-i18n -f libkcddb.lang
+%files -n kdemultimedia-libkcddb-i18n -f kdemultimedia-libkcddb-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdemultimedia-noatun-i18n -f noatun.lang
+%files -n kdemultimedia-noatun-i18n -f kdemultimedia-noatun-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-filesharing-i18n -f kfileshare.lang
 %defattr(644,root,root,755)
