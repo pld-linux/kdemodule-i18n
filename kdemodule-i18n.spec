@@ -2,8 +2,8 @@
 # - difference between kdemodule-i18n and kde-i18n is that one is per
 #   package and other is per language.
 # TODO:
-# - tons of unpackaged files (see end of install section for more)
-#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.5_3.txt
+# - tons of unpackaged files:
+#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_7.txt
 #
 %define		_name			kde-i18n
 %define		kdeaddons_epoch		1
@@ -669,6 +669,19 @@ Internationalization and localization files for smtp ioslave.
 %description -n kde-kio-smtp-i18n -l pl
 T³umaczenia dla smtp ioslave.
 
+%package -n kde-kio-svn-i18n
+Summary:	Internationalization and localization files for svn ioslave
+Summary(pl):	T³umaczenia dla svn ioslave
+Group:		X11/Applications
+Requires:	kde-kio-svn = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kde-kio-svn-i18n
+Internationalization and localization files for svn ioslave.
+
+%description -n kde-kio-svn-i18n -l pl
+T³umaczenia dla svn ioslave.
+
 %package -n kde-kio-pop3-i18n
 Summary:	Internationalization and localization files for pop3 ioslave
 Summary(pl):	T³umaczenia dla pop3 ioslave
@@ -682,6 +695,19 @@ Internationalization and localization files for pop3 ioslave.
 
 %description -n kde-kio-pop3-i18n -l pl
 T³umaczenia dla pop3 ioslave.
+
+%package -n kde-kio-groupwise-i18n
+Summary:	Internationalization and localization files for groupwise ioslave
+Summary(pl):	T³umaczenia dla groupwise ioslave
+Group:		X11/Applications
+Requires:	kde-kio-groupwise = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kde-kio-groupwise-i18n
+Internationalization and localization files for groupwise ioslave.
+
+%description -n kde-kio-groupwise-i18n -l pl
+T³umaczenia dla groupwise ioslave.
 
 %package -n kde-kio-imap4-i18n
 Summary:	Internationalization and localization files for imap4 ioslave
@@ -1237,6 +1263,32 @@ Internationalization and localization files for kdict.
 
 %description -n kdenetwork-kdict-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdict.
+
+%package -n kdenetwork-kdnssd-i18n
+Summary:	Internationalization and localization files for kdnssd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdnssd
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kdnssd = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kdnssd-i18n
+Internationalization and localization files for kdnssd.
+
+%description -n kdenetwork-kdnssd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdnssd.
+
+%package -n kdenetwork-kfile-torrent-i18n
+Summary:	Internationalization and localization files for kfile_torrent
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile_torrent
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kfile-torrent = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kfile-torrent-i18n
+Internationalization and localization files for kfile_torrent.
+
+%description -n kdenetwork-kfile-torrent-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfile_torrent.
 
 %package -n kdenetwork-kinetd-i18n
 Summary:	Internationalization and localization files for kinetd
@@ -1800,6 +1852,19 @@ Internationalization and localization files for flashkard.
 %description -n kdeedu-flashkard-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla flashkarda.
 
+%package -n kdeedu-blinken-i18n
+Summary:	Internationalization and localization files for blinken
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla blinken
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-blinken = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-blinken-i18n
+Internationalization and localization files for blinken.
+
+%description -n kdeedu-blinken-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla blinken.
+
 %package -n kdeedu-kalzium-i18n
 Summary:	Internationalization and localization files for kalzium
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kalzium
@@ -1838,6 +1903,19 @@ Internationalization and localization files for keduca.
 
 %description -n kdeedu-keduca-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla keduca.
+
+%package -n kdeedu-kgeography-i18n
+Summary:	Internationalization and localization files for kgeography
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgeography
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-kgeography = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-kgeography-i18n
+Internationalization and localization files for kgeography.
+
+%description -n kdeedu-kgeography-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kgeography.
 
 %package -n kdeedu-khangman-i18n
 Summary:	Internationalization and localization files for khangman
@@ -2203,6 +2281,19 @@ Internationalization and localization files for kmines.
 
 %description -n kdegames-kmines-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kmines.
+
+%package -n kdegames-knetwalk-i18n
+Summary:	Internationalization and localization files for knetwalk
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla knetwalk
+Group:		X11/Applications
+Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegames-knetwalk = %{kdegames_epoch}:%{version}
+
+%description -n kdegames-knetwalk-i18n
+Internationalization and localization files for knetwalk.
+
+%description -n kdegames-knetwalk-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla knetwalk.
 
 %package -n kdegames-kolf-i18n
 Summary:	Internationalization and localization files for kolf
@@ -3269,11 +3360,13 @@ kde_find_lang() {
 
 kde_find_lang kde-decoration-common-i18n kwin_art_clients
 kde_find_lang kde-kgreet-classic-i18n kgreet_classic
+kde_find_lang kde-kio-groupwise-i18n kio_groupwise
 kde_find_lang kde-kio-imap4-i18n kio_imap4
 kde_find_lang kde-kio-ldap-i18n kio_ldap
 kde_find_lang kde-kio-nntp-i18n kio_nntp
 kde_find_lang kde-kio-pop3-i18n kio_pop3
 kde_find_lang kde-kio-smtp-i18n kio_smtp
+kde_find_lang kde-kio-svn-i18n kio_svn
 kde_find_lang kdeaccessibility-kbstateapplet-i18n kbstateapplet
 kde_find_lang kdeaccessibility-kmag-i18n kmag
 kde_find_lang kdeaccessibility-kmousetool-i18n kmousetool
@@ -3525,10 +3618,13 @@ kde_find_lang kdebase-ksysguard-i18n ksysguard
 kde_find_lang kdebase-kwrite-i18n kwrite kwriteconfig
 kde_find_lang kdebase-screensavers-i18n screensaver kcmscreensaver kscreensaver
 kde_find_lang kdebase-useraccount-i18n useraccount kdepasswd
+# libkdeedu used by kdeedu/{kdeeduui,extdate}
+kde_find_lang kdeedu-blinken-i18n blinken
 kde_find_lang kdeedu-kalzium-i18n kalzium
 kde_find_lang kdeedu-kanagram-i18n kanagram
 kde_find_lang kdeedu-kbruch-i18n kbruch
 kde_find_lang kdeedu-keduca-i18n keduca
+kde_find_lang kdeedu-kgeography-i18n kgeography
 kde_find_lang kdeedu-khangman-i18n khangman
 kde_find_lang kdeedu-kig-i18n kig kfile_drgeo kfile_kig
 kde_find_lang kdeedu-kiten-i18n kiten
@@ -3558,6 +3654,7 @@ kde_find_lang kdegames-klickety-i18n klickety
 kde_find_lang kdegames-klines-i18n klines
 kde_find_lang kdegames-kmahjongg-i18n kmahjongg
 kde_find_lang kdegames-kmines-i18n kmines
+kde_find_lang kdegames-knetwalk-i18n knetwalk
 kde_find_lang kdegames-kolf-i18n kolf
 kde_find_lang kdegames-konquest-i18n konquest
 kde_find_lang kdegames-kpat-i18n kpat
@@ -3577,9 +3674,10 @@ kde_find_lang kdegames-lskat-i18n lskat
 kde_find_lang kdegraphics-kamera-i18n kamera kcmkamera
 kde_find_lang kdegraphics-kcoloredit-i18n kcoloredit
 kde_find_lang kdegraphics-kdvi-i18n kdvi
-kde_find_lang kdegraphics-kfax-i18n kfax
+kde_find_lang kdegraphics-kfax-i18n kfax kfaxview
 kde_find_lang kdegraphics-kfile-i18n "
 	kfile_bmp
+	kfile_dds
 	kfile_dvi
 	kfile_exr
 	kfile_gif
@@ -3594,6 +3692,7 @@ kde_find_lang kdegraphics-kfile-i18n "
 	kfile_tga
 	kfile_tiff
 	kfile_xbm
+	kfile_xpm
 "
 kde_find_lang kdegraphics-kgamma-i18n kgamma
 kde_find_lang kdegraphics-kghostview-i18n kghostview
@@ -3667,6 +3766,7 @@ kde_find_lang kdemultimedia-kfile-i18n "
 	kfile_m3u
 	kfile_mp3
 	kfile_mpc
+	kfile_mpeg
 	kfile_ogg
 	kfile_sid
 	kfile_theora
@@ -3680,6 +3780,8 @@ kde_find_lang kdemultimedia-libkcddb-i18n libkcddb kcmcddb
 kde_find_lang kdemultimedia-noatun-i18n noatun
 kde_find_lang kdenetwork-filesharing-i18n kfileshare
 kde_find_lang kdenetwork-kdict-i18n kdict kdictapplet
+kde_find_lang kdenetwork-kdnssd-i18n kio_zeroconf kcmkdnssd
+kde_find_lang kdenetwork-kfile-torrent-i18n kfile_torrent
 kde_find_lang kdenetwork-kget-i18n kget
 kde_find_lang kdenetwork-kinetd-i18n kinetd
 kde_find_lang kdenetwork-knewsticker-i18n knewsticker
@@ -3701,6 +3803,12 @@ kde_find_lang kdepim-i18n "
 	kdepimwizards
 	kfile_ics
 	kitchensync
+	konnector_dummy
+	konnector_kabc
+	konnector_kcal
+	konnector_local
+	konnector_qtopia
+	konnector_remote
 	kontact
 	korganizer
 	kres_exchange
@@ -3710,7 +3818,7 @@ kde_find_lang kdepim-i18n "
 	ksync
 	multisynk
 "
-kde_find_lang kdepim-kaddressbook-i18n kabc2mutt kaddressbook kcmkabconfig kfile_vcf
+kde_find_lang kdepim-kaddressbook-i18n kabc2mutt kaddressbook kcmkabconfig kfile_vcf libkaddrbk_gmx_xxport
 kde_find_lang kdepim-kandy-i18n kandy
 kde_find_lang kdepim-karm-i18n karm
 kde_find_lang kdepim-kmail-i18n "
@@ -3781,7 +3889,7 @@ kde_find_lang kdeutils-kdf-i18n kdf blockdevices
 kde_find_lang kdeutils-kedit-i18n kedit
 kde_find_lang kdeutils-kfloppy-i18n kfloppy
 kde_find_lang kdeutils-kgpg-i18n kgpg
-kde_find_lang kdeutils-khexedit-i18n khexedit
+kde_find_lang kdeutils-khexedit-i18n khexedit khexedit2part
 kde_find_lang kdeutils-kjots-i18n kjots
 kde_find_lang kdeutils-klaptopdaemon-i18n klaptopdaemon kcmlowbatcrit kcmlowbatwarn laptop powerctrl kcmlaptop
 kde_find_lang kdeutils-kmilo-i18n "
@@ -3969,11 +4077,9 @@ done
 %if 0
 #"
 # TODO these *.lang are created but not included in any %package yet
-%find_lang blinken --with-kde
 #%find_lang flashkard --with-kde # obsoleted?
 %find_lang kapptemplate --with-kde
 %find_lang kdesvn-build --with-kde
-%find_lang kgeography --with-kde
 #%find_lang kmessedwords --with-kde # obsoleted?
 %find_lang kmidi --with-kde
 %find_lang knetworkconf --with-kde
@@ -4002,6 +4108,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kde-kgreet-classic-i18n -f kde-kgreet-classic-i18n.lang
 %defattr(644,root,root,755)
+%files -n kde-kio-groupwise-i18n -f kde-kio-groupwise-i18n.lang
+%defattr(644,root,root,755)
 %files -n kde-kio-imap4-i18n -f kde-kio-imap4-i18n.lang
 %defattr(644,root,root,755)
 %files -n kde-kio-ldap-i18n -f kde-kio-ldap-i18n.lang
@@ -4011,6 +4119,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kde-kio-pop3-i18n -f kde-kio-pop3-i18n.lang
 %defattr(644,root,root,755)
 %files -n kde-kio-smtp-i18n -f kde-kio-smtp-i18n.lang
+%defattr(644,root,root,755)
+%files -n kde-kio-svn-i18n -f kde-kio-svn-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeaccessibility-kbstateapplet-i18n -f kdeaccessibility-kbstateapplet-i18n.lang
 %defattr(644,root,root,755)
@@ -4100,6 +4210,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdebase-useraccount-i18n -f kdebase-useraccount-i18n.lang
 %defattr(644,root,root,755)
+%files -n kdeedu-blinken-i18n -f kdeedu-blinken-i18n.lang
+%defattr(644,root,root,755)
 %files -n kdeedu-kalzium-i18n -f kdeedu-kalzium-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kanagram-i18n -f kdeedu-kanagram-i18n.lang
@@ -4107,6 +4219,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdeedu-kbruch-i18n -f kdeedu-kbruch-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-keduca-i18n -f kdeedu-keduca-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-kgeography-i18n -f kdeedu-kgeography-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-khangman-i18n -f kdeedu-khangman-i18n.lang
 %defattr(644,root,root,755)
@@ -4165,6 +4279,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdegames-kmahjongg-i18n -f kdegames-kmahjongg-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegames-kmines-i18n -f kdegames-kmines-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdegames-knetwalk-i18n -f kdegames-knetwalk-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegames-kolf-i18n -f kdegames-kolf-i18n.lang
 %defattr(644,root,root,755)
@@ -4267,6 +4383,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdenetwork-filesharing-i18n -f kdenetwork-filesharing-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-kdict-i18n -f kdenetwork-kdict-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdenetwork-kdnssd-i18n -f kdenetwork-kdnssd-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdenetwork-kfile-torrent-i18n -f kdenetwork-kfile-torrent-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdenetwork-kget-i18n -f kdenetwork-kget-i18n.lang
 %defattr(644,root,root,755)
