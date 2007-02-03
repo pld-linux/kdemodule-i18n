@@ -3281,6 +3281,8 @@ kde_find_lang kdeaccessibility-kmouth-i18n kmouth
 kde_find_lang kdeaccessibility-ksayit-i18n ksayit
 kde_find_lang kdeaccessibility-kttsd-i18n "
 	kcmkttsd
+	ktexteditor_kttsd
+	kttsd
 	kttsd_commandplugin
 	kttsd_eposplugin
 	kttsd_fliteplugin
@@ -3646,7 +3648,6 @@ kde_find_lang kdelibs-i18n "
 	ktexteditor_insertfile
 	ktexteditor_isearch
 	ktexteditor_kdatatool
-	kttsd
 	libkholidays
 	libkscreensaver
 	ppdtranslations
@@ -3814,7 +3815,7 @@ kde_find_lang kdewebdev-klinkstatus-i18n klinkstatus
 kde_find_lang kdewebdev-kommander-i18n kommander
 kde_find_lang kdewebdev-kxsldbg-i18n kxsldbg
 kde_find_lang kdewebdev-quanta-i18n quanta
-kde_find_lang kdm-i18n kdm kdmconfig kdmgreet
+kde_find_lang kdm-i18n kdm kdmconfig kdmgreet kgreet_winbind
 kde_find_lang konqueror-i18n "
 	appletproxy
 	cache
