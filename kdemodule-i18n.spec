@@ -1166,12 +1166,16 @@ Pliki umiêdzynarodawiaj±ce dla useraccount.
 
 %package -n kdeaccessibility-kbstateapplet-i18n
 Summary:	Internationalization and localization files for kbstateapplet
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kbstateapplet
 Group:		X11/Applications
 Requires:	kdeaccessibility-kbstateapplet = %{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeaccessibility-kbstateapplet-i18n
 Internationalization and localization files for kbstateapplet.
+
+%description -n kdeaccessibility-kbstateapplet-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kbstateapplet.
 
 %package -n kdeaccessibility-kmag-i18n
 Summary:	Internationalization and localization files for kmag
@@ -1668,6 +1672,9 @@ Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kdeadmin-knetworkconf-i18n
 Internationalization and localization files for knetworkconf.
+
+%description -n kdeadmin-knetworkconf-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla knetworkconf.
 
 %package -n kdeadmin-kpackage-i18n
 Summary:	Internationalization and localization files for kpackage
