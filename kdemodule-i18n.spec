@@ -707,6 +707,7 @@ T³umaczenia dla nntp ioslave.
 
 %package -n kde-resource-bugzilla-i18n
 Summary:	Internationalization and localization files for bugzilla plugin for the KDE PIM framework
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla wtyczki bugzilla do szkieletu KDE PIM
 Group:		X11/Applications
 Requires:	kde-resource-bugzilla-i18n = %{kdesdk_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
@@ -714,6 +715,10 @@ Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 %description -n kde-resource-bugzilla-i18n
 Internationalization and localization files for KDE PIM plugin that
 allows creating bugzilla TODO lists.
+
+%description -n kde-resource-bugzilla-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla wtyczki KDE PIM pozwalaj±cej na
+tworzenie list rzeczy do zrobienia (TODO) w bugzilli.
 
 %package -n kdevelop-i18n
 Summary:	Internationalization and localization files for kdevelop
