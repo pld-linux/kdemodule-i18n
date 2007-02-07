@@ -3,7 +3,14 @@
 #   package and other is per language.
 # TODO:
 # - tons of unpackaged files:
-#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_7.txt
+#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_8.txt
+#
+# NOTES:
+# - kstyle_phase_config kdeartwork-3.5.6/styles/phase/config/kstyle_phase_config.la
+# - kres_tvanytime.mo - kdepim-3.5.6/kresources/tvanytime/
+# - kres_blogging.mo - kdepim-3.5.6/kresources/blogging/ - not packged in pld
+# - kio_mobile - kdepim-3.5.6/kmobile/kioslave/
+# - kcmsmartcard - kdebase-3.5.6/kcontrol/smartcard - not packaged in pld
 #
 %define		_name			kde-i18n
 %define		kdeaddons_epoch		1
@@ -499,46 +506,6 @@ Internationalization and localization files for konqueror.
 %description -n konqueror-i18n -l pl
 T³umaczenia dla konquerora.
 
-%package -n kde-decoration-b2-i18n
-Summary:	Internationalization and localization files for kde-decoration-b2
-Summary(pl):	T³umaczenia dla kde-decoration-b2
-Group:		X11/Applications
-Requires:	kde-decoration-b2 = %{kdebase_epoch}:%{version}
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-b2-i18n
-Internationalization and localization files for kde-decoration-b2.
-
-%description -n kde-decoration-b2-i18n -l pl
-T³umaczenia dla kde-decoration-b2.
-
-%package -n kde-decoration-modernsys-i18n
-Summary:	Internationalization and localization files for kde-decoration-modernsys
-Summary(pl):	T³umaczenia dla kde-decoration-modernsys
-Group:		X11/Applications
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-decoration-modernsys = %{kdebase_epoch}:%{version}
-
-%description -n kde-decoration-modernsys-i18n
-Internationalization and localization files for
-kde-decoration-modernsys.
-
-%description -n kde-decoration-modernsys-i18n -l pl
-T³umaczenia dla kde-decoration-modernsys.
-
-%package -n kde-decoration-quartz-i18n
-Summary:	Internationalization and localization files for kde-decoration-quartz
-Summary(pl):	T³umaczenia dla kde-decoration-quartz
-Group:		X11/Applications
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-decoration-quartz = %{kdebase_epoch}:%{version}
-
-%description -n kde-decoration-quartz-i18n
-Internationalization and localization files for kde-decoration-quartz.
-
-%description -n kde-decoration-quartz-i18n -l pl
-T³umaczenia dla kde-decoration-quartz.
-
 %package -n kdebase-desktop-libs-i18n
 Summary:	Internationalization and localization files for desktop-libs
 Summary(pl):	T³umaczenia dla desktop-libs
@@ -737,6 +704,16 @@ Internationalization and localization files for nntp ioslave.
 
 %description -n kde-kio-nntp-i18n -l pl
 T³umaczenia dla nntp ioslave.
+
+%package -n kde-resource-bugzilla-i18n
+Summary:	Internationalization and localization files for bugzilla plugin for the KDE PIM framework
+Group:		X11/Applications
+Requires:	kde-resource-bugzilla-i18n = %{kdesdk_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kde-resource-bugzilla-i18n
+Internationalization and localization files for KDE PIM plugin that
+allows creating bugzilla TODO lists.
 
 %package -n kdevelop-i18n
 Summary:	Internationalization and localization files for kdevelop
@@ -1728,59 +1705,6 @@ Internationalization and localization files for kcmlilo.
 
 %description -n kdeadmin-kcmlilo-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kcmlilo.
-
-%package -n kde-decoration-cde-i18n
-Summary:	Internationalization and localization files for kde-decoration-cde
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
-Group:		X11/Applications
-Requires:	kde-decoration-cde = %{kdeartwork_epoch}:%{version}
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-cde-i18n
-Internationalization and localization files for kde-decoration-cde.
-
-%description -n kde-decoration-cde-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde.
-
-%package -n kde-decoration-icewm-i18n
-Summary:	Internationalization and localization files for kde-decoration-icewm
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
-Group:		X11/Applications
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-decoration-icewm = %{kdeartwork_epoch}:%{version}
-
-%description -n kde-decoration-icewm-i18n
-Internationalization and localization files for kde-decoration-icewm.
-
-%description -n kde-decoration-icewm-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm.
-
-%package -n kde-decoration-glow-i18n
-Summary:	Internationalization and localization files for kde-decoration-glow
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
-Group:		X11/Applications
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-decoration-glow = %{kdeartwork_epoch}:%{version}
-
-%description -n kde-decoration-glow-i18n
-Internationalization and localization files for kde-decoration-glow.
-
-%description -n kde-decoration-glow-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow.
-
-%package -n kde-decoration-plastik-i18n
-Summary:	Internationalization and localization files for kde-decoration-plastik
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
-Group:		X11/Applications
-Requires:	kde-decoration-common-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-decoration-plastik = %{kdeartwork_epoch}:%{version}
-
-%description -n kde-decoration-plastik-i18n
-Internationalization and localization files for
-kde-decoration-plastik.
-
-%description -n kde-decoration-plastik-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik.
 
 %package -n kde-decoration-common-i18n
 Summary:	Common internationalization and localization files for kwin decorations
@@ -2944,6 +2868,19 @@ Internationalization and localization files for kview.
 %description -n kdegraphics-kview-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kview.
 
+%package -n kdegraphics-kviewshell-i18n
+Summary:	Internationalization and localization files for kviewshell
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kviewshell
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kviewshell = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kviewshell-i18n
+Internationalization and localization files for kviewshell.
+
+%description -n kdegraphics-kviewshell-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kviewshell.
+
 %package -n kdegraphics-ksvg-i18n
 Summary:	Internationalization and localization files for ksvg
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksvg
@@ -3034,71 +2971,6 @@ Internationalization and localization files for kvim.
 
 %description -n kdeaddons-kvim-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvima.
-
-%package -n kde-decoration-kde1-i18n
-Summary:	Internationalization and localization files for kde1
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde1
-Group:		X11/Applications
-Requires:	kde-decoration-kde1 = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-kde1-i18n
-Internationalization and localization files for kde1.
-
-%description -n kde-decoration-kde1-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kde1.
-
-%package -n kde-decoration-kstep-i18n
-Summary:	Internationalization and localization files for kstep
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kstep
-Group:		X11/Applications
-Requires:	kde-decoration-kstep = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-kstep-i18n
-Internationalization and localization files for kstep.
-
-%description -n kde-decoration-kstep-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kstep.
-
-%package -n kde-decoration-openlook-i18n
-Summary:	Internationalization and localization files for openlook
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla openlook
-Group:		X11/Applications
-Requires:	kde-decoration-openlook = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-openlook-i18n
-Internationalization and localization files for openlook.
-
-%description -n kde-decoration-openlook-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla openlook.
-
-%package -n kde-decoration-riscos-i18n
-Summary:	Internationalization and localization files for riscos
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla riscos
-Group:		X11/Applications
-Requires:	kde-decoration-riscos = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-riscos-i18n
-Internationalization and localization files for riscos.
-
-%description -n kde-decoration-riscos-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla riscos.
-
-%package -n kde-decoration-system-i18n
-Summary:	Internationalization and localization files for system
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla system
-Group:		X11/Applications
-Requires:	kde-decoration-system = %{kdeartwork_epoch}:%{version}
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-decoration-system-i18n
-Internationalization and localization files for system.
-
-%description -n kde-decoration-system-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla system.
 
 %package -n kdeaddons-kicker-i18n
 Summary:	Internationalization and localization files for kicker
@@ -3374,6 +3246,7 @@ kde_find_lang kde-kio-nntp-i18n kio_nntp
 kde_find_lang kde-kio-pop3-i18n kio_pop3
 kde_find_lang kde-kio-smtp-i18n kio_smtp
 kde_find_lang kde-kio-svn-i18n kio_svn
+kde_find_lang kde-resource-bugzilla-i18n kres_bugzilla
 kde_find_lang kdeaccessibility-kbstateapplet-i18n kbstateapplet
 kde_find_lang kdeaccessibility-kmag-i18n kmag
 kde_find_lang kdeaccessibility-kmousetool-i18n kmousetool
@@ -3447,6 +3320,7 @@ kde_find_lang kdeaddons-konqueror-i18n "
 	konqsidebar_metabar
 	konqsidebar_news
 	kuick_plugin
+	mf_konqplugin
 	minitoolsplugin
 	searchbarplugin
 	uachangerplugin
@@ -3536,6 +3410,7 @@ kde_find_lang kdebase-desktop-i18n "
 	kcmkwm
 	kcmkxmlrpcd
 	kcmlaunch
+	kcmmedia
 	kcmnotify
 	kcmsmserver
 	kcmspellchecking
@@ -3565,6 +3440,8 @@ kde_find_lang kdebase-desktop-i18n "
 	kthememanager
 	ktip
 	kwin
+	kwin_clients
+	kwin_lib
 	kwindecoration
 	kxkb
 	kxmlrpcd
@@ -3573,6 +3450,8 @@ kde_find_lang kdebase-desktop-i18n "
 	libkickermenu_konsole
 	libkickermenu_prefmenu
 	libkickermenu_recentdocs
+	libkickermenu_remotemenu
+	libkickermenu_systemmenu
 	libkickermenu_tom
 	lockout
 	mediaapplet
@@ -3610,7 +3489,7 @@ kde_find_lang kdebase-kate-i18n "
 	katedefaultproject
 	katetabbarextension
 "
-kde_find_lang kdebase-kdcop-i18n kdcop
+kde_find_lang kdebase-kdcop-i18n kdcop dcoprss
 kde_find_lang kdebase-kdeprintfax-i18n kdeprintfax
 kde_find_lang kdebase-kdialog-i18n kdialog
 kde_find_lang kdebase-kfind-i18n kfind kfindpart
@@ -3681,7 +3560,7 @@ kde_find_lang kdegames-lskat-i18n lskat
 kde_find_lang kdegraphics-kamera-i18n kamera kcmkamera
 kde_find_lang kdegraphics-kcoloredit-i18n kcoloredit
 kde_find_lang kdegraphics-kdvi-i18n kdvi
-kde_find_lang kdegraphics-kfax-i18n kfax kfaxview
+kde_find_lang kdegraphics-kfax-i18n kfax kfaxview libkfaximgage
 kde_find_lang kdegraphics-kfile-i18n "
 	kfile_bmp
 	kfile_dds
@@ -3725,9 +3604,9 @@ kde_find_lang kdegraphics-kview-i18n "
 	kvieweffectsplugin
 	kviewpresenterplugin
 	kviewscannerplugin
-	kviewshell
 	kviewviewer
 "
+kde_find_lang kdegraphics-kviewshell-i18n kviewshell kdjview
 kde_find_lang kdelibs-i18n "
 	common
 	cupsdconf
@@ -3818,6 +3697,7 @@ kde_find_lang kdepim-i18n "
 	konnector_remote
 	kontact
 	korganizer
+	kres_birthday
 	kres_exchange
 	kres_imap
 	kres_remote
@@ -4129,6 +4009,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kde-kio-svn-i18n -f kde-kio-svn-i18n.lang
 %defattr(644,root,root,755)
+%files -n kde-resource-bugzilla-i18n -f kde-resource-bugzilla-i18n.lang
+%defattr(644,root,root,755)
 %files -n kdeaccessibility-kbstateapplet-i18n -f kdeaccessibility-kbstateapplet-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeaccessibility-kmag-i18n -f kdeaccessibility-kmag-i18n.lang
@@ -4356,6 +4238,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdegraphics-kuickshow-i18n -f kdegraphics-kuickshow-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegraphics-kview-i18n -f kdegraphics-kview-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdegraphics-kviewshell-i18n -f kdegraphics-kviewshell-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdelibs-i18n -f kdelibs-i18n.lang
 %defattr(644,root,root,755)
