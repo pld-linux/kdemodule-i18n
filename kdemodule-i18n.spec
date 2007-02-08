@@ -2,15 +2,8 @@
 # - difference between kdemodule-i18n and kde-i18n is that one is per
 #   package and other is per language.
 # TODO:
-# - tons of unpackaged files:
-#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_8.txt
-#
-# NOTES:
-# - kstyle_phase_config kdeartwork-3.5.6/styles/phase/config/kstyle_phase_config.la
-# - kres_tvanytime.mo - kdepim-3.5.6/kresources/tvanytime/
-# - kres_blogging.mo - kdepim-3.5.6/kresources/blogging/ - not packged in pld
-# - kio_mobile - kdepim-3.5.6/kmobile/kioslave/
-# - kcmsmartcard - kdebase-3.5.6/kcontrol/smartcard - not packaged in pld
+# - unpackaged files:
+#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_14.txt
 #
 %define		_name			kde-i18n
 %define		kdeaddons_epoch		1
@@ -1996,6 +1989,19 @@ Internationalization and localization files for kvoctrain.
 %description -n kdeedu-kvoctrain-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvoctrain.
 
+%package -n kdeedu-libkdeeduui-i18n
+Summary:	Internationalization and localization files for libkdeeduui
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libkdeeduui
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-libkdeeduui-i18n = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-libkdeeduui-i18n
+Internationalization and localization files for libkdeeduui.
+
+%description -n kdeedu-libkdeeduui-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla libkdeeduui.
+
 %package -n kdegames-i18n
 Summary:	Internationalization and localization files for kdegames libs
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla bibliotek kdegames
@@ -2452,6 +2458,19 @@ Internationalization and localization files for libcvsservice.
 %description -n kdesdk-libcvsservice-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla libcvsservice.
 
+%package -n kdesdk-scripts-developer-i18n
+Summary:	Internationalization and localization files for KDE developer scripts
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
+Group:		X11/Applications
+Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
+
+%description -n kdesdk-scripts-developer-i18n
+Internationalization and localization files for KDE developer scripts.
+
+%description -n kdesdk-scripts-developer-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
+
 %package -n kdesdk-kfile-i18n
 Summary:	Internationalization and localization files for kfile
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile
@@ -2478,6 +2497,20 @@ Internationalization and localization files for cervisia.
 
 %description -n kdesdk-cervisia-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla cervisii.
+
+%package -n kdesdk-kapptemplate-i18n
+Summary:	Internationalization and localization files for kapptemplate
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kapptemplate
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdesdk-kapptemplate = %{kdesdk_epoch}:%{version}
+Requires:	kdesdk-libcvsservice-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdesdk-kapptemplate-i18n
+Internationalization and localization files for kapptemplate.
+
+%description -n kdesdk-kapptemplate-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kapptemplate.
 
 %package -n kdesdk-kbabel-i18n
 Summary:	Internationalization and localization files for kbabel
@@ -3224,9 +3257,64 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	# remove empty language catalogs (= 1 message only)
 	find $RPM_BUILD_ROOT%{_datadir}/locale -type f -name '*.mo' | xargs file | egrep ', 1 messages$' | cut -d: -f1 | xargs rm -vf
 
+%if "%{version}" == "3.5.6"
+	# - kcmsmartcard - kdebase-3.5.6/kcontrol/smartcard - not packaged in pld
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kcmsmartcard.mo
+	# - kres_blogging.mo - kdepim-3.5.6/kresources/blogging/ - not packged in pld
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kres_blogging.mo
+	# - kmobile - kdepim-3.5.6/kmobile/ - not built in pld
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmobile.mo
+	# - kio_mobile - kdepim-3.5.6/kmobile/kioslave/ - not built in pld
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kio_mobile.mo
+
+	# - kstyle_phase_config kdeartwork-3.5.6/styles/phase/config/kstyle_phase_config.la
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kstyle_phase_config.mo
+	# - kres_tvanytime.mo - kdepim-3.5.6/kresources/tvanytime/
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kres_tvanytime.mo
+%endif
+
+	# (probably) no longer in kde
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/jefferson.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/katekttsd.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/katepartkttsd.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kateprojectmanager.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/katespell.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kcmkmix.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kcmmediacontrol.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kcmvim.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kio_newimap4.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/klegacyimport.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/konq_smbmounterplugin.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kres_opengroupware.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kviewtemplateplugin.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libcalendarresources.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libkcalsystem.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libkdehighscores.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libkdenetwork.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/vimpart.mo
+
+	# kmessedwords renamed to kanagram
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kmessedwords
+
+	# useless for the user
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/fa/COPYING
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/nb/README
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/se/ChangeLog
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/fr/nbsp_gui_fr.txt
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/fr/relecture_docs
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/fr/relecture_gui
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/da/da.compendium
+
+	# junk
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/mn/30x16.png
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/mn/60x40.png
+
 	rm -f __find.*
 	touch installed.stamp
 fi
+
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kmessedwords.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/ro/LC_MESSAGES/kviewtemplateplugin.mo
 
 rm -f *.lang
 
@@ -3236,10 +3324,9 @@ kde_find_lang() {
 	shift
 	> $out
 	for a in $*; do
-		%find_lang $a --with-kde tmp.lang
-		cat tmp.lang >> $out
+		%find_lang $a --with-kde lang.tmp
+		cat lang.tmp >> $out
 	done
-	rm -f tmp.lang
 }
 
 kde_find_lang kde-decoration-common-i18n kwin_art_clients
@@ -3309,7 +3396,6 @@ kde_find_lang kdeaddons-konqueror-i18n "
 	babelfish
 	crashesplugin
 	dirfilterplugin
-	domtreeviewer
 	imagerename_plugin
 	imgalleryplugin
 	kcmkuick
@@ -3330,8 +3416,13 @@ kde_find_lang kdeaddons-konqueror-i18n "
 	searchbarplugin
 	uachangerplugin
 	validatorsplugin
-	webarchiver
 "
+# webarchiver and domtreeviewer are subdirs of konq-plugins in %{_kdedocdir}
+# which we already scanned but they are also as .mo, so scan just .mo
+%find_lang domtreeviewer
+%find_lang webarchiver
+cat domtreeviewer.lang webarchiver.lang >> kdeaddons-konqueror-i18n.lang
+rm -f domtreeviewer.lang webarchiver.lang
 
 kde_find_lang kdeaddons-ksig-i18n ksig
 kde_find_lang kdeaddons-lnkforward-i18n rellinks kfile_lnk
@@ -3350,7 +3441,7 @@ kde_find_lang kdeaddons-noatun-i18n "
 	wavecapture
 "
 
-kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo
+kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo lilo-config
 kde_find_lang kdeadmin-kcron-i18n kcron
 kde_find_lang kdeadmin-kdat-i18n kdat
 kde_find_lang kdeadmin-knetworkconf-i18n knetworkconf
@@ -3399,6 +3490,7 @@ kde_find_lang kdebase-desktop-i18n "
 	joystick
 	kaccess
 	kasbarextension
+	kay
 	kbinaryclock
 	kcmaccess
 	kcmarts
@@ -3509,7 +3601,6 @@ kde_find_lang kdebase-ksysguard-i18n ksysguard
 kde_find_lang kdebase-kwrite-i18n kwrite kwriteconfig
 kde_find_lang kdebase-screensavers-i18n screensaver kcmscreensaver kscreensaver
 kde_find_lang kdebase-useraccount-i18n useraccount kdepasswd
-# libkdeedu used by kdeedu/{kdeeduui,extdate}
 kde_find_lang kdeedu-blinken-i18n blinken
 kde_find_lang kdeedu-kalzium-i18n kalzium
 kde_find_lang kdeedu-kanagram-i18n kanagram
@@ -3529,6 +3620,7 @@ kde_find_lang kdeedu-kturtle-i18n kturtle
 kde_find_lang kdeedu-kverbos-i18n kverbos
 kde_find_lang kdeedu-kvoctrain-i18n kvoctrain
 kde_find_lang kdeedu-kwordquiz-i18n kwordquiz
+kde_find_lang kdeedu-libkdeeduui-i18n libkdeedu
 kde_find_lang kdegames-atlantik-i18n atlantik
 kde_find_lang kdegames-i18n libkdegames
 kde_find_lang kdegames-kasteroids-i18n kasteroids
@@ -3705,6 +3797,7 @@ kde_find_lang kdepim-i18n "
 	kres_birthday
 	kres_exchange
 	kres_imap
+	kres_kolab
 	kres_remote
 	kres_xmlrpc
 	ksync
@@ -3730,8 +3823,12 @@ kde_find_lang kdepim-konsolekalendar-i18n konsolekalendar
 kde_find_lang kdepim-korn-i18n korn
 kde_find_lang kdepim-kpilot-i18n kpilot kfile_palm
 kde_find_lang kdepim-libs-i18n "
+	kdepimresources
 	kdgantt
 	kgantt
+	kres_featureplan
+	kres_groupware
+	kres_groupwise
 	libkcal
 	libkdepim
 	libkitchensync
@@ -3743,6 +3840,7 @@ kde_find_lang kdepim-libs-i18n "
 	libksync
 "
 kde_find_lang kdesdk-cervisia-i18n cervisia
+kde_find_lang kdesdk-kapptemplate-i18n kapptemplate
 kde_find_lang kdesdk-kbabel-i18n kbabel
 kde_find_lang kdesdk-kbugbuster-i18n kbugbuster
 kde_find_lang kdesdk-kcachegrind-i18n kcachegrind
@@ -3758,6 +3856,7 @@ kde_find_lang kdesdk-kspy-i18n spy
 kde_find_lang kdesdk-kstartperf-i18n kstartperf
 kde_find_lang kdesdk-kuiviewer-i18n kuiviewer
 kde_find_lang kdesdk-libcvsservice-i18n cvsservice
+kde_find_lang kdesdk-scripts-developer-i18n scripts kdesvn-build
 kde_find_lang kdesdk-umbrello-i18n umbrello
 kde_find_lang kdetoys-amor-i18n amor
 kde_find_lang kdetoys-fifteen-i18n kfifteenapplet
@@ -3770,12 +3869,7 @@ kde_find_lang kdetoys-kworldclock-i18n kworldclock
 kde_find_lang kdeutils-ark-i18n ark
 kde_find_lang kdeutils-kcalc-i18n kcalc
 kde_find_lang kdeutils-kcharselect-i18n kcharselect kcharselectapplet
-kde_find_lang kdeutils-kdelirc-i18n kdelirc
-%find_lang irkick		--with-kde
-%find_lang kcmlirc		--with-kde
-# XXX if mo goes there then where goes the rest?
-grep '\.mo' irkick.lang >> kdeutils-kdelirc-i18n.lang
-grep '\.mo' kcmlirc.lang >> kdeutils-kdelirc-i18n.lang
+kde_find_lang kdeutils-kdelirc-i18n kdelirc irkick kcmlirc
 kde_find_lang kdeutils-kdessh-i18n kdessh
 kde_find_lang kdeutils-kdf-i18n kdf blockdevices
 kde_find_lang kdeutils-kedit-i18n kedit
@@ -3786,7 +3880,6 @@ kde_find_lang kdeutils-kjots-i18n kjots
 kde_find_lang kdeutils-klaptopdaemon-i18n klaptopdaemon kcmlowbatcrit kcmlowbatwarn laptop powerctrl kcmlaptop
 kde_find_lang kdeutils-kmilo-i18n "
 	kcmkvaio
-	kcmthinkpad
 	kcmthinkpad
 	kmilo_delli8k
 	kmilo_generic
@@ -3813,9 +3906,9 @@ kde_find_lang kdewebdev-kfilereplace-i18n kfilereplace
 kde_find_lang kdewebdev-kimagemapeditor-i18n kimagemapeditor
 kde_find_lang kdewebdev-klinkstatus-i18n klinkstatus
 kde_find_lang kdewebdev-kommander-i18n kommander
-kde_find_lang kdewebdev-kxsldbg-i18n kxsldbg
+kde_find_lang kdewebdev-kxsldbg-i18n kxsldbg xsldbg
 kde_find_lang kdewebdev-quanta-i18n quanta
-kde_find_lang kdm-i18n kdm kdmconfig kdmgreet kgreet_winbind
+kde_find_lang kdm-i18n kdm kdmconfig kdmgreet libdmctl kgreet_winbind
 kde_find_lang konqueror-i18n "
 	appletproxy
 	cache
@@ -3966,33 +4059,6 @@ for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
 	fi
 done
 
-%if 0
-#"
-# TODO these *.lang are created but not included in any %package yet
-#%find_lang flashkard --with-kde # obsoleted?
-%find_lang kapptemplate --with-kde
-%find_lang kdesvn-build --with-kde
-#%find_lang kmessedwords --with-kde # obsoleted?
-%find_lang kmidi --with-kde
-%find_lang knetworkconf --with-kde
-%find_lang kompmgr --with-kde
-%find_lang kwuftpd --with-kde
-%find_lang kxconfig --with-kde
-%find_lang lilo-config --with-kde
-%find_lang megami --with-kde
-%find_lang multisynk --with-kde
-%find_lang scripts --with-kde
-%find_lang superkaramba --with-kde
-%find_lang xsldbg --with-kde
-%find_lang kcmsmartcard --with-kde
-%find_lang kio_mobile --with-kde
-%endif
-
-# Get rid of messages about files listed twice.
-for i in *.lang; do
-	sort -u $i > $i.tmp && mv $i.tmp $i
-done
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -4141,6 +4207,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdeedu-kvoctrain-i18n -f kdeedu-kvoctrain-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kwordquiz-i18n -f kdeedu-kwordquiz-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdeedu-libkdeeduui-i18n -f kdeedu-libkdeeduui-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegames-atlantik-i18n -f kdegames-atlantik-i18n.lang
 %defattr(644,root,root,755)
@@ -4328,6 +4396,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdepim-libs-i18n -f kdepim-libs-i18n.lang
 %defattr(644,root,root,755)
+%files -n kdesdk-kapptemplate-i18n -f kdesdk-kapptemplate-i18n.lang
+%defattr(644,root,root,755)
 %files -n kdesdk-cervisia-i18n -f kdesdk-cervisia-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-kbabel-i18n -f kdesdk-kbabel-i18n.lang
@@ -4347,6 +4417,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kdesdk-kuiviewer-i18n -f kdesdk-kuiviewer-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-libcvsservice-i18n -f kdesdk-libcvsservice-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-scripts-developer-i18n -f kdesdk-scripts-developer-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-umbrello-i18n -f kdesdk-umbrello-i18n.lang
 %defattr(644,root,root,755)
