@@ -1207,6 +1207,7 @@ Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdegames = %{kdegames_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdegames-megami-i18n
 
 %description -n kdegames-i18n
 Internationalization and localization files for kdegames libs.
@@ -1949,7 +1950,6 @@ Obsoletes:	kdeadmin-i18n
 Obsoletes:	kdeartwork-i18n
 Obsoletes:	kdebase-mailnews-i18n
 Obsoletes:	kdeedu-flashkard-i18n
-Obsoletes:	kdegames-megami-i18n
 Obsoletes:	kdeedu-i18n
 Obsoletes:	kdeedu-kmessedwords-i18n
 Obsoletes:	kdegraphics-i18n
