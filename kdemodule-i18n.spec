@@ -1949,6 +1949,7 @@ Obsoletes:	kdeadmin-i18n
 Obsoletes:	kdeartwork-i18n
 Obsoletes:	kdebase-mailnews-i18n
 Obsoletes:	kdeedu-flashkard-i18n
+Obsoletes:	kdegames-megami-i18n
 Obsoletes:	kdeedu-i18n
 Obsoletes:	kdeedu-kmessedwords-i18n
 Obsoletes:	kdegraphics-i18n
@@ -3155,73 +3156,6 @@ Internationalization and localization files for libkonq.
 
 %description -n konqueror-libs-i18n -l pl
 T³umaczenia dla libkonq.
-
-%if 0
-%package -n kdenetwork-rss-i18n
-Summary:	Internationalization and localization files for rss
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla rss
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-rss = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-rss-i18n
-Internationalization and localization files for rss.
-
-%description -n kdenetwork-rss-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla rss.
-
-%package -n kdeedu-flashkard-i18n
-Summary:	Internationalization and localization files for flashkard
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla flashkarda
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-flashkard = %{kdeedu_epoch}:%{version}
-
-%description -n kdeedu-flashkard-i18n
-Internationalization and localization files for flashkard.
-
-%description -n kdeedu-flashkard-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla flashkarda.
-
-%package -n kdegames-megami-i18n
-Summary:	Internationalization and localization files for megami
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla megami
-Group:		X11/Applications
-Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegames-megami = %{kdegames_epoch}:%{version}
-
-%description -n kdegames-megami-i18n
-Internationalization and localization files for megami.
-
-%description -n kdegames-megami-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla megami.
-
-%package -n kdeaddons-kvim-i18n
-Summary:	Internationalization and localization files for kvim
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kvima
-Group:		X11/Applications
-Requires:	kdeaddons-kvim = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-kvim-i18n
-Internationalization and localization files for kvim.
-
-%description -n kdeaddons-kvim-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kvima.
-
-%package -n kdeaddons-kontact-i18n
-Summary:	Internationalization and localization files for kontact
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kontact
-Group:		X11/Applications
-Requires:	kdeaddons-kontact = %{kdeaddons_epoch}:%{version}
-Requires:	kdenetwork-knewsticker-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-kontact-i18n
-Internationalization and localization files for kontact.
-
-%description -n kdeaddons-kontact-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kontact.
-%endif
 
 %prep
 %setup -qcT %(seq -f '-a %g' 0 64 | xargs)
