@@ -174,487 +174,31 @@ K Desktop Environment - international support.
 %description -l pl
 KDE - wsparcie dla wielu jêzyków.
 
-%package -n kdelibs-i18n
-Summary:	Internationalization and localization files for kdelibs
-Summary(pl):	Pliki umiêdzynarodawiaj±ce kdelibs
-Group:		X11/Libraries
-Requires:	kdelibs = %{kdelibs_epoch}:%{version}
-Obsoletes:	kde-i18n
-Obsoletes:	kde-i18n-Affrikaans
-Obsoletes:	kde-i18n-Afrikaans
-Obsoletes:	kde-i18n-Arabic
-Obsoletes:	kde-i18n-Azerbaijani
-Obsoletes:	kde-i18n-Basque
-Obsoletes:	kde-i18n-Bengali
-Obsoletes:	kde-i18n-Bosnian
-Obsoletes:	kde-i18n-Brazil
-Obsoletes:	kde-i18n-Brazil_Portugnese
-Obsoletes:	kde-i18n-Brazil_Portuguese
-Obsoletes:	kde-i18n-British
-Obsoletes:	kde-i18n-Bulgarian
-Obsoletes:	kde-i18n-Catalan
-Obsoletes:	kde-i18n-Chinese
-Obsoletes:	kde-i18n-Chinese-Big5
-Obsoletes:	kde-i18n-Croatian
-Obsoletes:	kde-i18n-Czech
-Obsoletes:	kde-i18n-Danish
-Obsoletes:	kde-i18n-Dutch
-Obsoletes:	kde-i18n-English_UK
-Obsoletes:	kde-i18n-Esperanto
-Obsoletes:	kde-i18n-Estonian
-Obsoletes:	kde-i18n-Farsi
-Obsoletes:	kde-i18n-Finnish
-Obsoletes:	kde-i18n-French
-Obsoletes:	kde-i18n-Galician
-Obsoletes:	kde-i18n-German
-Obsoletes:	kde-i18n-Greek
-Obsoletes:	kde-i18n-Hebrew
-Obsoletes:	kde-i18n-Hindi
-Obsoletes:	kde-i18n-Hungarian
-Obsoletes:	kde-i18n-Icelandic
-Obsoletes:	kde-i18n-Indonesian
-Obsoletes:	kde-i18n-Italian
-Obsoletes:	kde-i18n-Japanese
-Obsoletes:	kde-i18n-Korean
-Obsoletes:	kde-i18n-Latvian
-Obsoletes:	kde-i18n-Lithuanian
-Obsoletes:	kde-i18n-Low_Saxon
-Obsoletes:	kde-i18n-Malay
-Obsoletes:	kde-i18n-Maltese
-Obsoletes:	kde-i18n-Mongolian
-Obsoletes:	kde-i18n-Norwegian
-Obsoletes:	kde-i18n-Norwegian_Bokmaal
-Obsoletes:	kde-i18n-Norwegian_Bookmal
-Obsoletes:	kde-i18n-Norwegian_Nynorsk
-Obsoletes:	kde-i18n-Polish
-Obsoletes:	kde-i18n-Portugnese
-Obsoletes:	kde-i18n-Portuguese
-Obsoletes:	kde-i18n-Punjabi
-Obsoletes:	kde-i18n-Romanian
-Obsoletes:	kde-i18n-Russian
-Obsoletes:	kde-i18n-Serbian
-Obsoletes:	kde-i18n-Simplified_Chinese
-Obsoletes:	kde-i18n-Slovak
-Obsoletes:	kde-i18n-Slovenian
-Obsoletes:	kde-i18n-Spanish
-Obsoletes:	kde-i18n-Swedish
-Obsoletes:	kde-i18n-Tajik
-Obsoletes:	kde-i18n-Tamil
-Obsoletes:	kde-i18n-Thai
-Obsoletes:	kde-i18n-Turkish
-Obsoletes:	kde-i18n-Ukrainian
-Obsoletes:	kde-i18n-Upper_Sorbian
-Obsoletes:	kde-i18n-Uzbek
-Obsoletes:	kde-i18n-Venda
-Obsoletes:	kde-i18n-Vietnamese
-Obsoletes:	kde-i18n-Xhosa
-Obsoletes:	kde-i18n-Zulu
-Obsoletes:	kde-i18n-kdelibs
-Obsoletes:	kdeaccessibility-i18n
-Obsoletes:	kdeaddons-i18n
-Obsoletes:	kdeaddons-kvim-i18n
-Obsoletes:	kdeadmin-i18n
-Obsoletes:	kdeartwork-i18n
-Obsoletes:	kdebase-mailnews-i18n
-Obsoletes:	kdeedu-flashkard-i18n
-Obsoletes:	kdeedu-i18n
-Obsoletes:	kdeedu-kmessedwords-i18n
-Obsoletes:	kdegraphics-i18n
-Obsoletes:	kdemultimedia-i18n
-Obsoletes:	kdenetwork-i18n
-Obsoletes:	kdenetwork-rss-i18n
-Obsoletes:	kdesdk-i18n
-Obsoletes:	kdetoys-i18n
-Obsoletes:	kdeutils-i18n
-
-%description -n kdelibs-i18n
-Translations and localization data for KDE libraries.
-
-%description -n kdelibs-i18n -l pl
-T³umaczenia i dane miêdzynarodowe dla bibliotek KDE.
-
-%package -n kdebase-core-i18n
-Summary:	Internationalization and localization files for the core part of KDE
-Summary(pl):	T³umaczenia dla podstawowej czê¶ci KDE
+%package -n kde-decoration-common-i18n
+Summary:	Common internationalization and localization files for kwin decorations
+Summary(pl):	Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin
 Group:		X11/Applications
-Requires:	kdebase-core = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdebase-common-filemanagement-i18n
 
-%description -n kdebase-core-i18n
-Internationalization and localization files for KDE:
-- Control Center;
-- Help Center;
-- Print System;
-- Crash Handlers;
-- A Frontend for "su" program.
+%description -n kde-decoration-common-i18n
+Common internationalization and localization files for kwin
+decorations.
 
-%description -n kdebase-core-i18n -l pl
-T³umaczenia dla podstawowej czê¶ci KDE, obejmuj±cej m.in.:
-- Centrum sterownika
-- Centrum pomocy
-- System wydruków
-- Obs³ugê b³êdów
-- frontend dla programu "su".
+%description -n kde-decoration-common-i18n -l pl
+Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin.
 
-%package -n kdebase-desktop-i18n
-Summary:	Internationalization and localization files for the desktop part of KDE
-Summary(pl):	T³umaczenia dla desktopowej czê¶ci KDE
+%package -n kde-kgreet-classic-i18n
+Summary:	KDE greeter libraries - i18n
+Summary(pl):	Biblioteki s³u¿±ce do zapytañ o has³o - t³umaczenia
 Group:		X11/Applications
-Requires:	kdebase-desktop = %{kdebase_epoch}:%{version}
-Requires:	kdebase-desktop-libs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kfind-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kjobviewer-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kpager-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kde-decoration-b2-i18n
-Obsoletes:	kde-decoration-cde-i18n
-Obsoletes:	kde-decoration-glow-i18n
-Obsoletes:	kde-decoration-icewm-i18n
-Obsoletes:	kde-decoration-kde1-i18n
-Obsoletes:	kde-decoration-kstep-i18n
-Obsoletes:	kde-decoration-modernsys-i18n
-Obsoletes:	kde-decoration-openlook-i18n
-Obsoletes:	kde-decoration-plastik-i18n
-Obsoletes:	kde-decoration-quartz-i18n
-Obsoletes:	kde-decoration-riscos-i18n
-Obsoletes:	kde-decoration-system-i18n
-Obsoletes:	kde-style-plastik-i18n
-Obsoletes:	kdebase-kicker-i18n
-Obsoletes:	kdebase-kmenuedit-i18n
-Obsoletes:	kdebase-ksystraycmd-i18n
-
-%description -n kdebase-desktop-i18n
-Internationalization and localization files for KDE:
-- desktop
-- panel
-- splashscreen system
-- window manager
-
-%description -n kdebase-desktop-i18n -l pl
-T³umaczenia dla desktopowej czê¶ci KDE, obejmuj±cej:
-- pulpit
-- panel
-- system splashscreenów
-- zarz±dcê okien.
-
-%package -n kdebase-infocenter-i18n
-Summary:	Internationalization and localization files for KDE Information Centre
-Summary(pl):	T³umaczenia dla centrum informacji o systemie w KDE
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-infocenter = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-infocenter-i18n
-Internationalization and localization files for KDE Information
-Centre.
-
-%description -n kdebase-infocenter-i18n -l pl
-T³umaczenia dla centrum informacji o systemie w KDE.
-
-%package -n kdebase-kate-i18n
-Summary:	Internationalization and localization files for kate
-Summary(pl):	T³umaczenia dla kate
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kate = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kate-i18n
-Internationalization and localization files for kate.
-
-%description -n kdebase-kate-i18n -l pl
-T³umaczenia dla kate.
-
-%package -n kdebase-kfind-i18n
-Summary:	Internationalization and localization files for kfind
-Summary(pl):	T³umaczenia dla kfind
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kfind = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kfind-i18n
-Internationalization and localization files for kfind.
-
-%description -n kdebase-kfind-i18n -l pl
-T³umaczenia dla kfind.
-
-%package -n kdebase-kfontinst-i18n
-Summary:	Internationalization and localization files for kfontinst
-Summary(pl):	T³umaczenia dla kfontinst
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kfontinst = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kfontinst-i18n
-Internationalization and localization files for kfontinst.
-
-%description -n kdebase-kfontinst-i18n -l pl
-T³umaczenia dla kfontinst.
-
-%package -n kdebase-klipper-i18n
-Summary:	Internationalization and localization files for klipper
-Summary(pl):	T³umaczenia dla klippera
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-klipper = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-klipper-i18n
-Internationalization and localization files for klipper.
-
-%description -n kdebase-klipper-i18n -l pl
-T³umaczenia dla klippera.
-
-%package -n kdebase-konsole-i18n
-Summary:	Internationalization and localization files for konsole
-Summary(pl):	T³umaczenia dla konsole
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-konsole = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-konsole-i18n
-Internationalization and localization files for konsole.
-
-%description -n kdebase-konsole-i18n -l pl
-T³umaczenia dla konsole.
-
-%package -n kdebase-kpager-i18n
-Summary:	Internationalization and localization files for kpager
-Summary(pl):	T³umaczenia dla kpagera
-Group:		X11/Applications
-Requires:	kdebase-kpager = %{kdebase_epoch}:%{version}
+Requires:	kde-kgreet-classic = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdebase-kpager-i18n
-Internationalization and localization files for kpager.
+%description -n kde-kgreet-classic-i18n
+Tools for asking for passwords in the classic, default look - i18n.
 
-%description -n kdebase-kpager-i18n -l pl
-T³umaczenia dla kpagera.
-
-%package -n kdebase-ksysguard-i18n
-Summary:	Internationalization and localization files for ksysguard
-Summary(pl):	T³umaczenia dla ksysguarda
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-klipper-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-ksysguard = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-ksysguard-i18n
-Internationalization and localization files for ksysguard.
-
-%description -n kdebase-ksysguard-i18n -l pl
-T³umaczenia dla ksysguarda.
-
-%package -n kdebase-kwrite-i18n
-Summary:	Internationalization and localization files for kwrite
-Summary(pl):	T³umaczenia dla kwrite
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kwrite = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kwrite-i18n
-Internationalization and localization files for kwrite.
-
-%description -n kdebase-kwrite-i18n -l pl
-T³umaczenia dla kwrite.
-
-%package -n kdebase-screensavers-i18n
-Summary:	Internationalization and localization files for screensavers
-Summary(pl):	T³umaczenia dla screensavers
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-screensavers = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-screensavers-i18n
-Internationalization and localization files for screensavers.
-
-%description -n kdebase-screensavers-i18n -l pl
-T³umaczenia dla screensavers.
-
-%package -n kdm-i18n
-Summary:	Internationalization and localization files for kdm
-Summary(pl):	T³umaczenia dla kdm-a
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdm = %{kdebase_epoch}:%{version}
-
-%description -n kdm-i18n
-Internationalization and localization files for kdm.
-
-%description -n kdm-i18n -l pl
-T³umaczenia dla kdm-a.
-
-%package -n konqueror-i18n
-Summary:	Internationalization and localization files for konqueror
-Summary(pl):	T³umaczenia dla konquerora
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-konsole-i18n = %{epoch}:%{version}-%{release}
-Requires:	konqueror = %{kdebase_epoch}:%{version}
-Requires:	konqueror-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n konqueror-i18n
-Internationalization and localization files for konqueror.
-
-%description -n konqueror-i18n -l pl
-T³umaczenia dla konquerora.
-
-%package -n kdebase-desktop-libs-i18n
-Summary:	Internationalization and localization files for desktop-libs
-Summary(pl):	T³umaczenia dla desktop-libs
-Group:		X11/Applications
-Requires:	kdebase-desktop-libs = %{kdebase_epoch}:%{version}
-Obsoletes:	kdebase-kicker-libs-i18n
-
-%description -n kdebase-desktop-libs-i18n
-Internationalization and localization files for desktop-libs.
-
-%description -n kdebase-desktop-libs-i18n -l pl
-T³umaczenia dla desktop-libs.
-
-%package -n kdebase-kappfinder-i18n
-Summary:	Internationalization and localization files for kappfinder
-Summary(pl):	T³umaczenia dla kappfindera
-Group:		X11/Applications
-Requires:	kdebase-kappfinder = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kappfinder-i18n
-Internationalization and localization files for kappfinder.
-
-%description -n kdebase-kappfinder-i18n -l pl
-T³umaczenia dla kappfindera.
-
-%package -n kdebase-kdcop-i18n
-Summary:	Internationalization and localization files for kdcop
-Summary(pl):	T³umaczenia dla kdcopa
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kdcop = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kdcop-i18n
-Internationalization and localization files for kdcop.
-
-%description -n kdebase-kdcop-i18n -l pl
-T³umaczenia dla kdcopa.
-
-%package -n kdebase-kdeprintfax-i18n
-Summary:	Internationalization and localization files for kdeprintfax
-Summary(pl):	T³umaczenia dla kdeprintfax
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kdeprintfax = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kdeprintfax-i18n
-Internationalization and localization files for kdeprintfax.
-
-%description -n kdebase-kdeprintfax-i18n -l pl
-T³umaczenia dla kdeprintfax.
-
-%package -n kdebase-kdialog-i18n
-Summary:	Internationalization and localization files for kdialog
-Summary(pl):	T³umaczenia dla kdialoga
-Group:		X11/Applications
-Requires:	kdebase-kdialog = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kdialog-i18n
-Internationalization and localization files for kdialog.
-
-%description -n kdebase-kdialog-i18n -l pl
-T³umaczenia dla kdialoga.
-
-%package -n kdebase-kjobviewer-i18n
-Summary:	Internationalization and localization files for kjobviewer
-Summary(pl):	T³umaczenia dla kjobviewera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kjobviewer = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kjobviewer-i18n
-Internationalization and localization files for kjobviewer.
-
-%description -n kdebase-kjobviewer-i18n -l pl
-T³umaczenia dla kjobviewera.
-
-%package -n kdebase-kpersonalizer-i18n
-Summary:	Internationalization and localization files for kpersonalizer
-Summary(pl):	T³umaczenia dla kpersonalizera
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-kpersonalizer = %{kdebase_epoch}:%{version}
-
-%description -n kdebase-kpersonalizer-i18n
-Internationalization and localization files for kpersonalizer.
-
-%description -n kdebase-kpersonalizer-i18n -l pl
-T³umaczenia dla kpersonalizera.
-
-%package -n konqueror-libs-i18n
-Summary:	Internationalization and localization files for libkonq
-Summary(pl):	T³umaczenia dla libkonq
-Group:		X11/Applications
-Requires:	konqueror-libs = %{kdebase_epoch}:%{version}
-Obsoletes:	kdebase-libkonq-i18n
-
-%description -n konqueror-libs-i18n
-Internationalization and localization files for libkonq.
-
-%description -n konqueror-libs-i18n -l pl
-T³umaczenia dla libkonq.
-
-%package -n kde-kio-ldap-i18n
-Summary:	Internationalization and localization files for ldap ioslave
-Summary(pl):	T³umaczenia dla ldap ioslave
-Group:		X11/Applications
-Requires:	kde-kio-ldap = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Conflicts:	konqueror-i18n < %{epoch}:%{version}-%{release}
-
-%description -n kde-kio-ldap-i18n
-Internationalization and localization files for ldap ioslave.
-
-%description -n kde-kio-ldap-i18n -l pl
-T³umaczenia dla ldap ioslave.
-
-%package -n kde-kio-smtp-i18n
-Summary:	Internationalization and localization files for smtp ioslave
-Summary(pl):	T³umaczenia dla smtp ioslave
-Group:		X11/Applications
-Requires:	kde-kio-smtp = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Conflicts:	kdebase-mailnews-i18n
-
-%description -n kde-kio-smtp-i18n
-Internationalization and localization files for smtp ioslave.
-
-%description -n kde-kio-smtp-i18n -l pl
-T³umaczenia dla smtp ioslave.
-
-%package -n kde-kio-svn-i18n
-Summary:	Internationalization and localization files for svn ioslave
-Summary(pl):	T³umaczenia dla svn ioslave
-Group:		X11/Applications
-Requires:	kde-kio-svn = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kde-kio-svn-i18n
-Internationalization and localization files for svn ioslave.
-
-%description -n kde-kio-svn-i18n -l pl
-T³umaczenia dla svn ioslave.
-
-%package -n kde-kio-pop3-i18n
-Summary:	Internationalization and localization files for pop3 ioslave
-Summary(pl):	T³umaczenia dla pop3 ioslave
-Group:		X11/Applications
-Requires:	kde-kio-pop3 = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Conflicts:	kdebase-mailnews-i18n
-
-%description -n kde-kio-pop3-i18n
-Internationalization and localization files for pop3 ioslave.
-
-%description -n kde-kio-pop3-i18n -l pl
-T³umaczenia dla pop3 ioslave.
+%description -n kde-kgreet-classic-i18n -l pl
+Narzêdzia s³u¿±ce do zapytañ o has³o - klasyczny, domy¶lny motyw
+wygl±du - t³umaczenia.
 
 %package -n kde-kio-groupwise-i18n
 Summary:	Internationalization and localization files for groupwise ioslave
@@ -684,6 +228,20 @@ Internationalization and localization files for imap4 ioslave.
 %description -n kde-kio-imap4-i18n -l pl
 T³umaczenia dla imap4 ioslave.
 
+%package -n kde-kio-ldap-i18n
+Summary:	Internationalization and localization files for ldap ioslave
+Summary(pl):	T³umaczenia dla ldap ioslave
+Group:		X11/Applications
+Requires:	kde-kio-ldap = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	konqueror-i18n < %{epoch}:%{version}-%{release}
+
+%description -n kde-kio-ldap-i18n
+Internationalization and localization files for ldap ioslave.
+
+%description -n kde-kio-ldap-i18n -l pl
+T³umaczenia dla ldap ioslave.
+
 %package -n kde-kio-nntp-i18n
 Summary:	Internationalization and localization files for nntp ioslave
 Summary(pl):	T³umaczenia dla nntp ioslave
@@ -697,6 +255,47 @@ Internationalization and localization files for nntp ioslave.
 
 %description -n kde-kio-nntp-i18n -l pl
 T³umaczenia dla nntp ioslave.
+
+%package -n kde-kio-pop3-i18n
+Summary:	Internationalization and localization files for pop3 ioslave
+Summary(pl):	T³umaczenia dla pop3 ioslave
+Group:		X11/Applications
+Requires:	kde-kio-pop3 = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n
+
+%description -n kde-kio-pop3-i18n
+Internationalization and localization files for pop3 ioslave.
+
+%description -n kde-kio-pop3-i18n -l pl
+T³umaczenia dla pop3 ioslave.
+
+%package -n kde-kio-smtp-i18n
+Summary:	Internationalization and localization files for smtp ioslave
+Summary(pl):	T³umaczenia dla smtp ioslave
+Group:		X11/Applications
+Requires:	kde-kio-smtp = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Conflicts:	kdebase-mailnews-i18n
+
+%description -n kde-kio-smtp-i18n
+Internationalization and localization files for smtp ioslave.
+
+%description -n kde-kio-smtp-i18n -l pl
+T³umaczenia dla smtp ioslave.
+
+%package -n kde-kio-svn-i18n
+Summary:	Internationalization and localization files for svn ioslave
+Summary(pl):	T³umaczenia dla svn ioslave
+Group:		X11/Applications
+Requires:	kde-kio-svn = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kde-kio-svn-i18n
+Internationalization and localization files for svn ioslave.
+
+%description -n kde-kio-svn-i18n -l pl
+T³umaczenia dla svn ioslave.
 
 %package -n kde-resource-bugzilla-i18n
 Summary:	Internationalization and localization files for bugzilla plugin for the KDE PIM framework
@@ -712,432 +311,6 @@ allows creating bugzilla TODO lists.
 %description -n kde-resource-bugzilla-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla wtyczki KDE PIM pozwalaj±cej na
 tworzenie list rzeczy do zrobienia (TODO) w bugzilli.
-
-%package -n kdevelop-i18n
-Summary:	Internationalization and localization files for kdevelop
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdevelopa
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdevelop >= %{kdevelop_epoch}:%{kdevelop_version}
-
-%description -n kdevelop-i18n
-Internationalization and localization files for kdevelop.
-
-%description -n kdevelop-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdevelopa.
-
-%package -n kdepim-kaddressbook-i18n
-Summary:	Internationalization and localization files for kaddressbook
-Summary(pl):	T³umaczenia dla kaddressbook
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-kaddressbook = %{kdepim_epoch}:%{version}
-
-%description -n kdepim-kaddressbook-i18n
-Internationalization and localization files for kaddressbook.
-
-%description -n kdepim-kaddressbook-i18n -l pl
-T³umaczenia dla kaddressbook.
-
-%package -n kdepim-kandy-i18n
-Summary:	Internationalization and localization files for kandy
-Summary(pl):	T³umaczenia dla kandy
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-kandy = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-kandy-i18n
-Internationalization and localization files for kandy.
-
-%description -n kdepim-kandy-i18n -l pl
-T³umaczenia dla kandy.
-
-%package -n kdepim-karm-i18n
-Summary:	Internationalization and localization files for karm
-Summary(pl):	T³umaczenia dla karm
-Group:		X11/Applications
-Requires:	kdepim-karm = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-karm-i18n
-Internationalization and localization files for karm.
-
-%description -n kdepim-karm-i18n -l pl
-T³umaczenia dla karm.
-
-%package -n kdepim-kmail-i18n
-Summary:	Internationalization and localization files for kmail
-Summary(pl):	T³umaczenia dla kmaila
-Group:		X11/Applications
-Requires:	kde-kio-imap4-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-kio-pop3-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-kmail = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdepim-ktnef-i18n
-
-%description -n kdepim-kmail-i18n
-Internationalization and localization files for kmail.
-
-%description -n kdepim-kmail-i18n -l pl
-T³umaczenia dla kmaila.
-
-%package -n kdepim-knode-i18n
-Summary:	Internationalization and localization files for knode
-Summary(pl):	T³umaczenia dla knode
-Group:		X11/Applications
-Requires:	kde-kio-nntp-i18n = %{epoch}:%{version}-%{release}
-Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-knode = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-knode-i18n
-Internationalization and localization files for knode.
-
-%description -n kdepim-knode-i18n -l pl
-T³umaczenia dla knode.
-
-%package -n kdepim-knotes-i18n
-Summary:	Internationalization and localization files for knotes
-Summary(pl):	T³umaczenia dla knotes
-Group:		X11/Applications
-Requires:	kdepim-knotes = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-knotes-i18n
-Internationalization and localization files for knotes.
-
-%description -n kdepim-knotes-i18n -l pl
-T³umaczenia dla knotes.
-
-%package -n kdepim-konsolekalendar-i18n
-Summary:	Internationalization and localization files for konsolekalendar
-Summary(pl):	T³umaczenia dla konsolekalendara
-Group:		X11/Applications
-Requires:	kdepim-konsolekalendar = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-konsolekalendar-i18n
-Internationalization and localization files for konsolekalendar.
-
-%description -n kdepim-konsolekalendar-i18n -l pl
-T³umaczenia dla konsolekalendara.
-
-%package -n kdepim-i18n
-Summary:	Internationalization and localization files for kdepim
-Summary(pl):	T³umaczenia dla kdepim
-Group:		X11/Applications
-Requires:	kdepim = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdeaddons-kontact-i18n
-Obsoletes:	kdepim-kontact-i18n
-Obsoletes:	kdepim-korganizer-i18n
-Obsoletes:	kdepim-korganizer-libs-i18n
-Obsoletes:	kdepim-kresources-i18n
-
-%description -n kdepim-i18n
-Internationalization and localization files for kdepim.
-
-%description -n kdepim-i18n -l pl
-T³umaczenia dla kdepim.
-
-%package -n kdepim-korn-i18n
-Summary:	Internationalization and localization files for korn
-Summary(pl):	T³umaczenia dla korna
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-korn = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-korn-i18n
-Internationalization and localization files for korn.
-
-%description -n kdepim-korn-i18n -l pl
-T³umaczenia dla korna.
-
-%package -n kdepim-kpilot-i18n
-Summary:	Internationalization and localization files for kpilot
-Summary(pl):	T³umaczenia dla kpilota
-Group:		X11/Applications
-Requires:	kdepim-kpilot = %{kdepim_epoch}:%{version}
-Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdepim-kpilot-i18n
-Internationalization and localization files for kpilot.
-
-%description -n kdepim-kpilot-i18n -l pl
-T³umaczenia dla kpilota.
-
-%package -n kdepim-libs-i18n
-Summary:	Internationalization and localization files for libkdepim
-Summary(pl):	T³umaczenia dla libkdepim
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdepim-libs = %{kdepim_epoch}:%{version}
-Obsoletes:	kdepim-kmail-libs-i18n
-Obsoletes:	kdepim-korganizer-libs-i18n
-Obsoletes:	kdepim-libkcal-i18n
-Obsoletes:	kdepim-libkdenetwork-i18n
-Obsoletes:	kdepim-libkdepim-i18n
-Obsoletes:	kdepim-libkdgantt-i18n
-
-%description -n kdepim-libs-i18n
-Internationalization and localization files for kdepim libraries.
-
-%description -n kdepim-libs-i18n -l pl
-T³umaczenia dla bibliotek kdepim.
-
-%package -n kdeutils-ark-i18n
-Summary:	Internationalization and localization files for ark
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla arka
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-ark = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-ark-i18n
-Internationalization and localization files for ark.
-
-%description -n kdeutils-ark-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla arka.
-
-%package -n kdeutils-kcalc-i18n
-Summary:	Internationalization and localization files for kcalc
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcalca
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kcalc = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kcalc-i18n
-Internationalization and localization files for kcalc.
-
-%description -n kdeutils-kcalc-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kcalca.
-
-%package -n kdeutils-kcharselect-i18n
-Summary:	Internationalization and localization files for kcharselect
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcharselecta
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kcharselect = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kcharselect-i18n
-Internationalization and localization files for kcharselect.
-
-%description -n kdeutils-kcharselect-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kcharselecta.
-
-%package -n kdeutils-kdf-i18n
-Summary:	Internationalization and localization files for kdf
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdf
-Group:		X11/Applications
-Requires:	kdebase-infocenter-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kdf = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kdf-i18n
-Internationalization and localization files for kdf.
-
-%description -n kdeutils-kdf-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdf.
-
-%package -n kdeutils-kedit-i18n
-Summary:	Internationalization and localization files for kedit
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kedita
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kedit = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kedit-i18n
-Internationalization and localization files for kedit.
-
-%description -n kdeutils-kedit-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kedita.
-
-%package -n kdeutils-kmilo-i18n
-Summary:	Internationalization and localization files for kmilo
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kedita
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kmilo = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kmilo-i18n
-Internationalization and localization files for kmilo.
-
-%description -n kdeutils-kmilo-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmilo.
-
-%package -n kdeutils-kfloppy-i18n
-Summary:	Internationalization and localization files for kfloppy
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfloppy
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kfloppy = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kfloppy-i18n
-Internationalization and localization files for kfloppy.
-
-%description -n kdeutils-kfloppy-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfloppy.
-
-%package -n kdeutils-kgpg-i18n
-Summary:	Internationalization and localization files for kgpg
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgpg
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kgpg = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kgpg-i18n
-Internationalization and localization files for kgpg.
-
-%description -n kdeutils-kgpg-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kgpg.
-
-%package -n kdeutils-khexedit-i18n
-Summary:	Internationalization and localization files for khexedit
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla khexedita
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-khexedit = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-khexedit-i18n
-Internationalization and localization files for khexedit.
-
-%description -n kdeutils-khexedit-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla khexedita.
-
-%package -n kdeutils-kjots-i18n
-Summary:	Internationalization and localization files for kjots
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kjots
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kjots = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kjots-i18n
-Internationalization and localization files for kjots.
-
-%description -n kdeutils-kjots-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kjots.
-
-%package -n kdeutils-klaptopdaemon-i18n
-Summary:	Internationalization and localization files for klaptopdaemon
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klaptopdaemona
-Group:		X11/Applications
-Requires:	kdebase-infocenter-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-klaptopdaemon = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-klaptopdaemon-i18n
-Internationalization and localization files for klaptopdaemon.
-
-%description -n kdeutils-klaptopdaemon-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla klaptopdaemona.
-
-%package -n kdeutils-kregexpeditor-i18n
-Summary:	Internationalization and localization files for kregexpeditor
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kregexpeditora
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kregexpeditor = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kregexpeditor-i18n
-Internationalization and localization files for kregexpeditor.
-
-%description -n kdeutils-kregexpeditor-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kregexpeditora.
-
-%package -n kdeutils-ksim-i18n
-Summary:	Internationalization and localization files for ksim
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksima
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-ksim = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-ksim-i18n
-Internationalization and localization files for ksim.
-
-%description -n kdeutils-ksim-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksima.
-
-%package -n kdeutils-ktimer-i18n
-Summary:	Internationalization and localization files for ktimer
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktimera
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-ktimer = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-ktimer-i18n
-Internationalization and localization files for ktimer.
-
-%description -n kdeutils-ktimer-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ktimera.
-
-%package -n kdeutils-kwalletmanager-i18n
-Summary:	Internationalization and localization files for kwalletmanager
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwalletmanagera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kwalletmanager = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kwalletmanager-i18n
-Internationalization and localization files for kwalletmanager.
-
-%description -n kdeutils-kwalletmanager-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kwalletmanagera.
-
-%package -n kdeutils-superkaramba-i18n
-Summary:	Internationalization and localization files for superkaramba
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwalletmanagera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-superkaramba = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-superkaramba-i18n
-Internationalization and localization files for superkaramba.
-
-%description -n kdeutils-superkaramba-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla superkaramba.
-
-%package -n kdeutils-kdelirc-i18n
-Summary:	Internationalization and localization files for kdelirc
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdelirca
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kdelirc = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kdelirc-i18n
-Internationalization and localization files for kdelirc.
-
-%description -n kdeutils-kdelirc-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdelirca.
-
-%package -n kdeutils-kdessh-i18n
-Summary:	Internationalization and localization files for kdessh
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdessh
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeutils-kdessh = %{kdeutils_epoch}:%{version}
-
-%description -n kdeutils-kdessh-i18n
-Internationalization and localization files for kdessh.
-
-%description -n kdeutils-kdessh-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdessh.
-
-%package -n kdebase-useraccount-i18n
-Summary:	Internationalization and localization files for useraccount
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla useraccount
-Group:		X11/Applications
-Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdeutils-kdepasswd-i18n
-Obsoletes:	kdeutils-userinfo-i18n
-
-%description -n kdebase-useraccount-i18n
-Internationalization and localization files for useraccount.
-
-%description -n kdebase-useraccount-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla useraccount.
 
 %package -n kdeaccessibility-kbstateapplet-i18n
 Summary:	Internationalization and localization files for kbstateapplet
@@ -1217,400 +390,149 @@ Internationalization and localization files for kttsd.
 %description -n kdeaccessibility-kttsd-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kttsd.
 
-%package -n kdenetwork-filesharing-i18n
-Summary:	Internationalization and localization files for fileshare
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fileshare
+%package -n kdeaddons-ark-i18n
+Summary:	Internationalization and localization files for ark
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ark
 Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-filesharing = %{kdenetwork_epoch}:%{version}
+Requires:	kdeaddons-ark = %{kdeaddons_epoch}:%{version}
+Requires:	kdeutils-ark-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdenetwork-filesharing-i18n
-Internationalization and localization files for fileshare.
+%description -n kdeaddons-ark-i18n
+Internationalization and localization files for ark.
 
-%description -n kdenetwork-filesharing-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla fileshare.
+%description -n kdeaddons-ark-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ark.
 
-%package -n kdenetwork-kdict-i18n
-Summary:	Internationalization and localization files for kdict
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdict
+%package -n kdeaddons-atlantikdesigner-i18n
+Summary:	Internationalization and localization files for atlantikdesigner
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla atlantikdesigner
 Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kdict = %{kdenetwork_epoch}:%{version}
+Requires:	kdeaddons-atlantikdesigner = %{kdeaddons_epoch}:%{version}
+Requires:	kdegames-atlantik-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdenetwork-kdict-i18n
-Internationalization and localization files for kdict.
+%description -n kdeaddons-atlantikdesigner-i18n
+Internationalization and localization files for atlantikdesigner.
 
-%description -n kdenetwork-kdict-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdict.
+%description -n kdeaddons-atlantikdesigner-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
 
-%package -n kdenetwork-kdnssd-i18n
-Summary:	Internationalization and localization files for kdnssd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdnssd
+%package -n kdeaddons-fsview-i18n
+Summary:	Internationalization and localization files for fsview
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fsview
 Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kdnssd = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kdnssd-i18n
-Internationalization and localization files for kdnssd.
-
-%description -n kdenetwork-kdnssd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdnssd.
-
-%package -n kdenetwork-kfile-torrent-i18n
-Summary:	Internationalization and localization files for kfile_torrent
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile_torrent
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kfile-torrent = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kfile-torrent-i18n
-Internationalization and localization files for kfile_torrent.
-
-%description -n kdenetwork-kfile-torrent-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfile_torrent.
-
-%package -n kdenetwork-kinetd-i18n
-Summary:	Internationalization and localization files for kinetd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kinetd
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kinetd = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kinetd-i18n
-Internationalization and localization files for kinetd.
-
-%description -n kdenetwork-kinetd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kinetd.
-
-%package -n kdenetwork-kget-i18n
-Summary:	Internationalization and localization files for kget
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgeta
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kget = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kget-i18n
-Internationalization and localization files for kget.
-
-%description -n kdenetwork-kget-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kgeta.
-
-%package -n kdenetwork-knewsticker-i18n
-Summary:	Internationalization and localization files for knewsticker
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla knewstickera
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-knewsticker = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-knewsticker-i18n
-Internationalization and localization files for knewsticker.
-
-%description -n kdenetwork-knewsticker-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla knewstickera.
-
-%package -n kdenetwork-kopete-i18n
-Summary:	Internationalization and localization files for kopete
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kopete
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kopete = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kopete-i18n
-Internationalization and localization files for kopete.
-
-%description -n kdenetwork-kopete-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kopete.
-
-%package -n kdenetwork-kpf-i18n
-Summary:	Internationalization and localization files for kpf
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpf
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kpf = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kpf-i18n
-Internationalization and localization files for kpf.
-
-%description -n kdenetwork-kpf-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kpf.
-
-%package -n kdenetwork-kppp-i18n
-Summary:	Internationalization and localization files for kppp
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kppp
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kppp = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kppp-i18n
-Internationalization and localization files for kppp.
-
-%description -n kdenetwork-kppp-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kppp.
-
-%package -n kdenetwork-krfb-i18n
-Summary:	Internationalization and localization files for krfb
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krfb
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kinetd-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-krfb = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-krfb-i18n
-Internationalization and localization files for krfb.
-
-%description -n kdenetwork-krfb-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla krfb.
-
-%package -n kdenetwork-ksirc-i18n
-Summary:	Internationalization and localization files for ksirc
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksirc
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-ksirc = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-ksirc-i18n
-Internationalization and localization files for ksirc.
-
-%description -n kdenetwork-ksirc-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksirc.
-
-%package -n kdenetwork-ktalkd-i18n
-Summary:	Internationalization and localization files for ktalkd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktalkd
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-ktalkd = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-ktalkd-i18n
-Internationalization and localization files for ktalkd.
-
-%description -n kdenetwork-ktalkd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ktalkd.
-
-%package -n kdenetwork-kwifimanager-i18n
-Summary:	Internationalization and localization files for kwifimanager
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwifimanagera
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-kwifimanager = %{kdenetwork_epoch}:%{version}
-
-%description -n kdenetwork-kwifimanager-i18n
-Internationalization and localization files for kwifimanager.
-
-%description -n kdenetwork-kwifimanager-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kwifimanagera.
-
-%package -n kdenetwork-lanbrowser-i18n
-Summary:	Internationalization and localization files for lanbrowser
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lanbrowsera
-Group:		X11/Applications
-Requires:	kdenetwork-lanbrowser = %{kdenetwork_epoch}:%{version}
+Requires:	kdeaddons-fsview = %{kdeaddons_epoch}:%{version}
 Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdenetwork-lanbrowser-i18n
-Internationalization and localization files for lanbrowser.
+%description -n kdeaddons-fsview-i18n
+Internationalization and localization files for fsview.
 
-%description -n kdenetwork-lanbrowser-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla lanbrowsera.
+%description -n kdeaddons-fsview-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla fsview.
 
-%package -n kdenetwork-rss-i18n
-Summary:	Internationalization and localization files for rss
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla rss
+%package -n kdeaddons-kaddressbook-i18n
+Summary:	Internationalization and localization files for kaddressbook
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaddressbook
 Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdenetwork-rss = %{kdenetwork_epoch}:%{version}
+Requires:	kdeaddons-kaddressbook-plugins = %{kdeaddons_epoch}:%{version}
+Requires:	kdepim-kaddressbook-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdenetwork-rss-i18n
-Internationalization and localization files for rss.
+%description -n kdeaddons-kaddressbook-i18n
+Internationalization and localization files for kaddressbook.
 
-%description -n kdenetwork-rss-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla rss.
+%description -n kdeaddons-kaddressbook-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kaddressbook.
 
-%package -n kdemultimedia-artsbuilder-i18n
-Summary:	Internationalization and localization files for artsbuilder
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla artsbuildera
+%package -n kdeaddons-kate-i18n
+Summary:	Internationalization and localization files for kate
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kate
 Group:		X11/Applications
-Requires:	kdemultimedia-arts-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-artsbuilder = %{kdemultimedia_epoch}:%{version}
+Requires:	kdeaddons-kate = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-kate-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdemultimedia-artsbuilder-i18n
-Internationalization and localization files for artsbuilder.
+%description -n kdeaddons-kate-i18n
+Internationalization and localization files for kate.
 
-%description -n kdemultimedia-artsbuilder-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla artsbuildera.
+%description -n kdeaddons-kate-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kate.
 
-%package -n kdemultimedia-artscontrol-i18n
-Summary:	Internationalization and localization files for artscontrol
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla artscontrol
+%package -n kdeaddons-kicker-i18n
+Summary:	Internationalization and localization files for kicker
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kickera
 Group:		X11/Applications
-Requires:	kdemultimedia-arts-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-artscontrol = %{kdemultimedia_epoch}:%{version}
+Requires:	kdeaddons-kicker = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdemultimedia-artscontrol-i18n
-Internationalization and localization files for artscontrol.
+%description -n kdeaddons-kicker-i18n
+Internationalization and localization files for kicker.
 
-%description -n kdemultimedia-artscontrol-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla artscontrol.
+%description -n kdeaddons-kicker-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kickera.
 
-%package -n kdemultimedia-arts-i18n
-Summary:	Internationalization and localization files for arts
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla arts
+%package -n kdeaddons-konqueror-i18n
+Summary:	Internationalization and localization files for konqueror
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla konquerora
 Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-arts = %{kdemultimedia_epoch}:%{version}
+Requires:	kdeaddons-konqueror = %{kdeaddons_epoch}:%{version}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdemultimedia-arts-i18n
-Internationalization and localization files for arts.
+%description -n kdeaddons-konqueror-i18n
+Internationalization and localization files for konqueror.
 
-%description -n kdemultimedia-arts-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla arts.
+%description -n kdeaddons-konqueror-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla konquerora.
 
-%package -n kdemultimedia-juk-i18n
-Summary:	Internationalization and localization files for juk
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla juk
+%package -n kdeaddons-ksig-i18n
+Summary:	Internationalization and localization files for ksig
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksig
 Group:		X11/Applications
+Requires:	kdeaddons-ksig = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-juk = %{kdemultimedia_epoch}:%{version}
 
-%description -n kdemultimedia-juk-i18n
-Internationalization and localization files for juk.
+%description -n kdeaddons-ksig-i18n
+Internationalization and localization files for ksig.
 
-%description -n kdemultimedia-juk-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla juk.
+%description -n kdeaddons-ksig-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksig.
 
-%package -n kdemultimedia-kaboodle-i18n
-Summary:	Internationalization and localization files for kaboodle
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaboodle
+%package -n kdeaddons-lnkforward-i18n
+Summary:	Internationalization and localization files for lnkforward
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lnkforward
 Group:		X11/Applications
+Requires:	kdeaddons-lnkforward = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-kaboodle = %{kdemultimedia_epoch}:%{version}
 
-%description -n kdemultimedia-kaboodle-i18n
-Internationalization and localization files for kaboodle.
+%description -n kdeaddons-lnkforward-i18n
+Internationalization and localization files for lnkforward.
 
-%description -n kdemultimedia-kaboodle-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kaboodle.
+%description -n kdeaddons-lnkforward-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla lnkforward.
 
-%package -n kdemultimedia-kmid-i18n
-Summary:	Internationalization and localization files for kmid
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmid
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-kmid = %{kdemultimedia_epoch}:%{version}
-
-%description -n kdemultimedia-kmid-i18n
-Internationalization and localization files for kmid.
-
-%description -n kdemultimedia-kmid-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmid.
-
-%package -n kdemultimedia-kmix-i18n
-Summary:	Internationalization and localization files for kmix
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmix
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-kmix = %{kdemultimedia_epoch}:%{version}
-
-%description -n kdemultimedia-kmix-i18n
-Internationalization and localization files for kmix.
-
-%description -n kdemultimedia-kmix-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmix.
-
-%package -n kdemultimedia-kscd-i18n
-Summary:	Internationalization and localization files for kscd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kscd
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-kscd = %{kdemultimedia_epoch}:%{version}
-Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdemultimedia-kscd-i18n
-Internationalization and localization files for kscd.
-
-%description -n kdemultimedia-kscd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kscd.
-
-%package -n kdemultimedia-krec-i18n
-Summary:	Internationalization and localization files for krec
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krec
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-artscontrol-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-kmix-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-krec = %{kdemultimedia_epoch}:%{version}
-
-%description -n kdemultimedia-krec-i18n
-Internationalization and localization files for krec.
-
-%description -n kdemultimedia-krec-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla krec.
-
-%package -n kdemultimedia-noatun-i18n
+%package -n kdeaddons-noatun-i18n
 Summary:	Internationalization and localization files for noatun
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla noatun
 Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-noatun = %{kdemultimedia_epoch}:%{version}
+Requires:	kdeaddons-noatun = %{kdeaddons_epoch}:%{version}
+Requires:	kdemultimedia-noatun-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdemultimedia-noatun-i18n
+%description -n kdeaddons-noatun-i18n
 Internationalization and localization files for noatun.
 
-%description -n kdemultimedia-noatun-i18n -l pl
+%description -n kdeaddons-noatun-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla noatun.
 
-%package -n kdemultimedia-kfile-i18n
-Summary:	Internationalization and localization files for kfile
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile
+%package -n kdeadmin-kcmlilo-i18n
+Summary:	Internationalization and localization files for kcmlilo
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcmlilo
 Group:		X11/Applications
-Requires:	kdemultimedia-kfile = %{kdemultimedia_epoch}:%{version}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeadmin-kcmlilo = %{kdeadmin_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdeadmin-kcmlinuz-i18n
 
-%description -n kdemultimedia-kfile-i18n
-Internationalization and localization files for kfile.
+%description -n kdeadmin-kcmlilo-i18n
+Internationalization and localization files for kcmlilo.
 
-%description -n kdemultimedia-kfile-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfile.
-
-%package -n kdemultimedia-audiocd-i18n
-Summary:	Internationalization and localization files for audiocd
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla audiocd
-Group:		X11/Applications
-Requires:	kdemultimedia-audiocd = %{kdemultimedia_epoch}:%{version}
-Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdemultimedia-audiocd-i18n
-Internationalization and localization files for audiocd.
-
-%description -n kdemultimedia-audiocd-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla audiocd.
-
-%package -n kdemultimedia-libkcddb-i18n
-Summary:	Internationalization and localization files for libkcddb
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libkcddb
-Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdemultimedia-libkcddb = %{kdemultimedia_epoch}:%{version}
-
-%description -n kdemultimedia-libkcddb-i18n
-Internationalization and localization files for libkcddb.
-
-%description -n kdemultimedia-libkcddb-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla libkcddb.
-
-%package -n kdemultimedia-kaudiocreator-i18n
-Summary:	Internationalization and localization files for kaudiocreator
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaudiocreatora
-Group:		X11/Applications
-Requires:	kdemultimedia-kaudiocreator = %{kdemultimedia_epoch}:%{version}
-Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdemultimedia-kaudiocreator-i18n
-Internationalization and localization files for kaudiocreator.
-
-%description -n kdemultimedia-kaudiocreator-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kaudiocreatora.
+%description -n kdeadmin-kcmlilo-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kcmlilo.
 
 %package -n kdeadmin-kcron-i18n
 Summary:	Internationalization and localization files for kcron
@@ -1690,32 +612,6 @@ Internationalization and localization files for kuser.
 %description -n kdeadmin-kuser-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kusera.
 
-%package -n kdeadmin-kcmlilo-i18n
-Summary:	Internationalization and localization files for kcmlilo
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcmlilo
-Group:		X11/Applications
-Requires:	kdeadmin-kcmlilo = %{kdeadmin_epoch}:%{version}
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Obsoletes:	kdeadmin-kcmlinuz-i18n
-
-%description -n kdeadmin-kcmlilo-i18n
-Internationalization and localization files for kcmlilo.
-
-%description -n kdeadmin-kcmlilo-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kcmlilo.
-
-%package -n kde-decoration-common-i18n
-Summary:	Common internationalization and localization files for kwin decorations
-Summary(pl):	Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin
-Group:		X11/Applications
-
-%description -n kde-decoration-common-i18n
-Common internationalization and localization files for kwin
-decorations.
-
-%description -n kde-decoration-common-i18n -l pl
-Wspólne pliki umiêdzynarodawiaj±ce dla dekoracji kwin.
-
 %package -n kdeartwork-screensavers-i18n
 Summary:	Internationalization and localization files for screensavers
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla screensavers
@@ -1729,57 +625,307 @@ Internationalization and localization files for screensavers.
 %description -n kdeartwork-screensavers-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla screensavers.
 
-%package -n kdeedu-kwordquiz-i18n
-Summary:	Internationalization and localization files for kwordquiz
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwordquiz
+%package -n kdebase-core-i18n
+Summary:	Internationalization and localization files for the core part of KDE
+Summary(pl):	T³umaczenia dla podstawowej czê¶ci KDE
+Group:		X11/Applications
+Requires:	kdebase-core = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdebase-common-filemanagement-i18n
+
+%description -n kdebase-core-i18n
+Internationalization and localization files for KDE:
+- Control Center;
+- Help Center;
+- Print System;
+- Crash Handlers;
+- A Frontend for "su" program.
+
+%description -n kdebase-core-i18n -l pl
+T³umaczenia dla podstawowej czê¶ci KDE, obejmuj±cej m.in.:
+- Centrum sterownika
+- Centrum pomocy
+- System wydruków
+- Obs³ugê b³êdów
+- frontend dla programu "su".
+
+%package -n kdebase-desktop-i18n
+Summary:	Internationalization and localization files for the desktop part of KDE
+Summary(pl):	T³umaczenia dla desktopowej czê¶ci KDE
+Group:		X11/Applications
+Requires:	kdebase-desktop = %{kdebase_epoch}:%{version}
+Requires:	kdebase-desktop-libs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kfind-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kjobviewer-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kpager-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-decoration-b2-i18n
+Obsoletes:	kde-decoration-cde-i18n
+Obsoletes:	kde-decoration-glow-i18n
+Obsoletes:	kde-decoration-icewm-i18n
+Obsoletes:	kde-decoration-kde1-i18n
+Obsoletes:	kde-decoration-kstep-i18n
+Obsoletes:	kde-decoration-modernsys-i18n
+Obsoletes:	kde-decoration-openlook-i18n
+Obsoletes:	kde-decoration-plastik-i18n
+Obsoletes:	kde-decoration-quartz-i18n
+Obsoletes:	kde-decoration-riscos-i18n
+Obsoletes:	kde-decoration-system-i18n
+Obsoletes:	kde-style-plastik-i18n
+Obsoletes:	kdebase-kicker-i18n
+Obsoletes:	kdebase-kmenuedit-i18n
+Obsoletes:	kdebase-ksystraycmd-i18n
+
+%description -n kdebase-desktop-i18n
+Internationalization and localization files for KDE:
+- desktop
+- panel
+- splashscreen system
+- window manager
+
+%description -n kdebase-desktop-i18n -l pl
+T³umaczenia dla desktopowej czê¶ci KDE, obejmuj±cej:
+- pulpit
+- panel
+- system splashscreenów
+- zarz±dcê okien.
+
+%package -n kdebase-desktop-libs-i18n
+Summary:	Internationalization and localization files for desktop-libs
+Summary(pl):	T³umaczenia dla desktop-libs
+Group:		X11/Applications
+Requires:	kdebase-desktop-libs = %{kdebase_epoch}:%{version}
+Obsoletes:	kdebase-kicker-libs-i18n
+
+%description -n kdebase-desktop-libs-i18n
+Internationalization and localization files for desktop-libs.
+
+%description -n kdebase-desktop-libs-i18n -l pl
+T³umaczenia dla desktop-libs.
+
+%package -n kdebase-infocenter-i18n
+Summary:	Internationalization and localization files for KDE Information Centre
+Summary(pl):	T³umaczenia dla centrum informacji o systemie w KDE
 Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-kwordquiz = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-infocenter = %{kdebase_epoch}:%{version}
 
-%description -n kdeedu-kwordquiz-i18n
-Internationalization and localization files for kwordquiz.
+%description -n kdebase-infocenter-i18n
+Internationalization and localization files for KDE Information
+Centre.
 
-%description -n kdeedu-kwordquiz-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kwordquiz.
+%description -n kdebase-infocenter-i18n -l pl
+T³umaczenia dla centrum informacji o systemie w KDE.
 
-%package -n kdeedu-kturtle-i18n
-Summary:	Internationalization and localization files for kturtle
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kturtle
+%package -n kdebase-kappfinder-i18n
+Summary:	Internationalization and localization files for kappfinder
+Summary(pl):	T³umaczenia dla kappfindera
+Group:		X11/Applications
+Requires:	kdebase-kappfinder = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kappfinder-i18n
+Internationalization and localization files for kappfinder.
+
+%description -n kdebase-kappfinder-i18n -l pl
+T³umaczenia dla kappfindera.
+
+%package -n kdebase-kate-i18n
+Summary:	Internationalization and localization files for kate
+Summary(pl):	T³umaczenia dla kate
 Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-kturtle = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-kate = %{kdebase_epoch}:%{version}
 
-%description -n kdeedu-kturtle-i18n
-Internationalization and localization files for kturtle.
+%description -n kdebase-kate-i18n
+Internationalization and localization files for kate.
 
-%description -n kdeedu-kturtle-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kturtle.
+%description -n kdebase-kate-i18n -l pl
+T³umaczenia dla kate.
 
-%package -n kdeedu-klatin-i18n
-Summary:	Internationalization and localization files for klatin
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klatin
+%package -n kdebase-kdcop-i18n
+Summary:	Internationalization and localization files for kdcop
+Summary(pl):	T³umaczenia dla kdcopa
 Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-klatin = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-kdcop = %{kdebase_epoch}:%{version}
 
-%description -n kdeedu-klatin-i18n
-Internationalization and localization files for klatin.
+%description -n kdebase-kdcop-i18n
+Internationalization and localization files for kdcop.
 
-%description -n kdeedu-klatin-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla klatin.
+%description -n kdebase-kdcop-i18n -l pl
+T³umaczenia dla kdcopa.
 
-%package -n kdeedu-flashkard-i18n
-Summary:	Internationalization and localization files for flashkard
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla flashkarda
+%package -n kdebase-kdeprintfax-i18n
+Summary:	Internationalization and localization files for kdeprintfax
+Summary(pl):	T³umaczenia dla kdeprintfax
 Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-flashkard = %{kdeedu_epoch}:%{version}
+Requires:	kdebase-kdeprintfax = %{kdebase_epoch}:%{version}
 
-%description -n kdeedu-flashkard-i18n
-Internationalization and localization files for flashkard.
+%description -n kdebase-kdeprintfax-i18n
+Internationalization and localization files for kdeprintfax.
 
-%description -n kdeedu-flashkard-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla flashkarda.
+%description -n kdebase-kdeprintfax-i18n -l pl
+T³umaczenia dla kdeprintfax.
+
+%package -n kdebase-kdialog-i18n
+Summary:	Internationalization and localization files for kdialog
+Summary(pl):	T³umaczenia dla kdialoga
+Group:		X11/Applications
+Requires:	kdebase-kdialog = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kdialog-i18n
+Internationalization and localization files for kdialog.
+
+%description -n kdebase-kdialog-i18n -l pl
+T³umaczenia dla kdialoga.
+
+%package -n kdebase-kfind-i18n
+Summary:	Internationalization and localization files for kfind
+Summary(pl):	T³umaczenia dla kfind
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kfind = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kfind-i18n
+Internationalization and localization files for kfind.
+
+%description -n kdebase-kfind-i18n -l pl
+T³umaczenia dla kfind.
+
+%package -n kdebase-kfontinst-i18n
+Summary:	Internationalization and localization files for kfontinst
+Summary(pl):	T³umaczenia dla kfontinst
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kfontinst = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kfontinst-i18n
+Internationalization and localization files for kfontinst.
+
+%description -n kdebase-kfontinst-i18n -l pl
+T³umaczenia dla kfontinst.
+
+%package -n kdebase-kjobviewer-i18n
+Summary:	Internationalization and localization files for kjobviewer
+Summary(pl):	T³umaczenia dla kjobviewera
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kjobviewer = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kjobviewer-i18n
+Internationalization and localization files for kjobviewer.
+
+%description -n kdebase-kjobviewer-i18n -l pl
+T³umaczenia dla kjobviewera.
+
+%package -n kdebase-klipper-i18n
+Summary:	Internationalization and localization files for klipper
+Summary(pl):	T³umaczenia dla klippera
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-klipper = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-klipper-i18n
+Internationalization and localization files for klipper.
+
+%description -n kdebase-klipper-i18n -l pl
+T³umaczenia dla klippera.
+
+%package -n kdebase-konsole-i18n
+Summary:	Internationalization and localization files for konsole
+Summary(pl):	T³umaczenia dla konsole
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-konsole = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-konsole-i18n
+Internationalization and localization files for konsole.
+
+%description -n kdebase-konsole-i18n -l pl
+T³umaczenia dla konsole.
+
+%package -n kdebase-kpager-i18n
+Summary:	Internationalization and localization files for kpager
+Summary(pl):	T³umaczenia dla kpagera
+Group:		X11/Applications
+Requires:	kdebase-kpager = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdebase-kpager-i18n
+Internationalization and localization files for kpager.
+
+%description -n kdebase-kpager-i18n -l pl
+T³umaczenia dla kpagera.
+
+%package -n kdebase-kpersonalizer-i18n
+Summary:	Internationalization and localization files for kpersonalizer
+Summary(pl):	T³umaczenia dla kpersonalizera
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kpersonalizer = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kpersonalizer-i18n
+Internationalization and localization files for kpersonalizer.
+
+%description -n kdebase-kpersonalizer-i18n -l pl
+T³umaczenia dla kpersonalizera.
+
+%package -n kdebase-ksysguard-i18n
+Summary:	Internationalization and localization files for ksysguard
+Summary(pl):	T³umaczenia dla ksysguarda
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-klipper-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-ksysguard = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-ksysguard-i18n
+Internationalization and localization files for ksysguard.
+
+%description -n kdebase-ksysguard-i18n -l pl
+T³umaczenia dla ksysguarda.
+
+%package -n kdebase-kwrite-i18n
+Summary:	Internationalization and localization files for kwrite
+Summary(pl):	T³umaczenia dla kwrite
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-kwrite = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-kwrite-i18n
+Internationalization and localization files for kwrite.
+
+%description -n kdebase-kwrite-i18n -l pl
+T³umaczenia dla kwrite.
+
+%package -n kdebase-screensavers-i18n
+Summary:	Internationalization and localization files for screensavers
+Summary(pl):	T³umaczenia dla screensavers
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-screensavers = %{kdebase_epoch}:%{version}
+
+%description -n kdebase-screensavers-i18n
+Internationalization and localization files for screensavers.
+
+%description -n kdebase-screensavers-i18n -l pl
+T³umaczenia dla screensavers.
+
+%package -n kdebase-useraccount-i18n
+Summary:	Internationalization and localization files for useraccount
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla useraccount
+Group:		X11/Applications
+Requires:	kdebase-useraccount = %{kdebase_epoch}:%{version}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdeutils-kdepasswd-i18n
+Obsoletes:	kdeutils-userinfo-i18n
+
+%description -n kdebase-useraccount-i18n
+Internationalization and localization files for useraccount.
+
+%description -n kdebase-useraccount-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla useraccount.
 
 %package -n kdeedu-blinken-i18n
 Summary:	Internationalization and localization files for blinken
@@ -1806,6 +952,19 @@ Internationalization and localization files for kalzium.
 
 %description -n kdeedu-kalzium-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kalzium.
+
+%package -n kdeedu-kanagram-i18n
+Summary:	Internationalization and localization files for kanagram
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kanagram
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-kanagram = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-kanagram-i18n
+Internationalization and localization files for kanagram.
+
+%description -n kdeedu-kanagram-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kanagram.
 
 %package -n kdeedu-kbruch-i18n
 Summary:	Internationalization and localization files for kbruch
@@ -1885,6 +1044,19 @@ Internationalization and localization files for kiten.
 %description -n kdeedu-kiten-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kiten.
 
+%package -n kdeedu-klatin-i18n
+Summary:	Internationalization and localization files for klatin
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klatin
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-klatin = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-klatin-i18n
+Internationalization and localization files for klatin.
+
+%description -n kdeedu-klatin-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla klatin.
+
 %package -n kdeedu-klettres-i18n
 Summary:	Internationalization and localization files for klettres
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klettres
@@ -1897,19 +1069,6 @@ Internationalization and localization files for klettres.
 
 %description -n kdeedu-klettres-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla klettres.
-
-%package -n kdeedu-kanagram-i18n
-Summary:	Internationalization and localization files for kanagram
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kanagram
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-kanagram = %{kdeedu_epoch}:%{version}
-
-%description -n kdeedu-kanagram-i18n
-Internationalization and localization files for kanagram.
-
-%description -n kdeedu-kanagram-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kanagram.
 
 %package -n kdeedu-kmplot-i18n
 Summary:	Internationalization and localization files for kmplot
@@ -1963,6 +1122,19 @@ Internationalization and localization files for ktouch.
 %description -n kdeedu-ktouch-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla ktouch.
 
+%package -n kdeedu-kturtle-i18n
+Summary:	Internationalization and localization files for kturtle
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kturtle
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-kturtle = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-kturtle-i18n
+Internationalization and localization files for kturtle.
+
+%description -n kdeedu-kturtle-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kturtle.
+
 %package -n kdeedu-kverbos-i18n
 Summary:	Internationalization and localization files for kverbos
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kverbos
@@ -1989,6 +1161,19 @@ Internationalization and localization files for kvoctrain.
 %description -n kdeedu-kvoctrain-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kvoctrain.
 
+%package -n kdeedu-kwordquiz-i18n
+Summary:	Internationalization and localization files for kwordquiz
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwordquiz
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-kwordquiz = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-kwordquiz-i18n
+Internationalization and localization files for kwordquiz.
+
+%description -n kdeedu-kwordquiz-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kwordquiz.
+
 %package -n kdeedu-libkdeeduui-i18n
 Summary:	Internationalization and localization files for libkdeeduui
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libkdeeduui
@@ -2001,6 +1186,19 @@ Internationalization and localization files for libkdeeduui.
 
 %description -n kdeedu-libkdeeduui-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla libkdeeduui.
+
+%package -n kdegames-atlantik-i18n
+Summary:	Internationalization and localization files for atlantik
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla atlantika
+Group:		X11/Applications
+Requires:	kdegames-atlantik = %{kdegames_epoch}:%{version}
+Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdegames-atlantik-i18n
+Internationalization and localization files for atlantik.
+
+%description -n kdegames-atlantik-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla atlantika.
 
 %package -n kdegames-i18n
 Summary:	Internationalization and localization files for kdegames libs
@@ -2015,45 +1213,6 @@ Internationalization and localization files for kdegames libs.
 
 %description -n kdegames-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla bibliotek kdegames.
-
-%package -n kdegames-kmahjongg-i18n
-Summary:	Internationalization and localization files for kmahjongg
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmahjongga
-Group:		X11/Applications
-Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegames-kmahjongg = %{kdegames_epoch}:%{version}
-
-%description -n kdegames-kmahjongg-i18n
-Internationalization and localization files for kmahjongg.
-
-%description -n kdegames-kmahjongg-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmahjongga.
-
-%package -n kdegames-ksmiletris-i18n
-Summary:	Internationalization and localization files for ksmiletris
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksmiletrisa
-Group:		X11/Applications
-Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegames-ksmiletris = %{kdegames_epoch}:%{version}
-
-%description -n kdegames-ksmiletris-i18n
-Internationalization and localization files for ksmiletris.
-
-%description -n kdegames-ksmiletris-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksmiletrisa.
-
-%package -n kdegames-atlantik-i18n
-Summary:	Internationalization and localization files for atlantik
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla atlantika
-Group:		X11/Applications
-Requires:	kdegames-atlantik = %{kdegames_epoch}:%{version}
-Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdegames-atlantik-i18n
-Internationalization and localization files for atlantik.
-
-%description -n kdegames-atlantik-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla atlantika.
 
 %package -n kdegames-kasteroids-i18n
 Summary:	Internationalization and localization files for kasteroids
@@ -2211,6 +1370,19 @@ Internationalization and localization files for klines.
 %description -n kdegames-klines-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla klines.
 
+%package -n kdegames-kmahjongg-i18n
+Summary:	Internationalization and localization files for kmahjongg
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmahjongga
+Group:		X11/Applications
+Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegames-kmahjongg = %{kdegames_epoch}:%{version}
+
+%description -n kdegames-kmahjongg-i18n
+Internationalization and localization files for kmahjongg.
+
+%description -n kdegames-kmahjongg-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmahjongga.
+
 %package -n kdegames-kmines-i18n
 Summary:	Internationalization and localization files for kmines
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmines
@@ -2341,6 +1513,19 @@ Internationalization and localization files for ksirtet.
 %description -n kdegames-ksirtet-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla ksirteta.
 
+%package -n kdegames-ksmiletris-i18n
+Summary:	Internationalization and localization files for ksmiletris
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksmiletrisa
+Group:		X11/Applications
+Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegames-ksmiletris = %{kdegames_epoch}:%{version}
+
+%description -n kdegames-ksmiletris-i18n
+Internationalization and localization files for ksmiletris.
+
+%description -n kdegames-ksmiletris-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksmiletrisa.
+
 %package -n kdegames-ksnake-i18n
 Summary:	Internationalization and localization files for ksnake
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksnake'a
@@ -2432,57 +1617,899 @@ Internationalization and localization files for lskat.
 %description -n kdegames-lskat-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla lskata.
 
-%package -n kdegames-megami-i18n
-Summary:	Internationalization and localization files for megami
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla megami
+%package -n kdegraphics-kamera-i18n
+Summary:	Internationalization and localization files for kamera
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla programu kamera
 Group:		X11/Applications
-Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegames-megami = %{kdegames_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kamera = %{kdegraphics_epoch}:%{version}
 
-%description -n kdegames-megami-i18n
-Internationalization and localization files for megami.
+%description -n kdegraphics-kamera-i18n
+Internationalization and localization files for kamera.
 
-%description -n kdegames-megami-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla megami.
+%description -n kdegraphics-kamera-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla programu kamera.
 
-%package -n kdesdk-libcvsservice-i18n
-Summary:	Internationalization and localization files for libcvsservice
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libcvsservice
+%package -n kdegraphics-kcoloredit-i18n
+Summary:	Internationalization and localization files for kcoloredit
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcoloredita
 Group:		X11/Applications
-Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
-Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kcoloredit = %{kdegraphics_epoch}:%{version}
 
-%description -n kdesdk-libcvsservice-i18n
-Internationalization and localization files for libcvsservice.
+%description -n kdegraphics-kcoloredit-i18n
+Internationalization and localization files for kcoloredit.
 
-%description -n kdesdk-libcvsservice-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla libcvsservice.
+%description -n kdegraphics-kcoloredit-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kcoloredita.
 
-%package -n kdesdk-scripts-developer-i18n
-Summary:	Internationalization and localization files for KDE developer scripts
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
+%package -n kdegraphics-kdvi-i18n
+Summary:	Internationalization and localization files for kdvi
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdvi
 Group:		X11/Applications
-Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
-Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kdvi = %{kdegraphics_epoch}:%{version}
+Requires:	kdegraphics-kview-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdesdk-scripts-developer-i18n
-Internationalization and localization files for KDE developer scripts.
+%description -n kdegraphics-kdvi-i18n
+Internationalization and localization files for kdvi.
 
-%description -n kdesdk-scripts-developer-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
+%description -n kdegraphics-kdvi-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdvi.
 
-%package -n kdesdk-kfile-i18n
+%package -n kdegraphics-kfax-i18n
+Summary:	Internationalization and localization files for kfax
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfaksa
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kfax = %{kdegraphics_epoch}:%{version}
+Requires:	kdegraphics-kview-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdegraphics-kfax-i18n
+Internationalization and localization files for kfax.
+
+%description -n kdegraphics-kfax-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfaksa.
+
+%package -n kdegraphics-kfile-i18n
+Summary:	Internationalization and localization files for kfile
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile'a
+Group:		X11/Applications
+Requires:	kdegraphics-kfile = %{kdegraphics_epoch}:%{version}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdegraphics-kfile-i18n
+Internationalization and localization files for kfile.
+
+%description -n kdegraphics-kfile-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfile'a.
+
+%package -n kdegraphics-kgamma-i18n
+Summary:	Internationalization and localization files for kgamma
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgamma
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kgamma = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kgamma-i18n
+Internationalization and localization files for kgamma.
+
+%description -n kdegraphics-kgamma-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kgamma.
+
+%package -n kdegraphics-kghostview-i18n
+Summary:	Internationalization and localization files for kghostview
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kghostview
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kghostview = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kghostview-i18n
+Internationalization and localization files for kghostview.
+
+%description -n kdegraphics-kghostview-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kghostview.
+
+%package -n kdegraphics-kiconedit-i18n
+Summary:	Internationalization and localization files for kiconedit
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kiconedita
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kiconedit = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kiconedit-i18n
+Internationalization and localization files for kiconedit.
+
+%description -n kdegraphics-kiconedit-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kiconedita.
+
+%package -n kdegraphics-kmrml-i18n
+Summary:	Internationalization and localization files for kmrml
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmrml
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kmrml = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kmrml-i18n
+Internationalization and localization files for kmrml.
+
+%description -n kdegraphics-kmrml-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmrml.
+
+%package -n kdegraphics-kolourpaint-i18n
+Summary:	Internationalization and localization files for kolourpaint
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kolourpaint
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kolourpaint = %{kdegraphics_epoch}:%{version}
+Obsoletes:	kdegraphics-kpaint-i18n
+
+%description -n kdegraphics-kolourpaint-i18n
+Internationalization and localization files for kolourpaint.
+
+%description -n kdegraphics-kolourpaint-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kolourpaint.
+
+%package -n kdegraphics-kooka-i18n
+Summary:	Internationalization and localization files for kooka
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kooki
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kooka = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kooka-i18n
+Internationalization and localization files for kooka.
+
+%description -n kdegraphics-kooka-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kooki.
+
+%package -n kdegraphics-kpdf-i18n
+Summary:	Internationalization and localization files for kpdf
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpdf
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kpdf = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kpdf-i18n
+Internationalization and localization files for kpdf.
+
+%description -n kdegraphics-kpdf-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kpdf.
+
+%package -n kdegraphics-kpovmodeler-i18n
+Summary:	Internationalization and localization files for kpovmodeler
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpovmodelera
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kpovmodeler = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kpovmodeler-i18n
+Internationalization and localization files for kpovmodeler.
+
+%description -n kdegraphics-kpovmodeler-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kpovmodelera.
+
+%package -n kdegraphics-kruler-i18n
+Summary:	Internationalization and localization files for kruler
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krulera
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kruler = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kruler-i18n
+Internationalization and localization files for kruler.
+
+%description -n kdegraphics-kruler-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla krulera.
+
+%package -n kdegraphics-ksnapshot-i18n
+Summary:	Internationalization and localization files for ksnapshot
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksnapshota
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-ksnapshot = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-ksnapshot-i18n
+Internationalization and localization files for ksnapshot.
+
+%description -n kdegraphics-ksnapshot-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksnapshota.
+
+%package -n kdegraphics-ksvg-i18n
+Summary:	Internationalization and localization files for ksvg
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksvg
+Group:		X11/Applications
+Requires:	kdegraphics-ksvg = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-ksvg-i18n
+Internationalization and localization files for ksvg.
+
+%description -n kdegraphics-ksvg-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksvg.
+
+%package -n kdegraphics-kuickshow-i18n
+Summary:	Internationalization and localization files for kuickshow
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kuickshow
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kuickshow = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kuickshow-i18n
+Internationalization and localization files for kuickshow.
+
+%description -n kdegraphics-kuickshow-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kuickshow.
+
+%package -n kdegraphics-kview-i18n
+Summary:	Internationalization and localization files for kview
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kview
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kview = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kview-i18n
+Internationalization and localization files for kview.
+
+%description -n kdegraphics-kview-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kview.
+
+%package -n kdegraphics-kviewshell-i18n
+Summary:	Internationalization and localization files for kviewshell
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kviewshell
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegraphics-kviewshell = %{kdegraphics_epoch}:%{version}
+
+%description -n kdegraphics-kviewshell-i18n
+Internationalization and localization files for kviewshell.
+
+%description -n kdegraphics-kviewshell-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kviewshell.
+
+%package -n kdelibs-i18n
+Summary:	Internationalization and localization files for kdelibs
+Summary(pl):	Pliki umiêdzynarodawiaj±ce kdelibs
+Group:		X11/Libraries
+Requires:	kdelibs = %{kdelibs_epoch}:%{version}
+Obsoletes:	kde-i18n
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Basque
+Obsoletes:	kde-i18n-Bengali
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Farsi
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Galician
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Low_Saxon
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Punjabi
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tajik
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Upper_Sorbian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kdeaccessibility-i18n
+Obsoletes:	kdeaddons-i18n
+Obsoletes:	kdeaddons-kvim-i18n
+Obsoletes:	kdeadmin-i18n
+Obsoletes:	kdeartwork-i18n
+Obsoletes:	kdebase-mailnews-i18n
+Obsoletes:	kdeedu-flashkard-i18n
+Obsoletes:	kdeedu-i18n
+Obsoletes:	kdeedu-kmessedwords-i18n
+Obsoletes:	kdegraphics-i18n
+Obsoletes:	kdemultimedia-i18n
+Obsoletes:	kdenetwork-i18n
+Obsoletes:	kdenetwork-rss-i18n
+Obsoletes:	kdesdk-i18n
+Obsoletes:	kdetoys-i18n
+Obsoletes:	kdeutils-i18n
+
+%description -n kdelibs-i18n
+Translations and localization data for KDE libraries.
+
+%description -n kdelibs-i18n -l pl
+T³umaczenia i dane miêdzynarodowe dla bibliotek KDE.
+
+%package -n kdemultimedia-arts-i18n
+Summary:	Internationalization and localization files for arts
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla arts
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-arts = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-arts-i18n
+Internationalization and localization files for arts.
+
+%description -n kdemultimedia-arts-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla arts.
+
+%package -n kdemultimedia-artsbuilder-i18n
+Summary:	Internationalization and localization files for artsbuilder
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla artsbuildera
+Group:		X11/Applications
+Requires:	kdemultimedia-arts-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-artsbuilder = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-artsbuilder-i18n
+Internationalization and localization files for artsbuilder.
+
+%description -n kdemultimedia-artsbuilder-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla artsbuildera.
+
+%package -n kdemultimedia-artscontrol-i18n
+Summary:	Internationalization and localization files for artscontrol
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla artscontrol
+Group:		X11/Applications
+Requires:	kdemultimedia-arts-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-artscontrol = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-artscontrol-i18n
+Internationalization and localization files for artscontrol.
+
+%description -n kdemultimedia-artscontrol-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla artscontrol.
+
+%package -n kdemultimedia-audiocd-i18n
+Summary:	Internationalization and localization files for audiocd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla audiocd
+Group:		X11/Applications
+Requires:	kdemultimedia-audiocd = %{kdemultimedia_epoch}:%{version}
+Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdemultimedia-audiocd-i18n
+Internationalization and localization files for audiocd.
+
+%description -n kdemultimedia-audiocd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla audiocd.
+
+%package -n kdemultimedia-juk-i18n
+Summary:	Internationalization and localization files for juk
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla juk
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-juk = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-juk-i18n
+Internationalization and localization files for juk.
+
+%description -n kdemultimedia-juk-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla juk.
+
+%package -n kdemultimedia-kaboodle-i18n
+Summary:	Internationalization and localization files for kaboodle
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaboodle
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-kaboodle = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-kaboodle-i18n
+Internationalization and localization files for kaboodle.
+
+%description -n kdemultimedia-kaboodle-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kaboodle.
+
+%package -n kdemultimedia-kaudiocreator-i18n
+Summary:	Internationalization and localization files for kaudiocreator
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaudiocreatora
+Group:		X11/Applications
+Requires:	kdemultimedia-kaudiocreator = %{kdemultimedia_epoch}:%{version}
+Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdemultimedia-kaudiocreator-i18n
+Internationalization and localization files for kaudiocreator.
+
+%description -n kdemultimedia-kaudiocreator-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kaudiocreatora.
+
+%package -n kdemultimedia-kfile-i18n
 Summary:	Internationalization and localization files for kfile
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile
 Group:		X11/Applications
-Requires:	kdesdk-kfile = %{kdesdk_epoch}:%{version}
+Requires:	kdemultimedia-kfile = %{kdemultimedia_epoch}:%{version}
 Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
 
-%description -n kdesdk-kfile-i18n
+%description -n kdemultimedia-kfile-i18n
 Internationalization and localization files for kfile.
 
-%description -n kdesdk-kfile-i18n -l pl
+%description -n kdemultimedia-kfile-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kfile.
+
+%package -n kdemultimedia-kmid-i18n
+Summary:	Internationalization and localization files for kmid
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmid
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-kmid = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-kmid-i18n
+Internationalization and localization files for kmid.
+
+%description -n kdemultimedia-kmid-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmid.
+
+%package -n kdemultimedia-kmix-i18n
+Summary:	Internationalization and localization files for kmix
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmix
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-kmix = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-kmix-i18n
+Internationalization and localization files for kmix.
+
+%description -n kdemultimedia-kmix-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmix.
+
+%package -n kdemultimedia-krec-i18n
+Summary:	Internationalization and localization files for krec
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krec
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-artscontrol-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-kmix-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-krec = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-krec-i18n
+Internationalization and localization files for krec.
+
+%description -n kdemultimedia-krec-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla krec.
+
+%package -n kdemultimedia-kscd-i18n
+Summary:	Internationalization and localization files for kscd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kscd
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-kscd = %{kdemultimedia_epoch}:%{version}
+Requires:	kdemultimedia-libkcddb-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdemultimedia-kscd-i18n
+Internationalization and localization files for kscd.
+
+%description -n kdemultimedia-kscd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kscd.
+
+%package -n kdemultimedia-libkcddb-i18n
+Summary:	Internationalization and localization files for libkcddb
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libkcddb
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-libkcddb = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-libkcddb-i18n
+Internationalization and localization files for libkcddb.
+
+%description -n kdemultimedia-libkcddb-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla libkcddb.
+
+%package -n kdemultimedia-noatun-i18n
+Summary:	Internationalization and localization files for noatun
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla noatun
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdemultimedia-noatun = %{kdemultimedia_epoch}:%{version}
+
+%description -n kdemultimedia-noatun-i18n
+Internationalization and localization files for noatun.
+
+%description -n kdemultimedia-noatun-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla noatun.
+
+%package -n kdenetwork-filesharing-i18n
+Summary:	Internationalization and localization files for fileshare
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fileshare
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-filesharing = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-filesharing-i18n
+Internationalization and localization files for fileshare.
+
+%description -n kdenetwork-filesharing-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla fileshare.
+
+%package -n kdenetwork-kdict-i18n
+Summary:	Internationalization and localization files for kdict
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdict
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kdict = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kdict-i18n
+Internationalization and localization files for kdict.
+
+%description -n kdenetwork-kdict-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdict.
+
+%package -n kdenetwork-kdnssd-i18n
+Summary:	Internationalization and localization files for kdnssd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdnssd
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kdnssd = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kdnssd-i18n
+Internationalization and localization files for kdnssd.
+
+%description -n kdenetwork-kdnssd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdnssd.
+
+%package -n kdenetwork-kfile-torrent-i18n
+Summary:	Internationalization and localization files for kfile_torrent
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile_torrent
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kfile-torrent = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kfile-torrent-i18n
+Internationalization and localization files for kfile_torrent.
+
+%description -n kdenetwork-kfile-torrent-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfile_torrent.
+
+%package -n kdenetwork-kget-i18n
+Summary:	Internationalization and localization files for kget
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgeta
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kget = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kget-i18n
+Internationalization and localization files for kget.
+
+%description -n kdenetwork-kget-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kgeta.
+
+%package -n kdenetwork-kinetd-i18n
+Summary:	Internationalization and localization files for kinetd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kinetd
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kinetd = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kinetd-i18n
+Internationalization and localization files for kinetd.
+
+%description -n kdenetwork-kinetd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kinetd.
+
+%package -n kdenetwork-knewsticker-i18n
+Summary:	Internationalization and localization files for knewsticker
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla knewstickera
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-knewsticker = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-knewsticker-i18n
+Internationalization and localization files for knewsticker.
+
+%description -n kdenetwork-knewsticker-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla knewstickera.
+
+%package -n kdenetwork-kopete-i18n
+Summary:	Internationalization and localization files for kopete
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kopete
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kopete = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kopete-i18n
+Internationalization and localization files for kopete.
+
+%description -n kdenetwork-kopete-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kopete.
+
+%package -n kdenetwork-kpf-i18n
+Summary:	Internationalization and localization files for kpf
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpf
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kpf = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kpf-i18n
+Internationalization and localization files for kpf.
+
+%description -n kdenetwork-kpf-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kpf.
+
+%package -n kdenetwork-kppp-i18n
+Summary:	Internationalization and localization files for kppp
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kppp
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kppp = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kppp-i18n
+Internationalization and localization files for kppp.
+
+%description -n kdenetwork-kppp-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kppp.
+
+%package -n kdenetwork-krfb-i18n
+Summary:	Internationalization and localization files for krfb
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krfb
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kinetd-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-krfb = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-krfb-i18n
+Internationalization and localization files for krfb.
+
+%description -n kdenetwork-krfb-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla krfb.
+
+%package -n kdenetwork-ksirc-i18n
+Summary:	Internationalization and localization files for ksirc
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksirc
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-ksirc = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-ksirc-i18n
+Internationalization and localization files for ksirc.
+
+%description -n kdenetwork-ksirc-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksirc.
+
+%package -n kdenetwork-ktalkd-i18n
+Summary:	Internationalization and localization files for ktalkd
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktalkd
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-ktalkd = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-ktalkd-i18n
+Internationalization and localization files for ktalkd.
+
+%description -n kdenetwork-ktalkd-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ktalkd.
+
+%package -n kdenetwork-kwifimanager-i18n
+Summary:	Internationalization and localization files for kwifimanager
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwifimanagera
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-kwifimanager = %{kdenetwork_epoch}:%{version}
+
+%description -n kdenetwork-kwifimanager-i18n
+Internationalization and localization files for kwifimanager.
+
+%description -n kdenetwork-kwifimanager-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kwifimanagera.
+
+%package -n kdenetwork-lanbrowser-i18n
+Summary:	Internationalization and localization files for lanbrowser
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lanbrowsera
+Group:		X11/Applications
+Requires:	kdenetwork-lanbrowser = %{kdenetwork_epoch}:%{version}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdenetwork-lanbrowser-i18n
+Internationalization and localization files for lanbrowser.
+
+%description -n kdenetwork-lanbrowser-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla lanbrowsera.
+
+%package -n kdepim-i18n
+Summary:	Internationalization and localization files for kdepim
+Summary(pl):	T³umaczenia dla kdepim
+Group:		X11/Applications
+Requires:	kdepim = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdeaddons-kontact-i18n
+Obsoletes:	kdepim-kontact-i18n
+Obsoletes:	kdepim-korganizer-i18n
+Obsoletes:	kdepim-korganizer-libs-i18n
+Obsoletes:	kdepim-kresources-i18n
+
+%description -n kdepim-i18n
+Internationalization and localization files for kdepim.
+
+%description -n kdepim-i18n -l pl
+T³umaczenia dla kdepim.
+
+%package -n kdepim-kaddressbook-i18n
+Summary:	Internationalization and localization files for kaddressbook
+Summary(pl):	T³umaczenia dla kaddressbook
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-kaddressbook = %{kdepim_epoch}:%{version}
+
+%description -n kdepim-kaddressbook-i18n
+Internationalization and localization files for kaddressbook.
+
+%description -n kdepim-kaddressbook-i18n -l pl
+T³umaczenia dla kaddressbook.
+
+%package -n kdepim-kandy-i18n
+Summary:	Internationalization and localization files for kandy
+Summary(pl):	T³umaczenia dla kandy
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-kandy = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-kandy-i18n
+Internationalization and localization files for kandy.
+
+%description -n kdepim-kandy-i18n -l pl
+T³umaczenia dla kandy.
+
+%package -n kdepim-karm-i18n
+Summary:	Internationalization and localization files for karm
+Summary(pl):	T³umaczenia dla karm
+Group:		X11/Applications
+Requires:	kdepim-karm = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-karm-i18n
+Internationalization and localization files for karm.
+
+%description -n kdepim-karm-i18n -l pl
+T³umaczenia dla karm.
+
+%package -n kdepim-kmail-i18n
+Summary:	Internationalization and localization files for kmail
+Summary(pl):	T³umaczenia dla kmaila
+Group:		X11/Applications
+Requires:	kde-kio-imap4-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-pop3-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-kmail = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+Obsoletes:	kdepim-ktnef-i18n
+
+%description -n kdepim-kmail-i18n
+Internationalization and localization files for kmail.
+
+%description -n kdepim-kmail-i18n -l pl
+T³umaczenia dla kmaila.
+
+%package -n kdepim-knode-i18n
+Summary:	Internationalization and localization files for knode
+Summary(pl):	T³umaczenia dla knode
+Group:		X11/Applications
+Requires:	kde-kio-nntp-i18n = %{epoch}:%{version}-%{release}
+Requires:	kde-kio-smtp-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-knode = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-knode-i18n
+Internationalization and localization files for knode.
+
+%description -n kdepim-knode-i18n -l pl
+T³umaczenia dla knode.
+
+%package -n kdepim-knotes-i18n
+Summary:	Internationalization and localization files for knotes
+Summary(pl):	T³umaczenia dla knotes
+Group:		X11/Applications
+Requires:	kdepim-knotes = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-knotes-i18n
+Internationalization and localization files for knotes.
+
+%description -n kdepim-knotes-i18n -l pl
+T³umaczenia dla knotes.
+
+%package -n kdepim-konsolekalendar-i18n
+Summary:	Internationalization and localization files for konsolekalendar
+Summary(pl):	T³umaczenia dla konsolekalendara
+Group:		X11/Applications
+Requires:	kdepim-konsolekalendar = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-konsolekalendar-i18n
+Internationalization and localization files for konsolekalendar.
+
+%description -n kdepim-konsolekalendar-i18n -l pl
+T³umaczenia dla konsolekalendara.
+
+%package -n kdepim-korn-i18n
+Summary:	Internationalization and localization files for korn
+Summary(pl):	T³umaczenia dla korna
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-korn = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-korn-i18n
+Internationalization and localization files for korn.
+
+%description -n kdepim-korn-i18n -l pl
+T³umaczenia dla korna.
+
+%package -n kdepim-kpilot-i18n
+Summary:	Internationalization and localization files for kpilot
+Summary(pl):	T³umaczenia dla kpilota
+Group:		X11/Applications
+Requires:	kdepim-kpilot = %{kdepim_epoch}:%{version}
+Requires:	kdepim-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdepim-kpilot-i18n
+Internationalization and localization files for kpilot.
+
+%description -n kdepim-kpilot-i18n -l pl
+T³umaczenia dla kpilota.
+
+%package -n kdepim-libs-i18n
+Summary:	Internationalization and localization files for libkdepim
+Summary(pl):	T³umaczenia dla libkdepim
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdepim-libs = %{kdepim_epoch}:%{version}
+Obsoletes:	kdepim-kmail-libs-i18n
+Obsoletes:	kdepim-korganizer-libs-i18n
+Obsoletes:	kdepim-libkcal-i18n
+Obsoletes:	kdepim-libkdenetwork-i18n
+Obsoletes:	kdepim-libkdepim-i18n
+Obsoletes:	kdepim-libkdgantt-i18n
+
+%description -n kdepim-libs-i18n
+Internationalization and localization files for kdepim libraries.
+
+%description -n kdepim-libs-i18n -l pl
+T³umaczenia dla bibliotek kdepim.
 
 %package -n kdesdk-cervisia-i18n
 Summary:	Internationalization and localization files for cervisia
@@ -2551,6 +2578,19 @@ Internationalization and localization files for kcachegrind.
 %description -n kdesdk-kcachegrind-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kcachegrinda.
 
+%package -n kdesdk-kfile-i18n
+Summary:	Internationalization and localization files for kfile
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile
+Group:		X11/Applications
+Requires:	kdesdk-kfile = %{kdesdk_epoch}:%{version}
+Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdesdk-kfile-i18n
+Internationalization and localization files for kfile.
+
+%description -n kdesdk-kfile-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfile.
+
 %package -n kdesdk-kompare-i18n
 Summary:	Internationalization and localization files for kompare
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kompare
@@ -2563,6 +2603,20 @@ Internationalization and localization files for kompare.
 
 %description -n kdesdk-kompare-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kompare.
+
+%package -n kdesdk-kspy-i18n
+Summary:	Internationalization and localization files for kspy
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kspy
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdesdk-kspy = %{kdesdk_epoch}:%{version}
+Obsoletes:	kdesdk-spy-i18n
+
+%description -n kdesdk-kspy-i18n
+Internationalization and localization files for spy.
+
+%description -n kdesdk-kspy-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla spy.
 
 %package -n kdesdk-kstartperf-i18n
 Summary:	Internationalization and localization files for kstartperf
@@ -2590,19 +2644,31 @@ Internationalization and localization files for kuiviewer.
 %description -n kdesdk-kuiviewer-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kuiviewera.
 
-%package -n kdesdk-kspy-i18n
-Summary:	Internationalization and localization files for kspy
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kspy
+%package -n kdesdk-libcvsservice-i18n
+Summary:	Internationalization and localization files for libcvsservice
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla libcvsservice
 Group:		X11/Applications
-Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdesdk-kspy = %{kdesdk_epoch}:%{version}
-Obsoletes:	kdesdk-spy-i18n
+Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
 
-%description -n kdesdk-kspy-i18n
-Internationalization and localization files for spy.
+%description -n kdesdk-libcvsservice-i18n
+Internationalization and localization files for libcvsservice.
 
-%description -n kdesdk-kspy-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla spy.
+%description -n kdesdk-libcvsservice-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla libcvsservice.
+
+%package -n kdesdk-scripts-developer-i18n
+Summary:	Internationalization and localization files for KDE developer scripts
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
+Group:		X11/Applications
+Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
+
+%description -n kdesdk-scripts-developer-i18n
+Internationalization and localization files for KDE developer scripts.
+
+%description -n kdesdk-scripts-developer-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla KDE developer scripts
 
 %package -n kdesdk-umbrello-i18n
 Summary:	Internationalization and localization files for umbrello
@@ -2629,6 +2695,19 @@ Internationalization and localization files for amor.
 
 %description -n kdetoys-amor-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla amora.
+
+%package -n kdetoys-fifteen-i18n
+Summary:	Internationalization and localization files for fifteen
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fifteen
+Group:		X11/Applications
+Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdetoys-fifteen = %{kdetoys_epoch}:%{version}
+
+%description -n kdetoys-fifteen-i18n
+Internationalization and localization files for fifteen.
+
+%description -n kdetoys-fifteen-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla fifteen.
 
 %package -n kdetoys-kmoon-i18n
 Summary:	Internationalization and localization files for kmoon
@@ -2669,6 +2748,19 @@ Internationalization and localization files for kteatime.
 %description -n kdetoys-kteatime-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kteatime.
 
+%package -n kdetoys-ktux-i18n
+Summary:	Internationalization and localization files for ktux
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktuksa
+Group:		X11/Applications
+Requires:	kdebase-screensavers-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdetoys-ktux = %{kdetoys_epoch}:%{version}
+
+%description -n kdetoys-ktux-i18n
+Internationalization and localization files for ktux.
+
+%description -n kdetoys-ktux-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ktuksa.
+
 %package -n kdetoys-kweather-i18n
 Summary:	Internationalization and localization files for kweather
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kweather
@@ -2696,436 +2788,252 @@ Internationalization and localization files for kworldclock.
 %description -n kdetoys-kworldclock-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kworldclocka.
 
-%package -n kdetoys-ktux-i18n
-Summary:	Internationalization and localization files for ktux
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktuksa
-Group:		X11/Applications
-Requires:	kdebase-screensavers-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdetoys-ktux = %{kdetoys_epoch}:%{version}
-
-%description -n kdetoys-ktux-i18n
-Internationalization and localization files for ktux.
-
-%description -n kdetoys-ktux-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ktuksa.
-
-%package -n kdetoys-fifteen-i18n
-Summary:	Internationalization and localization files for fifteen
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fifteen
-Group:		X11/Applications
-Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdetoys-fifteen = %{kdetoys_epoch}:%{version}
-
-%description -n kdetoys-fifteen-i18n
-Internationalization and localization files for fifteen.
-
-%description -n kdetoys-fifteen-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla fifteen.
-
-%package -n kdegraphics-kamera-i18n
-Summary:	Internationalization and localization files for kamera
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla programu kamera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kamera = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kamera-i18n
-Internationalization and localization files for kamera.
-
-%description -n kdegraphics-kamera-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla programu kamera.
-
-%package -n kdegraphics-kcoloredit-i18n
-Summary:	Internationalization and localization files for kcoloredit
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcoloredita
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kcoloredit = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kcoloredit-i18n
-Internationalization and localization files for kcoloredit.
-
-%description -n kdegraphics-kcoloredit-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kcoloredita.
-
-%package -n kdegraphics-kdvi-i18n
-Summary:	Internationalization and localization files for kdvi
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdvi
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kdvi = %{kdegraphics_epoch}:%{version}
-Requires:	kdegraphics-kview-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdegraphics-kdvi-i18n
-Internationalization and localization files for kdvi.
-
-%description -n kdegraphics-kdvi-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdvi.
-
-%package -n kdegraphics-kgamma-i18n
-Summary:	Internationalization and localization files for kgamma
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgamma
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kgamma = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kgamma-i18n
-Internationalization and localization files for kgamma.
-
-%description -n kdegraphics-kgamma-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kgamma.
-
-%package -n kdegraphics-kghostview-i18n
-Summary:	Internationalization and localization files for kghostview
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kghostview
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kghostview = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kghostview-i18n
-Internationalization and localization files for kghostview.
-
-%description -n kdegraphics-kghostview-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kghostview.
-
-%package -n kdegraphics-kiconedit-i18n
-Summary:	Internationalization and localization files for kiconedit
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kiconedita
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kiconedit = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kiconedit-i18n
-Internationalization and localization files for kiconedit.
-
-%description -n kdegraphics-kiconedit-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kiconedita.
-
-%package -n kdegraphics-kooka-i18n
-Summary:	Internationalization and localization files for kooka
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kooki
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kooka = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kooka-i18n
-Internationalization and localization files for kooka.
-
-%description -n kdegraphics-kooka-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kooki.
-
-%package -n kdegraphics-kolourpaint-i18n
-Summary:	Internationalization and localization files for kolourpaint
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kolourpaint
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kolourpaint = %{kdegraphics_epoch}:%{version}
-Obsoletes:	kdegraphics-kpaint-i18n
-
-%description -n kdegraphics-kolourpaint-i18n
-Internationalization and localization files for kolourpaint.
-
-%description -n kdegraphics-kolourpaint-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kolourpaint.
-
-%package -n kdegraphics-kpdf-i18n
-Summary:	Internationalization and localization files for kpdf
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpdf
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kpdf = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kpdf-i18n
-Internationalization and localization files for kpdf.
-
-%description -n kdegraphics-kpdf-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kpdf.
-
-%package -n kdegraphics-kpovmodeler-i18n
-Summary:	Internationalization and localization files for kpovmodeler
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kpovmodelera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kpovmodeler = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kpovmodeler-i18n
-Internationalization and localization files for kpovmodeler.
-
-%description -n kdegraphics-kpovmodeler-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kpovmodelera.
-
-%package -n kdegraphics-kruler-i18n
-Summary:	Internationalization and localization files for kruler
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla krulera
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kruler = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kruler-i18n
-Internationalization and localization files for kruler.
-
-%description -n kdegraphics-kruler-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla krulera.
-
-%package -n kdegraphics-ksnapshot-i18n
-Summary:	Internationalization and localization files for ksnapshot
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksnapshota
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-ksnapshot = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-ksnapshot-i18n
-Internationalization and localization files for ksnapshot.
-
-%description -n kdegraphics-ksnapshot-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksnapshota.
-
-%package -n kdegraphics-kuickshow-i18n
-Summary:	Internationalization and localization files for kuickshow
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kuickshow
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kuickshow = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kuickshow-i18n
-Internationalization and localization files for kuickshow.
-
-%description -n kdegraphics-kuickshow-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kuickshow.
-
-%package -n kdegraphics-kview-i18n
-Summary:	Internationalization and localization files for kview
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kview
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kview = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kview-i18n
-Internationalization and localization files for kview.
-
-%description -n kdegraphics-kview-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kview.
-
-%package -n kdegraphics-kviewshell-i18n
-Summary:	Internationalization and localization files for kviewshell
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kviewshell
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kviewshell = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kviewshell-i18n
-Internationalization and localization files for kviewshell.
-
-%description -n kdegraphics-kviewshell-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kviewshell.
-
-%package -n kdegraphics-ksvg-i18n
-Summary:	Internationalization and localization files for ksvg
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksvg
-Group:		X11/Applications
-Requires:	kdegraphics-ksvg = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-ksvg-i18n
-Internationalization and localization files for ksvg.
-
-%description -n kdegraphics-ksvg-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksvg.
-
-%package -n kdegraphics-kfax-i18n
-Summary:	Internationalization and localization files for kfax
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfaksa
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kfax = %{kdegraphics_epoch}:%{version}
-Requires:	kdegraphics-kview-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdegraphics-kfax-i18n
-Internationalization and localization files for kfax.
-
-%description -n kdegraphics-kfax-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfaksa.
-
-%package -n kdegraphics-kmrml-i18n
-Summary:	Internationalization and localization files for kmrml
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kmrml
-Group:		X11/Applications
-Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdegraphics-kmrml = %{kdegraphics_epoch}:%{version}
-
-%description -n kdegraphics-kmrml-i18n
-Internationalization and localization files for kmrml.
-
-%description -n kdegraphics-kmrml-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kmrml.
-
-%package -n kdegraphics-kfile-i18n
-Summary:	Internationalization and localization files for kfile
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfile'a
-Group:		X11/Applications
-Requires:	kdegraphics-kfile = %{kdegraphics_epoch}:%{version}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdegraphics-kfile-i18n
-Internationalization and localization files for kfile.
-
-%description -n kdegraphics-kfile-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kfile'a.
-
-%package -n kdeaddons-ark-i18n
+%package -n kdeutils-ark-i18n
 Summary:	Internationalization and localization files for ark
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ark
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla arka
 Group:		X11/Applications
-Requires:	kdeaddons-ark = %{kdeaddons_epoch}:%{version}
-Requires:	kdeutils-ark-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-ark = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-ark-i18n
+%description -n kdeutils-ark-i18n
 Internationalization and localization files for ark.
 
-%description -n kdeaddons-ark-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ark.
+%description -n kdeutils-ark-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla arka.
 
-%package -n kdeaddons-lnkforward-i18n
-Summary:	Internationalization and localization files for lnkforward
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla lnkforward
+%package -n kdeutils-kcalc-i18n
+Summary:	Internationalization and localization files for kcalc
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcalca
 Group:		X11/Applications
-Requires:	kdeaddons-lnkforward = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kcalc = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-lnkforward-i18n
-Internationalization and localization files for lnkforward.
+%description -n kdeutils-kcalc-i18n
+Internationalization and localization files for kcalc.
 
-%description -n kdeaddons-lnkforward-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla lnkforward.
+%description -n kdeutils-kcalc-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kcalca.
 
-%package -n kdeaddons-kvim-i18n
-Summary:	Internationalization and localization files for kvim
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kvima
+%package -n kdeutils-kcharselect-i18n
+Summary:	Internationalization and localization files for kcharselect
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kcharselecta
 Group:		X11/Applications
-Requires:	kdeaddons-kvim = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kcharselect = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-kvim-i18n
-Internationalization and localization files for kvim.
+%description -n kdeutils-kcharselect-i18n
+Internationalization and localization files for kcharselect.
 
-%description -n kdeaddons-kvim-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kvima.
+%description -n kdeutils-kcharselect-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kcharselecta.
 
-%package -n kdeaddons-kicker-i18n
-Summary:	Internationalization and localization files for kicker
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kickera
+%package -n kdeutils-kdelirc-i18n
+Summary:	Internationalization and localization files for kdelirc
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdelirca
 Group:		X11/Applications
-Requires:	kdeaddons-kicker = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kdelirc = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kdelirc-i18n
+Internationalization and localization files for kdelirc.
+
+%description -n kdeutils-kdelirc-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdelirca.
+
+%package -n kdeutils-kdessh-i18n
+Summary:	Internationalization and localization files for kdessh
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdessh
+Group:		X11/Applications
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kdessh = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kdessh-i18n
+Internationalization and localization files for kdessh.
+
+%description -n kdeutils-kdessh-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdessh.
+
+%package -n kdeutils-kdf-i18n
+Summary:	Internationalization and localization files for kdf
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdf
+Group:		X11/Applications
+Requires:	kdebase-infocenter-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kdf = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kdf-i18n
+Internationalization and localization files for kdf.
+
+%description -n kdeutils-kdf-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdf.
+
+%package -n kdeutils-kedit-i18n
+Summary:	Internationalization and localization files for kedit
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kedita
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kedit = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kedit-i18n
+Internationalization and localization files for kedit.
+
+%description -n kdeutils-kedit-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kedita.
+
+%package -n kdeutils-kfloppy-i18n
+Summary:	Internationalization and localization files for kfloppy
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kfloppy
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kfloppy = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kfloppy-i18n
+Internationalization and localization files for kfloppy.
+
+%description -n kdeutils-kfloppy-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kfloppy.
+
+%package -n kdeutils-kgpg-i18n
+Summary:	Internationalization and localization files for kgpg
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kgpg
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kgpg = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kgpg-i18n
+Internationalization and localization files for kgpg.
+
+%description -n kdeutils-kgpg-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kgpg.
+
+%package -n kdeutils-khexedit-i18n
+Summary:	Internationalization and localization files for khexedit
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla khexedita
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-khexedit = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-khexedit-i18n
+Internationalization and localization files for khexedit.
+
+%description -n kdeutils-khexedit-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla khexedita.
+
+%package -n kdeutils-kjots-i18n
+Summary:	Internationalization and localization files for kjots
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kjots
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kjots = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kjots-i18n
+Internationalization and localization files for kjots.
+
+%description -n kdeutils-kjots-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kjots.
+
+%package -n kdeutils-klaptopdaemon-i18n
+Summary:	Internationalization and localization files for klaptopdaemon
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla klaptopdaemona
+Group:		X11/Applications
+Requires:	kdebase-infocenter-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-klaptopdaemon = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-klaptopdaemon-i18n
+Internationalization and localization files for klaptopdaemon.
+
+%description -n kdeutils-klaptopdaemon-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla klaptopdaemona.
+
+%package -n kdeutils-kmilo-i18n
+Summary:	Internationalization and localization files for kmilo
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kedita
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kmilo = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kmilo-i18n
+Internationalization and localization files for kmilo.
+
+%description -n kdeutils-kmilo-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kmilo.
+
+%package -n kdeutils-kregexpeditor-i18n
+Summary:	Internationalization and localization files for kregexpeditor
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kregexpeditora
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kregexpeditor = %{kdeutils_epoch}:%{version}
+
+%description -n kdeutils-kregexpeditor-i18n
+Internationalization and localization files for kregexpeditor.
+
+%description -n kdeutils-kregexpeditor-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kregexpeditora.
+
+%package -n kdeutils-ksim-i18n
+Summary:	Internationalization and localization files for ksim
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksima
+Group:		X11/Applications
 Requires:	kdebase-desktop-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-ksim = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-kicker-i18n
-Internationalization and localization files for kicker.
+%description -n kdeutils-ksim-i18n
+Internationalization and localization files for ksim.
 
-%description -n kdeaddons-kicker-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kickera.
+%description -n kdeutils-ksim-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ksima.
 
-%package -n kdeaddons-konqueror-i18n
-Summary:	Internationalization and localization files for konqueror
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla konquerora
+%package -n kdeutils-ktimer-i18n
+Summary:	Internationalization and localization files for ktimer
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ktimera
 Group:		X11/Applications
-Requires:	kdeaddons-konqueror = %{kdeaddons_epoch}:%{version}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-ktimer = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-konqueror-i18n
-Internationalization and localization files for konqueror.
+%description -n kdeutils-ktimer-i18n
+Internationalization and localization files for ktimer.
 
-%description -n kdeaddons-konqueror-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla konquerora.
+%description -n kdeutils-ktimer-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla ktimera.
 
-%package -n kdeaddons-kontact-i18n
-Summary:	Internationalization and localization files for kontact
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kontact
+%package -n kdeutils-kwalletmanager-i18n
+Summary:	Internationalization and localization files for kwalletmanager
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwalletmanagera
 Group:		X11/Applications
-Requires:	kdeaddons-kontact = %{kdeaddons_epoch}:%{version}
-Requires:	kdenetwork-knewsticker-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-kontact-i18n
-Internationalization and localization files for kontact.
-
-%description -n kdeaddons-kontact-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kontact.
-
-%package -n kdeaddons-ksig-i18n
-Summary:	Internationalization and localization files for ksig
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla ksig
-Group:		X11/Applications
-Requires:	kdeaddons-ksig = %{kdeaddons_epoch}:%{version}
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-kwalletmanager = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-ksig-i18n
-Internationalization and localization files for ksig.
+%description -n kdeutils-kwalletmanager-i18n
+Internationalization and localization files for kwalletmanager.
 
-%description -n kdeaddons-ksig-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla ksig.
+%description -n kdeutils-kwalletmanager-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kwalletmanagera.
 
-%package -n kdeaddons-kaddressbook-i18n
-Summary:	Internationalization and localization files for kaddressbook
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kaddressbook
+%package -n kdeutils-superkaramba-i18n
+Summary:	Internationalization and localization files for superkaramba
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kwalletmanagera
 Group:		X11/Applications
-Requires:	kdeaddons-kaddressbook-plugins = %{kdeaddons_epoch}:%{version}
-Requires:	kdepim-kaddressbook-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeutils-superkaramba = %{kdeutils_epoch}:%{version}
 
-%description -n kdeaddons-kaddressbook-i18n
-Internationalization and localization files for kaddressbook.
+%description -n kdeutils-superkaramba-i18n
+Internationalization and localization files for superkaramba.
 
-%description -n kdeaddons-kaddressbook-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kaddressbook.
+%description -n kdeutils-superkaramba-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla superkaramba.
 
-%package -n kdeaddons-kate-i18n
-Summary:	Internationalization and localization files for kate
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kate
+%package -n kdevelop-i18n
+Summary:	Internationalization and localization files for kdevelop
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kdevelopa
 Group:		X11/Applications
-Requires:	kdeaddons-kate = %{kdeaddons_epoch}:%{version}
-Requires:	kdebase-kate-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdevelop >= %{kdevelop_epoch}:%{kdevelop_version}
 
-%description -n kdeaddons-kate-i18n
-Internationalization and localization files for kate.
+%description -n kdevelop-i18n
+Internationalization and localization files for kdevelop.
 
-%description -n kdeaddons-kate-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kate.
-
-%package -n kdeaddons-fsview-i18n
-Summary:	Internationalization and localization files for fsview
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla fsview
-Group:		X11/Applications
-Requires:	kdeaddons-fsview = %{kdeaddons_epoch}:%{version}
-Requires:	konqueror-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-fsview-i18n
-Internationalization and localization files for fsview.
-
-%description -n kdeaddons-fsview-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla fsview.
-
-%package -n kdeaddons-noatun-i18n
-Summary:	Internationalization and localization files for noatun
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla noatun
-Group:		X11/Applications
-Requires:	kdeaddons-noatun = %{kdeaddons_epoch}:%{version}
-Requires:	kdemultimedia-noatun-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-noatun-i18n
-Internationalization and localization files for noatun.
-
-%description -n kdeaddons-noatun-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla noatun.
-
-%package -n kdeaddons-atlantikdesigner-i18n
-Summary:	Internationalization and localization files for atlantikdesigner
-Summary(pl):	Pliki umiêdzynarodawiaj±ce dla atlantikdesigner
-Group:		X11/Applications
-Requires:	kdeaddons-atlantikdesigner = %{kdeaddons_epoch}:%{version}
-Requires:	kdegames-atlantik-i18n = %{epoch}:%{version}-%{release}
-
-%description -n kdeaddons-atlantikdesigner-i18n
-Internationalization and localization files for atlantikdesigner.
-
-%description -n kdeaddons-atlantikdesigner-i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla atlantikdesigner.
+%description -n kdevelop-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kdevelopa.
 
 %package -n kdewebdev-kfilereplace-i18n
 Summary:	Internationalization and localization files for kfilereplace
@@ -3207,19 +3115,113 @@ Internationalization and localization files for quanta.
 %description -n kdewebdev-quanta-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla quanta.
 
-%package -n kde-kgreet-classic-i18n
-Summary:	KDE greeter libraries - i18n
-Summary(pl):	Biblioteki s³u¿±ce do zapytañ o has³o - t³umaczenia
+%package -n kdm-i18n
+Summary:	Internationalization and localization files for kdm
+Summary(pl):	T³umaczenia dla kdm-a
 Group:		X11/Applications
-Requires:	kde-kgreet-classic = %{kdebase_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdm = %{kdebase_epoch}:%{version}
+
+%description -n kdm-i18n
+Internationalization and localization files for kdm.
+
+%description -n kdm-i18n -l pl
+T³umaczenia dla kdm-a.
+
+%package -n konqueror-i18n
+Summary:	Internationalization and localization files for konqueror
+Summary(pl):	T³umaczenia dla konquerora
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdebase-konsole-i18n = %{epoch}:%{version}-%{release}
+Requires:	konqueror = %{kdebase_epoch}:%{version}
+Requires:	konqueror-libs-i18n = %{epoch}:%{version}-%{release}
+
+%description -n konqueror-i18n
+Internationalization and localization files for konqueror.
+
+%description -n konqueror-i18n -l pl
+T³umaczenia dla konquerora.
+
+%package -n konqueror-libs-i18n
+Summary:	Internationalization and localization files for libkonq
+Summary(pl):	T³umaczenia dla libkonq
+Group:		X11/Applications
+Requires:	konqueror-libs = %{kdebase_epoch}:%{version}
+Obsoletes:	kdebase-libkonq-i18n
+
+%description -n konqueror-libs-i18n
+Internationalization and localization files for libkonq.
+
+%description -n konqueror-libs-i18n -l pl
+T³umaczenia dla libkonq.
+
+%if 0
+%package -n kdenetwork-rss-i18n
+Summary:	Internationalization and localization files for rss
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla rss
+Group:		X11/Applications
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdenetwork-rss = %{kdenetwork_epoch}:%{version}
 
-%description -n kde-kgreet-classic-i18n
-Tools for asking for passwords in the classic, default look - i18n.
+%description -n kdenetwork-rss-i18n
+Internationalization and localization files for rss.
 
-%description -n kde-kgreet-classic-i18n -l pl
-Narzêdzia s³u¿±ce do zapytañ o has³o - klasyczny, domy¶lny motyw
-wygl±du - t³umaczenia.
+%description -n kdenetwork-rss-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla rss.
+
+%package -n kdeedu-flashkard-i18n
+Summary:	Internationalization and localization files for flashkard
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla flashkarda
+Group:		X11/Applications
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdeedu-flashkard = %{kdeedu_epoch}:%{version}
+
+%description -n kdeedu-flashkard-i18n
+Internationalization and localization files for flashkard.
+
+%description -n kdeedu-flashkard-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla flashkarda.
+
+%package -n kdegames-megami-i18n
+Summary:	Internationalization and localization files for megami
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla megami
+Group:		X11/Applications
+Requires:	kdegames-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdegames-megami = %{kdegames_epoch}:%{version}
+
+%description -n kdegames-megami-i18n
+Internationalization and localization files for megami.
+
+%description -n kdegames-megami-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla megami.
+
+%package -n kdeaddons-kvim-i18n
+Summary:	Internationalization and localization files for kvim
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kvima
+Group:		X11/Applications
+Requires:	kdeaddons-kvim = %{kdeaddons_epoch}:%{version}
+Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-kvim-i18n
+Internationalization and localization files for kvim.
+
+%description -n kdeaddons-kvim-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kvima.
+
+%package -n kdeaddons-kontact-i18n
+Summary:	Internationalization and localization files for kontact
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kontact
+Group:		X11/Applications
+Requires:	kdeaddons-kontact = %{kdeaddons_epoch}:%{version}
+Requires:	kdenetwork-knewsticker-i18n = %{epoch}:%{version}-%{release}
+
+%description -n kdeaddons-kontact-i18n
+Internationalization and localization files for kontact.
+
+%description -n kdeaddons-kontact-i18n -l pl
+Pliki umiêdzynarodawiaj±ce dla kontact.
+%endif
 
 %prep
 %setup -qcT %(seq -f '-a %g' 0 64 | xargs)
@@ -3292,8 +3294,10 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libkdehighscores.mo
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/libkdenetwork.mo
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/vimpart.mo
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/ro/LC_MESSAGES/kviewtemplateplugin.mo
 
 	# kmessedwords renamed to kanagram
+	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kmessedwords.mo
 	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kmessedwords
 
 	# useless for the user
@@ -3312,9 +3316,6 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm -f __find.*
 	touch installed.stamp
 fi
-
-	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kmessedwords.mo
-	rm $RPM_BUILD_ROOT%{_datadir}/locale/ro/LC_MESSAGES/kviewtemplateplugin.mo
 
 rm -f *.lang
 
@@ -4396,9 +4397,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdepim-libs-i18n -f kdepim-libs-i18n.lang
 %defattr(644,root,root,755)
-%files -n kdesdk-kapptemplate-i18n -f kdesdk-kapptemplate-i18n.lang
-%defattr(644,root,root,755)
 %files -n kdesdk-cervisia-i18n -f kdesdk-cervisia-i18n.lang
+%defattr(644,root,root,755)
+%files -n kdesdk-kapptemplate-i18n -f kdesdk-kapptemplate-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdesdk-kbabel-i18n -f kdesdk-kbabel-i18n.lang
 %defattr(644,root,root,755)
