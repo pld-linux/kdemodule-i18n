@@ -1,9 +1,6 @@
 # NOTE
 # - difference between kdemodule-i18n and kde-i18n is that one is per
 #   package and other is per language.
-# TODO:
-# - unpackaged files:
-#   http://glen.alkohol.ee/pld/kdemodule-i18n-3.5.6_14.txt
 #
 %define		_name			kde-i18n
 %define		kdeaddons_epoch		1
@@ -3234,6 +3231,21 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/kmessedwords.mo
 	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kmessedwords
 
+	# kpaint renamed (obsoleted) by kolourpaint
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/es/kpaint
+
+	# kdeadmin/kxconfig - not in kde tarballs, moved to kdenonbeta
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kxconfig
+	# kdeadmin/kwuftpd - not in kde tarballs, moved to kdenonbeta
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kwuftpd
+	# kdemultimedia/kmidi - moved to kdenonbeta
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/kmidi
+
+	# kdegames/megami - obsoleted
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/megami
+	# kdeedu/flashkard - obsoleted
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/*/flashkard
+
 	# useless for the user
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/fa/COPYING
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/nb/README
@@ -3242,6 +3254,8 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/fr/relecture_docs
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/fr/relecture_gui
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/da/da.compendium
+	rm -r $RPM_BUILD_ROOT%{_kdedocdir}/pt_BR/api
+	rm $RPM_BUILD_ROOT%{_kdedocdir}/es/api/*.png
 
 	# junk
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/mn/30x16.png
@@ -3385,16 +3399,13 @@ kde_find_lang kdeadmin-ksysv-i18n ksysv secpolicy
 kde_find_lang kdeadmin-kuser-i18n kuser
 kde_find_lang kdeartwork-screensavers-i18n klock kpartsaver kxsconfig
 kde_find_lang kdebase-core-i18n "
-	colors
 	drkonqi
-	fonts
 	kcmaccessibility
 	kcmcolors
 	kcmfonts
 	kcmkded
 	kcmlocale
 	kcmprintmgr
-	kcmstyle
 	kcontrol
 	kdebugdialog
 	kdeprint
@@ -3408,10 +3419,16 @@ kde_find_lang kdebase-core-i18n "
 	kio_settings
 	kio_thumbnail
 	knetattach
+	kompmgr
 	kprinter
 	kstyle_keramik_config
-	language
 "
+# kcmstyle is subdir of kcontrol in %{_kdedocdir} which we already scanned but
+# it's are also as .mo, so scan just .mo
+%find_lang kcmstyle
+cat kcmstyle.lang >> kdebase-core-i18n.lang
+rm -f kcmstyle
+
 kde_find_lang kdebase-desktop-i18n "
 	arts
 	background
@@ -3617,7 +3634,7 @@ kde_find_lang kdegraphics-kgamma-i18n kgamma
 kde_find_lang kdegraphics-kghostview-i18n kghostview
 kde_find_lang kdegraphics-kiconedit-i18n kiconedit
 kde_find_lang kdegraphics-kmrml-i18n kmrml
-kde_find_lang kdegraphics-kolourpaint-i18n kolourpaint # 'kpaint' obsoleted by kolourpaint?
+kde_find_lang kdegraphics-kolourpaint-i18n kolourpaint
 kde_find_lang kdegraphics-kooka-i18n kooka libkscan
 kde_find_lang kdegraphics-kpdf-i18n kpdf
 kde_find_lang kdegraphics-kpovmodeler-i18n kpovmodeler
