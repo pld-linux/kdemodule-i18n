@@ -3395,6 +3395,7 @@ kde_find_lang kdebase-core-i18n "
 	kcmlocale
 	kcmprintmgr
 	kcmstyle
+	kcontrol
 	kdebugdialog
 	kdeprint
 	kdeprint_part
@@ -3953,22 +3954,6 @@ for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
 	if [ -d $i ] ; then
 		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
 		echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> kdebase-core-i18n.lang
-	fi
-done
-
-%find_lang kcontrol --with-kde
-grep '\.mo' kcontrol.lang >> kdebase-core-i18n.lang
-
-sed -e 's,%{_prefix},%dir %{_prefix},g' kcontrol.lang | grep HTML >> kdebase-core-i18n.lang
-
-for i in $RPM_BUILD_ROOT%{_kdedocdir}/*/kcontrol/index.docbook; do
-	echo $i
-	if [ -f $i ]; then
-		z=`echo $i | sed -e "s,$RPM_BUILD_ROOT%{_kdedocdir},,g"`
-		lang=`echo $z | cut -d'/' -f2`
-		if [ -n "$lang" ] ; then
-			echo -e "%lang($lang) %{_kdedocdir}/$lang/kcontrol/*.*" >> kdebase-core-i18n.lang
-		fi
 	fi
 done
 
