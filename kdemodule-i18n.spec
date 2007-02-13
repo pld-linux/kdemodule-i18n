@@ -194,8 +194,8 @@ Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Tools for asking for passwords in the classic, default look - i18n.
 
 %description -n kde-kgreet-classic-i18n -l pl.UTF-8
-Narzędzia służące do zapytań o hasło - klasyczny, domyślny motyw
-wyglądu - tłumaczenia.
+Narzędzia służące do zapytań o hasło - klasyczny, domyślny
+motyw wyglądu - tłumaczenia.
 
 %package -n kde-kio-groupwise-i18n
 Summary:	Internationalization and localization files for groupwise ioslave
@@ -3261,6 +3261,14 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/mn/30x16.png
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/mn/60x40.png
 
+	# old ones, by some coolo:
+	# DON'T PACKAGE KMATHTOOL
+	rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
+	rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
+	# Not packaging kmobile, it was disabled by coolo
+	# We don't build kcardchooser (disabled by default by coolo)
+	# re-enabling it would be posssible, but what for?
+
 	rm -f __find.*
 	touch installed.stamp
 fi
@@ -3910,92 +3918,6 @@ kde_find_lang konqueror-i18n "
 "
 kde_find_lang konqueror-libs-i18n libkonq
 
-# package dirs
-for i in $(find $RPM_BUILD_ROOT%{_kdedocdir}  -maxdepth 1 -mindepth 1 -printf "%f\n"); do
-	echo "%dir %{_kdedocdir}/${i}" >> kdelibs-i18n.lang
-done
-
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/klatin/data/vocabs/*; do
-	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdeedu-klatin-i18n.lang
-done
-
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/*.xml; do
-	t=${a##*logokeywords.}
-	lang=${t%.xml}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdeedu-kturtle-i18n.lang
-done
-
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/*; do
-	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdeedu-kturtle-i18n.lang
-done
-
-
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/kanagram/data/*; do
-	lang=${a##*/}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdeedu-kanagram-i18n.lang
-done
-
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/*; do
-	if [ -d $i ]; then
-		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/ktuberling/sounds/,,`
-		echo "%lang($z) %{_datadir}/apps/ktuberling/sounds/$z" >> kdegames-ktuberling-i18n.lang
-	fi
-done
-
-# TODO: to kate?
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.*.xml; do
-	t=${a##*/logohighlightstyle.}
-	lang=${t%.xml}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdelibs-i18n.lang
-done
-
-
-# DON'T PACKAGE KMATHTOOL
-rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kmathtool.mo
-rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/*/kmathtool
-
-# Not packaging kmobile, it was disabled by coolo
-
-# We don't build kcardchooser (disabled by default by coolo)
-# re-enabling it would be posssible, but what for?
-
-for i in $RPM_BUILD_ROOT%{_datadir}/locale/*; do
-	echo $i
-	if [ -d $i ] ; then
-		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/locale/,,`
-		echo "%lang($z) %{_datadir}/locale/$z/[cef]*" >> kdebase-core-i18n.lang
-	fi
-done
-
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/*; do
-	echo $i
-	if [ -d $i ]; then
-		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/khangman/data/,,`
-		echo "%lang($z) %{_datadir}/apps/khangman/data/$z" >> kdeedu-khangman-i18n.lang
-	fi
-done
-for a in $RPM_BUILD_ROOT%{_datadir}/apps/khangman/*.txt; do
-	t=${a##*/}
-	lang=${t%.txt}
-	path=${a#$RPM_BUILD_ROOT}
-	echo "%lang($lang) $path" >> kdeedu-khangman-i18n.lang
-done
-
-for i in $RPM_BUILD_ROOT%{_datadir}/apps/klettres/*; do
-	echo $i
-	if [ -d $i ]; then
-		z=`echo $i|sed -e s,$RPM_BUILD_ROOT%{_datadir}/apps/klettres/,,`
-		echo "%lang($z) %{_datadir}/apps/klettres/$z" >> kdeedu-klettres-i18n.lang
-	fi
-done
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -4067,8 +3989,206 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeartwork-screensavers-i18n -f kdeartwork-screensavers-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdebase-core-i18n -f kdebase-core-i18n.lang
 %defattr(644,root,root,755)
+%lang(af) %{_datadir}/locale/af/charset
+%lang(af) %{_datadir}/locale/af/entry.desktop
+%lang(af) %{_datadir}/locale/af/flag.png
+%lang(ar) %{_datadir}/locale/ar/charset
+%lang(ar) %{_datadir}/locale/ar/entry.desktop
+#%lang(ar) %{_datadir}/locale/ar/flag.png
+%lang(az) %{_datadir}/locale/az/charset
+%lang(az) %{_datadir}/locale/az/entry.desktop
+%lang(az) %{_datadir}/locale/az/flag.png
+%lang(bg) %{_datadir}/locale/bg/charset
+%lang(bg) %{_datadir}/locale/bg/entry.desktop
+%lang(bg) %{_datadir}/locale/bg/flag.png
+%lang(bn) %{_datadir}/locale/bn/charset
+%lang(bn) %{_datadir}/locale/bn/entry.desktop
+#%lang(bn) %{_datadir}/locale/bn/flag.png
+%lang(br) %{_datadir}/locale/br/charset
+%lang(br) %{_datadir}/locale/br/entry.desktop
+%lang(br) %{_datadir}/locale/br/flag.png
+%lang(bs) %{_datadir}/locale/bs/charset
+%lang(bs) %{_datadir}/locale/bs/entry.desktop
+%lang(bs) %{_datadir}/locale/bs/flag.png
+%lang(ca) %{_datadir}/locale/ca/charset
+%lang(ca) %{_datadir}/locale/ca/entry.desktop
+%lang(ca) %{_datadir}/locale/ca/flag.png
+%lang(cs) %{_datadir}/locale/cs/charset
+%lang(cs) %{_datadir}/locale/cs/entry.desktop
+%lang(cs) %{_datadir}/locale/cs/flag.png
+%lang(cy) %{_datadir}/locale/cy/charset
+%lang(cy) %{_datadir}/locale/cy/entry.desktop
+%lang(cy) %{_datadir}/locale/cy/flag.png
+%lang(da) %{_datadir}/locale/da/charset
+%lang(da) %{_datadir}/locale/da/entry.desktop
+%lang(da) %{_datadir}/locale/da/flag.png
+%lang(de) %{_datadir}/locale/de/charset
+%lang(de) %{_datadir}/locale/de/entry.desktop
+%lang(de) %{_datadir}/locale/de/flag.png
+%lang(el) %{_datadir}/locale/el/charset
+%lang(el) %{_datadir}/locale/el/entry.desktop
+%lang(el) %{_datadir}/locale/el/flag.png
+%lang(en_GB) %{_datadir}/locale/en_GB/charset
+%lang(en_GB) %{_datadir}/locale/en_GB/entry.desktop
+%lang(en_GB) %{_datadir}/locale/en_GB/flag.png
+%lang(eo) %{_datadir}/locale/eo/charset
+%lang(eo) %{_datadir}/locale/eo/entry.desktop
+%lang(eo) %{_datadir}/locale/eo/flag.png
+%lang(es) %{_datadir}/locale/es/charset
+%lang(es) %{_datadir}/locale/es/entry.desktop
+%lang(es) %{_datadir}/locale/es/flag.png
+%lang(et) %{_datadir}/locale/et/charset
+%lang(et) %{_datadir}/locale/et/entry.desktop
+%lang(et) %{_datadir}/locale/et/flag.png
+%lang(eu) %{_datadir}/locale/eu/charset
+%lang(eu) %{_datadir}/locale/eu/entry.desktop
+%lang(eu) %{_datadir}/locale/eu/flag.png
+%lang(fa) %{_datadir}/locale/fa/charset
+%lang(fa) %{_datadir}/locale/fa/entry.desktop
+%lang(fa) %{_datadir}/locale/fa/flag.png
+%lang(fi) %{_datadir}/locale/fi/charset
+%lang(fi) %{_datadir}/locale/fi/entry.desktop
+%lang(fi) %{_datadir}/locale/fi/flag.png
+%lang(fr) %{_datadir}/locale/fr/charset
+%lang(fr) %{_datadir}/locale/fr/entry.desktop
+%lang(fr) %{_datadir}/locale/fr/flag.png
+%lang(fy) %{_datadir}/locale/fy/charset
+%lang(fy) %{_datadir}/locale/fy/entry.desktop
+#%lang(fy) %{_datadir}/locale/fy/flag.png
+%lang(ga) %{_datadir}/locale/ga/charset
+%lang(ga) %{_datadir}/locale/ga/entry.desktop
+%lang(ga) %{_datadir}/locale/ga/flag.png
+%lang(gl) %{_datadir}/locale/gl/charset
+%lang(gl) %{_datadir}/locale/gl/entry.desktop
+%lang(gl) %{_datadir}/locale/gl/flag.png
+%lang(he) %{_datadir}/locale/he/charset
+%lang(he) %{_datadir}/locale/he/entry.desktop
+%lang(he) %{_datadir}/locale/he/flag.png
+%lang(hi) %{_datadir}/locale/hi/charset
+%lang(hi) %{_datadir}/locale/hi/entry.desktop
+#%lang(hi) %{_datadir}/locale/hi/flag.png
+%lang(hr) %{_datadir}/locale/hr/charset
+%lang(hr) %{_datadir}/locale/hr/entry.desktop
+%lang(hr) %{_datadir}/locale/hr/flag.png
+%lang(hu) %{_datadir}/locale/hu/charset
+%lang(hu) %{_datadir}/locale/hu/entry.desktop
+%lang(hu) %{_datadir}/locale/hu/flag.png
+%lang(is) %{_datadir}/locale/is/charset
+%lang(is) %{_datadir}/locale/is/entry.desktop
+%lang(is) %{_datadir}/locale/is/flag.png
+%lang(it) %{_datadir}/locale/it/charset
+%lang(it) %{_datadir}/locale/it/entry.desktop
+%lang(it) %{_datadir}/locale/it/flag.png
+%lang(ja) %{_datadir}/locale/ja/charset
+%lang(ja) %{_datadir}/locale/ja/entry.desktop
+%lang(ja) %{_datadir}/locale/ja/flag.png
+%lang(kk) %{_datadir}/locale/kk/charset
+%lang(kk) %{_datadir}/locale/kk/entry.desktop
+%lang(kk) %{_datadir}/locale/kk/flag.png
+%lang(km) %{_datadir}/locale/km/charset
+%lang(km) %{_datadir}/locale/km/entry.desktop
+%lang(km) %{_datadir}/locale/km/flag.png
+%lang(ko) %{_datadir}/locale/ko/charset
+%lang(ko) %{_datadir}/locale/ko/entry.desktop
+%lang(ko) %{_datadir}/locale/ko/flag.png
+%lang(lt) %{_datadir}/locale/lt/charset
+%lang(lt) %{_datadir}/locale/lt/entry.desktop
+%lang(lt) %{_datadir}/locale/lt/flag.png
+%lang(lv) %{_datadir}/locale/lv/charset
+%lang(lv) %{_datadir}/locale/lv/entry.desktop
+%lang(lv) %{_datadir}/locale/lv/flag.png
+%lang(mk) %{_datadir}/locale/mk/charset
+%lang(mk) %{_datadir}/locale/mk/entry.desktop
+%lang(mk) %{_datadir}/locale/mk/flag.png
+%lang(mn) %{_datadir}/locale/mn/charset
+%lang(mn) %{_datadir}/locale/mn/entry.desktop
+#%lang(mn) %{_datadir}/locale/mn/flag.png
+%lang(mn) %{_datadir}/locale/mn/flag_new_30x16.png
+%lang(ms) %{_datadir}/locale/ms/charset
+%lang(ms) %{_datadir}/locale/ms/entry.desktop
+#%lang(ms) %{_datadir}/locale/ms/flag.png
+%lang(nb) %{_datadir}/locale/nb/charset
+%lang(nb) %{_datadir}/locale/nb/entry.desktop
+%lang(nb) %{_datadir}/locale/nb/flag.png
+%lang(nds) %{_datadir}/locale/nds/charset
+%lang(nds) %{_datadir}/locale/nds/entry.desktop
+#%lang(nds) %{_datadir}/locale/nds/flag.png
+%lang(nl) %{_datadir}/locale/nl/charset
+%lang(nl) %{_datadir}/locale/nl/entry.desktop
+%lang(nl) %{_datadir}/locale/nl/flag.png
+%lang(nn) %{_datadir}/locale/nn/charset
+%lang(nn) %{_datadir}/locale/nn/entry.desktop
+%lang(nn) %{_datadir}/locale/nn/flag.png
+%lang(pa) %{_datadir}/locale/pa/charset
+%lang(pa) %{_datadir}/locale/pa/entry.desktop
+#%lang(pa) %{_datadir}/locale/pa/flag.png
+%lang(pl) %{_datadir}/locale/pl/charset
+%lang(pl) %{_datadir}/locale/pl/entry.desktop
+%lang(pl) %{_datadir}/locale/pl/flag.png
+%lang(pt) %{_datadir}/locale/pt/charset
+%lang(pt) %{_datadir}/locale/pt/entry.desktop
+%lang(pt) %{_datadir}/locale/pt/flag.png
+%lang(pt_BR) %{_datadir}/locale/pt_BR/charset
+%lang(pt_BR) %{_datadir}/locale/pt_BR/entry.desktop
+%lang(pt_BR) %{_datadir}/locale/pt_BR/flag.png
+%lang(ro) %{_datadir}/locale/ro/charset
+%lang(ro) %{_datadir}/locale/ro/entry.desktop
+%lang(ro) %{_datadir}/locale/ro/flag.png
+%lang(ru) %{_datadir}/locale/ru/charset
+%lang(ru) %{_datadir}/locale/ru/entry.desktop
+%lang(ru) %{_datadir}/locale/ru/flag.png
+%lang(rw) %{_datadir}/locale/rw/charset
+%lang(rw) %{_datadir}/locale/rw/entry.desktop
+#%lang(rw) %{_datadir}/locale/rw/flag.png
+%lang(se) %{_datadir}/locale/se/charset
+%lang(se) %{_datadir}/locale/se/entry.desktop
+%lang(se) %{_datadir}/locale/se/flag.png
+%lang(sk) %{_datadir}/locale/sk/charset
+%lang(sk) %{_datadir}/locale/sk/entry.desktop
+%lang(sk) %{_datadir}/locale/sk/flag.png
+%lang(sl) %{_datadir}/locale/sl/charset
+%lang(sl) %{_datadir}/locale/sl/entry.desktop
+%lang(sl) %{_datadir}/locale/sl/flag.png
+%lang(sr) %{_datadir}/locale/sr/charset
+%lang(sr) %{_datadir}/locale/sr/entry.desktop
+%lang(sr) %{_datadir}/locale/sr/flag.png
+%lang(sr@Latn) %{_datadir}/locale/sr@Latn/charset
+%lang(sr@Latn) %{_datadir}/locale/sr@Latn/entry.desktop
+%lang(sr@Latn) %{_datadir}/locale/sr@Latn/flag.png
+%lang(ss) %{_datadir}/locale/ss/charset
+%lang(ss) %{_datadir}/locale/ss/entry.desktop
+#%lang(ss) %{_datadir}/locale/ss/flag.png
+%lang(sv) %{_datadir}/locale/sv/charset
+%lang(sv) %{_datadir}/locale/sv/entry.desktop
+%lang(sv) %{_datadir}/locale/sv/flag.png
+%lang(ta) %{_datadir}/locale/ta/charset
+%lang(ta) %{_datadir}/locale/ta/entry.desktop
+%lang(ta) %{_datadir}/locale/ta/flag.png
+%lang(tg) %{_datadir}/locale/tg/charset
+%lang(tg) %{_datadir}/locale/tg/entry.desktop
+#%lang(tg) %{_datadir}/locale/tg/flag.png
+%lang(tr) %{_datadir}/locale/tr/charset
+%lang(tr) %{_datadir}/locale/tr/entry.desktop
+%lang(tr) %{_datadir}/locale/tr/flag.png
+%lang(uk) %{_datadir}/locale/uk/charset
+%lang(uk) %{_datadir}/locale/uk/entry.desktop
+%lang(uk) %{_datadir}/locale/uk/flag.png
+%lang(uz) %{_datadir}/locale/uz/charset
+%lang(uz) %{_datadir}/locale/uz/entry.desktop
+%lang(uz) %{_datadir}/locale/uz/flag.png
+%lang(vi) %{_datadir}/locale/vi/charset
+%lang(vi) %{_datadir}/locale/vi/entry.desktop
+%lang(vi) %{_datadir}/locale/vi/flag.png
+%lang(zh_CN) %{_datadir}/locale/zh_CN/charset
+%lang(zh_CN) %{_datadir}/locale/zh_CN/entry.desktop
+%lang(zh_CN) %{_datadir}/locale/zh_CN/flag.png
+%lang(zh_TW) %{_datadir}/locale/zh_TW/charset
+%lang(zh_TW) %{_datadir}/locale/zh_TW/entry.desktop
+%lang(zh_TW) %{_datadir}/locale/zh_TW/flag.png
+
 %files -n kdebase-desktop-i18n -f kdebase-desktop-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdebase-desktop-libs-i18n -f kdebase-desktop-libs-i18n.lang
@@ -4111,23 +4231,91 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-kalzium-i18n -f kdeedu-kalzium-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdeedu-kanagram-i18n -f kdeedu-kanagram-i18n.lang
 %defattr(644,root,root,755)
+%lang(de) %{_datadir}/apps/kanagram/data/de
+%lang(et) %{_datadir}/apps/kanagram/data/et
+%lang(fr) %{_datadir}/apps/kanagram/data/fr
+%lang(it) %{_datadir}/apps/kanagram/data/it
+
 %files -n kdeedu-kbruch-i18n -f kdeedu-kbruch-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-keduca-i18n -f kdeedu-keduca-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kgeography-i18n -f kdeedu-kgeography-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdeedu-khangman-i18n -f kdeedu-khangman-i18n.lang
 %defattr(644,root,root,755)
+%lang(bg) %{_datadir}/apps/khangman/data/bg
+%lang(ca) %{_datadir}/apps/khangman/ca.txt
+%lang(cs) %{_datadir}/apps/khangman/cs.txt
+%lang(da) %{_datadir}/apps/khangman/da.txt
+%lang(de) %{_datadir}/apps/khangman/de.txt
+%lang(es) %{_datadir}/apps/khangman/es.txt
+%lang(et) %{_datadir}/apps/khangman/et.txt
+%lang(fi) %{_datadir}/apps/khangman/fi.txt
+%lang(fr) %{_datadir}/apps/khangman/fr.txt
+%lang(ga) %{_datadir}/apps/khangman/ga.txt
+%lang(hu) %{_datadir}/apps/khangman/hu.txt
+%lang(nb) %{_datadir}/apps/khangman/nb.txt
+%lang(nn) %{_datadir}/apps/khangman/nn.txt
+%lang(pl) %{_datadir}/apps/khangman/pl.txt
+%lang(pt) %{_datadir}/apps/khangman/pt.txt
+%lang(pt_BR) %{_datadir}/apps/khangman/pt_BR.txt
+%lang(sl) %{_datadir}/apps/khangman/sl.txt
+%lang(sr@Latn) %{_datadir}/apps/khangman/sr@Latn.txt
+%lang(sv) %{_datadir}/apps/khangman/sv.txt
+%lang(tg) %{_datadir}/apps/khangman/tg.txt
+%lang(tr) %{_datadir}/apps/khangman/tr.txt
+
+%lang(ca) %{_datadir}/apps/khangman/data/ca
+%lang(cs) %{_datadir}/apps/khangman/data/cs
+%lang(da) %{_datadir}/apps/khangman/data/da
+%lang(de) %{_datadir}/apps/khangman/data/de
+%lang(es) %{_datadir}/apps/khangman/data/es
+%lang(et) %{_datadir}/apps/khangman/data/et
+%lang(fi) %{_datadir}/apps/khangman/data/fi
+%lang(fr) %{_datadir}/apps/khangman/data/fr
+%lang(ga) %{_datadir}/apps/khangman/data/ga
+%lang(hu) %{_datadir}/apps/khangman/data/hu
+%lang(it) %{_datadir}/apps/khangman/data/it
+%lang(nb) %{_datadir}/apps/khangman/data/nb
+%lang(nl) %{_datadir}/apps/khangman/data/nl
+%lang(nn) %{_datadir}/apps/khangman/data/nn
+%lang(pl) %{_datadir}/apps/khangman/data/pl
+%lang(pt) %{_datadir}/apps/khangman/data/pt
+%lang(pt_BR) %{_datadir}/apps/khangman/data/pt_BR
+%lang(ru) %{_datadir}/apps/khangman/data/ru
+%lang(sl) %{_datadir}/apps/khangman/data/sl
+%lang(sr) %{_datadir}/apps/khangman/data/sr
+%lang(sr@Latn) %{_datadir}/apps/khangman/data/sr@Latn
+%lang(sv) %{_datadir}/apps/khangman/data/sv
+%lang(tg) %{_datadir}/apps/khangman/data/tg
+%lang(tr) %{_datadir}/apps/khangman/data/tr
+
 %files -n kdeedu-kig-i18n -f kdeedu-kig-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kiten-i18n -f kdeedu-kiten-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdeedu-klatin-i18n -f kdeedu-klatin-i18n.lang
 %defattr(644,root,root,755)
+%lang(it) %{_datadir}/apps/klatin/data/vocabs/it
+
 %files -n kdeedu-klettres-i18n -f kdeedu-klettres-i18n.lang
+%defattr(644,root,root,755)
+%lang(cs) %{_datadir}/apps/klettres/cs
+%lang(da) %{_datadir}/apps/klettres/da
+%lang(de) %{_datadir}/apps/klettres/de
+%lang(en_GB) %{_datadir}/apps/klettres/en_GB
+%lang(es) %{_datadir}/apps/klettres/es
+%lang(he) %{_datadir}/apps/klettres/he
+%lang(it) %{_datadir}/apps/klettres/it
+%lang(nl) %{_datadir}/apps/klettres/nl
+%lang(sk) %{_datadir}/apps/klettres/sk
+
 %defattr(644,root,root,755)
 %files -n kdeedu-kmplot-i18n -f kdeedu-kmplot-i18n.lang
 %defattr(644,root,root,755)
@@ -4137,8 +4325,41 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeedu-ktouch-i18n -f kdeedu-ktouch-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdeedu-kturtle-i18n -f kdeedu-kturtle-i18n.lang
 %defattr(644,root,root,755)
+%lang(ca) %{_datadir}/apps/kturtle/data/logokeywords.ca.xml
+%lang(de_DE) %{_datadir}/apps/kturtle/data/logokeywords.de_DE.xml
+%lang(en_GB) %{_datadir}/apps/kturtle/data/logokeywords.en_GB.xml
+%lang(es) %{_datadir}/apps/kturtle/data/logokeywords.es.xml
+%lang(fr_FR) %{_datadir}/apps/kturtle/data/logokeywords.fr_FR.xml
+%lang(it) %{_datadir}/apps/kturtle/data/logokeywords.it.xml
+%lang(nl) %{_datadir}/apps/kturtle/data/logokeywords.nl.xml
+%lang(pl) %{_datadir}/apps/kturtle/data/logokeywords.pl.xml
+%lang(pt_BR) %{_datadir}/apps/kturtle/data/logokeywords.pt_BR.xml
+%lang(ru) %{_datadir}/apps/kturtle/data/logokeywords.ru.xml
+%lang(sk) %{_datadir}/apps/kturtle/data/logokeywords.sk.xml
+%lang(sl) %{_datadir}/apps/kturtle/data/logokeywords.sl.xml
+%lang(sr) %{_datadir}/apps/kturtle/data/logokeywords.sr.xml
+%lang(sr@Latn) %{_datadir}/apps/kturtle/data/logokeywords.sr@Latn.xml
+%lang(sv) %{_datadir}/apps/kturtle/data/logokeywords.sv.xml
+
+%lang(ca) %{_datadir}/apps/kturtle/examples/ca
+%lang(de_DE) %{_datadir}/apps/kturtle/examples/de_DE
+%lang(en_GB) %{_datadir}/apps/kturtle/examples/en_GB
+%lang(es) %{_datadir}/apps/kturtle/examples/es
+%lang(fr_FR) %{_datadir}/apps/kturtle/examples/fr_FR
+%lang(it) %{_datadir}/apps/kturtle/examples/it
+%lang(nl) %{_datadir}/apps/kturtle/examples/nl
+%lang(pl) %{_datadir}/apps/kturtle/examples/pl
+%lang(pt_BR) %{_datadir}/apps/kturtle/examples/pt_BR
+%lang(ru) %{_datadir}/apps/kturtle/examples/ru
+%lang(sk) %{_datadir}/apps/kturtle/examples/sk
+%lang(sl) %{_datadir}/apps/kturtle/examples/sl
+%lang(sr) %{_datadir}/apps/kturtle/examples/sr
+%lang(sr@Latn) %{_datadir}/apps/kturtle/examples/sr@Latn
+%lang(sv) %{_datadir}/apps/kturtle/examples/sv
+
 %files -n kdeedu-kverbos-i18n -f kdeedu-kverbos-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdeedu-kvoctrain-i18n -f kdeedu-kvoctrain-i18n.lang
@@ -4207,8 +4428,24 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegames-ktron-i18n -f kdegames-ktron-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdegames-ktuberling-i18n -f kdegames-ktuberling-i18n.lang
 %defattr(644,root,root,755)
+%lang(da) %{_datadir}/apps/ktuberling/sounds/da
+%lang(de) %{_datadir}/apps/ktuberling/sounds/de
+%lang(es) %{_datadir}/apps/ktuberling/sounds/es
+%lang(fr) %{_datadir}/apps/ktuberling/sounds/fr
+%lang(it) %{_datadir}/apps/ktuberling/sounds/it
+%lang(nds) %{_datadir}/apps/ktuberling/sounds/nds
+%lang(nl) %{_datadir}/apps/ktuberling/sounds/nl
+%lang(pt) %{_datadir}/apps/ktuberling/sounds/pt
+%lang(ro) %{_datadir}/apps/ktuberling/sounds/ro
+%lang(sk) %{_datadir}/apps/ktuberling/sounds/sk
+%lang(sl) %{_datadir}/apps/ktuberling/sounds/sl
+%lang(sr) %{_datadir}/apps/ktuberling/sounds/sr
+%lang(sr@Latn) %{_datadir}/apps/ktuberling/sounds/sr@Latn
+%lang(sv) %{_datadir}/apps/ktuberling/sounds/sv
+
 %files -n kdegames-kwin4-i18n -f kdegames-kwin4-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdegames-lskat-i18n -f kdegames-lskat-i18n.lang
@@ -4251,8 +4488,58 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdegraphics-kviewshell-i18n -f kdegraphics-kviewshell-i18n.lang
 %defattr(644,root,root,755)
+
 %files -n kdelibs-i18n -f kdelibs-i18n.lang
 %defattr(644,root,root,755)
+# package dirs
+%dir %{_kdedocdir}/ca
+%dir %{_kdedocdir}/da
+%dir %{_kdedocdir}/de
+%dir %{_kdedocdir}/cs
+%dir %{_kdedocdir}/es
+%dir %{_kdedocdir}/et
+%dir %{_kdedocdir}/fi
+%dir %{_kdedocdir}/eu
+%dir %{_kdedocdir}/fr
+%dir %{_kdedocdir}/he
+%dir %{_kdedocdir}/hr
+%dir %{_kdedocdir}/hu
+%dir %{_kdedocdir}/ja
+%dir %{_kdedocdir}/it
+%dir %{_kdedocdir}/ko
+%dir %{_kdedocdir}/nl
+%dir %{_kdedocdir}/pl
+%dir %{_kdedocdir}/pt
+%dir %{_kdedocdir}/ro
+%dir %{_kdedocdir}/ru
+%dir %{_kdedocdir}/sk
+%dir %{_kdedocdir}/sl
+%dir %{_kdedocdir}/sr
+%dir %{_kdedocdir}/sv
+%dir %{_kdedocdir}/tr
+%dir %{_kdedocdir}/uk
+%dir %{_kdedocdir}/en_GB
+%dir %{_kdedocdir}/pt_BR
+%dir %{_kdedocdir}/zh_CN
+%dir %{_kdedocdir}/zh_TW
+
+# TODO: to kate?
+%lang(ca) %{_datadir}/apps/katepart/syntax/logohighlightstyle.ca.xml
+%lang(de_DE) %{_datadir}/apps/katepart/syntax/logohighlightstyle.de_DE.xml
+%lang(en_GB) %{_datadir}/apps/katepart/syntax/logohighlightstyle.en_GB.xml
+%lang(es) %{_datadir}/apps/katepart/syntax/logohighlightstyle.es.xml
+%lang(fr_FR) %{_datadir}/apps/katepart/syntax/logohighlightstyle.fr_FR.xml
+%lang(it) %{_datadir}/apps/katepart/syntax/logohighlightstyle.it.xml
+%lang(nl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.nl.xml
+%lang(pl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.pl.xml
+%lang(pt_BR) %{_datadir}/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
+%lang(ru) %{_datadir}/apps/katepart/syntax/logohighlightstyle.ru.xml
+%lang(sk) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sk.xml
+%lang(sl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sl.xml
+%lang(sr) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr.xml
+%lang(sr@Latn) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
+%lang(sv) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sv.xml
+
 %files -n kdemultimedia-arts-i18n -f kdemultimedia-arts-i18n.lang
 %defattr(644,root,root,755)
 %files -n kdemultimedia-artsbuilder-i18n -f kdemultimedia-artsbuilder-i18n.lang
