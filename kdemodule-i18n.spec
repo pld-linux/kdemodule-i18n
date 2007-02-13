@@ -25,7 +25,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl.UTF-8):	KDE - wsparcie dla wielu języków
 Name:		kdemodule-i18n
 Version:	3.5.6
-Release:	1
+Release:	2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -4523,7 +4523,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_kdedocdir}/zh_CN
 %dir %{_kdedocdir}/zh_TW
 
-# TODO: to kate?
+# /apps/katepart/syntax/ is in kdelibs package, so kdepart therefore here too
 %lang(ca) %{_datadir}/apps/katepart/syntax/logohighlightstyle.ca.xml
 %lang(de_DE) %{_datadir}/apps/katepart/syntax/logohighlightstyle.de_DE.xml
 %lang(en_GB) %{_datadir}/apps/katepart/syntax/logohighlightstyle.en_GB.xml
