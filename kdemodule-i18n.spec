@@ -25,7 +25,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl.UTF-8):	KDE - wsparcie dla wielu języków
 Name:		kdemodule-i18n
 Version:	3.5.6
-Release:	2
+Release:	3
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -285,7 +285,7 @@ Tłumaczenia dla smtp ioslave.
 Summary:	Internationalization and localization files for svn ioslave
 Summary(pl.UTF-8):	Tłumaczenia dla svn ioslave
 Group:		X11/Applications
-Requires:	kde-kio-svn = %{kdebase_epoch}:%{version}
+Requires:	kde-kio-svn = %{kdesdk_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-kio-svn-i18n
@@ -298,7 +298,7 @@ Tłumaczenia dla svn ioslave.
 Summary:	Internationalization and localization files for bugzilla plugin for the KDE PIM framework
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla wtyczki bugzilla do szkieletu KDE PIM
 Group:		X11/Applications
-Requires:	kde-resource-bugzilla-i18n = %{kdesdk_epoch}:%{version}
+Requires:	kdesdk-kde-resource-bugzilla = %{kdesdk_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 
 %description -n kde-resource-bugzilla-i18n
@@ -1176,7 +1176,7 @@ Summary:	Internationalization and localization files for libkdeeduui
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla libkdeeduui
 Group:		X11/Applications
 Requires:	kdebase-core-i18n = %{epoch}:%{version}-%{release}
-Requires:	kdeedu-libkdeeduui-i18n = %{kdeedu_epoch}:%{version}
+Requires:	kdeedu-libkdeeduui = %{kdeedu_epoch}:%{version}
 
 %description -n kdeedu-libkdeeduui-i18n
 Internationalization and localization files for libkdeeduui.
