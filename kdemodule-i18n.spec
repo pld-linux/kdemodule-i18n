@@ -25,7 +25,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl):	KDE - wsparcie dla wielu jêzyków
 Name:		kdemodule-i18n
 Version:	3.5.6
-Release:	2
+Release:	3
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -3973,7 +3973,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeaddons-noatun-i18n -f kdeaddons-noatun-i18n.lang
 %defattr(644,root,root,755)
+%ifarch %{ix86} %{x8664} sparc sparc64
 %files -n kdeadmin-kcmlilo-i18n -f kdeadmin-kcmlilo-i18n.lang
+%endif
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcron-i18n -f kdeadmin-kcron-i18n.lang
 %defattr(644,root,root,755)
