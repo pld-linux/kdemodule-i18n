@@ -1,6 +1,7 @@
 # NOTE
 # - difference between kdemodule-i18n and kde-i18n is that one is per
 #   package and other is per language.
+# - do not add %%ifarch here, as it's noarch package
 #
 %define		kdeaddons_epoch		1
 %define		kdeadmin_epoch		8
@@ -27,7 +28,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl.UTF-8):	KDE - wsparcie dla wielu języków
 Name:		kdemodule-i18n
 Version:	3.5.7
-Release:	0.1
+Release:	1
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -172,6 +173,8 @@ BuildRequires:	libxml2-progs >= 2.4.2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		no_install_post_py_hardlink	1
+
 %description
 K Desktop Environment - international support.
 
@@ -305,8 +308,8 @@ Tłumaczenia dla svn ioslave.
 Summary:	Internationalization and localization files for bugzilla plugin for the KDE PIM framework
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla wtyczki bugzilla do szkieletu KDE PIM
 Group:		X11/Applications
-Requires:	kdesdk-kde-resource-bugzilla = %{kdesdk_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdesdk-kde-resource-bugzilla = %{kdesdk_epoch}:%{version}
 
 %description -n kde-resource-bugzilla-i18n
 Internationalization and localization files for KDE PIM plugin that
@@ -3162,7 +3165,7 @@ Internationalization and localization files for libkonq.
 Tłumaczenia dla libkonq.
 
 %prep
-%setup -qcT %(seq -f '-a %g' 0 64 | xargs)
+%setup -qcT %(seq -f '-a %g' 0 66 | xargs)
 
 %build
 export kde_htmldir="%{_kdedocdir}"
@@ -3197,7 +3200,7 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	# remove empty language catalogs (= 1 message only)
 	find $RPM_BUILD_ROOT%{_datadir}/locale -type f -name '*.mo' | xargs file | egrep ', 1 messages$' | cut -d: -f1 | xargs rm -vf
 
-%if "%{version}" == "3.5.6"
+%if "%{version}" == "3.5.7"
 	# - kcmsmartcard - kdebase-3.5.6/kcontrol/smartcard - not packaged in pld
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kcmsmartcard.mo
 	# - kres_blogging.mo - kdepim-3.5.6/kresources/blogging/ - not packged in pld
@@ -3212,6 +3215,11 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	# - kres_tvanytime.mo - kdepim-3.5.6/kresources/tvanytime/
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/kres_tvanytime.mo
 %endif
+
+	# XXX check this rename
+	mv $RPM_BUILD_ROOT%{_datadir}/apps/katepart/syntax/logohighlightstyle.mk{_MK,}.xml
+	mv $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/data/logokeywords.mk{_MK,}.xml
+	mv $RPM_BUILD_ROOT%{_datadir}/apps/kturtle/examples/mk{_MK,}
 
 	# (probably) no longer in kde
 	rm $RPM_BUILD_ROOT%{_datadir}/locale/km/LC_MESSAGES/jefferson.mo
@@ -3288,7 +3296,7 @@ kde_find_lang() {
 	shift
 	> $out
 	for a in $*; do
-		%find_lang $a --with-kde lang.tmp
+		%find_lang $a --with-kde lang.tmp > /dev/null
 		cat lang.tmp >> $out
 	done
 }
@@ -3405,7 +3413,12 @@ kde_find_lang kdeaddons-noatun-i18n "
 	wavecapture
 "
 
-kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo lilo-config
+# Hack: 'BuildArch: noarch' and %%ifarch do not work, so we create empty packages.
+# TH: In reality the arches would get full tarball anyway
+# These arch's don't bave kcmlilo package: %{ix86} %{x8664} sparc sparc64
+> kdeadmin-kcmlilo-i18n.lang
+kde_find_lang kdeadmin-kcmlilo-i18n kcmlilo lilo-config || :
+
 kde_find_lang kdeadmin-kcron-i18n kcron
 kde_find_lang kdeadmin-kdat-i18n kdat
 kde_find_lang kdeadmin-knetworkconf-i18n knetworkconf
@@ -3501,13 +3514,13 @@ kde_find_lang kdebase-desktop-i18n "
 	kstyle_plastik_config
 	ksystemtrayapplet
 	ksystraycmd
-	ktaskbarapplet
 	kthememanager
 	ktip
 	kwin
 	kwin_clients
-	kwin_lib
 	kwindecoration
+	kwin_lib
+	kwriteconfig
 	kxkb
 	kxmlrpcd
 	libkicker
@@ -3528,7 +3541,6 @@ kde_find_lang kdebase-desktop-i18n "
 	privacy
 	quicklauncher
 	spellchecking
-	taskbarextension
 	trashapplet
 	windowmanagement
 "
@@ -3551,7 +3563,6 @@ kde_find_lang kdebase-infocenter-i18n "
 kde_find_lang kdebase-kappfinder-i18n kappfinder
 kde_find_lang kdebase-kate-i18n "
 	kate
-	katedefaultproject
 	katetabbarextension
 "
 kde_find_lang kdebase-kdcop-i18n kdcop dcoprss
@@ -3565,8 +3576,7 @@ kde_find_lang kdebase-konsole-i18n konsole kcmkonsole
 kde_find_lang kdebase-kpager-i18n kpager
 kde_find_lang kdebase-kpersonalizer-i18n kpersonalizer
 kde_find_lang kdebase-ksysguard-i18n ksysguard
-# XXX kwriteconfig != kwrite
-kde_find_lang kdebase-kwrite-i18n kwrite kwriteconfig
+kde_find_lang kdebase-kwrite-i18n kwrite
 kde_find_lang kdebase-screensavers-i18n screensaver kcmscreensaver kscreensaver
 kde_find_lang kdebase-useraccount-i18n useraccount kdepasswd
 kde_find_lang kdeedu-blinken-i18n blinken
@@ -3900,7 +3910,6 @@ kde_find_lang konqueror-i18n "
 	kcmkurifilt
 	kcmlayout
 	kcmperformance
-	kfile_font
 	kfmclient
 	khtml
 	kio_finger
@@ -3980,9 +3989,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %files -n kdeaddons-noatun-i18n -f kdeaddons-noatun-i18n.lang
 %defattr(644,root,root,755)
-%ifarch %{ix86} %{x8664} sparc sparc64
 %files -n kdeadmin-kcmlilo-i18n -f kdeadmin-kcmlilo-i18n.lang
-%endif
 %defattr(644,root,root,755)
 %files -n kdeadmin-kcron-i18n -f kdeadmin-kcron-i18n.lang
 %defattr(644,root,root,755)
@@ -4025,6 +4032,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ca) %{_datadir}/locale/ca/charset
 %lang(ca) %{_datadir}/locale/ca/entry.desktop
 %lang(ca) %{_datadir}/locale/ca/flag.png
+%lang(csb) %{_datadir}/locale/csb/charset
+%lang(csb) %{_datadir}/locale/csb/entry.desktop
+%lang(csb) %{_datadir}/locale/csb/flag.png
 %lang(cs) %{_datadir}/locale/cs/charset
 %lang(cs) %{_datadir}/locale/cs/entry.desktop
 %lang(cs) %{_datadir}/locale/cs/flag.png
@@ -4178,6 +4188,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ta) %{_datadir}/locale/ta/flag.png
 %lang(tg) %{_datadir}/locale/tg/charset
 %lang(tg) %{_datadir}/locale/tg/entry.desktop
+%lang(th) %{_datadir}/locale/th/charset
+%lang(th) %{_datadir}/locale/th/entry.desktop
+%lang(th) %{_datadir}/locale/th/flag.png
 #%lang(tg) %{_datadir}/locale/tg/flag.png
 %lang(tr) %{_datadir}/locale/tr/charset
 %lang(tr) %{_datadir}/locale/tr/entry.desktop
@@ -4257,7 +4270,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kdeedu-khangman-i18n -f kdeedu-khangman-i18n.lang
 %defattr(644,root,root,755)
-%lang(bg) %{_datadir}/apps/khangman/data/bg
 %lang(ca) %{_datadir}/apps/khangman/ca.txt
 %lang(cs) %{_datadir}/apps/khangman/cs.txt
 %lang(da) %{_datadir}/apps/khangman/da.txt
@@ -4269,16 +4281,18 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ga) %{_datadir}/apps/khangman/ga.txt
 %lang(hu) %{_datadir}/apps/khangman/hu.txt
 %lang(nb) %{_datadir}/apps/khangman/nb.txt
+%lang(nds) %{_datadir}/apps/khangman/nds.txt
 %lang(nn) %{_datadir}/apps/khangman/nn.txt
 %lang(pl) %{_datadir}/apps/khangman/pl.txt
-%lang(pt) %{_datadir}/apps/khangman/pt.txt
 %lang(pt_BR) %{_datadir}/apps/khangman/pt_BR.txt
+%lang(pt) %{_datadir}/apps/khangman/pt.txt
 %lang(sl) %{_datadir}/apps/khangman/sl.txt
 %lang(sr@Latn) %{_datadir}/apps/khangman/sr@Latn.txt
 %lang(sv) %{_datadir}/apps/khangman/sv.txt
 %lang(tg) %{_datadir}/apps/khangman/tg.txt
 %lang(tr) %{_datadir}/apps/khangman/tr.txt
 
+%lang(bg) %{_datadir}/apps/khangman/data/bg
 %lang(ca) %{_datadir}/apps/khangman/data/ca
 %lang(cs) %{_datadir}/apps/khangman/data/cs
 %lang(da) %{_datadir}/apps/khangman/data/da
@@ -4291,11 +4305,12 @@ rm -rf $RPM_BUILD_ROOT
 %lang(hu) %{_datadir}/apps/khangman/data/hu
 %lang(it) %{_datadir}/apps/khangman/data/it
 %lang(nb) %{_datadir}/apps/khangman/data/nb
+%lang(nds) %{_datadir}/apps/khangman/data/nds
 %lang(nl) %{_datadir}/apps/khangman/data/nl
 %lang(nn) %{_datadir}/apps/khangman/data/nn
 %lang(pl) %{_datadir}/apps/khangman/data/pl
-%lang(pt) %{_datadir}/apps/khangman/data/pt
 %lang(pt_BR) %{_datadir}/apps/khangman/data/pt_BR
+%lang(pt) %{_datadir}/apps/khangman/data/pt
 %lang(ru) %{_datadir}/apps/khangman/data/ru
 %lang(sl) %{_datadir}/apps/khangman/data/sl
 %lang(sr) %{_datadir}/apps/khangman/data/sr
@@ -4322,6 +4337,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/apps/klettres/es
 %lang(he) %{_datadir}/apps/klettres/he
 %lang(it) %{_datadir}/apps/klettres/it
+%lang(nds) %{_datadir}/apps/klettres/nds
 %lang(nl) %{_datadir}/apps/klettres/nl
 %lang(sk) %{_datadir}/apps/klettres/sk
 
@@ -4343,6 +4359,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/apps/kturtle/data/logokeywords.es.xml
 %lang(fr_FR) %{_datadir}/apps/kturtle/data/logokeywords.fr_FR.xml
 %lang(it) %{_datadir}/apps/kturtle/data/logokeywords.it.xml
+%lang(mk) %{_datadir}/apps/kturtle/data/logokeywords.mk.xml
 %lang(nl) %{_datadir}/apps/kturtle/data/logokeywords.nl.xml
 %lang(pl) %{_datadir}/apps/kturtle/data/logokeywords.pl.xml
 %lang(pt_BR) %{_datadir}/apps/kturtle/data/logokeywords.pt_BR.xml
@@ -4359,6 +4376,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/apps/kturtle/examples/es
 %lang(fr_FR) %{_datadir}/apps/kturtle/examples/fr_FR
 %lang(it) %{_datadir}/apps/kturtle/examples/it
+%lang(mk) %{_datadir}/apps/kturtle/examples/mk
 %lang(nl) %{_datadir}/apps/kturtle/examples/nl
 %lang(pl) %{_datadir}/apps/kturtle/examples/pl
 %lang(pt_BR) %{_datadir}/apps/kturtle/examples/pt_BR
@@ -4539,6 +4557,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/apps/katepart/syntax/logohighlightstyle.es.xml
 %lang(fr_FR) %{_datadir}/apps/katepart/syntax/logohighlightstyle.fr_FR.xml
 %lang(it) %{_datadir}/apps/katepart/syntax/logohighlightstyle.it.xml
+%lang(mk) %{_datadir}/apps/katepart/syntax/logohighlightstyle.mk.xml
 %lang(nl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.nl.xml
 %lang(pl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.pl.xml
 %lang(pt_BR) %{_datadir}/apps/katepart/syntax/logohighlightstyle.pt_BR.xml
