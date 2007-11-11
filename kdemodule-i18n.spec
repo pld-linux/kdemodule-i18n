@@ -31,7 +31,7 @@ Summary:	K Desktop Environment - international support
 Summary(pl.UTF-8):	KDE - wsparcie dla wielu języków
 Name:		kdemodule-i18n
 Version:	3.5.8
-Release:	1
+Release:	2
 Epoch:		10
 License:	GPL
 Group:		X11/Applications
@@ -174,6 +174,7 @@ Source67:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-z
 Source68:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-zh_TW-%{version}.tar.bz2
 # Source68-md5:	7defcfa0506759695f92e2835b06abeb
 Patch0:		kde-i18n-fa.patch
+Patch1:		kde-i18n-locale-names.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -192,6 +193,8 @@ KDE - wsparcie dla wielu języków.
 Summary:	Common internationalization and localization files for kwin decorations
 Summary(pl.UTF-8):	Wspólne pliki umiędzynarodawiające dla dekoracji kwin
 Group:		X11/Applications
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kde-decoration-common-i18n
 Common internationalization and localization files for kwin
@@ -646,6 +649,8 @@ Group:		X11/Applications
 Requires:	kdebase-core = %{kdebase_epoch}:%{version}
 Requires:	kdelibs-i18n = %{epoch}:%{version}-%{release}
 Obsoletes:	kdebase-common-filemanagement-i18n
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kdebase-core-i18n
 Internationalization and localization files for KDE:
@@ -737,6 +742,8 @@ Summary:	Internationalization and localization files for kappfinder
 Summary(pl.UTF-8):	Tłumaczenia dla kappfindera
 Group:		X11/Applications
 Requires:	kdebase-kappfinder = %{kdebase_epoch}:%{version}
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kdebase-kappfinder-i18n
 Internationalization and localization files for kappfinder.
@@ -788,6 +795,8 @@ Summary:	Internationalization and localization files for kdialog
 Summary(pl.UTF-8):	Tłumaczenia dla kdialoga
 Group:		X11/Applications
 Requires:	kdebase-kdialog = %{kdebase_epoch}:%{version}
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kdebase-kdialog-i18n
 Internationalization and localization files for kdialog.
@@ -1835,6 +1844,8 @@ Summary:	Internationalization and localization files for ksvg
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla ksvg
 Group:		X11/Applications
 Requires:	kdegraphics-ksvg = %{kdegraphics_epoch}:%{version}
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kdegraphics-ksvg-i18n
 Internationalization and localization files for ksvg.
@@ -1973,6 +1984,8 @@ Obsoletes:	kdenetwork-rss-i18n
 Obsoletes:	kdesdk-i18n
 Obsoletes:	kdetoys-i18n
 Obsoletes:	kdeutils-i18n
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n kdelibs-i18n
 Translations and localization data for KDE libraries.
@@ -2664,6 +2677,8 @@ Summary:	Internationalization and localization files for libcvsservice
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla libcvsservice
 Group:		X11/Applications
 Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
 
 %description -n kdesdk-libcvsservice-i18n
@@ -2677,6 +2692,8 @@ Summary:	Internationalization and localization files for KDE developer scripts
 Summary(pl.UTF-8):	Pliki umiędzynarodawiające dla KDE developer scripts
 Group:		X11/Applications
 Requires:	kdesdk-libcvsservice = %{kdesdk_epoch}:%{version}
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 Conflicts:	kdesdk-cervisia-i18n < %{epoch}:%{version}-%{release}
 
 %description -n kdesdk-scripts-developer-i18n
@@ -3164,6 +3181,8 @@ Summary(pl.UTF-8):	Tłumaczenia dla libkonq
 Group:		X11/Applications
 Requires:	konqueror-libs = %{kdebase_epoch}:%{version}
 Obsoletes:	kdebase-libkonq-i18n
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 
 %description -n konqueror-libs-i18n
 Internationalization and localization files for libkonq.
@@ -3174,6 +3193,7 @@ Tłumaczenia dla libkonq.
 %prep
 %setup -qcT %(seq -f '-a %g' 0 68 | xargs)
 %patch0 -p1
+%patch1 -p1
 
 %build
 export kde_htmldir="%{_kdedocdir}"
@@ -4183,9 +4203,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr) %{_datadir}/locale/sr/charset
 %lang(sr) %{_datadir}/locale/sr/entry.desktop
 %lang(sr) %{_datadir}/locale/sr/flag.png
-%lang(sr@Latn) %{_datadir}/locale/sr@Latn/charset
-%lang(sr@Latn) %{_datadir}/locale/sr@Latn/entry.desktop
-%lang(sr@Latn) %{_datadir}/locale/sr@Latn/flag.png
+%lang(sr@latin) %{_datadir}/locale/sr@latin/charset
+%lang(sr@latin) %{_datadir}/locale/sr@latin/entry.desktop
+%lang(sr@latin) %{_datadir}/locale/sr@latin/flag.png
 %lang(ss) %{_datadir}/locale/ss/charset
 %lang(ss) %{_datadir}/locale/ss/entry.desktop
 #%lang(ss) %{_datadir}/locale/ss/flag.png
@@ -4303,7 +4323,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pt_BR) %{_datadir}/apps/khangman/pt_BR.txt
 %lang(pt) %{_datadir}/apps/khangman/pt.txt
 %lang(sl) %{_datadir}/apps/khangman/sl.txt
-%lang(sr@Latn) %{_datadir}/apps/khangman/sr@Latn.txt
+%lang(sr@latin) %{_datadir}/apps/khangman/sr@latin.txt
 %lang(sv) %{_datadir}/apps/khangman/sv.txt
 %lang(tg) %{_datadir}/apps/khangman/tg.txt
 %lang(tr) %{_datadir}/apps/khangman/tr.txt
@@ -4330,7 +4350,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru) %{_datadir}/apps/khangman/data/ru
 %lang(sl) %{_datadir}/apps/khangman/data/sl
 %lang(sr) %{_datadir}/apps/khangman/data/sr
-%lang(sr@Latn) %{_datadir}/apps/khangman/data/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/khangman/data/sr@latin
 %lang(sv) %{_datadir}/apps/khangman/data/sv
 %lang(tg) %{_datadir}/apps/khangman/data/tg
 %lang(tr) %{_datadir}/apps/khangman/data/tr
@@ -4385,7 +4405,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/kturtle/data/logokeywords.sk.xml
 %lang(sl) %{_datadir}/apps/kturtle/data/logokeywords.sl.xml
 %lang(sr) %{_datadir}/apps/kturtle/data/logokeywords.sr.xml
-%lang(sr@Latn) %{_datadir}/apps/kturtle/data/logokeywords.sr@Latn.xml
+%lang(sr@latin) %{_datadir}/apps/kturtle/data/logokeywords.sr@latin.xml
 %lang(sv) %{_datadir}/apps/kturtle/data/logokeywords.sv.xml
 
 %lang(ca) %{_datadir}/apps/kturtle/examples/ca
@@ -4402,7 +4422,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/kturtle/examples/sk
 %lang(sl) %{_datadir}/apps/kturtle/examples/sl
 %lang(sr) %{_datadir}/apps/kturtle/examples/sr
-%lang(sr@Latn) %{_datadir}/apps/kturtle/examples/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/kturtle/examples/sr@latin
 %lang(sv) %{_datadir}/apps/kturtle/examples/sv
 
 %files -n kdeedu-kverbos-i18n -f kdeedu-kverbos-i18n.lang
@@ -4488,7 +4508,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/ktuberling/sounds/sk
 %lang(sl) %{_datadir}/apps/ktuberling/sounds/sl
 %lang(sr) %{_datadir}/apps/ktuberling/sounds/sr
-%lang(sr@Latn) %{_datadir}/apps/ktuberling/sounds/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/ktuberling/sounds/sr@latin
 %lang(sv) %{_datadir}/apps/ktuberling/sounds/sv
 
 %files -n kdegames-kwin4-i18n -f kdegames-kwin4-i18n.lang
@@ -4583,7 +4603,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sk.xml
 %lang(sl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sl.xml
 %lang(sr) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr.xml
-%lang(sr@Latn) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
+%lang(sr@latin) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr@latin.xml
 %lang(sv) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sv.xml
 
 %files -n kdemultimedia-arts-i18n -f kdemultimedia-arts-i18n.lang
