@@ -21,7 +21,7 @@
 %define		kdetoys_epoch		9
 %define		kdeutils_epoch		9
 %define		kdevelop_epoch		7
-%define		kdevelop_version	3.4.1
+%define		kdevelop_version	3.5.1
 %define		kdewebdev_epoch		2
 #
 %define		_state		stable
