@@ -4,7 +4,7 @@
 # - do not add %%ifarch here, as it's noarch package
 # - easy way to update all sources with new/old locales:
 #   copy sources from updated kde-i18n.spec and replace:
-#   :%s#kde-i18n/%{_name}-#kde-i18n/%{_name}-#
+#   :%s#kde-i18n/%{name}-#kde-i18n/%{_name}-#
 #
 %define		kdeaddons_epoch		1
 %define		kdeadmin_epoch		8
