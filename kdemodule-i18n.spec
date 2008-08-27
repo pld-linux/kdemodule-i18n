@@ -177,6 +177,7 @@ Source69:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-z
 # Source69-md5:	c9b7fc28f62fc43f57c0d75535860be6
 Source70:	kde-admin.tar.bz2
 # Source70-md5:	d98cf83cbea953f42d5b3087d1f47c71
+Patch0:		%{name}-locale-names.patch
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3209,6 +3210,13 @@ Tłumaczenia dla libkonq.
 %prep
 %setup -qcT %(seq -f '-a %g' 0 69 | xargs)
 
+cd kde-i18n-sr@Latn-%{version}
+%patch0 -p2
+mv data/kdeedu/khangman/sr@{Latn,latin}.txt
+mv data/kdeedu/kturtle/logohighlightstyle.sr@{Latn,latin}.xml
+mv data/kdeedu/kturtle/logokeywords.sr@{Latn,latin}.xml
+cd ..
+
 # http://bugs.kde.org/show_bug.cgi?id=157967
 cd kde-i18n-ru-%{version}
 %{__tar} xjf %{SOURCE70}
@@ -4238,9 +4246,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr) %{_datadir}/locale/sr/charset
 %lang(sr) %{_datadir}/locale/sr/entry.desktop
 %lang(sr) %{_datadir}/locale/sr/flag.png
-%lang(sr@latin) %{_datadir}/locale/sr@Latn/charset
-%lang(sr@latin) %{_datadir}/locale/sr@Latn/entry.desktop
-%lang(sr@latin) %{_datadir}/locale/sr@Latn/flag.png
+%lang(sr@latin) %{_datadir}/locale/sr@latin/charset
+%lang(sr@latin) %{_datadir}/locale/sr@latin/entry.desktop
+%lang(sr@latin) %{_datadir}/locale/sr@latin/flag.png
 %lang(ss) %{_datadir}/locale/ss/charset
 %lang(ss) %{_datadir}/locale/ss/entry.desktop
 #%lang(ss) %{_datadir}/locale/ss/flag.png
@@ -4359,7 +4367,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pt_BR) %{_datadir}/apps/khangman/pt_BR.txt
 %lang(pt) %{_datadir}/apps/khangman/pt.txt
 %lang(sl) %{_datadir}/apps/khangman/sl.txt
-%lang(sr@latin) %{_datadir}/apps/khangman/sr@Latn.txt
+%lang(sr@latin) %{_datadir}/apps/khangman/sr@latin.txt
 %lang(sv) %{_datadir}/apps/khangman/sv.txt
 %lang(tg) %{_datadir}/apps/khangman/tg.txt
 %lang(tr) %{_datadir}/apps/khangman/tr.txt
@@ -4386,7 +4394,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru) %{_datadir}/apps/khangman/data/ru
 %lang(sl) %{_datadir}/apps/khangman/data/sl
 %lang(sr) %{_datadir}/apps/khangman/data/sr
-%lang(sr@latin) %{_datadir}/apps/khangman/data/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/khangman/data/sr@latin
 %lang(sv) %{_datadir}/apps/khangman/data/sv
 %lang(tg) %{_datadir}/apps/khangman/data/tg
 %lang(tr) %{_datadir}/apps/khangman/data/tr
@@ -4442,7 +4450,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/kturtle/data/logokeywords.sk.xml
 %lang(sl) %{_datadir}/apps/kturtle/data/logokeywords.sl.xml
 %lang(sr) %{_datadir}/apps/kturtle/data/logokeywords.sr.xml
-%lang(sr@latin) %{_datadir}/apps/kturtle/data/logokeywords.sr@Latn.xml
+%lang(sr@latin) %{_datadir}/apps/kturtle/data/logokeywords.sr@latin.xml
 %lang(sv) %{_datadir}/apps/kturtle/data/logokeywords.sv.xml
 
 %lang(ca) %{_datadir}/apps/kturtle/examples/ca
@@ -4459,7 +4467,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/kturtle/examples/sk
 %lang(sl) %{_datadir}/apps/kturtle/examples/sl
 %lang(sr) %{_datadir}/apps/kturtle/examples/sr
-%lang(sr@latin) %{_datadir}/apps/kturtle/examples/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/kturtle/examples/sr@latin
 %lang(sv) %{_datadir}/apps/kturtle/examples/sv
 
 %files -n kdeedu-kverbos-i18n -f kdeedu-kverbos-i18n.lang
@@ -4545,7 +4553,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/ktuberling/sounds/sk
 %lang(sl) %{_datadir}/apps/ktuberling/sounds/sl
 %lang(sr) %{_datadir}/apps/ktuberling/sounds/sr
-%lang(sr@latin) %{_datadir}/apps/ktuberling/sounds/sr@Latn
+%lang(sr@latin) %{_datadir}/apps/ktuberling/sounds/sr@latin
 %lang(sv) %{_datadir}/apps/ktuberling/sounds/sv
 
 %files -n kdegames-kwin4-i18n -f kdegames-kwin4-i18n.lang
@@ -4640,7 +4648,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sk) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sk.xml
 %lang(sl) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sl.xml
 %lang(sr) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr.xml
-%lang(sr@latin) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
+%lang(sr@latin) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sr@latin.xml
 %lang(sv) %{_datadir}/apps/katepart/syntax/logohighlightstyle.sv.xml
 
 %files -n kdemultimedia-arts-i18n -f kdemultimedia-arts-i18n.lang
