@@ -167,17 +167,18 @@ Source64:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-u
 # Source64-md5:	c4bb322541cbba9dad22da3c588ba639
 Source65:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-uz-%{version}.tar.bz2
 # Source65-md5:	9c4aca3db425032d85016aa23e9a3b92
-Source66:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-vi-%{version}.tar.bz2
-# Source66-md5:	78c9313e33f5122cdd576d70be360c3c
-Source67:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-wa-%{version}.tar.bz2
-# Source67-md5:	b7bc216e665e1612e47874aea6628af3
-Source68:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-zh_CN-%{version}.tar.bz2
-# Source68-md5:	65ac47c0c1d2424158e416dfa878cc26
-Source69:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-zh_TW-%{version}.tar.bz2
-# Source69-md5:	c9b7fc28f62fc43f57c0d75535860be6
-Source70:	kde-admin.tar.bz2
-# Source70-md5:	d98cf83cbea953f42d5b3087d1f47c71
-Patch1:		kde-i18n-et-bug-157938.patch
+Source66:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-uz@cyrillic-%{version}.tar.bz2
+# Source66-md5:	32ef78a2a6a17742a150dedba636b0e8
+Source67:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-vi-%{version}.tar.bz2
+# Source67-md5:	78c9313e33f5122cdd576d70be360c3c
+Source68:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-wa-%{version}.tar.bz2
+# Source68-md5:	b7bc216e665e1612e47874aea6628af3
+Source69:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-zh_CN-%{version}.tar.bz2
+# Source69-md5:	65ac47c0c1d2424158e416dfa878cc26
+Source70:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/kde-i18n/%{_name}-zh_TW-%{version}.tar.bz2
+# Source70-md5:	c9b7fc28f62fc43f57c0d75535860be6
+Source71:	kde-admin.tar.bz2
+# Source71-md5:	d98cf83cbea953f42d5b3087d1f47c71
 URL:		http://i18n.kde.org/
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs >= 2.4.2
@@ -3208,7 +3209,7 @@ Tłumaczenia dla libkonq.
 
 # http://bugs.kde.org/show_bug.cgi?id=157967
 cd kde-i18n-ru-%{version}
-%{__tar} xjf %{SOURCE70}
+%{__tar} xjf %{SOURCE71}
 mv -f configure{,.dist}
 cd ..
 
@@ -4265,6 +4266,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(uz) %{_datadir}/locale/uz/charset
 %lang(uz) %{_datadir}/locale/uz/entry.desktop
 %lang(uz) %{_datadir}/locale/uz/flag.png
+%lang(uz@cyrillic) %{_datadir}/locale/uz@cyrillic/charset
+%lang(uz@cyrillic) %{_datadir}/locale/uz@cyrillic/entry.desktop
+%lang(uz@cyrillic) %{_datadir}/locale/uz@cyrillic/flag.png
 %lang(vi) %{_datadir}/locale/vi/charset
 %lang(vi) %{_datadir}/locale/vi/entry.desktop
 %lang(vi) %{_datadir}/locale/vi/flag.png
