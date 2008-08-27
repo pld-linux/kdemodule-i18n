@@ -3205,7 +3205,7 @@ Internationalization and localization files for libkonq.
 Tłumaczenia dla libkonq.
 
 %prep
-%setup -qcT %(seq -f '-a %g' 0 69 | xargs)
+%setup -qcT %(seq -f '-a %g' 0 70 | xargs)
 
 # http://bugs.kde.org/show_bug.cgi?id=157967
 cd kde-i18n-ru-%{version}
